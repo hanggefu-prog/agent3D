@@ -1,0 +1,39 @@
+max_iterations: 10
+checkpoint_interval: 1
+diff_based_evolution: false
+max_code_length: 18000
+prompt:
+  system_message: >-
+    Improve the legacy TP-GNN embedding loss and its whole-design two-way
+    clustering decoder jointly. Maximize the measured setup timing score after
+    legal partitioning, fixed placement and HBT assignment, after one OPT pass:
+    0.4 WNS deficit improvement and 0.6 TNS deficit improvement.
+    Change only compute_tp_gnn_loss and decode_tp_gnn_embeddings in one complete
+    program. Keep their exact interfaces and all features, sampling, model,
+    training budget, seeds, optimizer, feasibility closure, physical flow and
+    evaluation rules fixed. The loss uses frozen two-dimensional prototype
+    timing inputs, not candidate final timing. The decoder receives only
+    read-only embeddings, areas and scalar controls; it may change clustering
+    distance, centers and ranking but not the protected repair mechanism.
+    Training loss, cut and HPWL are diagnostics, not selection objectives.
+    Use only supplied inputs and measured feedback. Treat failures as failures
+    and missing metrics as unknown. Return exactly the two complete functions
+    compute_tp_gnn_loss followed by decode_tp_gnn_embeddings, with short
+    docstrings, between the EVOLVE-BLOCK markers. No imports, JSON, diffs,
+    additional functions or text outside the markers. Native hooks and trusted
+    collection are connected; candidate timing requires a freshly qualified
+    same-case reference from this task's exact initial program and fixed recipe.
+    Another task's reference cannot qualify it. A search template does not
+    authorize model calls itself.
+  include_artifacts: true
+  max_artifact_bytes: 32768
+  artifact_security_filter: true
+evaluator:
+  timeout: 21600
+  cascade_thresholds: [0.01]
+  parallel_evaluations: 1
+  enable_artifacts: true
+database:
+  population_size: 16
+  archive_size: 10
+  num_islands: 3

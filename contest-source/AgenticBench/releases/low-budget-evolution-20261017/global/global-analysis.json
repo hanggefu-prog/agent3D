@@ -1,0 +1,301 @@
+{
+  "evaluations": [
+    {
+      "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+      "vector": {
+        "timing": 1.0,
+        "overflow": 1.0,
+        "temperature_peak_k": 1.0
+      },
+      "feasible": true,
+      "per_case": {
+        "bp_fe-ng45": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.134205021972545,
+            "temperature_peak_k": 324.3666666666667,
+            "tns_deficit_ns": 339.2830195787466,
+            "wns_deficit_ns": 0.6848528604730505
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.134205021972545,
+            "temperature_peak_k": 324.3666666666667,
+            "tns_deficit_ns": 339.2830195787466,
+            "wns_deficit_ns": 0.6848528604730505
+          },
+          "power_ratio": 1.0
+        },
+        "bp-ng45": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.3156815623825412,
+            "temperature_peak_k": 322.9066666666667,
+            "tns_deficit_ns": 7709.019494591678,
+            "wns_deficit_ns": 7.97252834464225
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.3156815623825412,
+            "temperature_peak_k": 322.9066666666667,
+            "tns_deficit_ns": 7709.019494591678,
+            "wns_deficit_ns": 7.97252834464225
+          },
+          "power_ratio": 1.0
+        },
+        "ariane133-ng45": {
+          "candidate_mean": {
+            "overflow": 19,
+            "power_w": 0.18585392730496142,
+            "temperature_peak_k": 320.51666666666665,
+            "tns_deficit_ns": 136.73199137711958,
+            "wns_deficit_ns": 0.7123820253851022
+          },
+          "baseline_mean": {
+            "overflow": 19,
+            "power_w": 0.18585392730496142,
+            "temperature_peak_k": 320.51666666666665,
+            "tns_deficit_ns": 136.73199137711958,
+            "wns_deficit_ns": 0.7123820253851022
+          },
+          "power_ratio": 1.0
+        },
+        "swerv_wrapper-ng45": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.23446653313823457,
+            "temperature_peak_k": 323.12666666666667,
+            "tns_deficit_ns": 1914.5667021827023,
+            "wns_deficit_ns": 2.0147693713291632
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.23446653313823457,
+            "temperature_peak_k": 323.12666666666667,
+            "tns_deficit_ns": 1914.5667021827023,
+            "wns_deficit_ns": 2.0147693713291632
+          },
+          "power_ratio": 1.0
+        },
+        "bp_fe-asap7": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.02932269521153074,
+            "temperature_peak_k": 328.39,
+            "tns_deficit_ns": 70.16045898397493,
+            "wns_deficit_ns": 0.6174972559911984
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.02932269521153074,
+            "temperature_peak_k": 328.39,
+            "tns_deficit_ns": 70.16045898397493,
+            "wns_deficit_ns": 0.6174972559911984
+          },
+          "power_ratio": 1.0
+        }
+      },
+      "archive_matches_independent_recomputation": true
+    },
+    {
+      "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+      "vector": {
+        "timing": 1.0072409438431866,
+        "overflow": 1.0878028404344193,
+        "temperature_peak_k": 0.9999877825070985
+      },
+      "feasible": true,
+      "per_case": {
+        "bp_fe-ng45": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.13421921175001233,
+            "temperature_peak_k": 324.37,
+            "tns_deficit_ns": 339.67770239486583,
+            "wns_deficit_ns": 0.7132106958741188
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.134205021972545,
+            "temperature_peak_k": 324.3666666666667,
+            "tns_deficit_ns": 339.2830195787466,
+            "wns_deficit_ns": 0.6848528604730505
+          },
+          "power_ratio": 1.0001057320900424
+        },
+        "bp-ng45": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.315549810081864,
+            "temperature_peak_k": 322.90000000000003,
+            "tns_deficit_ns": 7545.623461411255,
+            "wns_deficit_ns": 7.973093818252119
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.3156815623825412,
+            "temperature_peak_k": 322.9066666666667,
+            "tns_deficit_ns": 7709.019494591678,
+            "wns_deficit_ns": 7.97252834464225
+          },
+          "power_ratio": 0.9995826417618983
+        },
+        "ariane133-ng45": {
+          "candidate_mean": {
+            "overflow": 28.666666666666668,
+            "power_w": 0.18582767005129586,
+            "temperature_peak_k": 320.51666666666665,
+            "tns_deficit_ns": 140.59556524360866,
+            "wns_deficit_ns": 0.6516956048156591
+          },
+          "baseline_mean": {
+            "overflow": 19,
+            "power_w": 0.18585392730496142,
+            "temperature_peak_k": 320.51666666666665,
+            "tns_deficit_ns": 136.73199137711958,
+            "wns_deficit_ns": 0.7123820253851022
+          },
+          "power_ratio": 0.9998587210179182
+        },
+        "swerv_wrapper-ng45": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.23422793113495682,
+            "temperature_peak_k": 323.12333333333333,
+            "tns_deficit_ns": 1893.2828581523142,
+            "wns_deficit_ns": 1.9935594480222616
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.23446653313823457,
+            "temperature_peak_k": 323.12666666666667,
+            "tns_deficit_ns": 1914.5667021827023,
+            "wns_deficit_ns": 2.0147693713291632
+          },
+          "power_ratio": 0.9989823622156896
+        },
+        "bp_fe-asap7": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.029299655426727668,
+            "temperature_peak_k": 328.37666666666667,
+            "tns_deficit_ns": 73.93311239154369,
+            "wns_deficit_ns": 0.6233036485593357
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.02932269521153074,
+            "temperature_peak_k": 328.39,
+            "tns_deficit_ns": 70.16045898397493,
+            "wns_deficit_ns": 0.6174972559911984
+          },
+          "power_ratio": 0.999214267834629
+        }
+      },
+      "archive_matches_independent_recomputation": true
+    },
+    {
+      "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+      "vector": {
+        "timing": 0.9990647115672642,
+        "overflow": 0.8715956558061821,
+        "temperature_peak_k": 1.0
+      },
+      "feasible": true,
+      "per_case": {
+        "bp_fe-ng45": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.134205021972545,
+            "temperature_peak_k": 324.3666666666667,
+            "tns_deficit_ns": 339.2830195787466,
+            "wns_deficit_ns": 0.6848528604730505
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.134205021972545,
+            "temperature_peak_k": 324.3666666666667,
+            "tns_deficit_ns": 339.2830195787466,
+            "wns_deficit_ns": 0.6848528604730505
+          },
+          "power_ratio": 1.0
+        },
+        "bp-ng45": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.3156815623825412,
+            "temperature_peak_k": 322.9066666666667,
+            "tns_deficit_ns": 7709.019494591678,
+            "wns_deficit_ns": 7.97252834464225
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.3156815623825412,
+            "temperature_peak_k": 322.9066666666667,
+            "tns_deficit_ns": 7709.019494591678,
+            "wns_deficit_ns": 7.97252834464225
+          },
+          "power_ratio": 1.0
+        },
+        "ariane133-ng45": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.18582695608335079,
+            "temperature_peak_k": 320.51666666666665,
+            "tns_deficit_ns": 135.50308399610873,
+            "wns_deficit_ns": 0.7099977103499842
+          },
+          "baseline_mean": {
+            "overflow": 19,
+            "power_w": 0.18585392730496142,
+            "temperature_peak_k": 320.51666666666665,
+            "tns_deficit_ns": 136.73199137711958,
+            "wns_deficit_ns": 0.7123820253851022
+          },
+          "power_ratio": 0.999854879463664
+        },
+        "swerv_wrapper-ng45": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.23446653313823457,
+            "temperature_peak_k": 323.12666666666667,
+            "tns_deficit_ns": 1914.5667021827023,
+            "wns_deficit_ns": 2.0147693713291632
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.23446653313823457,
+            "temperature_peak_k": 323.12666666666667,
+            "tns_deficit_ns": 1914.5667021827023,
+            "wns_deficit_ns": 2.0147693713291632
+          },
+          "power_ratio": 1.0
+        },
+        "bp_fe-asap7": {
+          "candidate_mean": {
+            "overflow": 0,
+            "power_w": 0.02932269521153074,
+            "temperature_peak_k": 328.39,
+            "tns_deficit_ns": 70.16045898397493,
+            "wns_deficit_ns": 0.6174972559911984
+          },
+          "baseline_mean": {
+            "overflow": 0,
+            "power_w": 0.02932269521153074,
+            "temperature_peak_k": 328.39,
+            "tns_deficit_ns": 70.16045898397493,
+            "wns_deficit_ns": 0.6174972559911984
+          },
+          "power_ratio": 1.0
+        }
+      },
+      "archive_matches_independent_recomputation": true
+    }
+  ],
+  "independent_frontier": [
+    "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5"
+  ],
+  "verified_upstream_stage_reuse_checks": 195,
+  "all_reuse_checks_passed": true
+}

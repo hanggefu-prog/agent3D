@@ -1,0 +1,6 @@
+schema_version: 1
+id: open3dbench-codesign-cts-thermal-20261008-v1
+image: sha256:1b5567c86d48effa03b0543089e01fec37786e4f249309b7da627b477d7639e5
+image_digest: null
+entrypoint: [python3, /trusted/open3dbench_codesign_verifier.py, --mode, cts-thermal, --profile, tp_gnn_placement_cts_thermal_20261008, --submission, /submission, --output, /verifier-output, --evaluated-run, /evaluation-run, --reference-run, /inputs/reference]
+timeout_seconds: 21600

@@ -1,0 +1,18 @@
+schema_version: 1
+id: open3dbench-codesign-timing-v1
+image: open3dbench:release
+image_digest: null
+entrypoint:
+  - python3
+  - /trusted/open3dbench_codesign_verifier.py
+  - --mode
+  - timing
+  - --submission
+  - /submission
+  - --output
+  - /verifier-output
+  - --evaluated-run
+  - /evaluation-run
+  - --reference-run
+  - /inputs/reference
+timeout_seconds: 21600

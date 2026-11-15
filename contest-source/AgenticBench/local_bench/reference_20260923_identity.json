@@ -1,0 +1,239 @@
+{
+  "cases": {
+    "ariane133": {
+      "partition_assignment_sha256": "291521b520b6875308a0c4b911d00356ff55396f14ff643b65ebe9461245b6e7",
+      "physical_prefix": {
+        "00_input/design.def": {
+          "bytes": 18495516,
+          "sha256": "29895eed88ba3029de865563c2005698bc234f1d6346190d2f55262263b2b2de"
+        },
+        "00_input/design.sdc": {
+          "bytes": 709,
+          "sha256": "39b3b9b8b5f794709e8b7a5aa36698f5e9476c6a45fe0a22677a584eb34a59c2"
+        },
+        "00_input/design.v": {
+          "bytes": 20636043,
+          "sha256": "f1a93a73467b0deef029de635b1db206ad6337ec8dcc59d69894a5781f0f4891"
+        },
+        "10_floorplan/design.def": {
+          "bytes": 22384487,
+          "sha256": "55e68df4cc18392e9e69145c8bf5f7eb3e6152ff88c9e6dff4dbff27718b66c0"
+        },
+        "10_floorplan/design.sdc": {
+          "bytes": 709,
+          "sha256": "39b3b9b8b5f794709e8b7a5aa36698f5e9476c6a45fe0a22677a584eb34a59c2"
+        },
+        "10_floorplan/design.v": {
+          "bytes": 20636043,
+          "sha256": "f1a93a73467b0deef029de635b1db206ad6337ec8dcc59d69894a5781f0f4891"
+        },
+        "10_floorplan/floorplan.json": {
+          "bytes": 1355,
+          "sha256": "5e7c34f4f8f467fe3b3aef3759f6f299ce76a0b354f5135658cd1a9a326bae5d"
+        },
+        "10_floorplan/io_plan.csv": {
+          "bytes": 42258,
+          "sha256": "2cf94fc7368a9451fec2585ac749aa447a2c1bbe2932f7bf0d8bb098dcf597a1"
+        },
+        "10_floorplan/io_preplace.def": {
+          "bytes": 21677645,
+          "sha256": "c7c8dbc65de041099a4abdc777fbc5fcaf02fc55c7a086e442e9a1c52a165b82"
+        },
+        "10_floorplan/io_seed.def": {
+          "bytes": 18543824,
+          "sha256": "32cf777bbdb73a833af0d5464350a6917d34b4e4cca8139b6dba88a9732807be"
+        },
+        "10_floorplan/partition.names.csv": {
+          "bytes": 2274306,
+          "sha256": "85e6732fd65b998507c552f11743fc2fc0df164e452c85c8869f72e2d8a25391"
+        },
+        "10_floorplan/pdn_plan.json": {
+          "bytes": 301,
+          "sha256": "b553295779885545cc4bc557c2e37069fa120121e806d2b1e6249b37294f5936"
+        },
+        "10_floorplan/preplan_manifest.json": {
+          "bytes": 309,
+          "sha256": "c383ddb117ab2a84da1724275c1eb33c7c6e861a4a0a0637fa9d1489aab413c1"
+        }
+      },
+      "run": "user_runs/manual-v2-merged-four-20260922/ariane133/run"
+    },
+    "bp": {
+      "partition_assignment_sha256": "3a3c60036da76deefc1188cceeebfa38b850749f25e7a2783ea73698a4f49c0c",
+      "physical_prefix": {
+        "00_input/design.def": {
+          "bytes": 20495217,
+          "sha256": "3e4968a9b1e9f59a187a721933bda9e6845a760a826d96187a9b7e1f2c18e5c7"
+        },
+        "00_input/design.sdc": {
+          "bytes": 173417,
+          "sha256": "53ee20d6f7c6cefcf54f9818b1cd7722f18e7dccfe6ea592ea4b475f07e13b30"
+        },
+        "00_input/design.v": {
+          "bytes": 26919690,
+          "sha256": "28bec2f53a48d3079c5eb10a6878220e1cf79b6ea47abcc2abddbbb5507f1d7b"
+        },
+        "10_floorplan/design.def": {
+          "bytes": 24898963,
+          "sha256": "c89567de244b4fae9f2e67a6de9e4a9b443b855ed5ec486e25de0bb37b7d0292"
+        },
+        "10_floorplan/design.sdc": {
+          "bytes": 173417,
+          "sha256": "53ee20d6f7c6cefcf54f9818b1cd7722f18e7dccfe6ea592ea4b475f07e13b30"
+        },
+        "10_floorplan/design.v": {
+          "bytes": 26919690,
+          "sha256": "28bec2f53a48d3079c5eb10a6878220e1cf79b6ea47abcc2abddbbb5507f1d7b"
+        },
+        "10_floorplan/floorplan.json": {
+          "bytes": 1350,
+          "sha256": "10156f485f7f6ebecb19d1d57dd0f7a2d1a7cf6c3ae44d6a977873e33b7c7bd9"
+        },
+        "10_floorplan/io_plan.csv": {
+          "bytes": 110949,
+          "sha256": "076e574d388e842263efac74002991ae21ba4a59fd61f70375576a5aee4b7a37"
+        },
+        "10_floorplan/io_preplace.def": {
+          "bytes": 24503789,
+          "sha256": "64c32b81dc75595f957fa9914ade24681c025feddde2ef16a4bacfa185e5ab72"
+        },
+        "10_floorplan/io_seed.def": {
+          "bytes": 20612478,
+          "sha256": "cd803f0553a3e40c7d1924f6a3a68694f262df915362e811f03b5263b16575eb"
+        },
+        "10_floorplan/partition.names.csv": {
+          "bytes": 2486554,
+          "sha256": "4ea0a1f47411388c7defa0b812157ad9df819cf9429d3433692635d082cc31a8"
+        },
+        "10_floorplan/pdn_plan.json": {
+          "bytes": 301,
+          "sha256": "b553295779885545cc4bc557c2e37069fa120121e806d2b1e6249b37294f5936"
+        },
+        "10_floorplan/preplan_manifest.json": {
+          "bytes": 308,
+          "sha256": "d8171d567c735fbc65472323fb39f11444e8c2c260a750aba2724f14079b642d"
+        }
+      },
+      "run": "user_runs/manual-v2-merged-four-20260922/bp/run"
+    },
+    "bp_fe": {
+      "partition_assignment_sha256": "ae30aaa817aea35c7026e4be343805cb73a71a8e3c2333c1540c60a8dc9fbe03",
+      "physical_prefix": {
+        "00_input/design.def": {
+          "bytes": 3827494,
+          "sha256": "9896c74736b9350785ea260b6c4a5773fd37a0f01597f17ddf28555cf3f90124"
+        },
+        "00_input/design.sdc": {
+          "bytes": 2160,
+          "sha256": "f54a8e78db2c390a257181b5384aab07b58230204ce78b4d724b8ff563d1b9a7"
+        },
+        "00_input/design.v": {
+          "bytes": 4146894,
+          "sha256": "9365ec18bcb256f191cb60a8ea7e9f442d64d94585ef3df53abd5511e1643d44"
+        },
+        "10_floorplan/design.def": {
+          "bytes": 4817272,
+          "sha256": "27b5533e15064bce09d2a0c29f7490861d0c8e9658e9bcad4cab1b30a4217d21"
+        },
+        "10_floorplan/design.sdc": {
+          "bytes": 2160,
+          "sha256": "f54a8e78db2c390a257181b5384aab07b58230204ce78b4d724b8ff563d1b9a7"
+        },
+        "10_floorplan/design.v": {
+          "bytes": 4146894,
+          "sha256": "9365ec18bcb256f191cb60a8ea7e9f442d64d94585ef3df53abd5511e1643d44"
+        },
+        "10_floorplan/floorplan.json": {
+          "bytes": 1324,
+          "sha256": "6354a80bba4daafe094b03627662e4c399f8a2c73b5c6aff0adab9c607c02abe"
+        },
+        "10_floorplan/io_plan.csv": {
+          "bytes": 236826,
+          "sha256": "8ac23ca8d423d71d8856b633a7f987d1eba4edec2f0be48cb9fcc8f5c5dac0ec"
+        },
+        "10_floorplan/io_preplace.def": {
+          "bytes": 4666525,
+          "sha256": "e010cbbdaf82741b055191592c408be49268a2632cddcc7c379fbe3247ba7d92"
+        },
+        "10_floorplan/io_seed.def": {
+          "bytes": 4071452,
+          "sha256": "247efbdbdde9efcbd0916a259c03d9c9264ebe27e49a71437c12f3abe8ec3ac2"
+        },
+        "10_floorplan/partition.names.csv": {
+          "bytes": 402961,
+          "sha256": "470a05c79b0b7650147ae9eef369d463155811fe0eccdd55443175786332f4f7"
+        },
+        "10_floorplan/pdn_plan.json": {
+          "bytes": 301,
+          "sha256": "b553295779885545cc4bc557c2e37069fa120121e806d2b1e6249b37294f5936"
+        },
+        "10_floorplan/preplan_manifest.json": {
+          "bytes": 306,
+          "sha256": "48e1d70dfb1975aa99b30003f96086a6457eb4475fd1ed18ba867882305e6b9a"
+        }
+      },
+      "run": "user_runs/manual-v2-merged-four-20260922/bp_fe/run"
+    },
+    "swerv_wrapper": {
+      "partition_assignment_sha256": "66e4f78da238de3934e6bb919d60e205dfdd54206247fe64d9d2b7ef239d4c01",
+      "physical_prefix": {
+        "00_input/design.def": {
+          "bytes": 10898217,
+          "sha256": "64445024a981c42d75440a13101349e2f3fd57504fe164c584aebdc8a7df89fa"
+        },
+        "00_input/design.sdc": {
+          "bytes": 1199,
+          "sha256": "801464dcefd123c351020dae62755793dd3d33bea6c4731b2192008362cda437"
+        },
+        "00_input/design.v": {
+          "bytes": 12592857,
+          "sha256": "eddd2a2e768eea66c61fbb19d09d923496e083ed88fbe48fabbc60bf9fe617ec"
+        },
+        "10_floorplan/design.def": {
+          "bytes": 13346599,
+          "sha256": "51c29754d9688b2e184d095d12066869a1918faa8cde49d2998f7fce198711db"
+        },
+        "10_floorplan/design.sdc": {
+          "bytes": 1199,
+          "sha256": "801464dcefd123c351020dae62755793dd3d33bea6c4731b2192008362cda437"
+        },
+        "10_floorplan/design.v": {
+          "bytes": 12592857,
+          "sha256": "eddd2a2e768eea66c61fbb19d09d923496e083ed88fbe48fabbc60bf9fe617ec"
+        },
+        "10_floorplan/floorplan.json": {
+          "bytes": 1349,
+          "sha256": "f55a671ce82c522b82b12551dd181c474c3335a7e65d7aa29d8c0662c8c74305"
+        },
+        "10_floorplan/io_plan.csv": {
+          "bytes": 128464,
+          "sha256": "be518541f218d066b88aff6c34e465768601c3319dd034f8e1fd9d9f74aa8a1a"
+        },
+        "10_floorplan/io_preplace.def": {
+          "bytes": 13104215,
+          "sha256": "82b4d4ae5b5024a80b85b4c7955e43924efc5dc1e0043540dbc4d6f56c0cb6ec"
+        },
+        "10_floorplan/io_seed.def": {
+          "bytes": 11036730,
+          "sha256": "81fa4ec643d953c4c87c508a6599fdf430bf04c1ed236ae8b1f4c4f5d2f37339"
+        },
+        "10_floorplan/partition.names.csv": {
+          "bytes": 1306105,
+          "sha256": "11200d28c48dc6c628602adb21ac79a5b16330f21cd2c1283620dc081042780e"
+        },
+        "10_floorplan/pdn_plan.json": {
+          "bytes": 301,
+          "sha256": "b553295779885545cc4bc557c2e37069fa120121e806d2b1e6249b37294f5936"
+        },
+        "10_floorplan/preplan_manifest.json": {
+          "bytes": 308,
+          "sha256": "d10498d569d752ad5d499e475c7046c2fa8abef1e101ed02b96b3b38339212fd"
+        }
+      },
+      "run": "user_runs/manual-v2-merged-four-20260922/swerv_wrapper/run"
+    }
+  },
+  "reference_id": "open3dbench-four-case-cts-grt-20260923-v1",
+  "reference_json_sha256": "282a1c58dcc09c6ecafa12c06c47589f566330af8517a16278f7e7a3a7d882c9",
+  "schema_version": 1
+}

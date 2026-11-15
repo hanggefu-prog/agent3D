@@ -1,0 +1,6 @@
+{
+  "model_result_sha256": "e1efc4122048e14e64314070bd26699ab8a6e323714df1bee537927ad13a012a",
+  "new_model_call": false,
+  "reason": "Reuse the same first algorithm hypothesis on the corrected reference contract; discard old setup feedback",
+  "reused_model_result": "${DATA_ROOT}/agenticbench-integration-20261016/local-matrix-audit-20261018/routing-reference-recovery/tasks/global_routing_maze_cost/model-01/result.json"
+}

@@ -1,0 +1,129 @@
+schema_version: 1
+id: lol_partition_placement_timing_one_pass_10
+title: Reference-20260923 one-pass LoL partition-placement co-optimization for setup timing (10 rounds)
+instruction: instruction.md
+
+source:
+  repository: Open3DBench-V2.0
+  revision: HEAD
+
+workspace:
+  container_path: /workspace
+  runs_path: /runs
+  scratch_path: /scratch
+  protected_paths:
+    - AgenticBench
+    - tests
+    - open3dbench
+    - OpenROAD-3D
+    - docker
+    - Place-3D/src/api.py
+    - Place-3D/src/validation.py
+    - Place-3D/src/evaluation
+    - Place-3D/src/hbt
+    - Place-3D/scripts
+
+environment:
+  image: open3dbench:release
+  image_digest: null
+  cpu: 32
+  memory_gb: 128
+  storage_gb: 256
+  gpus: 1
+  walltime_seconds: 21600
+  network: restricted
+  pids_limit: 4096
+
+inputs:
+  - name: benchmark_input
+    source: ${OPENAGENTIC3D_GLOBAL_INPUT}
+    mount: /inputs/benchmark
+    read_only: true
+    sha256: null
+  - name: reference_run
+    source: ${OPENAGENTIC3D_GLOBAL_REFERENCE}
+    mount: /inputs/reference
+    read_only: true
+    sha256: null
+
+submission:
+  required_artifacts: [run_manifest, final_checkpoint, metrics]
+
+verifier:
+  id: open3dbench-codesign-timing-one-pass-v1
+  separate_environment: true
+
+objective:
+  kind: sta_wns_tns
+  evaluator_profile: tp_gnn_placement_one_pass
+  primary_metric: combined_score
+  direction: maximize
+  reference_input: reference_run
+  parameters:
+    wns_weight: 0.6
+    tns_weight: 0.4
+    deficit_floor: 1.0e-12
+    opt_passes: 1
+
+seed_policy:
+  io_placement: 1
+  partition: 1001
+  placement: 1000
+  routing: -1
+
+evaluation:
+  unknown_change_policy: all
+  default_policy: suffix
+  stages:
+    - id: 00_input
+      directory: 00_input
+      runner_name: input
+      depends_on: []
+      implementation_paths: []
+    - id: 10_floorplan
+      directory: 10_floorplan
+      runner_name: floorplan
+      depends_on: [00_input]
+      implementation_paths: []
+    - id: 15_timing_extract
+      directory: 15_timing_extract
+      runner_name: timing_extract
+      depends_on: [10_floorplan]
+      implementation_paths:
+        - Place-3D/thirdparty/partition/extract_tp_gnn_timing_openroad.py
+        - Place-3D/config/partition/**
+    - id: 20_partition
+      directory: 20_partition
+      runner_name: partition
+      depends_on: [15_timing_extract]
+      implementation_paths:
+        - Place-3D/src/partition/**
+        - Place-3D/config/partition/**
+    - id: 30_placement
+      directory: 30_placement
+      runner_name: placement
+      depends_on: [20_partition]
+      implementation_paths:
+        - Place-3D/src/placement/**
+        - Place-3D/config/placement/**
+        - Place-3D/thirdparty/DREAMPlace/dreamplace/**
+    - id: 40_pdn
+      directory: 40_pdn
+      runner_name: pdn
+      depends_on: [30_placement]
+      implementation_paths: []
+    - id: 50_hbt
+      directory: 50_hbt
+      runner_name: hbt
+      depends_on: [40_pdn]
+      implementation_paths: []
+    - id: 60_opt
+      directory: 60_opt
+      runner_name: opt
+      depends_on: [50_hbt]
+      implementation_paths: []
+
+budget:
+  global_rounds: 10
+  concurrent_trials: 2
+  expensive_evaluations: 10

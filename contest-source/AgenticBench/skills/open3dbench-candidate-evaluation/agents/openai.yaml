@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Candidate Evaluation"
+  short_description: "Verify and score one bounded task candidate"
+  default_prompt: "Use $open3dbench-candidate-evaluation to verify and evaluate this selected task candidate with the common harness."

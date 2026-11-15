@@ -1,0 +1,29 @@
+{
+  "command": "PYTHONPATH=.:..:../Place-3D python -m pytest -q tests",
+  "working_directory": "AgenticBench",
+  "passed": 2776,
+  "failed": 34,
+  "errors": 68,
+  "skipped": 47,
+  "subtests_passed": 222,
+  "wall_seconds": 176.26,
+  "failures_by_module": {
+    "tests/test_reference_baseline.py": 5,
+    "tests/test_reference_evaluated.py": 2,
+    "tests/test_sealed_reference_verifier.py": 4,
+    "tests/test_workspace_extension_execution.py": 10,
+    "tests/test_workspace_latest.py": 1,
+    "tests/test_workspace_reference.py": 12
+  },
+  "classification": {
+    "missing_dated_reference_assets": "The frozen September physical recipe files are not present in this consolidated checkout. Dated reference validation remains strict; current Nesterov uses a separately qualified explicit profile.",
+    "retired_archive_bridge": "Six fixture errors in test_qualify_archive_grt use the old routing publication API. Current local routing uses the supported standalone GRT boundary.",
+    "historical_global_tasks": "Workspace extension, alias, sealed reference and old thermal/timing tests are outside the current post-GRT contract."
+  },
+  "full_suite_green": false,
+  "raw_log_sha256": "d5e80ae02ffee35693c746e4016be390ce1faa6d23ecdc8fa6c4a6759d8cec50",
+  "setup_errors_by_module": {
+    "tests/test_qualify_archive_grt.py": 6,
+    "tests/test_workspace_importer_alias.py": 62
+  }
+}

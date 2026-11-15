@@ -1,0 +1,466 @@
+--- a/open3dbench/backend/three_d_opt.py
++++ b/open3dbench/backend/three_d_opt.py
+@@ -22,6 +22,7 @@ import shutil
+ import subprocess
+ import tempfile
+ import time
++from dataclasses import replace
+ from pathlib import Path
+ from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
+ 
+@@ -270,6 +271,82 @@
+ set count 0
+ set cutpoint_available 0
+ set cutpoint_constrained 0
++set exact_cutpoint_query [expr {
++  [llength [info commands get_parasitic_cutpoint_timing]] == 1
++}]
++
++# Some maintained OpenROAD binaries predate the analysis-only detailed-RC
++# cutpoint command.  Keep the continuous passive-HBT graph authoritative and
++# derive a conservative die-boundary budget from its real driver/load timing
++# properties in that case.  The driver envelope supplies the source required
++# time; the latest downstream load supplies the sink arrival and slew.  This
++# changes only the inter-die budget projection--global WNS/TNS above and after
++# each die pass still come from the complete stitched passive network.
++proc open3d_finite_ui_value {value} {
++  return [expr {
++    [string is double -strict $value]
++    && abs(double($value)) < 1.0e20
++  }]
++}
++
++proc open3d_pin_ui_value {pin property} {
++  if {[catch {set value [get_property $pin $property]}]} { return "" }
++  if {![open3d_finite_ui_value $value]} { return "" }
++  return [expr {double($value)}]
++}
++
++proc open3d_endpoint_envelope_timing {point transition driver} {
++  set net [get_nets -quiet -of_objects $driver]
++  if {[llength $net] != 1} { return [dict create] }
++  set loads [sta::net_load_pins $net]
++  set selected $driver
++  if {$point eq "far"} {
++    set latest ""
++    foreach load $loads {
++      set value [open3d_pin_ui_value $load "arrival_max_${transition}"]
++      if {$value ne "" && ($latest eq "" || $value > $latest)} {
++        set latest $value
++        set selected $load
++      }
++    }
++    if {$latest eq ""} { return [dict create] }
++  }
++
++  set arrival_ui [open3d_pin_ui_value $selected "arrival_max_${transition}"]
++  if {$arrival_ui eq ""} { return [dict create] }
++  set slew_ui [open3d_pin_ui_value $selected "slew_max_${transition}"]
++  if {$slew_ui eq "" || $slew_ui <= 0.0} { set slew_ui 0.0 }
++  set slack_ui [open3d_pin_ui_value $selected "slack_max_${transition}"]
++  set constrained [expr {$slack_ui ne ""}]
++  set required_ui [expr {
++    $constrained ? $arrival_ui + $slack_ui : 0.0
++  }]
++  set driver_arrival_ui [open3d_pin_ui_value \
++    $driver "arrival_max_${transition}"]
++  set wire_delay_ui 0.0
++  if {$driver_arrival_ui ne "" && $arrival_ui > $driver_arrival_ui} {
++    set wire_delay_ui [expr {$arrival_ui - $driver_arrival_ui}]
++  }
++  set load_count [llength $loads]
++  set pi [sta::find_pi_elmore $driver $transition max]
++  set downstream_cap 0.0
++  if {[llength $pi] == 3} {
++    set downstream_cap [expr {[lindex $pi 0] + [lindex $pi 2]}]
++  }
++  return [dict create \
++    arrival [sta::time_ui_sta $arrival_ui] \
++    slew [sta::time_ui_sta $slew_ui] \
++    required [sta::time_ui_sta $required_ui] \
++    slack [sta::time_ui_sta [expr {$constrained ? $slack_ui : 0.0}]] \
++    wire_delay [sta::time_ui_sta $wire_delay_ui] \
++    elmore [sta::time_ui_sta $wire_delay_ui] \
++    downstream_cap $downstream_cap \
++    path_resistance 0.0 \
++    downstream_load_count $load_count \
++    constrained_load_count [expr {$constrained ? $load_count : 0}] \
++    constrained $constrained]
++}
++
+ while {[gets $plan line] >= 0} {
+   if {$line eq ""} { continue }
+   lassign [split $line "\t"] hbt_id net_name driver_kind driver_name near_node_id far_node_id
+@@ -301,7 +378,13 @@
+   puts $loads "$hbt_id\t[get_name $driver]\t$full_cap_ui\t$remote_load_ui"
+   foreach {point node_id} [list near $near_node_id far $far_node_id] {
+     foreach transition {rise fall} {
+-      set timing [get_parasitic_cutpoint_timing -$transition -max $driver $node_id]
++      if {$exact_cutpoint_query} {
++        set timing [get_parasitic_cutpoint_timing \
++          -$transition -max $driver $node_id]
++      } else {
++        set timing [open3d_endpoint_envelope_timing \
++          $point $transition $driver]
++      }
+       if {[dict size $timing] == 0} {
+         puts $cutpoints "$hbt_id\t$point\t$transition\t0\t\t\t\t\t\t\t\t\t0\t0\t0"
+         continue
+@@ -333,7 +416,11 @@
+   error "passive-HBT load coverage $count != $::env(OPT_EXPECTED_HBTS)"
+ }
+ set metrics [open $::env(OPT_PASSIVE_METRICS) a]
+-puts $metrics "cutpoint_query_model\telmore_cutpoint"
++set cutpoint_model [expr {
++  $exact_cutpoint_query ? "elmore_cutpoint" : "endpoint_pin_envelope"
++}]
++puts $metrics "cutpoint_query_model\t$cutpoint_model"
++puts $metrics "cutpoint_query_exact\t$exact_cutpoint_query"
+ puts $metrics "cutpoint_query_diagnostic_only\t$::env(OPT_PASSIVE_CUTPOINT_DIAGNOSTIC_ONLY)"
+ puts $metrics "cutpoint_query_available\t$cutpoint_available"
+ puts $metrics "cutpoint_query_constrained\t$cutpoint_constrained"
+@@ -980,7 +1067,7 @@
+     return selected
+
+
+-def _global_snapshot(
++def run_global_placement_sta(
+     handoff: OptHandoff,
+     assembly_dir: Path,
+     die_odbs: Mapping[str, Path],
+@@ -989,6 +1076,8 @@
+     output: Path,
+     openroad: str,
+ ) -> Dict[str, object]:
++    """Run one unified placement-estimated STA pass with passive HBT pi RC."""
++
+     output.mkdir(parents=True, exist_ok=True)
+     plan = output / "boundary_plan.tsv"
+     _boundary_plan(handoff, plan)
+@@ -1106,16 +1195,27 @@
+         raise ThreeDOptError(
+             "global STA has no constrained HBT boundary; check die-port netlist connectivity"
+         )
++    passive_metrics = _read_key_values(passive / "metrics.tsv")
++    exact_cutpoint_query = bool(passive_metrics.get("cutpoint_query_exact", 0.0))
++    boundary_budget_model = (
++        "passive-cutpoint"
++        if exact_cutpoint_query
++        else "passive-endpoint-pin-envelope"
++    )
+     snapshot: Dict[str, object] = {
+         "schema_version": 1,
+         "stage": "global-sta",
+-        "metrics": _read_key_values(passive / "metrics.tsv"),
++        "metrics": passive_metrics,
+         "clocks": clocks,
+         "boundaries": budget_rows,
+-        "boundary_budget_model": "passive-cutpoint",
++        "boundary_budget_model": boundary_budget_model,
+         "passive_loads": passive_loads,
+         "passive_cutpoint_timing": {
+-            "model": "elmore_cutpoint",
++            "model": (
++                "elmore_cutpoint"
++                if exact_cutpoint_query
++                else "endpoint_pin_envelope"
++            ),
+             "diagnostic_only": False,
+             "table": "passive/passive_boundary_timing.tsv",
+         },
+@@ -1134,7 +1234,11 @@
+             "rc_construction_model": "directional-placeholder-only",
+             "die_optimization_model": "placement-estimated-rc",
+             "estimated_spef": "temporary-flat-stitching-artifact",
+-            "cutpoint_query": "active-elmore-single-master-clock",
++            "cutpoint_query": (
++                "active-elmore-single-master-clock"
++                if exact_cutpoint_query
++                else "active-endpoint-pin-envelope-single-master-clock"
++            ),
+         },
+     }
+     _write_json(output / "timing.json", snapshot)
+@@ -1400,7 +1504,17 @@ def _die_optimize(
+     common_warnings: List[WarningRule] = [
+         (
+             "RSZ-3018",
+             r"insertBufferBeforeLoads: skip net .+ because at least one load is dont-touch",
+             "fixed-hbt-boundary-load",
+         ),
++        (
++            "STA-0471",
++            r"no valid objects specified for -from\.",
++            "physical-die-omits-assembly-sdc-from-object",
++        ),
++        (
++            "STA-0473",
++            r"no valid objects specified for -to\.",
++            "physical-die-omits-assembly-sdc-to-object",
++        ),
+     ]
+@@ -1574,7 +1688,10 @@
+         raise ThreeDOptError("max_utilization must be an OpenROAD percentage in (0, 100]")
+     if not 0.0 <= args.max_buffer_percent <= 100.0:
+         raise ThreeDOptError("max_buffer_percent must be in [0, 100]")
+-    algorithm = "openroad-coordinated-passive-cutpoint"
++    passes = int(os.environ.get("OPEN3D_OPT_PASSES", "1"))
++    if passes < 1 or passes > 8:
++        raise ThreeDOptError("OPEN3D_OPT_PASSES must be in [1, 8]")
++    algorithm = "openroad-coordinated-passive-boundary"
+
+     iterations = output / "iterations"
+     iterations.mkdir(exist_ok=True)
+@@ -1588,7 +1705,7 @@
+         handoff.dies["top"].verilog,
+         initial_assembly,
+     )
+-    initial_snapshot = _global_snapshot(
++    initial_snapshot = run_global_placement_sta(
+         handoff,
+         initial_assembly,
+         {die: handoff.dies[die].odb for die in ("bottom", "top")},
+@@ -1597,81 +1714,115 @@
+         initial,
+         args.openroad,
+     )
++    boundary_budget_model = str(initial_snapshot["boundary_budget_model"])
+
+-    # One coordinated pass is the release contract: derive both die budgets
+-    # from the same passive snapshot, optimize bottom once and top once, then
+-    # publish the post-pass passive evaluation.  There is no outer fixed-point
+-    # loop and no fallback that silently discards the completed die repairs.
+-    iteration = iterations / "01"
+-    constraints = iteration / "constraints"
+-    constraints.mkdir(parents=True)
+-    constraint_counts = {}
+-    for die in ("bottom", "top"):
+-        constraint_counts[die] = _boundary_sdc(
+-            die,
+-            handoff.dies[die].sdc,
+-            initial_snapshot,
+-            handoff,
+-            constraints / (die + ".sdc"),
+-        )
++    # Every pass derives both die budgets from the same authoritative passive
++    # snapshot.  Pass N consumes only the completed ODB/netlist pair from pass
++    # N-1, so bottom/top trade-offs remain globally coordinated and there is no
++    # hidden per-die Gauss-Seidel ordering.  The final requested pass is always
++    # published; the evaluator does not select an earlier, luckier snapshot.
++    current_snapshot = initial_snapshot
++    current_handoff = handoff
++    pass_records = []
++    iteration = initial
++    iteration_assembly = initial_assembly
++    for pass_number in range(1, passes + 1):
++        iteration = iterations / ("{:02d}".format(pass_number))
++        constraints = iteration / "constraints"
++        constraints.mkdir(parents=True)
++        constraint_counts = {}
++        for die in ("bottom", "top"):
++            constraint_counts[die] = _boundary_sdc(
++                die,
++                handoff.dies[die].sdc,
++                current_snapshot,
++                handoff,
++                constraints / (die + ".sdc"),
++            )
+
+-    die_metrics = {}
+-    for die in ("bottom", "top"):
+-        die_metrics[die] = _die_optimize(
++        die_metrics = {}
++        for die in ("bottom", "top"):
++            die_metrics[die] = _die_optimize(
++                current_handoff,
++                die,
++                current_handoff.dies[die].odb,
++                constraints / (die + ".sdc"),
++                platform,
++                iteration / die,
++                args.openroad,
++                args.max_buffer_percent,
++                args.max_utilization,
++                args.bottom_signal_layer if die == "bottom" else args.top_signal_layer,
++                args.bottom_clock_layer if die == "bottom" else args.top_clock_layer,
++                args.tie_low_cell,
++                args.tie_low_port,
++                args.tie_high_cell,
++                args.tie_high_port,
++            )
++
++        iteration_assembly = iteration / "assembly"
++        _rebuild_assembly(
+             handoff,
+-            die,
+-            handoff.dies[die].odb,
+-            constraints / (die + ".sdc"),
+-            platform,
+-            iteration / die,
+-            args.openroad,
+-            args.max_buffer_percent,
+-            args.max_utilization,
+-            args.bottom_signal_layer if die == "bottom" else args.top_signal_layer,
+-            args.bottom_clock_layer if die == "bottom" else args.top_clock_layer,
+-            args.tie_low_cell,
+-            args.tie_low_port,
+-            args.tie_high_cell,
+-            args.tie_high_port,
++            iteration / "bottom/design.v",
++            iteration / "top/design.v",
++            iteration_assembly,
+         )
+-
+-    iteration_assembly = iteration / "assembly"
+-    _rebuild_assembly(
+-        handoff,
+-        iteration / "bottom/design.v",
+-        iteration / "top/design.v",
+-        iteration_assembly,
+-    )
+-    final_snapshot = _global_snapshot(
+-        handoff,
+-        iteration_assembly,
+-        {
++        next_odbs = {
+             "bottom": iteration / "bottom/design.odb",
+             "top": iteration / "top/design.odb",
+-        },
+-        {
++        }
++        next_verilogs = {
+             "bottom": iteration / "bottom/design.v",
+             "top": iteration / "top/design.v",
+-        },
+-        platform,
+-        iteration / "global",
+-        args.openroad,
+-    )
+-    boundary_delta = _boundary_delta(initial_snapshot, final_snapshot)
+-    wns_delta = float(final_snapshot["metrics"].get("wns_setup", 0.0)) - float(
+-        initial_snapshot["metrics"].get("wns_setup", 0.0)
+-    )
+-    record = {
+-        "pass": 1,
+-        "die_order": ["bottom", "top"],
+-        "constraints": constraint_counts,
+-        "die_metrics": die_metrics,
+-        "global_before": initial_snapshot["metrics"],
+-        "global_after": final_snapshot["metrics"],
+-        "max_boundary_delta_ns": boundary_delta,
+-        "wns_improvement_ns": wns_delta,
+-    }
+-    _write_json(iteration / "iteration.json", record)
++        }
++        # SDC projection checks both physical dies, including the remote
++        # buffer path.  Advance DEF/ODB/Verilog together only after both dies
++        # finish; never pair a new ODB with the original HBT DEF inventory.
++        # The original handoff above remains the base SDC/boundary authority,
++        # so generated per-pass budgets are not accumulated into later passes.
++        next_handoff = replace(
++            handoff,
++            dies={
++                die: replace(
++                    handoff.dies[die],
++                    odb=next_odbs[die],
++                    deffile=iteration / die / "design.def",
++                    verilog=next_verilogs[die],
++                    sdc=iteration / die / "design.sdc",
++                )
++                for die in ("bottom", "top")
++            },
++        )
++        next_snapshot = run_global_placement_sta(
++            next_handoff,
++            iteration_assembly,
++            next_odbs,
++            next_verilogs,
++            platform,
++            iteration / "global",
++            args.openroad,
++        )
++        boundary_delta = _boundary_delta(current_snapshot, next_snapshot)
++        wns_delta = float(next_snapshot["metrics"].get("wns_setup", 0.0)) - float(
++            current_snapshot["metrics"].get("wns_setup", 0.0)
++        )
++        record = {
++            "pass": pass_number,
++            "die_order": ["bottom", "top"],
++            "constraints": constraint_counts,
++            "die_metrics": die_metrics,
++            "global_before": current_snapshot["metrics"],
++            "global_after": next_snapshot["metrics"],
++            "max_boundary_delta_ns": boundary_delta,
++            "wns_improvement_ns": wns_delta,
++        }
++        _write_json(iteration / "iteration.json", record)
++        pass_records.append(record)
++        current_snapshot = next_snapshot
++        current_handoff = next_handoff
++
++    final_snapshot = current_snapshot
++    record = pass_records[-1]
+
+     for die in ("bottom", "top"):
+         shutil.copytree(iteration / die, output / die)
+@@ -1746,18 +1897,19 @@
+     final_metrics = {
+         "schema_version": 1,
+         "algorithm": algorithm,
+-        "boundary_budget_model": "passive-cutpoint",
++        "boundary_budget_model": boundary_budget_model,
+         "status": "success",
+-        "iterations_run": 1,
+-        "passes_run": 1,
+-        "die_passes": {"bottom": 1, "top": 1},
+-        "best_iteration": 1,
++        "iterations_run": passes,
++        "passes_run": passes,
++        "die_passes": {"bottom": passes, "top": passes},
++        "best_iteration": passes,
+         "placement_refinement": "disabled-preserve-input-placement",
+         "initial_global": initial_snapshot["metrics"],
+         "final_global": final_snapshot["metrics"],
+         "initial_boundary_coverage": initial_snapshot["boundary_coverage"],
+         "final_boundary_coverage": final_snapshot["boundary_coverage"],
+         "pass_record": record,
++        "pass_records": pass_records,
+         "runtime_seconds": time.perf_counter() - started,
+         "timing_model_status": handoff.timing_model["status"],
+         "hold_policy": "report-only-before-cts",
+@@ -1772,13 +1924,16 @@
+             "remote_die_load_visible_to_source_driver": True,
+             "hbt_is_passive_rc_in_authoritative_global_sta": True,
+             "passive_cutpoint_query_is_diagnostic_only": False,
++            "passive_cutpoint_query_exact": bool(
++                initial_snapshot["metrics"].get("cutpoint_query_exact", 0.0)
++            ),
+             "authoritative_timing_view": "continuous-passive-hbt",
+             "signoff_ready": False,
+         },
+         "parasitics": {
+             "assembly": "continuous-passive-hbt-placement-estimated-rc",
+             "hbt": "flat-pi-section-3ohm-0.6fF",
+-            "boundary_budget": "passive-cutpoint",
++            "boundary_budget": boundary_budget_model,
+             "rc_construction": "directional-placeholder-only",
+             "per_die_opt": "placement-estimated-rc",
+             "spef": "temporary-placement-estimated-flat-stitching-artifact",
+@@ -1812,12 +1967,12 @@
+             },
+             "opt": {
+                 "algorithm": algorithm,
+-                "boundary_budget_model": "passive-cutpoint",
++                "boundary_budget_model": boundary_budget_model,
+                 "metrics": "metrics.json",
+-                "iterations": 1,
+-                "passes": 1,
+-                "die_passes": {"bottom": 1, "top": 1},
+-                "best_iteration": 1,
++                "iterations": passes,
++                "passes": passes,
++                "die_passes": {"bottom": passes, "top": passes},
++                "best_iteration": passes,
+             },
+             "ready_for_cts": True,
+         }

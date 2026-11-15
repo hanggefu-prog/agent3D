@@ -1,0 +1,103 @@
+{
+  "schema_version": 2,
+  "id": "six-case-post-grt-three-objective-unified-seeds-v2",
+  "endpoint": "post-grt-passive-hbt-peak-v2",
+  "metrics": [
+    "wns_deficit_ns",
+    "tns_deficit_ns",
+    "overflow",
+    "temperature_peak_k",
+    "power_w"
+  ],
+  "opt_passes": 1,
+  "activity": 0.1,
+  "ambient_k": 318.15,
+  "grid_size": 10,
+  "epsilon": 0,
+  "normalization_floors": {
+    "wns_deficit_ns": 0.001,
+    "tns_deficit_ns": 0.001,
+    "overflow": 1,
+    "temperature_peak_k": 1,
+    "power_w": 1e-06
+  },
+  "seeds": [
+    {
+      "id": "s1",
+      "io": 1,
+      "partition": 1001,
+      "placement": 1001,
+      "routing": -1
+    },
+    {
+      "id": "s2",
+      "io": 1,
+      "partition": 1002,
+      "placement": 1002,
+      "routing": -1
+    },
+    {
+      "id": "s3",
+      "io": 1,
+      "partition": 1003,
+      "placement": 1003,
+      "routing": -1
+    }
+  ],
+  "cases": [
+    {
+      "id": "bp_fe-ng45",
+      "design": "bp_fe",
+      "pdk": "ng45",
+      "split": "train",
+      "weight": 0.5
+    },
+    {
+      "id": "bp-ng45",
+      "design": "bp",
+      "pdk": "ng45",
+      "split": "train",
+      "weight": 1
+    },
+    {
+      "id": "ariane133-ng45",
+      "design": "ariane133",
+      "pdk": "ng45",
+      "split": "train",
+      "weight": 1
+    },
+    {
+      "id": "swerv_wrapper-ng45",
+      "design": "swerv_wrapper",
+      "pdk": "ng45",
+      "split": "train",
+      "weight": 1
+    },
+    {
+      "id": "bp_fe-asap7",
+      "design": "bp_fe",
+      "pdk": "asap7",
+      "split": "train",
+      "weight": 0.5
+    },
+    {
+      "id": "gemmini-asap7",
+      "design": "gemmini",
+      "pdk": "asap7",
+      "split": "train",
+      "weight": 1
+    }
+  ],
+  "objectives": [
+    "timing",
+    "overflow",
+    "temperature_peak_k"
+  ],
+  "scoring": {
+    "timing_weights": {
+      "wns_deficit_ns": 0.7,
+      "tns_deficit_ns": 0.3
+    },
+    "power_max_ratio": 1.1
+  }
+}

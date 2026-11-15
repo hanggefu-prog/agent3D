@@ -1,0 +1,59 @@
+schema_version: 1
+id: placement_preconditioner
+title: Gradient preconditioning under native Nesterov
+description: Evolve only PreconditionOp; the other component remains native.
+kind: placement_preconditioner_source
+base_config: ../tp_gnn_post_placement_timing/reference_config.yaml
+initial_candidate: initial_candidate
+prompt: prompt.md
+program:
+  mode: task_adapter
+  template: initial_program.py
+  adapter: program_adapter.py
+  entrypoint: PreconditionOp
+prompt_context:
+  max_source_chars: 24000
+  feedback_recent: 3
+  feedback_top: 3
+  max_feedback_chars: 16000
+  source_ranges:
+    - {path: Place-3D/thirdparty/DREAMPlace/dreamplace/PlaceObj.py, start_line: 45, end_line: 170}
+execution:
+  from: placement
+  to: placement
+  upstream_stages: [input, floorplan, partition]
+  boundary: dreamplace-global-placement
+candidate_policy:
+  allowed_config_paths:
+    - placement.target_density
+  allowed_source_paths:
+    - Place-3D/thirdparty/DREAMPlace/dreamplace/PlaceObj.py
+  max_changed_files: 1
+  max_added_lines: 800
+  max_deleted_lines: 400
+  files:
+    - path: placement.json
+      inject_as: placement.config
+      allowed_paths:
+        - concurrent_dreamplace.cross_die_net_weight
+        - concurrent_dreamplace.iterations
+        - concurrent_dreamplace.num_bins
+        - concurrent_dreamplace.target_density
+        - concurrent_dreamplace.stop_overflow
+        - concurrent_dreamplace.density_weight
+        - concurrent_dreamplace.macro_place_flag
+        - concurrent_dreamplace.learning_rate
+        - concurrent_dreamplace.die_params
+        - concurrent_dreamplace.hide_fillers_in_plot
+  value_constraints:
+    - {path: /config_overrides/placement/target_density, type: number, enum: [0.6]}
+    - {path: /candidate_files/placement.json/concurrent_dreamplace/cross_die_net_weight, type: number, enum: [1.0]}
+    - {path: /candidate_files/placement.json/concurrent_dreamplace/iterations, type: integer, enum: [4000]}
+    - {path: /candidate_files/placement.json/concurrent_dreamplace/num_bins, type: integer, enum: [512]}
+    - {path: /candidate_files/placement.json/concurrent_dreamplace/target_density, type: number, enum: [0.6]}
+    - {path: /candidate_files/placement.json/concurrent_dreamplace/stop_overflow, type: number, enum: [0.01]}
+    - {path: /candidate_files/placement.json/concurrent_dreamplace/density_weight, type: number, enum: [0.00003]}
+    - {path: /candidate_files/placement.json/concurrent_dreamplace/macro_place_flag, type: boolean, enum: [true]}
+    - {path: /candidate_files/placement.json/concurrent_dreamplace/learning_rate, type: number, enum: [0.01]}
+    - {path: /candidate_files/placement.json/concurrent_dreamplace/die_params, type: object, enum: [{}]}
+    - {path: /candidate_files/placement.json/concurrent_dreamplace/hide_fillers_in_plot, type: boolean, enum: [false]}

@@ -1,0 +1,82 @@
+schema_version: 1
+skills:
+  - name: agentic3d-global-analyzer
+    directory: global-analyzer
+    category: analyzer
+    capabilities: [task_modeling, global_diagnosis, stage_selection, candidate_adjudication]
+    requires: [open3dbench-environment-check, open3dbench-results-analysis]
+  - name: agentic3d-local-analyzer
+    directory: local-analyzer
+    category: analyzer
+    capabilities: [stage_diagnosis, log_analysis, candidate_audit]
+    requires: [open3dbench-results-analysis]
+  - name: optimize-mol-partition
+    directory: optimize-mol-partition
+    category: task_agent
+    capabilities: [partition_source_edit, partition_config_edit, partition_evaluation]
+    requires: [open3dbench-environment-check, open3dbench-runtime-build, open3dbench-benchmark-input, open3dbench-candidate-evaluation, open3dbench-results-analysis]
+  - name: optimize-mol-layout
+    directory: optimize-mol-layout
+    category: task_agent
+    capabilities: [placement_source_edit, placement_config_edit, placement_evaluation]
+    requires: [open3dbench-environment-check, open3dbench-runtime-build, open3dbench-benchmark-input, open3dbench-candidate-evaluation, open3dbench-results-analysis]
+  - name: optimize-openroad-place
+    directory: optimize-openroad-place
+    category: task_agent
+    capabilities: [place_opt_source_edit, cts_edit, backend_evaluation]
+    requires: [open3dbench-environment-check, open3dbench-runtime-build, open3dbench-candidate-evaluation, open3dbench-results-analysis]
+  - name: optimize-openroad-routing
+    directory: optimize-openroad-routing
+    category: task_agent
+    capabilities: [routing_source_edit, routing_config_edit, routing_evaluation]
+    requires: [open3dbench-environment-check, open3dbench-runtime-build, open3dbench-candidate-evaluation, open3dbench-results-analysis]
+  - name: operate-open3dbench-global-workspace
+    directory: operate-open3dbench-global-workspace
+    category: task_agent
+    capabilities: [global_workspace_edit, intervention_execution, adaptive_stage_replay, global_submission]
+    requires: [open3dbench-environment-check, open3dbench-runtime-build, open3dbench-stage-replay, open3dbench-artifact-handoff, open3dbench-results-analysis]
+  - name: open3dbench-environment-check
+    directory: open3dbench-environment-check
+    category: infrastructure
+    capabilities: [repository_inspection, runtime_qualification, tool_inventory]
+    requires: []
+  - name: open3dbench-runtime-build
+    directory: open3dbench-runtime-build
+    category: infrastructure
+    capabilities: [dreamplace_build, openroad_build, opensta_contract_check]
+    requires: [open3dbench-environment-check]
+  - name: open3dbench-benchmark-input
+    directory: open3dbench-benchmark-input
+    category: infrastructure
+    capabilities: [input_preparation, input_validation, artifact_hash_audit]
+    requires: [open3dbench-environment-check]
+  - name: open3dbench-candidate-evaluation
+    directory: open3dbench-candidate-evaluation
+    category: infrastructure
+    capabilities: [candidate_verification, isolated_stage_evaluation, metric_extraction]
+    requires: [open3dbench-environment-check, open3dbench-benchmark-input]
+  - name: open3dbench-sta-evaluation
+    directory: open3dbench-sta-evaluation
+    category: infrastructure
+    capabilities: [two_pass_opt, continuous_hbt_sta, timing_result_collection]
+    requires: [open3dbench-environment-check, open3dbench-runtime-build, open3dbench-results-analysis]
+  - name: open3dbench-thermal-evaluation
+    directory: open3dbench-thermal-evaluation
+    category: infrastructure
+    capabilities: [hotspot_placement_snapshot, hotspot_full_flow, thermal_stage_attribution, average_temperature_validation, thermal_result_collection]
+    requires: [open3dbench-environment-check, open3dbench-runtime-build, open3dbench-results-analysis]
+  - name: open3dbench-results-analysis
+    directory: open3dbench-results-analysis
+    category: infrastructure
+    capabilities: [result_audit, failure_classification, convergence_analysis, comparison_table]
+    requires: []
+  - name: open3dbench-stage-replay
+    directory: open3dbench-stage-replay
+    category: infrastructure
+    capabilities: [change_impact_analysis, checkpoint_reuse, adaptive_stage_evaluation]
+    requires: [open3dbench-environment-check, open3dbench-benchmark-input]
+  - name: open3dbench-artifact-handoff
+    directory: open3dbench-artifact-handoff
+    category: infrastructure
+    capabilities: [workspace_diff_capture, artifact_collection, submission_integrity]
+    requires: [open3dbench-environment-check]

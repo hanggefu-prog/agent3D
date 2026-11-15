@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Stage Replay"
+  short_description: "Replay only stages invalidated by a candidate"
+  default_prompt: "Use $open3dbench-stage-replay to resolve and run the smallest trusted evaluation suffix for this candidate."

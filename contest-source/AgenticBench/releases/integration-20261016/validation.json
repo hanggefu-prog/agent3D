@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "branch": "codex/local-task-integration-20261016",
+  "tested_implementation_commit": "cb445971f388b79aae3eff666878f360b74ac018",
+  "publication_base": "15e08ded3193b52c8d3ccb9603ea8cb99926b72d",
+  "merge_commits": {
+    "clock": "1dbac0cf",
+    "pdn": "4dc038de"
+  },
+  "native_fix": "cb445971",
+  "openroad_commit": "e8c2b9f802b28bbf4a07548ee41f7becc758675a",
+  "opensta_commit": "5d8d515edfa5a22165faea5897539da1888fe68d",
+  "tests": [
+    {
+      "group": "current local, engineering and post-GRT interfaces",
+      "passed": 1064,
+      "skipped": 10,
+      "subtests_passed": 156,
+      "log": "tests/current-tasks.log"
+    },
+    {
+      "group": "physical flow and orchestrator",
+      "passed": 520,
+      "skipped": 1,
+      "subtests_passed": 210,
+      "log": "tests/physical-flow.log"
+    },
+    {
+      "group": "Place-3D in installed native runtime",
+      "passed": 198,
+      "log": "tests/place-3d.log"
+    }
+  ],
+  "skips": "Optional sealed CTS evidence, package-build dependencies and external OpenEvolve/PyTorch-dependent host fixtures; Place-3D runtime checks were run inside the installed image.",
+  "scope": "Preserve eight maintained local tasks, three engineering tasks, and current post-GRT evolution. Historical global-only execution is excluded.",
+  "main_merged": false,
+  "live_campaign_activated": false,
+  "remaining_release_gate": "Full native, case-matched qualification of all maintained task endpoints on the final release before main activation; these bounded integration tests are not that matrix.",
+  "native": {
+    "passed": 4,
+    "failed_final": 0,
+    "initial_failed_and_fixed": 2,
+    "record": "native-evidence.json",
+    "source_files_matched": 450,
+    "normal_pdn_assignment_and_timing_unchanged": true,
+    "resource_leases_released": true
+  }
+}

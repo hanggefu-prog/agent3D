@@ -1,0 +1,137 @@
+{
+  "runtime": {
+    "base_image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+    "binary_sha256": "1beb236e47feeae02f7ecf259868eaa5c3a914f92c241f6e483afb786f568c64",
+    "cache_key": "029c1233f3f83f95e2f851196d6f23ba7eaa32e76abe4a18b0a97272e09ce11b",
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "image": "sha256:59b5cc67c7eeaba428733b7e97de923e3a0c18e4097cc1e109b56a2d768d2a31",
+    "manifest": {
+      "base_image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+      "binary_sha256": "1beb236e47feeae02f7ecf259868eaa5c3a914f92c241f6e483afb786f568c64",
+      "cache_key": "029c1233f3f83f95e2f851196d6f23ba7eaa32e76abe4a18b0a97272e09ce11b",
+      "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+      "consumer": "candidate-openroad-physical/fixed-opensta-scoring",
+      "kind": "grt-matrix-installed-openroad-v1",
+      "source_fingerprint": {
+        "algorithm": "openroad-tree-v1",
+        "bytes": 1838548760,
+        "entries": 11840,
+        "sha256": "990df636bec94e5826a6127dff09fdfd66017922bb8a87913182d97c360af6f5"
+      }
+    },
+    "mode": "private-tree-shared-ccache",
+    "native": true,
+    "verification": {
+      "binary_sha256": "1beb236e47feeae02f7ecf259868eaa5c3a914f92c241f6e483afb786f568c64",
+      "manifest": {
+        "base_image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+        "binary_sha256": "1beb236e47feeae02f7ecf259868eaa5c3a914f92c241f6e483afb786f568c64",
+        "cache_key": "029c1233f3f83f95e2f851196d6f23ba7eaa32e76abe4a18b0a97272e09ce11b",
+        "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+        "consumer": "candidate-openroad-physical/fixed-opensta-scoring",
+        "kind": "grt-matrix-installed-openroad-v1",
+        "source_fingerprint": {
+          "algorithm": "openroad-tree-v1",
+          "bytes": 1838548760,
+          "entries": 11840,
+          "sha256": "990df636bec94e5826a6127dff09fdfd66017922bb8a87913182d97c360af6f5"
+        }
+      },
+      "version_exit_code": 0
+    },
+    "wall_seconds": 210.1494690552354
+  },
+  "compile_summary": {
+    "cache_key": "029c1233f3f83f95e2f851196d6f23ba7eaa32e76abe4a18b0a97272e09ce11b",
+    "source_fingerprint": {
+      "algorithm": "openroad-tree-v1",
+      "bytes": 1838548760,
+      "entries": 11840,
+      "sha256": "990df636bec94e5826a6127dff09fdfd66017922bb8a87913182d97c360af6f5"
+    },
+    "build_source_fingerprint": {
+      "algorithm": "openroad-tree-v1",
+      "bytes": 1839184896,
+      "entries": 11891,
+      "sha256": "470bbc43b5bb3f053f4f9319c415b1b773571bb1d1de40933fe509af5096aac7"
+    },
+    "cache_statistics_interpretation": "Raw shared-namespace ccache statistics, not per-attempt hits or misses; concurrent writers can contribute to both snapshots.",
+    "native_evaluation_performed": false
+  },
+  "build_events": [
+    {
+      "phase": "compiler_cache_attempt",
+      "schema_version": 1,
+      "state": "started",
+      "timestamp_utc": "2026-10-17T15:34:55.590936+00:00"
+    },
+    {
+      "phase": "source_materialization",
+      "schema_version": 1,
+      "state": "started",
+      "timestamp_utc": "2026-10-17T15:34:55.591053+00:00"
+    },
+    {
+      "duration_seconds": 7.70814511179924,
+      "exit_code": 0,
+      "phase": "source_materialization",
+      "schema_version": 1,
+      "state": "completed",
+      "timestamp_utc": "2026-10-17T15:35:03.299232+00:00"
+    },
+    {
+      "phase": "toolchain_probe",
+      "schema_version": 1,
+      "state": "started",
+      "timestamp_utc": "2026-10-17T15:35:03.299424+00:00"
+    },
+    {
+      "duration_seconds": 1.2935469076037407,
+      "exit_code": 0,
+      "phase": "toolchain_probe",
+      "schema_version": 1,
+      "state": "completed",
+      "timestamp_utc": "2026-10-17T15:35:04.593014+00:00"
+    },
+    {
+      "cache_key": "029c1233f3f83f95e2f851196d6f23ba7eaa32e76abe4a18b0a97272e09ce11b",
+      "phase": "build_container",
+      "schema_version": 1,
+      "state": "started",
+      "timestamp_utc": "2026-10-17T15:35:04.596053+00:00"
+    },
+    {
+      "duration_seconds": 186.2715831398964,
+      "exit_code": 0,
+      "phase": "build_container",
+      "schema_version": 1,
+      "state": "completed",
+      "timestamp_utc": "2026-10-17T15:38:10.867817+00:00"
+    },
+    {
+      "phase": "compiled_artifact_verify",
+      "schema_version": 1,
+      "state": "started",
+      "timestamp_utc": "2026-10-17T15:38:14.918642+00:00"
+    },
+    {
+      "duration_seconds": 1.2376770004630089,
+      "exit_code": 0,
+      "phase": "compiled_artifact_verify",
+      "schema_version": 1,
+      "state": "completed",
+      "timestamp_utc": "2026-10-17T15:38:16.156345+00:00"
+    },
+    {
+      "duration_seconds": 202.55945696681738,
+      "exit_code": 0,
+      "phase": "compiler_cache_attempt",
+      "schema_version": 1,
+      "state": "completed",
+      "timestamp_utc": "2026-10-17T15:38:18.150350+00:00"
+    }
+  ],
+  "stats_before": "cache directory                     /ccache\nprimary config                      /trusted/ccache.conf\nsecondary config      (readonly)    \nstats updated                       Sat Oct 17 13:53:21 2026\ncache hit (direct)                 35012\ncache hit (preprocessed)               0\ncache miss                          2396\ncache hit rate                     93.59 %\ncleanups performed                     0\nfiles in cache                      7244\ncache size                         619.7 MB\nmax cache size                       8.0 GB\n",
+  "stats_after": "cache directory                     /ccache\nprimary config                      /trusted/ccache.conf\nsecondary config      (readonly)    \nstats updated                       Sat Oct 17 15:35:39 2026\ncache hit (direct)                 37346\ncache hit (preprocessed)               0\ncache miss                          2400\ncache hit rate                     93.96 %\ncleanups performed                     0\nfiles in cache                      7253\ncache size                         621.3 MB\nmax cache size                       8.0 GB\n",
+  "compile_result_sha256": "fd7bf5839d43ce09bc60332954e19860cfe3d657a6dfa9fa1560b834c3a2ed53"
+}

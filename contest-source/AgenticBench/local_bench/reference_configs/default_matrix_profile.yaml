@@ -1,0 +1,58 @@
+# Default evaluation-matrix profile for the eight maintained local tasks.
+#
+# This file is declarative and contains no results. It encodes the case,
+# seed and per-task settings of the 2026-10-18 matrix release
+# (releases/local-matrix-evolution-20261018/audit_runner.py and
+# routing_audit_runner.py). It is NOT a qualification: every rendered cell
+# still needs a frozen upstream baseline run, and the matrix must be
+# qualified with `local_bench.cli qualify-matrix` before it can score
+# candidates. Loader and validator: local_bench/matrix_profile.py.
+schema_version: 1
+id: local_default_bp_fe_ariane133_3seed
+description: >-
+  BP_FE and Ariane133 on LoL ng45, three paired frontend seeds per case,
+  as used by the 2026-10-18 local matrix release.
+source_release: AgenticBench/releases/local-matrix-evolution-20261018
+qualified: false
+timeout_seconds: 3600
+cases:
+  - id: bp_fe-ng45
+    design: bp_fe
+  - id: ariane133-ng45
+    design: ariane133
+seeds:
+  - {id: s1, io: 1, partition: 1001, placement: 1001, routing: -1}
+  - {id: s2, io: 1, partition: 1002, placement: 1002, routing: -1}
+  - {id: s3, io: 1, partition: 1003, placement: 1003, routing: -1}
+tasks:
+  tp_gnn_post_placement_timing:
+    workers: 6
+  placement_initialization:
+    workers: 6
+  placement_preconditioner:
+    workers: 6
+  placement_parameters_reference_20260923:
+    workers: 6
+    # The release evaluated the current Nesterov controller recipe, not the
+    # task's single-case base_config.
+    base_config: nesterov_current.yaml
+  hbt_assignment_policy:
+    workers: 6
+  global_routing_ripup_policy:
+    workers: 2
+    config_overrides: {threads: 16, routing.threads: 16}
+    case_config_overrides:
+      bp_fe-ng45: {routing.resource_reduction: 0.5}
+      ariane133-ng45: {routing.resource_reduction: 0.0}
+  global_routing_maze_cost:
+    workers: 2
+    config_overrides: {threads: 16, routing.threads: 16}
+    case_config_overrides:
+      bp_fe-ng45: {routing.resource_reduction: 0.5}
+      ariane133-ng45: {routing.resource_reduction: 0.0}
+  global_routing_iteration_controller:
+    workers: 2
+    config_overrides: {threads: 16, routing.threads: 16}
+    case_config_overrides:
+      bp_fe-ng45: {routing.resource_reduction: 0.5}
+      ariane133-ng45: {routing.resource_reduction: 0.0}

@@ -1,0 +1,21 @@
+schema_version: 1
+id: ibex_lol_ng45_cpu_smoke
+description: >-
+  CPU-only smoke input for external users. Small no-macro ibex LoL ng45 design,
+  CPU TP-GNN flat global-2way partition, CPU DREAMPlace. Not a qualified
+  benchmark input; scores against it are not comparable to qualified results.
+qualified: false
+config: config.yaml
+stop_stage: partition
+required_stages:
+  input: 00_input
+  floorplan: 10_floorplan
+  partition: 20_partition
+partition_contract:
+  method: tp-gnn-flat
+  decoder: global-2way
+compatible_tasks:
+  - placement_initialization
+runtime:
+  python_minimum: "3.8"
+  gpu: false

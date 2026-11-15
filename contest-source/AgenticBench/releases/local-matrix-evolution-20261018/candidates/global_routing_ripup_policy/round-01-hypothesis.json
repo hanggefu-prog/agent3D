@@ -1,0 +1,4 @@
+{
+  "feedback_use": "Only qualified-reference results are available: baseline activity is zero, bp_fe ends overflow-free, and ariane133 has seed-dependent top-die overflow. Therefore this first-round change is shared across dies, preserves every native removal, and selectively adds only locally under-capacity reroutes; no measured gain is claimed before matrix evaluation.",
+  "hypothesis": "Rerouting sufficiently long, clean detours on ordinary noncritical nets can shorten final wirelength without weakening native congestion cleanup. Excluding clock, NDR, and HBT edges limits disruption to specialized routes."
+}

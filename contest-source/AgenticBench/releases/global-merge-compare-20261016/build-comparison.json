@@ -1,0 +1,25 @@
+{
+  "binary_equal": false,
+  "binary_sha256": "f8a0c09c7016e889ef9d2fb01a0b4b8593b23c47180932a8f015d258b0938cef",
+  "cache_key": "029c1233f3f83f95e2f851196d6f23ba7eaa32e76abe4a18b0a97272e09ce11b",
+  "cache_key_changed": true,
+  "checks": {
+    "base_image": true,
+    "compiler_and_link_commands": true,
+    "generated_sources": true,
+    "manifest_contract": true,
+    "source_fingerprint": true,
+    "toolchain_and_cache_policy": true
+  },
+  "concurrent_repeat_calls": 2,
+  "new_build_seconds": 216.2845513150096,
+  "new_image": "sha256:f237f86a64545f8762179f346be8cd44981ccc2f3b5c0b53f3de60095c8d67ff",
+  "old_binary_sha256": "0fdfe376a921993b446c2f69747684669b4f400a28936178d16c2d332c5fc3d7",
+  "old_build_seconds": 215.26331485807896,
+  "old_cache_key": "ded8adbfeb8e1e8dfce556e24bb679e7f0f91eda37886913ea7ad61bf7af8bce",
+  "old_image": "sha256:fbac72913dd48365c43549c0e7860d73f7ff2f877ad3ca76288ba89790abb07b",
+  "recipe_change": "perf branch adds ccache statistic snapshots; compiler options unchanged",
+  "repeat_recompiled": false,
+  "repeat_wall_seconds": 16.629282660782337,
+  "status": "verified"
+}

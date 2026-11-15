@@ -1,0 +1,589 @@
+[
+  {
+    "task": "clock_compensation",
+    "directory": "engineering-v3/campaign/clock_compensation",
+    "model": {
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 1197.8439081385732,
+      "terminal_tool_calls": 46,
+      "final_message": "Implemented `plan_clock_compensation(context)` in [clock_compensation.py](/workspace/engineering/clock_compensation.py:452).\n\nKey changes:\n\n- Validates v2 timing, clock-group, action, placement, and resource data.\n- Uses action-specific NLDM estimates with conservative uncertainty margins.\n- Models setup/hold launch-capture directionality and missing clock-sink data.\n- Rejects shared trunks, overlapping sinks/sites, resource conflicts, new hold violations, and predicted WNS/TNS regressions.\n- Deterministically evaluates legal single actions and bounded disjoint pairs.\n- Returns justified no-ops for aligned, unsafe, or unsupported cases.\n\nAdded eight focused tests in [test_clock_compensation.py](/workspace/engineering/tests/test_clock_compensation.py:72), covering useful compensation, aligned trees, shared trunks, hold/space limits, missing timing, nonfinite values, and disjoint paired branches.\n\nVerification completed:\n\n- 8 focused assertions passed.\n- Python compilation and `git diff --check` passed.\n- All four baseline contexts ran successfully and passed the supplied structural validator.\n- No full physical evaluation or EDA search was run.\n\nActual legalized RC effects and final propagated-clock STA guards remain for the protected evaluator to establish.",
+      "thread_id": "01a14a15-190b-77d0-a66c-4f040aa038b6",
+      "usage": [
+        {
+          "input_tokens": 5335027,
+          "cached_input_tokens": 5183616,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 43099,
+          "reasoning_output_tokens": 17018
+        }
+      ]
+    },
+    "cases": [
+      {
+        "case": "ariane133",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.37845300000000004,
+        "candidate_metric": 0.37845300000000004,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "bbf4084cd33b0a1a0676dbcac8cd1d32b6ef71c688d5523d48066ea65ffa670a",
+        "started_at": "2026-10-17T14:09:45.144989+00:00",
+        "completed_at": "2026-10-17T14:13:50.175877+00:00",
+        "directory": "engineering-v3/campaign/clock_compensation/finals/ledger/ariane133",
+        "timing_diagnostic": {
+          "baseline": {
+            "setup_wns_ns": -0.8356253703287781,
+            "setup_tns_ns": -19.65225371394592,
+            "hold_wns_ns": -0.5630671643870642,
+            "hold_tns_ns": -440.8469589713739,
+            "endpoint_count": 56127
+          },
+          "candidate": {
+            "setup_wns_ns": -0.8356253703287781,
+            "setup_tns_ns": -19.65225371394592,
+            "hold_wns_ns": -0.5630671643870642,
+            "hold_tns_ns": -440.8469589713739,
+            "endpoint_count": 56127
+          },
+          "new_hold_endpoint_count": 0
+        },
+        "selected_actions": {
+          "actions": []
+        }
+      },
+      {
+        "case": "bp",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.454953,
+        "candidate_metric": 0.454953,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "bbf4084cd33b0a1a0676dbcac8cd1d32b6ef71c688d5523d48066ea65ffa670a",
+        "started_at": "2026-10-17T14:02:45.092959+00:00",
+        "completed_at": "2026-10-17T14:06:15.897335+00:00",
+        "directory": "engineering-v3/campaign/clock_compensation/finals/ledger/bp",
+        "timing_diagnostic": {
+          "baseline": {
+            "setup_wns_ns": -7.891457488615496,
+            "setup_tns_ns": -7227.032005843326,
+            "hold_wns_ns": -0.2906885370246622,
+            "hold_tns_ns": -405.45147054039774,
+            "endpoint_count": 54400
+          },
+          "candidate": {
+            "setup_wns_ns": -7.891457488615496,
+            "setup_tns_ns": -7227.032005843326,
+            "hold_wns_ns": -0.2906885370246622,
+            "hold_tns_ns": -405.45147054039774,
+            "endpoint_count": 54400
+          },
+          "new_hold_endpoint_count": 0
+        },
+        "selected_actions": {
+          "actions": []
+        }
+      },
+      {
+        "case": "bp_fe",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.27950600000000003,
+        "candidate_metric": 0.26824899999999996,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "bbf4084cd33b0a1a0676dbcac8cd1d32b6ef71c688d5523d48066ea65ffa670a",
+        "started_at": "2026-10-17T13:59:04.786944+00:00",
+        "completed_at": "2026-10-17T14:00:15.215403+00:00",
+        "directory": "engineering-v3/campaign/clock_compensation/finals/ledger/bp_fe",
+        "timing_diagnostic": {
+          "baseline": {
+            "setup_wns_ns": -0.6300793398702527,
+            "setup_tns_ns": -381.643627058756,
+            "hold_wns_ns": -0.08844933369408181,
+            "hold_tns_ns": -53.259577811037595,
+            "endpoint_count": 9997
+          },
+          "candidate": {
+            "setup_wns_ns": -0.6300793398702527,
+            "setup_tns_ns": -376.1484030718096,
+            "hold_wns_ns": -0.08700465594243005,
+            "hold_tns_ns": -51.02419253754691,
+            "endpoint_count": 9997
+          },
+          "new_hold_endpoint_count": 0
+        },
+        "selected_actions": {
+          "actions": [
+            "bottom/clkbuf_regs_0_CLK/BUF_X1_bottom/1"
+          ]
+        }
+      },
+      {
+        "case": "swerv_wrapper",
+        "status": "failed",
+        "legal": false,
+        "reference_metric": 0.372858,
+        "candidate_metric": null,
+        "error": "ValueError('Setup/hold nonregression failed: new_hold_violating_endpoints')",
+        "seed": 1001,
+        "submission_sha256": "bbf4084cd33b0a1a0676dbcac8cd1d32b6ef71c688d5523d48066ea65ffa670a",
+        "started_at": "2026-10-17T14:16:27.649775+00:00",
+        "completed_at": "2026-10-17T14:19:20.219685+00:00",
+        "directory": "engineering-v3/campaign/clock_compensation/finals/ledger/swerv_wrapper",
+        "timing_diagnostic": {
+          "baseline": {
+            "setup_wns_ns": -2.18184010367707,
+            "setup_tns_ns": -2070.6534672987686,
+            "hold_wns_ns": -0.3366782503639589,
+            "hold_tns_ns": -765.1063004159229,
+            "endpoint_count": 35652
+          },
+          "candidate": {
+            "setup_wns_ns": -2.155896855393114,
+            "setup_tns_ns": -2066.2826630121085,
+            "hold_wns_ns": -0.3107351131023085,
+            "hold_tns_ns": -686.1959230610981,
+            "endpoint_count": 35652
+          },
+          "new_hold_endpoint_count": 26
+        },
+        "selected_actions": {
+          "actions": [
+            "bottom/clkbuf_1_0_0_clk_regs/BUF_X1_bottom/1"
+          ]
+        }
+      }
+    ],
+    "development": {
+      "candidate_finals": 0,
+      "changed_paths": [
+        "engineering/clock_compensation.py",
+        "engineering/tests/test_clock_compensation.py"
+      ],
+      "completed_at": "2026-10-17T13:57:52.121262+00:00",
+      "developer_success": true,
+      "duration_seconds": 1197.8439081385732,
+      "model": "gpt-5.6-sol",
+      "source_sha256": "d7f22bdbb1caff7c4870d6ca59ec2c9ea4bc50b3a28a6590786d24b93c413e2c",
+      "status": "implementation_ready",
+      "task": "clock_compensation",
+      "terminal_tool_calls": 46,
+      "thread_id": "01a14a15-190b-77d0-a66c-4f040aa038b6"
+    },
+    "driver_status": "completed",
+    "algorithm_sources": {
+      "engineering/clock_compensation.py": "fc335f6310d6dbc32cd733a8311d4c5891f06aa0aaaf9a4866676beb61d753d4"
+    },
+    "aggregate": {
+      "all_case_mean_improvement_percent": null,
+      "expected_cases": 4,
+      "failed_cases": [
+        "swerv_wrapper"
+      ],
+      "judge_score_is_separate": true,
+      "metric": "clock_skew_ns",
+      "missing_cases": [],
+      "per_case_improvement_percent": {
+        "ariane133": 0.0,
+        "bp": 0.0,
+        "bp_fe": 4.027462737830341
+      },
+      "running_cases": [],
+      "successful_cases": 3,
+      "successful_subset_mean_improvement_percent": 1.3424875792767803,
+      "task": "clock_compensation"
+    }
+  },
+  {
+    "task": "cross_die_cts",
+    "directory": "engineering-v3/campaign/cross_die_cts",
+    "model": {
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 422.6588077172637,
+      "terminal_tool_calls": 59,
+      "final_message": "Blocked by the container configuration: `/workspace` is mounted read-only.\n\nPatch application failed with:\n\n```text\nunable to write file 'open3dbench/backend/three_d_cts.py': Read-only file system\n```\n\nNo task files were changed and no tests were run. The two pre-existing AgenticBench modifications were left untouched.\n\nPlease remount `/workspace` read-write and rerun the task.",
+      "thread_id": "01a14a27-5e7d-7bb1-b159-ae1c59800adb",
+      "usage": [
+        {
+          "input_tokens": 3588372,
+          "cached_input_tokens": 3431808,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 21701,
+          "reasoning_output_tokens": 9321
+        }
+      ]
+    },
+    "cases": [
+      {
+        "case": "bp",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.454953,
+        "candidate_metric": 0.454953,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "10dfbf87b4403f61658d58e334e4cdd8b7326cceaba11b10d68fb12e8886b638",
+        "started_at": "2026-10-17T14:08:29.780191+00:00",
+        "completed_at": "2026-10-17T14:17:23.271226+00:00",
+        "directory": "engineering-v3/campaign/cross_die_cts/finals/ledger/bp"
+      },
+      {
+        "case": "bp_fe",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.27950600000000003,
+        "candidate_metric": 0.27950600000000003,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "10dfbf87b4403f61658d58e334e4cdd8b7326cceaba11b10d68fb12e8886b638",
+        "started_at": "2026-10-17T14:05:19.981218+00:00",
+        "completed_at": "2026-10-17T14:08:00.005374+00:00",
+        "directory": "engineering-v3/campaign/cross_die_cts/finals/ledger/bp_fe"
+      }
+    ],
+    "development": {
+      "candidate_finals": 0,
+      "changed_paths": [],
+      "completed_at": "2026-10-17T14:04:53.885725+00:00",
+      "developer_success": true,
+      "duration_seconds": 422.6588077172637,
+      "model": "gpt-5.6-sol",
+      "source_sha256": "ec5e4ada90a84d3048fce6fedb80b76a404abc5a1349b0f8e4469e3c4c813d20",
+      "status": "implementation_ready",
+      "task": "cross_die_cts",
+      "terminal_tool_calls": 59,
+      "thread_id": "01a14a27-5e7d-7bb1-b159-ae1c59800adb"
+    },
+    "driver_status": "blocked",
+    "algorithm_sources": {}
+  },
+  {
+    "task": "multi_hbt_fanout",
+    "directory": "engineering-v3/campaign/multi_hbt_fanout",
+    "model": {
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 807.7730230987072,
+      "terminal_tool_calls": 55,
+      "final_message": "Implemented multi-HBT fanout synthesis in [multi_hbt.py](/workspace/engineering/multi_hbt.py) with tests in [test_multi_hbt.py](/workspace/engineering/tests/test_multi_hbt.py).\n\nSummary:\n\n- Deterministically selects one to three branches using seed 1001, baseline receiver delays, geometry, RC estimates, buffer limits, and reserved sites.\n- Preserves the original HBT, driver, coordinates, and at least one receiver.\n- Creates isolated source/sink electrical nets for every additional HBT.\n- Inserts exactly one compatible noninverting source-die buffer per added branch.\n- Materializes paired COVER anchors and native-layer BTerms/BPins.\n- Preserves all original cells and clock topology during detailed placement.\n- Restores original placement statuses and validates placement and PG connectivity.\n- Writes both output ODBs and a complete `branch_plan.json`.\n- Rejects unsupported clocks, multi-driver nets, exception-bearing nets, unsupported buffers, invalid units, and malformed native mappings.\n\nTests completed:\n\n- Python compilation passed.\n- Four unit tests passed covering one-HBT preservation, exhausted resources, real multi-branch disjoint coverage, unsupported targets, and unavailable noninverting buffers.\n- Policy and materialization-script generation were exercised across all four supplied contexts.\n- The policy selected 2, 3, 2, and 6 added HBTs respectively for `bp_fe`, `bp`, `ariane133`, and `swerv_wrapper`.\n- `git diff --check` passed.\n\nLimitation: no full-case physical search or joint STA was run, as prohibited. The selection model is intentionally approximate; final delay, electrical, setup/hold, placement, and equivalence validity remain determined by the protected native evaluator.",
+      "thread_id": "01a14a19-171e-7c83-9f30-bd8b938e91e6",
+      "usage": [
+        {
+          "input_tokens": 4396169,
+          "cached_input_tokens": 4224640,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 55867,
+          "reasoning_output_tokens": 12323
+        }
+      ]
+    },
+    "cases": [
+      {
+        "case": "ariane133",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.1286282742160604,
+        "candidate_metric": 0.12851938507829266,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "0ab9346a073d593d1e96adbc1934536e733141ef1adebf4951a48c2f52e4bd74",
+        "started_at": "2026-10-17T14:05:13.744196+00:00",
+        "completed_at": "2026-10-17T14:10:27.084780+00:00",
+        "directory": "engineering-v3/campaign/multi_hbt_fanout/finals-clean-cache/ledger/ariane133",
+        "timing_diagnostic": {
+          "baseline": {
+            "setup_wns_ns": -0.8356253703287781,
+            "setup_tns_ns": -19.65225371394592,
+            "hold_wns_ns": -0.5630671643870642,
+            "hold_tns_ns": -440.8469589713739,
+            "endpoint_count": 56127
+          },
+          "candidate": {
+            "setup_wns_ns": -0.8356253703287781,
+            "setup_tns_ns": -19.65225371394592,
+            "hold_wns_ns": -0.5630671643870642,
+            "hold_tns_ns": -440.8469589713739,
+            "endpoint_count": 56127
+          },
+          "new_hold_endpoint_count": 0
+        }
+      },
+      {
+        "case": "bp",
+        "status": "failed",
+        "legal": false,
+        "reference_metric": 0.17054434399934568,
+        "candidate_metric": null,
+        "error": "ValueError('Setup/hold nonregression failed: hold_tns_ns,new_hold_violating_endpoints')",
+        "seed": 1001,
+        "submission_sha256": "0ab9346a073d593d1e96adbc1934536e733141ef1adebf4951a48c2f52e4bd74",
+        "started_at": "2026-10-17T14:00:44.305689+00:00",
+        "completed_at": "2026-10-17T14:05:05.981901+00:00",
+        "directory": "engineering-v3/campaign/multi_hbt_fanout/finals-clean-cache/ledger/bp",
+        "timing_diagnostic": {
+          "baseline": {
+            "setup_wns_ns": -7.891457488615496,
+            "setup_tns_ns": -7227.032005843326,
+            "hold_wns_ns": -0.2906885370246622,
+            "hold_tns_ns": -405.45147054039774,
+            "endpoint_count": 54400
+          },
+          "candidate": {
+            "setup_wns_ns": -7.891457488615496,
+            "setup_tns_ns": -7227.032005843326,
+            "hold_wns_ns": -0.2906885370246622,
+            "hold_tns_ns": -406.06168465912657,
+            "endpoint_count": 54400
+          },
+          "new_hold_endpoint_count": 16
+        }
+      },
+      {
+        "case": "bp_fe",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.12974689241237414,
+        "candidate_metric": 0.13048946953507257,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "0ab9346a073d593d1e96adbc1934536e733141ef1adebf4951a48c2f52e4bd74",
+        "started_at": "2026-10-17T13:59:13.624958+00:00",
+        "completed_at": "2026-10-17T14:00:36.364851+00:00",
+        "directory": "engineering-v3/campaign/multi_hbt_fanout/finals-clean-cache/ledger/bp_fe",
+        "timing_diagnostic": {
+          "baseline": {
+            "setup_wns_ns": -0.6300793398702527,
+            "setup_tns_ns": -381.643627058756,
+            "hold_wns_ns": -0.08844933369408181,
+            "hold_tns_ns": -53.259577811037595,
+            "endpoint_count": 9997
+          },
+          "candidate": {
+            "setup_wns_ns": -0.6300793398702527,
+            "setup_tns_ns": -381.643627058756,
+            "hold_wns_ns": -0.08844933369408181,
+            "hold_tns_ns": -53.259577811037595,
+            "endpoint_count": 9997
+          },
+          "new_hold_endpoint_count": 0
+        }
+      },
+      {
+        "case": "swerv_wrapper",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.14484073405521586,
+        "candidate_metric": 0.14063050877718408,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "0ab9346a073d593d1e96adbc1934536e733141ef1adebf4951a48c2f52e4bd74",
+        "started_at": "2026-10-17T14:10:34.312407+00:00",
+        "completed_at": "2026-10-17T14:14:08.952120+00:00",
+        "directory": "engineering-v3/campaign/multi_hbt_fanout/finals-clean-cache/ledger/swerv_wrapper",
+        "timing_diagnostic": {
+          "baseline": {
+            "setup_wns_ns": -2.18184010367707,
+            "setup_tns_ns": -2070.6534672987686,
+            "hold_wns_ns": -0.3366782503639589,
+            "hold_tns_ns": -765.1063004159229,
+            "endpoint_count": 35652
+          },
+          "candidate": {
+            "setup_wns_ns": -2.18184010367707,
+            "setup_tns_ns": -2068.8829084380172,
+            "hold_wns_ns": -0.3366782503639589,
+            "hold_tns_ns": -765.1063004159229,
+            "endpoint_count": 35652
+          },
+          "new_hold_endpoint_count": 0
+        }
+      }
+    ],
+    "development": {
+      "candidate_finals": 0,
+      "completed_at": "2026-10-17T13:55:43.021726+00:00",
+      "error": "ValueError: Changes outside task scope: engineering/__pycache__/multi_hbt.cpython-38.pyc",
+      "model": "gpt-5.6-sol",
+      "status": "blocked",
+      "task": "multi_hbt_fanout"
+    },
+    "driver_status": "blocked",
+    "intervention": {
+      "algorithm_files_unchanged_from_agent": {
+        "engineering/multi_hbt.py": "7ef162d200b3f3e8d7c8c1d0da00a39f3ae654b889f16e132e0d00dd21ad086d",
+        "engineering/tests/__pycache__/test_multi_hbt.cpython-38.pyc": "ac6e194d6db8441388b4fe5527cb32c3c2b947f5768dc5431aa9f044ba22c549",
+        "engineering/tests/test_multi_hbt.py": "c3ed6353a58f94aeabb82b6df639442fe8ad624303aac20695566c23ee7208fe"
+      },
+      "allowed_changes": [
+        "engineering/multi_hbt.py",
+        "engineering/tests/__pycache__/test_multi_hbt.cpython-38.pyc",
+        "engineering/tests/test_multi_hbt.py"
+      ],
+      "candidate_finals_before_cleanup": 0,
+      "kind": "host_cache_cleanup_only",
+      "new_model_calls": 0,
+      "original_development_status": {
+        "candidate_finals": 0,
+        "completed_at": "2026-10-17T13:55:43.021726+00:00",
+        "error": "ValueError: Changes outside task scope: engineering/__pycache__/multi_hbt.cpython-38.pyc",
+        "model": "gpt-5.6-sol",
+        "status": "blocked",
+        "task": "multi_hbt_fanout"
+      },
+      "original_source": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign/multi_hbt_fanout/development/source",
+      "removed_from_clean_copy": {
+        "engineering/__pycache__/multi_hbt.cpython-38.pyc": {
+          "executable": false,
+          "kind": "file",
+          "sha256": "76e38e4b5f746814664b7e0418e1c7322493587236f6d29efc162200682156c2"
+        }
+      }
+    },
+    "algorithm_sources": {
+      "engineering/multi_hbt.py": "7ef162d200b3f3e8d7c8c1d0da00a39f3ae654b889f16e132e0d00dd21ad086d"
+    },
+    "aggregate": {
+      "all_case_mean_improvement_percent": null,
+      "expected_cases": 4,
+      "failed_cases": [
+        "bp"
+      ],
+      "judge_score_is_separate": true,
+      "metric": "mean_target_net_delay_ns",
+      "missing_cases": [],
+      "per_case_improvement_percent": {
+        "ariane133": 0.08465412323330912,
+        "bp_fe": -0.572327482293987,
+        "swerv_wrapper": 2.906796424013402
+      },
+      "running_cases": [],
+      "successful_cases": 3,
+      "successful_subset_mean_improvement_percent": 0.8063743549842414,
+      "task": "multi_hbt_fanout"
+    }
+  },
+  {
+    "task": "cross_die_cts",
+    "directory": "engineering-v3/campaign-editfix/cross_die_cts",
+    "model": null,
+    "cases": [],
+    "driver_status": "blocked"
+  },
+  {
+    "task": "cross_die_cts",
+    "directory": "engineering-v3/campaign-editfix2/cross_die_cts",
+    "model": {
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 497.76836889237165,
+      "terminal_tool_calls": 78,
+      "final_message": "Implemented coordinated two-die CTS in [three_d_cts.py](/workspace/open3dbench/backend/three_d_cts.py:595).\n\nKey changes:\n\n- Measures full passive HBT plus receiving-tree delay, then feeds it back as a real TritonCTS insertion-delay model.\n- Rebuilds the source-side tree once with clock-net repair before native latency balancing.\n- Compares baseline and coordinated trees using authoritative passive, per-clock/active-edge skew.\n- Rejects changed sink/domain ownership and falls back unless skew improves beyond numerical tolerance.\n- Enforces a conservative 2\u00d7 source-tree buffer guard; setup/hold remains diagnostic.\n- Preserves separate seed/coordinated models and publishes detailed selection evidence in `metrics.json`.\n\nAdded targeted tests in [test_cross_die_cts.py](/workspace/engineering/tests/test_cross_die_cts.py:38), covering normal coordination, little-offset fallback, setup/hold independence, auxiliary-clock ownership, resource limits, and insertion-delay construction.\n\nEvidence:\n\n- 60 targeted Python tests passed; one optional sealed-input test skipped.\n- Real OpenROAD CTS smoke test inserted three latency-balancing buffers with zero unconnected buffers.\n- No full-case EDA search or benchmark evaluation was run.\n- No native C++ files changed, so no candidate-image compilation is required.\n\nExpected\u2014not measured\u2014benefit is reduced cross-die skew when receiving-tree latency dominates. Final QoR, electrical nonregression, legality, and exact area are still determined by the unchanged harness legalization and independent placement-RC evaluator. The method uses one bounded source-tree rebuild and remains placement-estimated rather than routed signoff timing.",
+      "thread_id": "01a14a3d-1dea-7c00-bd71-4cbfc9a50cda",
+      "usage": [
+        {
+          "input_tokens": 4964807,
+          "cached_input_tokens": 4789632,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 26919,
+          "reasoning_output_tokens": 12629
+        }
+      ]
+    },
+    "cases": [
+      {
+        "case": "ariane133",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.37845300000000004,
+        "candidate_metric": 0.37845300000000004,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "d1d5dac4b34510619a289f63c8d4142d67d8b91bb8eaaa030641982bd472ce88",
+        "started_at": "2026-10-17T14:45:20.835746+00:00",
+        "completed_at": "2026-10-17T14:57:52.915492+00:00",
+        "directory": "engineering-v3/campaign-editfix2/cross_die_cts/finals/ledger/ariane133"
+      },
+      {
+        "case": "bp",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.454953,
+        "candidate_metric": 0.454953,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "d1d5dac4b34510619a289f63c8d4142d67d8b91bb8eaaa030641982bd472ce88",
+        "started_at": "2026-10-17T14:34:01.591713+00:00",
+        "completed_at": "2026-10-17T14:44:50.434501+00:00",
+        "directory": "engineering-v3/campaign-editfix2/cross_die_cts/finals/ledger/bp"
+      },
+      {
+        "case": "bp_fe",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.27950600000000003,
+        "candidate_metric": 0.27950600000000003,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "d1d5dac4b34510619a289f63c8d4142d67d8b91bb8eaaa030641982bd472ce88",
+        "started_at": "2026-10-17T14:30:20.485833+00:00",
+        "completed_at": "2026-10-17T14:33:24.844984+00:00",
+        "directory": "engineering-v3/campaign-editfix2/cross_die_cts/finals/ledger/bp_fe"
+      },
+      {
+        "case": "swerv_wrapper",
+        "status": "succeeded",
+        "legal": true,
+        "reference_metric": 0.372858,
+        "candidate_metric": 0.372858,
+        "error": null,
+        "seed": 1001,
+        "submission_sha256": "d1d5dac4b34510619a289f63c8d4142d67d8b91bb8eaaa030641982bd472ce88",
+        "started_at": "2026-10-17T14:58:12.643834+00:00",
+        "completed_at": "2026-10-17T15:06:14.748339+00:00",
+        "directory": "engineering-v3/campaign-editfix2/cross_die_cts/finals/ledger/swerv_wrapper"
+      }
+    ],
+    "development": {
+      "candidate_finals": 0,
+      "changed_paths": [
+        "engineering/tests/test_cross_die_cts.py",
+        "open3dbench/backend/three_d_cts.py"
+      ],
+      "completed_at": "2026-10-17T14:29:54.300220+00:00",
+      "developer_success": true,
+      "duration_seconds": 497.76836889237165,
+      "model": "gpt-5.6-sol",
+      "source_sha256": "3a067b04792f5a7e66a680f94054b379512fc3537bd4a33f48e8382dbe690f2c",
+      "status": "implementation_ready",
+      "task": "cross_die_cts",
+      "terminal_tool_calls": 78,
+      "thread_id": "01a14a3d-1dea-7c00-bd71-4cbfc9a50cda"
+    },
+    "driver_status": "completed",
+    "algorithm_sources": {
+      "open3dbench/backend/three_d_cts.py": "f5ec9f5578cba76185fa1e920b6ff8740ba52430b75498ae8c05711d1b5a8c77"
+    },
+    "aggregate": {
+      "all_case_mean_improvement_percent": 0.0,
+      "expected_cases": 4,
+      "failed_cases": [],
+      "judge_score_is_separate": true,
+      "metric": "clock_skew_ns",
+      "missing_cases": [],
+      "per_case_improvement_percent": {
+        "ariane133": 0.0,
+        "bp": 0.0,
+        "bp_fe": 0.0,
+        "swerv_wrapper": 0.0
+      },
+      "running_cases": [],
+      "successful_cases": 4,
+      "successful_subset_mean_improvement_percent": 0.0,
+      "task": "cross_die_cts"
+    }
+  }
+]

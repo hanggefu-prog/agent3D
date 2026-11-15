@@ -1,0 +1,13 @@
+schema_version: 1
+id: bp_lol_ng45_tp_gnn_ta3d_20260904
+description: BP with frozen full-coverage partition-last timing and TA3D-style TP-GNN decoding.
+config: config.yaml
+stop_stage: partition
+required_stages:
+  input: 00_input
+  floorplan: 10_floorplan
+  partition: 20_partition
+compatible_tasks:
+  - tp_gnn_ta3d_learning_objective
+runtime:
+  python_minimum: "3.8"

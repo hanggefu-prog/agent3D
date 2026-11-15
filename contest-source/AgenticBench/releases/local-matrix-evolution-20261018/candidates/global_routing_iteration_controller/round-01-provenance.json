@@ -1,0 +1,6 @@
+{
+  "model_result_sha256": "f2a3baa3967f14b83470ad7a84971b95b7dc9f9670b6be9880380b090e0eb8df",
+  "new_model_call": false,
+  "reason": "Reuse the same first algorithm hypothesis on the corrected reference contract; discard old setup feedback",
+  "reused_model_result": "${DATA_ROOT}/agenticbench-integration-20261016/local-matrix-audit-20261018/routing-config-fix/tasks/global_routing_iteration_controller/model-01/result.json"
+}

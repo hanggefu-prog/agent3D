@@ -1,0 +1,92 @@
+--- parent/OpenROAD-3D/openroad/src/grt/src/fastroute/src/FastRoute.cpp
++++ candidate/OpenROAD-3D/openroad/src/grt/src/fastroute/src/FastRoute.cpp
+@@ -1593,17 +1593,47 @@
+ 
+   const int max_overflow_increases = 25;
+ 
++  // When the configured budget leaves only sparse overflow, spend a small
++  // bounded polish budget rather than abandoning an otherwise routable result.
++  // Checkpointing starts only for the polish rounds, so ordinary uncongested
++  // routing keeps the original memory and runtime behavior.
++  constexpr int residual_overflow_threshold = 500;
++  constexpr int residual_polish_iterations = 4;
++  const int overflow_iteration_limit
++      = overflow_iterations_ > 0
++            ? overflow_iterations_ + residual_polish_iterations
++            : 0;
++  bool residual_polish_active = false;
++
+   float slack_th = std::numeric_limits<float>::lowest();
+ 
+   // set overflow_increases as -1 since the first iteration always sum 1
+   int overflow_increases = -1;
+   int last_total_overflow = 0;
+   float overflow_reduction_percent = -1;
+-  while (total_overflow_ > 0 && i <= overflow_iterations_
++  while (total_overflow_ > 0 && i <= overflow_iteration_limit
++         && (i <= overflow_iterations_
++             || total_overflow_ <= residual_overflow_threshold)
+          && overflow_increases <= max_overflow_increases) {
++    if (!residual_polish_active && i > overflow_iterations_) {
++      residual_polish_active = true;
++      minofl = total_overflow_;
++      minoflrnd = i - 1;
++      copyRS();
++      if (verbose_) {
++        logger_->info(GRT,
++                      103,
++                      "Polishing residual overflow {} for up to {} iterations.",
++                      total_overflow_,
++                      residual_polish_iterations);
++      }
++    }
+     if (verbose_) {
++      const int reported_limit = residual_polish_active
++                                     ? overflow_iteration_limit
++                                     : overflow_iterations_;
+       logger_->info(
+-          GRT, 102, "Start extra iteration {}/{}", i, overflow_iterations_);
++          GRT, 102, "Start extra iteration {}/{}", i, reported_limit);
+     }
+ 
+     if (THRESH_M > 15) {
+@@ -1689,6 +1719,9 @@
+     if (minofl > past_cong) {
+       minofl = past_cong;
+       minoflrnd = i;
++      if (residual_polish_active) {
++        copyRS();
++      }
+     }
+ 
+     if (i == 8) {
+@@ -1907,7 +1940,9 @@
+ 
+   removeLoops();
+ 
+-  getOverflow2Dmaze(&maxOverflow, &tUsage);
++  // copyBR() may have restored the best residual-polish checkpoint.  Refresh
++  // past_cong so the 3D cleanup decision below reflects that restored route.
++  past_cong = getOverflow2Dmaze(&maxOverflow, &tUsage);
+ 
+   layerAssignment();
+ 
+@@ -1930,6 +1965,18 @@
+ 
+     mazeRouteMSMDOrder3D(enlarge_, 0, long_edge_len);
+     mazeRouteMSMDOrder3D(enlarge_, 0, short_edge_len);
++
++    // The regular 3D cleanup concentrates on short edges.  If only sparse 3D
++    // overflow remains, make one bounded pass over the next edge-length band;
++    // these medium edges provide detour freedom without reopening every long
++    // timing-sensitive route.
++    getOverflow3D();
++    const int residual_3d_overflow = total_overflow_;
++    if (!enable_resistance_aware_ && residual_3d_overflow > 0
++        && residual_3d_overflow <= residual_overflow_threshold) {
++      mazeRouteMSMDOrder3D(
++          enlarge_, long_edge_len - 1, 2 * long_edge_len);
++    }
+   }
+ 
+   // Disable estimate parasitics for grt incremental steps with resistance-aware

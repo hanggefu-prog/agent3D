@@ -1,0 +1,28 @@
+design: bp_fe
+type: lol
+pdk: ng45
+threads: 32
+input:
+  mode: rtl
+  variant: default
+partition:
+  algorithm: tp-gnn
+placement:
+  algorithm: concurrent-dreamplace
+  gpu: true
+  target_density: 0.60
+hbt:
+  algorithm: track-aware-greedy
+opt:
+  algorithm: openroad
+cts:
+  algorithm: openroad
+routing:
+  algorithm: openroad
+  threads: 32
+  congestion_iterations: 4
+  max_iterations: 5
+  resource_reduction: 0.0
+  seed: -1
+thermal:
+  enabled: false

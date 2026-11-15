@@ -1,0 +1,27 @@
+--- parent
++++ round-02
+@@ -1,7 +1,6 @@
+ # EVOLVE-BLOCK-START
+ def control_reroute_iteration(ctx):
+-    """Adapt only congestion pressure; preserve native search and rip-up controls."""
+-    # Shift gently toward shorter routes as overflow eases, but defend stalled regressions.
++    # Defend every stalled regression with a small urgency floor near convergence.
+     phase = min(1.0, max(0.0, ctx.reroute_phase))
+     trend = ctx.congestion_trend
+     stagnation = ctx.stagnation
+@@ -13,8 +12,13 @@
+     regression = min(1.0, max(0.0, 2.0 * (0.5 - trend)))
+ 
+     congestion_scale = 1.0
+-    if regression > 0.0 and stagnation > 0.12 and urgency > 0.12:
+-        congestion_scale += (0.04 + 0.10 * stagnation) * urgency * regression
++    if regression > 0.0 and stagnation > 0.12:
++        defended_urgency = max(0.08, urgency)
++        congestion_scale += (
++            (0.04 + 0.10 * stagnation)
++            * defended_urgency
++            * regression
++        )
+     else:
+         relief = (0.02 + 0.09 * phase) * (1.0 - 0.65 * urgency)
+         relief += 0.025 * progress * (1.0 - urgency)

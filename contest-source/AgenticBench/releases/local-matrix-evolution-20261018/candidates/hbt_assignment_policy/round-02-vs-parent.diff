@@ -1,0 +1,32 @@
+--- parent
++++ round-02
+@@ -1,10 +1,25 @@
+ # EVOLVE-BLOCK-START
+ def net_priority(context):
+-    """Assign nets with more pins first."""
++    """Retain fanout-first assignment after span-sensitive ordering regressed timing."""
+     return context["pin_count"]
+ 
+ 
+ def site_cost(net_context, site_context):
+-    """Minimize the combined wire length at a legal terminal position."""
+-    return site_context["combined_hpwl_dbu"]
+-# EVOLVE-BLOCK-END
++    """Mildly favor short incremental reach on the tier containing more pins."""
++    bottom_count = net_context["bottom_pin_count"]
++    top_count = net_context["top_pin_count"]
++    total_count = max(1.0, bottom_count + top_count)
++
++    bottom_extension = max(
++        0.0,
++        site_context["bottom_hpwl_dbu"] - net_context["bottom_bbox_hpwl_dbu"],
++    )
++    top_extension = max(
++        0.0,
++        site_context["top_hpwl_dbu"] - net_context["top_bbox_hpwl_dbu"],
++    )
++
++    bottom_weight = 0.75 + 0.5 * bottom_count / total_count
++    top_weight = 0.75 + 0.5 * top_count / total_count
++    return bottom_weight * bottom_extension + top_weight * top_extension
++# EVOLVE-BLOCK-END

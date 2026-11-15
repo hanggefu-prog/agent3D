@@ -1,0 +1,39 @@
+{
+  "schema": "engineering-evaluation-profile-v2",
+  "task": "cross_die_cts",
+  "scoring_version": 2,
+  "identity_version": 2,
+  "capability_schema": 2,
+  "allow_unverified_capabilities": [],
+  "calibration": {
+    "qor_noop": "qualified reference metric (the unmodified input measured by the same native endpoint)",
+    "normalized_formula": "100*(qor-qor_noop)/(qor_expert-qor_noop)",
+    "failed_case_score": 0.0,
+    "expert_registry": "expert-reference.json"
+  },
+  "judge": {
+    "weight_in_headline": 0,
+    "min_samples": 3,
+    "aggregation": "median"
+  },
+  "gates": {
+    "timing": {
+      "tolerances_ns": {
+        "setup_wns_ns": 0.01,
+        "setup_tns_ns": 0.1,
+        "hold_wns_ns": 0.01,
+        "hold_tns_ns": 0.1
+      },
+      "relative_tolerance": 0.02
+    },
+    "insertion_delay": {
+      "max_reference_ratio": 1.25,
+      "absolute_tolerance_ns": 0.01
+    },
+    "clock_area_max_reference_ratio": 1.25,
+    "clock_buffer_count_max_reference_ratio": 1.25,
+    "clock_power": {
+      "max_reference_ratio": 1.1
+    }
+  }
+}

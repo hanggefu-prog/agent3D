@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Artifact Handoff"
+  short_description: "Freeze a trial for trusted verification"
+  default_prompt: "Use $open3dbench-artifact-handoff to collect this global trial into a complete, hashed submission bundle."

@@ -1,0 +1,222 @@
+{
+  "aggregation": "equal-case-mean-of-required-seed-scores",
+  "calibration_cases": [
+    "ariane133-ng45",
+    "bp-ng45",
+    "bp_fe-asap7",
+    "bp_fe-ng45",
+    "swerv_wrapper-ng45"
+  ],
+  "cases": {
+    "ariane133-ng45": {
+      "measurements": {
+        "binary_loss": {
+          "1001": {
+            "reference_summary_sha256": "8d37b6d402f71e9243b77331c2a75009fc59c20d55c65e36628c9424aa34001c",
+            "tns_ns": -15.531635084336429,
+            "wns_ns": -0.6536975590302824
+          },
+          "1002": {
+            "reference_summary_sha256": "37a237f645721cf5f3220507888fb99ca11febfc1f955f7eb3367c3cd5af483f",
+            "tns_ns": -210.97986888043664,
+            "wns_ns": -0.7315863677487308
+          },
+          "1003": {
+            "reference_summary_sha256": "1c820937136377621ec1467310da5c2541b24056051a46c1ae3a6ff3583f8e5e",
+            "tns_ns": -0.2038524962088658,
+            "wns_ns": -0.18467627949598983
+          }
+        },
+        "loss_decoder": {
+          "1001": {
+            "reference_summary_sha256": "89e4722dc3b85db4320a0df53b1b73adf8b4bc434879b10e0475da1bcc09443d",
+            "tns_ns": -22.69812846368777,
+            "wns_ns": -0.46473759489492794
+          },
+          "1002": {
+            "reference_summary_sha256": "d3a21196f2c3b6976f8ef626ebd7f4d4e942ae5e3f961686dc1dc57e5ad79223",
+            "tns_ns": -101.00025635050363,
+            "wns_ns": -0.511323442504157
+          },
+          "1003": {
+            "reference_summary_sha256": "99b3077c8ab7dd2d5d4eafdf0b1420ef0fab94c1ff68cabaa1c60fec04ee8ff3",
+            "tns_ns": -29.767709140211068,
+            "wns_ns": -0.5738236714876622
+          }
+        }
+      },
+      "reference_tns_deficit_ns": 96.42498143235612,
+      "reference_wns_deficit_ns": 0.5290353246723486,
+      "split": "train"
+    },
+    "bp-ng45": {
+      "measurements": {
+        "binary_loss": {
+          "1001": {
+            "reference_summary_sha256": "097e08b1477e1a5e9032d7e1365b3947c1264f6b0dab646f24d509bd2b97983e",
+            "tns_ns": -5654.094071197938,
+            "wns_ns": -8.244947180582997
+          },
+          "1002": {
+            "reference_summary_sha256": "92e21a1766439b8954b04d26a1249bc8b7e70206fe9b10be97bb127b3fbff26b",
+            "tns_ns": -8888.098160593543,
+            "wns_ns": -8.389914778167997
+          },
+          "1003": {
+            "reference_summary_sha256": "d08d4dbeeb3eaad371a1f7a4daf02539c8bde326c3faa398f2ba971b40153165",
+            "tns_ns": -9086.499887922982,
+            "wns_ns": -8.486693366050867
+          }
+        },
+        "loss_decoder": {
+          "1001": {
+            "reference_summary_sha256": "33107240f73a83eb41aaee41f4f4163a4ed5dc1e1f4284929d7020a33b73667c",
+            "tns_ns": -9059.339646875793,
+            "wns_ns": -8.392474508445966
+          },
+          "1002": {
+            "reference_summary_sha256": "a1d63e8367a129f1f5470b186005c77b62f26d49d24400da8885c0d92a9db597",
+            "tns_ns": -10349.946316496395,
+            "wns_ns": -7.841612026113778
+          },
+          "1003": {
+            "reference_summary_sha256": "37dfb7a94ef4fe76d05a1a7cdf1261d89eaa6d7f584691e7f9b32c6667203b0f",
+            "tns_ns": -8622.276498609612,
+            "wns_ns": -7.870566643414895
+          }
+        }
+      },
+      "reference_tns_deficit_ns": 6622.78575944895,
+      "reference_wns_deficit_ns": 8.663351750761597,
+      "split": "train"
+    },
+    "bp_fe-asap7": {
+      "measurements": {
+        "binary_loss": {
+          "1001": {
+            "reference_summary_sha256": "4e8602efb23c7024d1226a40089fe0a07dbdf1048cdac751ada15da23af5bf61",
+            "tns_ns": -14.162959206297096,
+            "wns_ns": -0.4656251072059138
+          },
+          "1002": {
+            "reference_summary_sha256": "d76658d1e160c28de748e832c23386170f35eefe01e1b4211a872b3f85d527f8",
+            "tns_ns": -7.0555918660173935,
+            "wns_ns": -0.3515152712846691
+          },
+          "1003": {
+            "reference_summary_sha256": "542f39272fbb2c6b27f2573d8e7e2e68b391d14a2e493111a68fcefb1e7df25e",
+            "tns_ns": -22.65722784630383,
+            "wns_ns": -0.649279204334222
+          }
+        },
+        "loss_decoder": {
+          "1001": {
+            "reference_summary_sha256": "447e4e002d421467487e0b7827ddbe52c0d3502904c806cc14dd2199c1b568c2",
+            "tns_ns": -7.721294044907856,
+            "wns_ns": -0.3774616281931819
+          },
+          "1002": {
+            "reference_summary_sha256": "8ead58181dd78fd875a888cc2bb4782a03cc89703a4deff6e8eb5d0a1e30885d",
+            "tns_ns": -32.47584337816895,
+            "wns_ns": -0.7174002706057677
+          },
+          "1003": {
+            "reference_summary_sha256": "0cfd4a985d3837542340b3f67c0c2a24a84aaba7002f625a3ede9dd226c92013",
+            "tns_ns": -14.176231256798035,
+            "wns_ns": -0.5076440522741864
+          }
+        }
+      },
+      "reference_tns_deficit_ns": 11.63672038665827,
+      "reference_wns_deficit_ns": 0.4500643532099901,
+      "split": "validation"
+    },
+    "bp_fe-ng45": {
+      "measurements": {
+        "binary_loss": {
+          "1001": {
+            "reference_summary_sha256": "b0e857d79ce4dacc3b0758794c193a315ee89df930d4d229bbfe503ecaff711d",
+            "tns_ns": -506.9645255978024,
+            "wns_ns": -0.6980237696535849
+          },
+          "1002": {
+            "reference_summary_sha256": "242a4fa0a89e7c06d0fc8da645e70c711463280d47e3cd97dc8b44ea91b82509",
+            "tns_ns": -313.49049754535235,
+            "wns_ns": -0.8542906623912717
+          },
+          "1003": {
+            "reference_summary_sha256": "87e43f8840480956b8f6510eaa44e8dce719e7590d32f3f664f35635ad1cceda",
+            "tns_ns": -604.3571432140003,
+            "wns_ns": -0.8388328047376327
+          }
+        },
+        "loss_decoder": {
+          "1001": {
+            "reference_summary_sha256": "bd221681a4bc854e196e094c19df84554abab52d8fef03a3d562bfa477313a74",
+            "tns_ns": -174.72074415142822,
+            "wns_ns": -0.6611195111821111
+          },
+          "1002": {
+            "reference_summary_sha256": "27aa508db61bdcc031c32141f42668282d136c186b9a5c4fc2aae05663899625",
+            "tns_ns": -211.7487329856929,
+            "wns_ns": -0.7280568576313236
+          },
+          "1003": {
+            "reference_summary_sha256": "0ea9486b11314babf26baa2b8deb01d46bb7376f23a16034916ce6559719aba9",
+            "tns_ns": -188.35428327940795,
+            "wns_ns": -0.639466275808939
+          }
+        }
+      },
+      "reference_tns_deficit_ns": 716.9190029865956,
+      "reference_wns_deficit_ns": 0.9002498352590634,
+      "split": "train"
+    },
+    "swerv_wrapper-ng45": {
+      "measurements": {
+        "binary_loss": {
+          "1001": {
+            "reference_summary_sha256": "9b17993a59d725bfba05b84f931a2991a93423c5227298114c748c7c8955ac78",
+            "tns_ns": -2797.2119705582168,
+            "wns_ns": -2.5686620224555936
+          },
+          "1002": {
+            "reference_summary_sha256": "1961c82fd1e8be27fcd389cac92f12bcc5e25a1c2f8a1dae2877cac7411506b4",
+            "tns_ns": -1872.4144258387096,
+            "wns_ns": -2.0093189902876576
+          },
+          "1003": {
+            "reference_summary_sha256": "3135f0c18e20e5303011e4905d7c8ea0e4cd4f42aaaab8023b1905bfc94e35e8",
+            "tns_ns": -2639.377118680291,
+            "wns_ns": -2.030925485270171
+          }
+        },
+        "loss_decoder": {
+          "1001": {
+            "reference_summary_sha256": "4e3ac2f7b8294e8e25dcd4a7f6187376ef8a0fbe2032e7f8c5d1666959d24bfc",
+            "tns_ns": -1966.4844886851063,
+            "wns_ns": -1.984719778035325
+          },
+          "1002": {
+            "reference_summary_sha256": "18787d583065dcd82a60568fa778ab2a2a1c5f22fb630e256a9435b4e8e31b8c",
+            "tns_ns": -4344.438944004679,
+            "wns_ns": -1.8654300854238925
+          },
+          "1003": {
+            "reference_summary_sha256": "a583988aa7c1b5203dcfe29dd36d302896f7ec7baf7307acca2e5677a9291612",
+            "tns_ns": -2604.8945355820383,
+            "wns_ns": -1.7788500065336628
+          }
+        }
+      },
+      "reference_tns_deficit_ns": 1978.8934947862522,
+      "reference_wns_deficit_ns": 2.4819366232401716,
+      "split": "validation"
+    }
+  },
+  "endpoint": "post-opt-pre-cts",
+  "probability_weight": 1.8540644055012456,
+  "schema_version": 1,
+  "tns_weight": 0.6,
+  "wns_weight": 0.4
+}

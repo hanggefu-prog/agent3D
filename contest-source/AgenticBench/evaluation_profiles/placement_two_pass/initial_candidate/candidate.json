@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "config_overrides": {
+    "placement": {
+      "target_density": 0.6
+    }
+  },
+  "candidate_files": {
+    "placement.json": {
+      "concurrent_dreamplace": {
+        "cross_die_net_weight": 1.0,
+        "density_weight": 0.00003,
+        "die_params": {},
+        "hide_fillers_in_plot": false,
+        "iterations": 2000,
+        "learning_rate": 0.01,
+        "macro_halo_x": 10.0,
+        "macro_halo_y": 10.0,
+        "macro_place_flag": false,
+        "num_bins": 512,
+        "stop_overflow": 0.01,
+        "target_density": 0.6
+      }
+    }
+  },
+  "source_patch": "",
+  "notes": "Static promotion template; production runs replace it with a selected and independently verified placement candidate."
+}

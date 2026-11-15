@@ -1,0 +1,132 @@
+--- parent/Place-3D/src/hbt/assignment.py
++++ candidate/Place-3D/src/hbt/assignment.py
+@@ -582,6 +582,129 @@
+         available.remove(site)
+         block_escape_tracks(site)
+         assigned[net.net_name] = (site, combined_hpwl(net, site))
++    return _refine_routing_pair_swaps(problem, ideals, assigned)
++
++
++def _refine_routing_pair_swaps(
++    problem: HBTProblem,
++    ideals: Mapping[str, Point],
++    assigned: Dict[str, Tuple[Point, int]],
++    candidate_count: int = 24,
++    max_passes: int = 2,
++) -> Dict[str, Tuple[Point, int]]:
++    """Improve greedy HPWL by swapping ownership of already selected sites.
++
++    The selected site set determines all uniqueness and escape-track conflicts,
++    so exchanging two nets cannot invalidate the track-aware legalizer.  Limit
++    each net to nearby selected sites to keep this polishing step linear in the
++    number of HBTs.  A swap must reduce unweighted HPWL without increasing the
++    pin-count-weighted HPWL, which protects the high-fanout priority established
++    by the initial greedy ordering.
++    """
++
++    if candidate_count <= 0 or max_passes <= 0 or len(assigned) < 2:
++        return assigned
++    try:
++        import numpy as np
++        from scipy.spatial import cKDTree
++    except ImportError:
++        return assigned
++
++    nets = {net.net_name: net for net in problem.nets}
++    names = tuple(sorted(assigned))
++    sites = tuple(sorted(site for site, _cost in assigned.values()))
++    tree = cKDTree(np.asarray([(site.x, site.y) for site in sites]))
++    limit = min(candidate_count, len(sites))
++    _distances, indices = tree.query(
++        np.asarray([(ideals[name].x, ideals[name].y) for name in names]),
++        k=limit,
++        p=1,
++    )
++    indices = np.asarray(indices).reshape(len(names), limit)
++    nearby_sites = {
++        name: tuple(
++            sorted(
++                (sites[int(index)] for index in row.tolist()),
++                key=lambda site: (
++                    ideals[name].manhattan(site),
++                    site.x,
++                    site.y,
++                ),
++            )
++        )
++        for name, row in zip(names, indices)
++    }
++
++    owner = {site: name for name, (site, _cost) in assigned.items()}
++    costs = {
++        name: combined_hpwl(nets[name], assigned[name][0])
++        for name in names
++    }
++    ideal_costs = {
++        name: combined_hpwl(nets[name], ideals[name])
++        for name in names
++    }
++    for _pass in range(max_passes):
++        changed = False
++        # Visit nets with the largest avoidable HPWL first.  This is stable and
++        # gives the bounded search its best chance to repair costly early grabs.
++        visit_order = sorted(
++            names,
++            key=lambda name: (
++                -(costs[name] - ideal_costs[name]),
++                -nets[name].pin_count,
++                name,
++            ),
++        )
++        for name in visit_order:
++            net = nets[name]
++            site = assigned[name][0]
++            current_cost = costs[name]
++            best = None
++            for other_site in nearby_sites[name]:
++                other_name = owner[other_site]
++                if other_name == name:
++                    continue
++                other_net = nets[other_name]
++                other_current = costs[other_name]
++                swapped_cost = combined_hpwl(net, other_site)
++                other_swapped = combined_hpwl(other_net, site)
++                hpwl_gain = (
++                    current_cost + other_current - swapped_cost - other_swapped
++                )
++                weighted_gain = (
++                    current_cost * net.pin_count
++                    + other_current * other_net.pin_count
++                    - swapped_cost * net.pin_count
++                    - other_swapped * other_net.pin_count
++                )
++                if hpwl_gain <= 0 or weighted_gain < 0:
++                    continue
++                rank = (hpwl_gain, weighted_gain)
++                if (
++                    best is None
++                    or rank > best[0]
++                    or (rank == best[0] and other_name < best[1])
++                ):
++                    best = (
++                        rank,
++                        other_name,
++                        other_site,
++                        swapped_cost,
++                        other_swapped,
++                    )
++            if best is None:
++                continue
++            _rank, other_name, other_site, swapped_cost, other_swapped = best
++            assigned[name] = (other_site, swapped_cost)
++            assigned[other_name] = (site, other_swapped)
++            costs[name] = swapped_cost
++            costs[other_name] = other_swapped
++            owner[site] = other_name
++            owner[other_site] = name
++            changed = True
++        if not changed:
++            break
+     return assigned
+ 
+ 

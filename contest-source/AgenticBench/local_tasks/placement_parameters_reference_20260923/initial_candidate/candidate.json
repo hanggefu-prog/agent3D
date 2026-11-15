@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "config_overrides": {},
+  "candidate_files": {},
+  "source_patch": "",
+  "notes": "Native Nesterov reference recipe. Program-mode initial control is the actively invoked identity 1 x (1,1); the new optimizer interface requires separate native qualification."
+}

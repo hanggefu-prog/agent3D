@@ -1,0 +1,4 @@
+{
+  "feedback_use": "No candidate feedback exists yet. The baseline shows persistent final overflow, with strong die imbalance in several bp_fe seeds, so this first-round change is deliberately modest and generic.",
+  "hypothesis": "A smoothed shared response that slightly favors improving HPWL while allowing larger steps under residual overflow, combined with gradual per-die balancing from overflow, density-weight, and gradient skew, should improve final placement without disrupting native acceleration or backtracking."
+}

@@ -1,0 +1,31 @@
+design: ariane133
+type: lol
+pdk: ng45
+threads: 32
+input:
+  mode: rtl
+  variant: default
+partition:
+  algorithm: mtkahypar
+placement:
+  algorithm: concurrent-dreamplace
+  gpu: true
+  target_density: 0.60
+hbt:
+  algorithm: track-aware-greedy
+opt:
+  algorithm: openroad
+cts:
+  algorithm: openroad
+routing:
+  algorithm: openroad
+  threads: 32
+  # FastRoute's maintained StNetOrder hook is enabled when iteration % 3 == 0.
+  # Four iterations ensure i=3 is reached before the soft-NDR reset at the
+  # configured limit, exposing multiple ordered phases on congested designs.
+  congestion_iterations: 4
+  max_iterations: 5
+  resource_reduction: 0.0
+  seed: -1
+thermal:
+  enabled: false

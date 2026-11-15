@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "design": "gemmini",
+  "top": "Gemmini",
+  "source": {
+    "chipyard_tag": "1.14.0",
+    "chipyard_commit": "0acc1e1de2d3284bcd4d876956932a013ffe1949",
+    "gemmini_commit": "8c3f9923a44a2fe2c7930587be297d6d4f8c09ca",
+    "reachable_generated_rtl_files": 134
+  },
+  "interface": {
+    "clock": "clock",
+    "reset": "reset",
+    "clock_gates": 0
+  },
+  "macros": {
+    "mem_ext": {
+      "count": 4,
+      "depth": 4096,
+      "data_width": 128,
+      "ports": "1RW"
+    },
+    "mem_0_ext": {
+      "count": 2,
+      "depth": 512,
+      "data_width": 512,
+      "ports": "1R1W"
+    }
+  },
+  "source_acceptance": {
+    "status": "PASS",
+    "synthesized_components": 1157357,
+    "dff_count": 98925,
+    "create_clock_count": 1,
+    "heteroplace3d_completed": true
+  }
+}

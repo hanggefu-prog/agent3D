@@ -1,0 +1,11 @@
+{
+  "schema": "engineering-expert-reference-v1",
+  "task": "multi_hbt_fanout",
+  "note": "qor_expert per case: null until an expert solution is measured by the same native endpoint; then {\"qor\": <number>, \"source\": <description>, \"receipt_sha256\": <64 hex>}",
+  "cases": {
+    "bp_fe": null,
+    "bp": null,
+    "ariane133": null,
+    "swerv_wrapper": null
+  }
+}

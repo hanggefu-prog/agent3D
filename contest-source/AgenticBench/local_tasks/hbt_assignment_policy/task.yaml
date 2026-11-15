@@ -1,0 +1,99 @@
+schema_version: 1
+id: hbt_assignment_policy
+title: Hybrid bonding terminal assignment policy
+description: Evolve network priority and legal-site cost to improve joint two-die setup timing after HBT assignment.
+kind: hbt_assignment_policy
+availability: available
+base_config: ../tp_gnn_post_placement_timing/reference_config.yaml
+initial_candidate: initial_candidate
+prompt: prompt.md
+program:
+  mode: task_adapter
+  template: initial_program.py
+  adapter: program_adapter.py
+  entrypoint: net_priority
+prompt_context:
+  max_source_chars: 0
+  feedback_recent: 3
+  feedback_top: 3
+  max_feedback_chars: 16000
+execution:
+  from: hbt
+  to: hbt
+  upstream_stages: [input, floorplan, partition, placement, pdn]
+  boundary: open3dbench-stage
+candidate_policy:
+  allowed_config_paths: []
+  allowed_source_paths: []
+  max_changed_files: 0
+  max_added_lines: 0
+  max_deleted_lines: 0
+  files:
+    - path: hbt_policy.json
+      inject_as: hbt.policy
+      allowed_paths: [interface_version, source]
+  value_constraints:
+    - {path: /candidate_files/hbt_policy.json/interface_version, type: string, enum: [hbt-policy-v1]}
+    - {path: /candidate_files/hbt_policy.json/source, type: string}
+# Host-owned specification. The policy is executed by the bounded native
+# planner; each physical input requires its own initial-program reference.
+definition:
+  integration: lol
+  platforms: [ng45, asap7]
+  upstream_partition_reference: global-2way
+  ideal_method: optimal-region
+  endpoint_coordinate: placed_component_or_bterm_origin
+  normalization_region: intersection_of_die_cores
+  reference_policy: track-aware-greedy
+  functions:
+    net_priority: {arguments: [context], output: finite_scalar, order: descending}
+    site_cost: {arguments: [net_context, site_context], output: finite_scalar, order: ascending}
+  priority_tie_break: canonical_net_name_ascending
+  site_tie_break: [ideal_manhattan_displacement_dbu, x_dbu, y_dbu]
+  priority_schedule: once_per_network_before_assignment
+  site_schedule: once_per_candidate_site_for_current_network
+  candidate_search:
+    nearest_per_seed: 8
+    expansion: double_only_until_a_legal_candidate_exists
+    seeds: native_routing_seed_points
+    backend: scipy_cKDTree_required
+    escape_guards: native_track_aware_rules
+    exhaustive_fallback: forbidden
+  output: one_complete_program_containing_both_functions
+  limits:
+    source_bytes: 16000
+    ast_nodes: 500
+    loops: forbidden
+    recursion: forbidden
+    external_io: forbidden
+    mutable_state: forbidden
+    candidate_flow_wall_seconds: 21600
+    physical_threads: 4
+  endpoint:
+    checkpoint: 50_hbt/checkpoint.json
+    measurement: post_placement_sta
+    directory: 55_post_placement_sta
+    opt_passes: 0
+    clocks: ideal_pre_cts
+    rc: placement_estimated_die_rc_plus_passive_hbt_pi
+    excluded: [opt, cts, global_route, detailed_route, thermal]
+  objective:
+    direction: maximize
+    metric: combined_score
+    formula: 1 / max(0.6 * normalized_wns_deficit + 0.4 * normalized_tns_deficit, 1e-12)
+    timing_unit: ns
+    deficit: max(0, -setup_slack)
+    zero_reference_epsilon_ns: 1.0e-12
+    zero_reference_rule: both_at_or_below_epsilon_cost_1_else_1_plus_candidate_deficit_over_epsilon
+    diagnostics_not_rewards: [hpwl, displacement, runtime, track_usage]
+  admission:
+    native_hooks: bounded-scalar-v1
+    trusted_context_producer: native-hbt-geometry-v1
+    trusted_physical_collector: independent-geometry-and-joint-sta-v1
+    same_contract_native_reference: required-before-candidate
+    existing_hbt_stage_is_not_task_qualification: true
+    missing_required_geometry: reject
+    per_network_timing_context: not_exposed_in_v1
+    candidate_exception_or_nonfinite: reject_no_baseline_fallback
+    incomplete_or_illegal_assignment: reject_no_repair_by_another_solver
+    missing_final_timing: reject_not_zero

@@ -1,0 +1,1 @@
+{"schema_version":1,"config_overrides":{"partition":{"algorithm":"tp-gnn"},"placement":{"algorithm":"concurrent-dreamplace"}},"candidate_files":{},"source_patch":"","notes":"TP-GNN global-2way + concurrent placement; two OPT passes then CTS cell power and HotSpot."}

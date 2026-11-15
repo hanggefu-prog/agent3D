@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Results Analysis"
+  short_description: "Compare metrics, failures, and convergence"
+  default_prompt: "Use $open3dbench-results-analysis to audit these experiment results and produce a provenance-correct comparison."

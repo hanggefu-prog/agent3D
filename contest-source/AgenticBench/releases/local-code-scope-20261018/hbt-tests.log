@@ -1,0 +1,17 @@
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+test_contexts_are_copied_and_state_is_not_shared (test_hbt_policy.PolicyTest) ... ok
+test_exceptions_and_nonnumeric_return_fail (test_hbt_policy.PolicyTest) ... ok
+test_illegal_code_is_never_executed (test_hbt_policy.PolicyTest) ... ok
+test_missing_and_nonfinite_context_fail (test_hbt_policy.PolicyTest) ... ok
+test_native_python_subscript_ast_and_context_lookup (test_hbt_policy.PolicyTest) ... ok
+test_numerical_functions_are_interpreted_with_finite_results (test_hbt_policy.PolicyTest) ... ok
+test_other_legalizer_and_missing_geometry_fail (test_hbt_policy.PolicyTest) ... ok
+test_planner_records_policy_identity_and_physical_cost (test_hbt_policy.PolicyTest) ... ok
+test_policy_can_change_site_without_changing_legal_sites (test_hbt_policy.PolicyTest) ... ok
+test_reference_exact_assignment_equivalence (test_hbt_policy.PolicyTest) ... ok
+test_short_circuit_and_branches (test_hbt_policy.PolicyTest) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.533s
+
+OK

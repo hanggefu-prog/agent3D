@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "name": "engineering-three-tasks-example",
+  "developer_model": "gpt-5.6-sol",
+  "judge_model": "gpt-5.6-sol",
+  "seed": 1001,
+  "submissions_per_task": 1,
+  "evaluations_per_case": 1,
+  "cases": ["bp_fe", "bp", "ariane133", "swerv_wrapper"],
+  "tasks": ["clock_compensation", "multi_hbt_fanout", "cross_die_cts"],
+  "framework_revision": "d0c6ad20411e4b5b12cc23629351fd28d3074ab7",
+  "flow_revision": "5d5dd87f1f2fff8b5d8503138bc99140f0fffbd3",
+  "hosts": {
+    "worker-a": {
+      "root": "/srv/agenticbench/worker-a/engineering-run",
+      "reference_root": "/srv/agenticbench/worker-a/frozen-references",
+      "cases": ["bp_fe", "bp"],
+      "max_parallel": 1,
+      "cpus_per_job": 8,
+      "memory_gb_per_job": 32
+    },
+    "worker-b": {
+      "root": "/srv/agenticbench/worker-b/engineering-run",
+      "reference_root": "/srv/agenticbench/worker-b/frozen-references",
+      "cases": ["ariane133", "swerv_wrapper"],
+      "max_parallel": 1,
+      "cpus_per_job": 8,
+      "memory_gb_per_job": 32
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "feedback_use": "Baseline embeddings leave positive and negative cosine medians close to 1, while repair movement varies substantially by seed. The change targets both collapse and repair sensitivity without assuming prototype timing is final timing.",
+  "hypothesis": "An annealed, area-balanced timing-graph relaxation will preserve high-weight connections while forcing useful global separation, giving the balanced decoder a more stable two-way geometry and potentially improving post-placement WNS/TNS."
+}

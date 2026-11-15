@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "config_overrides": {},
+  "candidate_files": {},
+  "source_patch": "",
+  "notes": "Program-mode task; the trusted adapter materializes the behavior-preserving FastRoute reroute-iteration controller."
+}

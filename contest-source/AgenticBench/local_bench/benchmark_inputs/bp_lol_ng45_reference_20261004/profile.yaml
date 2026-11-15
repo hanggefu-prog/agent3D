@@ -1,0 +1,30 @@
+schema_version: 1
+id: bp_lol_ng45_reference_20261004
+description: Explicit latest-flow input. Qualification and scoring authority are separate.
+config: config.yaml
+stop_stage: partition
+required_stages:
+  input: 00_input
+  floorplan: 10_floorplan
+  partition: 20_partition
+partition_contract:
+  method: tp-gnn-flat
+  decoder: global-2way
+compatible_tasks:
+  - global_routing_net_ordering_source
+  - tp_gnn_placement_one_pass_20261004
+  - global_routing_iteration_controller_source
+  - global_routing_maze_cost_source
+  - global_routing_ripup_policy_source
+  - tp_gnn_learning_objective_reference_20260923
+  - placement_dynamic_parameters_reference_20260923
+  - placement_preconditioner_source_reference_20260923
+  - tp_gnn_placement_one_pass
+  - tp_gnn_placement_cts_thermal_one_pass
+  - tp_gnn_placement_thermal
+  - lol_partition_placement_timing_one_pass
+  - lol_partition_placement_timing_one_pass_10
+  - lol_partition_placement_cts_thermal_one_pass
+  - lol_partition_placement_thermal
+runtime:
+  python_minimum: "3.8"

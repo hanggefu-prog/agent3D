@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenROAD Routing Agent"
+  short_description: "Optimize and validate 3D global and detail routing"
+  default_prompt: "Use $optimize-openroad-routing with repository_context to improve OpenROAD-3D routing while preserving guide, connectivity and DRC correctness."

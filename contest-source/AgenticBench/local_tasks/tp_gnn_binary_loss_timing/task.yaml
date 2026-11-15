@@ -1,0 +1,182 @@
+schema_version: 1
+id: tp_gnn_binary_loss_timing
+title: Binary TP-GNN loss evolution with one-pass OPT timing
+description: Evolve only the regularized binary TP-GNN loss; score joint setup WNS and TNS after one fixed OPT pass.
+kind: tp_gnn_binary_loss_timing
+availability: available
+base_config: reference_config.yaml
+initial_candidate: initial_candidate
+prompt: prompt.md
+program:
+  mode: task_adapter
+  template: initial_program.py
+  adapter: program_adapter.py
+  entrypoint: compute_binary_partition_loss
+prompt_context:
+  priority_parameters:
+    - probabilities
+    - expected_cut
+    - net_cut_probabilities
+    - net_weights
+    - node_features
+    - node_areas
+    - balance_target
+    - cut_weight
+    - area_balance_weight
+    - binarization_weight
+    - epoch
+    - max_epochs
+  max_source_chars: 0
+  feedback_recent: 3
+  feedback_top: 3
+  max_feedback_chars: 24000
+execution:
+  from: partition
+  to: opt
+  upstream_stages: [input, floorplan]
+  boundary: open3dbench-stage
+  frozen_inputs:
+    - name: tp_gnn_timing
+      source: baseline_run
+      path: 20_partition/timing_input
+      inject_as: partition.timing_input
+      required_files:
+        - timing_features.csv
+        - timing_net_weights.csv
+        - timing_manifest.json
+        - openroad_full_partition_last.connections.tsv
+      json_checks:
+        - path: timing_manifest.json
+          equals:
+            timing_status: full_coverage_partition_last
+            timing_weight_mode: paper_delay_slack_hyperedge_v1
+candidate_policy:
+  allowed_config_paths: []
+  allowed_source_paths: []
+  max_changed_files: 0
+  max_added_lines: 0
+  max_deleted_lines: 0
+  files:
+    - path: binary_loss_program.json
+      inject_as: partition.evolution_program
+      allowed_paths: [interface_version, source]
+  value_constraints:
+    - {path: /candidate_files/binary_loss_program.json/interface_version, type: string, enum: [tp-gnn-binary-loss-v1]}
+    - {path: /candidate_files/binary_loss_program.json/source, type: string}
+# The capsule is transported by the protected runner; references qualify per case.
+definition:
+  interface_version: tp-gnn-binary-loss-v1
+  integration: lol
+  default_case: bp_fe
+  pdk: ng45
+  function:
+    name: compute_binary_partition_loss
+    arguments: [probabilities, expected_cut, net_cut_probabilities, net_weights, node_features, node_areas, balance_target, cut_weight, area_balance_weight, binarization_weight, epoch, max_epochs]
+    output: finite_differentiable_scalar_tensor
+  editable: [loss_expression, loss_regularization, loss_epoch_schedule, loss_only_per_net_weighting_and_nonlinear_penalties]
+  forbidden_outputs: [assignment, embeddings, logits, temperature, optimizer_state]
+  fixed_recipe: Place-3D/config/partition/tp_gnn_binary_regularized.json
+  fixed_training:
+    method: tp-gnn-flat
+    training_mode: binary-cut
+    decoder: binary-probability
+    features: partition-last
+    preserve_macro_singletons: true
+    contraction_passes: 2
+    aggregation_hops: 2
+    embedding_dim: 128
+    device: cuda_required_no_fallback
+    optimizer: Adam
+    learning_rate: 0.003
+    updates: 400
+    full_graph: true
+    seed: paired_case_seed
+    input_seed_feature_scale: 0.05
+    temperature_initial: 1.0
+    temperature_final: 0.1
+    warmup_fraction: 0.25
+    ramp_end_fraction: 0.75
+    cut_weight: 1.0
+    area_balance_weight: 200.0
+    final_binarization_weight: 10.0
+    initial_logit_noise_scale: 0.02
+    final_logit_noise_scale: 0.0
+    logit_noise: seeded_cpu_generator_uniform_area_centered
+    final_phase: final_25_percent_noise_free
+    checkpoint_selection: lowest_noise_free_final_settings_loss_in_final_stable_phase
+    scoring_loss_epoch: max_epochs
+    hard_threshold: 0.5
+    hard_top_rule: probability_greater_than_or_equal_to_threshold
+    feasibility_closure: protected_shared_supernode_preserving_macro_and_area_closure
+  expected_cut:
+    producer: trusted_native_differentiable_hyperedge_cut
+    formula: sum_e(w_e * (1 - product_g_in_e(p_g) - product_g_in_e(1-p_g))) / sum_e(w_e)
+    degree_filter: 2_to_32_unique_known_original_instances_before_contraction
+    group_membership: unique_per_net
+    parallel_nets: retained_separately
+    internal_group_nets: zero_numerator_retained_weight_in_denominator
+    net_weights: frozen_paper_delay_slack_hyperedge_v1
+    per_net_inputs: aligned_read_only_cut_probabilities_and_weights_for_all_retained_nets
+    per_net_cut_gradients: connected_to_same_group_probabilities
+    per_net_order: fixed_original_net_order_after_filtering
+    canonical_cut_diagnostics: protected_unmodified_weights_and_formula
+    callback_exposed_to_candidate: false
+  constraints:
+    complete_allowed_die_assignment: required
+    supernodes: indivisible
+    top_total_area_share: [0.47, 0.53]
+    area_balance_error_definition: abs(top_area-bottom_area)/total_area
+    maximum_area_balance_error: 0.06
+    top_macro_count_share_when_present: [0.45, 0.55]
+    top_macro_area_share_when_present: [0.45, 0.55]
+    infeasible_integer_or_group_load: reject_no_relaxation
+  fixed_downstream:
+    io_seed: 1
+    placement: concurrent-dreamplace
+    placement_seed: paired_case_seed
+    target_density: 0.60
+    macro_halo_um: 10.0
+    hbt: track-aware-greedy
+    physical_threads: 4
+  limits:
+    source_bytes: 18000
+    ast_nodes: 3000
+    loops: forbidden
+    external_io: forbidden
+    mutable_state: forbidden
+    dense_pairwise_tensors: forbidden
+    memory: linear_in_group_features_plus_retained_nets
+    candidate_flow_wall_seconds: 21600
+    search_rounds_template: 30
+    template_is_execution_authorization: false
+  endpoint:
+    checkpoint: 60_opt/checkpoint.json
+    measurement: post_opt_pre_cts
+    directory: 60_opt
+    opt_passes: 1
+    clocks: ideal_pre_cts
+    rc: placement_estimated_die_rc_plus_passive_hbt_pi
+    excluded: [cts, global_route, detailed_route, thermal]
+  objective:
+    direction: maximize
+    metric: combined_score
+    formula: 100 * (0.4 * WNS_deficit_improvement + 0.6 * TNS_deficit_improvement)
+    timing_unit: ns
+    deficit: max(0, -setup_slack)
+    zero_reference_epsilon_ns: 1.0e-12
+    zero_reference_rule: reject_until_official_rule_is_frozen
+    diagnostics_not_rewards: [hpwl, cut_net_count, timing_weighted_cut, training_loss, probability_uncertainty, feasibility_repair_moved_area, runtime]
+  admission:
+    native_loss_hook: source_connected
+    trusted_context_producer: source_connected
+    trusted_physical_collector: source_connected
+    same_contract_native_reference: pending_per_case_fresh_qualification
+    existing_binary_algorithm_is_not_task_qualification: true
+    reference_task_id: tp_gnn_binary_loss_timing
+    reference_recipe_and_initial_program: exact_same_contract_required
+    old_partition_or_hpwl_diagnostic_reference: forbidden
+    missing_reference: only_exact_initial_program_may_create_fresh_reference
+    candidate_exception_or_nonfinite: reject_no_baseline_fallback
+    detached_or_nonscalar_loss: reject
+    incomplete_or_illegal_assignment: reject
+    missing_final_timing: reject_not_zero

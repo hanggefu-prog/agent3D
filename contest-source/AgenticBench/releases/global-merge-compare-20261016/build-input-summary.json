@@ -1,0 +1,22 @@
+{
+  "flags_and_link_commands": {
+    "old_count": 288,
+    "new_count": 288,
+    "changed_count": 0,
+    "changed_examples": []
+  },
+  "compiled_objects": {
+    "old_count": 2340,
+    "new_count": 2340,
+    "changed_count": 2340,
+    "changed_examples": [
+      "src/gpl/CMakeFiles/gpl_lib.dir/src/graphicsNone.cpp.o",
+      "src/sta/CMakeFiles/OpenSTA.dir/spice/WriteSpice.cc.o",
+      "third-party/abc/CMakeFiles/libabc.dir/src/base/acb/acbUtil.c.o"
+    ]
+  },
+  "full_evidence": {
+    "path": "/data-ssd/gcr/agenticbench-integration-20261016/global-compare-v1/build-input-comparison.json",
+    "sha256": "585e926c357016f45feb9d60d567c8d137173218cbed6a0915f89ce0656007f7"
+  }
+}

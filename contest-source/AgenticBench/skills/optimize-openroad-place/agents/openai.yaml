@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenROAD Place Opt Agent"
+  short_description: "Optimize OpenROAD placement, timing and CTS stages"
+  default_prompt: "Use $optimize-openroad-place with repository_context to improve OpenROAD placement, timing optimization and CTS with isolated validation."

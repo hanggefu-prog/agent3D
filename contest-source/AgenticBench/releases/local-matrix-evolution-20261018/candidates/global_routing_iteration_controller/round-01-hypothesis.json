@@ -1,0 +1,4 @@
+{
+  "feedback_use": "No candidate feedback exists yet. The reference shows low final overflow and a wirelength-dominated objective, so this round changes only congestion pressure while leaving search and rip-up behavior native. Per-die overflow, trend, stagnation, phase, and wirelength pressure determine the correction; die identity is not used.",
+  "hypothesis": "A modest phase-dependent reduction in congestion cost should favor shorter routes when overflow pressure is low or improving, while restoring or slightly increasing pressure during meaningful regression and stagnation. This should improve wirelength without broadly sacrificing overflow convergence."
+}

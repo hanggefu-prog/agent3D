@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "control_tests_passed": 213,
+  "subtests_passed": 129,
+  "physical_cells_passed": 15,
+  "raw_metric_values_equal": 75,
+  "active_shared_test_leases": 0,
+  "shared_test_jobs": {
+    "failed_initial_strict_binary_comparison": 1,
+    "succeeded": 2
+  },
+  "test_containers_running": 0,
+  "formal_model_calls": 0,
+  "formal_evaluation_budget_spent": 0,
+  "source_tested": "0a1e5056c54892954bc339bb5c0d6a30e42f9567",
+  "main_merged": false,
+  "comparison_sha256": "8a7648dddf6b0dc05ac719d2965eaaed4ea1881db21ea7a4914aab8fdc94139a"
+}

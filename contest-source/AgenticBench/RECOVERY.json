@@ -1,0 +1,12 @@
+{
+  "copied_files": 613,
+  "historical_snapshot_modified": false,
+  "kind": "agenticbench-maintained-source-recovery",
+  "maintenance_root": "AgenticBench",
+  "post_recovery_changes": "Explicit reference_20261004 adapters are separate edits, not historical source.",
+  "repository_boundary": "Do not include flow and AgenticBench in a single commit.",
+  "schema_version": 1,
+  "source_git_pointer_status": "unavailable-do-not-infer-commit",
+  "source_inventory_sha256": "5190d7dc53506d4395997732c87abb4534cc90bb4e0f359c201851bdd3448258",
+  "source_snapshot": "outputs/evolution-4case-20260928/reference-profile-audit-code/AgenticBench"
+}

@@ -1,0 +1,21 @@
+{
+  "new_failures": [],
+  "resolved_failures": [],
+  "existing_failures": [
+    "tests.test_local_matrix::test_ask_tell_budget_cache_and_matrix_feedback",
+    "tests.test_local_matrix::test_changed_reference_cannot_hit_cached_candidate",
+    "tests.test_local_matrix::test_failed_qualification_never_publishes_reference_matrix",
+    "tests.test_local_matrix::test_native_exception_survives_matrix_and_next_round_feedback",
+    "tests.test_local_matrix::test_new_single_seed_gnn_tasks_do_not_inherit_historical_matrix_authority[tp_gnn_binary_loss_timing]",
+    "tests.test_local_matrix::test_new_single_seed_gnn_tasks_do_not_inherit_historical_matrix_authority[tp_gnn_loss_decoder_timing]",
+    "tests.test_local_matrix::test_placement_matrix_command_uses_supported_native_arguments",
+    "tests.test_local_matrix::test_qualification_passes_null_references_and_keeps_all_physical_evidence",
+    "tests.test_local_matrix::test_seed_overrides_reach_resolved_config_and_embedded_parameters[global_routing_iteration_controller]",
+    "tests.test_local_matrix::test_seed_overrides_reach_resolved_config_and_embedded_parameters[global_routing_maze_cost]",
+    "tests.test_local_matrix::test_seed_overrides_reach_resolved_config_and_embedded_parameters[global_routing_ripup_policy]",
+    "tests.test_local_matrix::test_seed_overrides_reach_resolved_config_and_embedded_parameters[placement_initialization]",
+    "tests.test_local_matrix::test_seed_overrides_reach_resolved_config_and_embedded_parameters[placement_parameters_reference_20260923]",
+    "tests.test_local_matrix::test_seed_overrides_reach_resolved_config_and_embedded_parameters[placement_preconditioner]",
+    "tests.test_local_matrix::test_unexercised_routing_reference_does_not_publish_qualified_matrix"
+  ]
+}

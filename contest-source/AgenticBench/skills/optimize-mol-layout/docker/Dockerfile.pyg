@@ -1,0 +1,15 @@
+FROM gaocr/dreamplace:cuda
+
+# Place-MoL's GNN partitioner imports PyG, while the compatible local
+# DREAMPlace image only contains PyTorch 1.7.1 + CUDA 11.0.  Pin the matching
+# binary-extension generation so the partition can be frozen once before the
+# layout-only refinement loop.  The build context contains locally verified
+# upstream artifacts so the remote build never depends on proxy TLS behavior.
+COPY wheels /tmp/agentic3d-pyg-wheels
+
+RUN python -m pip install --no-cache-dir --no-index --no-deps \
+      /tmp/agentic3d-pyg-wheels/*.whl \
+      /tmp/agentic3d-pyg-wheels/torch_geometric-1.7.2.tar.gz \
+    && rm -rf /tmp/agentic3d-pyg-wheels
+
+RUN python -c "import torch_geometric, torch_scatter, torch_sparse"

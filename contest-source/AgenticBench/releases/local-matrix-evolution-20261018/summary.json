@@ -1,0 +1,74 @@
+{
+  "tasks": 8,
+  "cases": [
+    "bp_fe-ng45",
+    "ariane133-ng45"
+  ],
+  "paired_seeds": [
+    1001,
+    1002,
+    1003
+  ],
+  "proposals_per_task": 2,
+  "qualified_reference_cells": 48,
+  "candidate_cells": 96,
+  "successful_candidate_cells": 89,
+  "failed_candidate_cells": 7,
+  "complete_candidate_matrices": 14,
+  "invalid_candidate_matrices": 2,
+  "actual_model_calls": 17,
+  "discarded_invalid_setup_model_calls": 1,
+  "retained_proposals": 16,
+  "tp_gpu_releases": 18,
+  "gpu_slots_peak": 6,
+  "gpu_slots_peak_per_device": {
+    "0": 3,
+    "1": 3
+  },
+  "live_evaluations_peak": 8,
+  "tp_gpu_slot_minutes_avoided": 49.26479219794273,
+  "tp_cpu_backend_median_seconds": 74.47734971344471,
+  "server_free_gib": 76.71027374267578,
+  "all_owned_resources_returned": true,
+  "aggregation_verified": true,
+  "archived_program_hashes_verified": true,
+  "tests": {
+    "passed": 1267,
+    "skipped": 8,
+    "subtests_passed": 180
+  },
+  "scores": {
+    "hbt_assignment_policy": [
+      0.999724105119355,
+      1.000521848231287
+    ],
+    "placement_initialization": [
+      0.9838181357427422,
+      1.0101465389467077
+    ],
+    "placement_preconditioner": [
+      null,
+      0.9791031942220335
+    ],
+    "tp_gnn_post_placement_timing": [
+      1.0188887462602967,
+      null
+    ],
+    "placement_parameters_reference_20260923": [
+      1.0116240605142848,
+      1.0112232411688058
+    ],
+    "global_routing_iteration_controller": [
+      1.0029070765740764,
+      1.0029070765740764
+    ],
+    "global_routing_maze_cost": [
+      0.9996150460026338,
+      1.0010326648709458
+    ],
+    "global_routing_ripup_policy": [
+      0.9996839095579912,
+      0.9999911402674929
+    ]
+  }
+}

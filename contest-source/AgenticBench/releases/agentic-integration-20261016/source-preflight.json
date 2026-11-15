@@ -1,0 +1,55 @@
+{
+  "total": 8,
+  "passed": 8,
+  "tasks": [
+    {
+      "task": "global_routing_iteration_controller_source",
+      "status": "passed",
+      "program_chars": 282,
+      "prompt_chars": 11778
+    },
+    {
+      "task": "global_routing_maze_cost_source",
+      "status": "passed",
+      "program_chars": 158,
+      "prompt_chars": 11850
+    },
+    {
+      "task": "global_routing_ripup_policy_source",
+      "status": "passed",
+      "program_chars": 179,
+      "prompt_chars": 12164
+    },
+    {
+      "task": "hbt_assignment_policy",
+      "status": "passed",
+      "program_chars": 306,
+      "prompt_chars": 8033
+    },
+    {
+      "task": "placement_initialization",
+      "status": "passed",
+      "program_chars": 5058,
+      "prompt_chars": 11885
+    },
+    {
+      "task": "placement_dynamic_parameters_reference_20260923",
+      "status": "passed",
+      "program_chars": 384,
+      "prompt_chars": 9887
+    },
+    {
+      "task": "placement_preconditioner",
+      "status": "passed",
+      "program_chars": 5101,
+      "prompt_chars": 12199
+    },
+    {
+      "task": "tp_gnn_post_placement_timing",
+      "status": "passed",
+      "program_chars": 625,
+      "prompt_chars": 21749
+    }
+  ],
+  "scope": "CPU source/contract preflight only; no EDA or model calls"
+}

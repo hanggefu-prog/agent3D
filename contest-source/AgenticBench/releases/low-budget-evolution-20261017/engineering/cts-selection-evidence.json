@@ -1,0 +1,54 @@
+[
+  {
+    "case": "swerv_wrapper",
+    "selection": {
+      "baseline_max_per_clock_skew_ns": 0.37280100000000005,
+      "comparison_tolerance_ns": 1e-06,
+      "coordinated_max_per_clock_skew_ns": 0.37280100000000005,
+      "exact_clock_sink_identity_match": true,
+      "improvement_ns": 0.0,
+      "reason": "no-improvement-beyond-numerical-tolerance",
+      "selected": "baseline",
+      "setup_hold_used_for_selection": false
+    }
+  },
+  {
+    "case": "bp",
+    "selection": {
+      "baseline_max_per_clock_skew_ns": 0.455054,
+      "comparison_tolerance_ns": 1e-06,
+      "coordinated_max_per_clock_skew_ns": 0.455054,
+      "exact_clock_sink_identity_match": true,
+      "improvement_ns": 0.0,
+      "reason": "no-improvement-beyond-numerical-tolerance",
+      "selected": "baseline",
+      "setup_hold_used_for_selection": false
+    }
+  },
+  {
+    "case": "ariane133",
+    "selection": {
+      "baseline_max_per_clock_skew_ns": 0.37955900000000004,
+      "comparison_tolerance_ns": 1e-06,
+      "coordinated_max_per_clock_skew_ns": 0.37955900000000004,
+      "exact_clock_sink_identity_match": true,
+      "improvement_ns": 0.0,
+      "reason": "no-improvement-beyond-numerical-tolerance",
+      "selected": "baseline",
+      "setup_hold_used_for_selection": false
+    }
+  },
+  {
+    "case": "bp_fe",
+    "selection": {
+      "baseline_max_per_clock_skew_ns": 0.27951899999999996,
+      "comparison_tolerance_ns": 1e-06,
+      "coordinated_max_per_clock_skew_ns": 0.27951899999999996,
+      "exact_clock_sink_identity_match": true,
+      "improvement_ns": 0.0,
+      "reason": "no-improvement-beyond-numerical-tolerance",
+      "selected": "baseline",
+      "setup_hold_used_for_selection": false
+    }
+  }
+]

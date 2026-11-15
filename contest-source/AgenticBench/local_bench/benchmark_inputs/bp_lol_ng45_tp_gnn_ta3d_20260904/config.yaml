@@ -1,0 +1,25 @@
+design: bp
+type: lol
+pdk: ng45
+threads: 32
+input:
+  mode: rtl
+  variant: default
+partition:
+  algorithm: tp-gnn
+  config: config/partition/tp_gnn_ta3d.json
+  timing_input: /data/gcr/agentic3d-dev/runs/tp_gnn_paper_reference_20260902-v1/references-v4/bp/run/20_partition/timing_input
+placement:
+  algorithm: concurrent-dreamplace
+  gpu: true
+  target_density: 0.60
+hbt:
+  algorithm: track-aware-greedy
+opt:
+  algorithm: openroad
+cts:
+  algorithm: openroad
+routing:
+  algorithm: openroad
+thermal:
+  enabled: false

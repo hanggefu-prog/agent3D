@@ -1,0 +1,161 @@
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+/usr/local/lib/python3.8/dist-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+  return torch._C._cuda_getDeviceCount() > 0
+....................................................................................../opt/dreamplace/dreamplace/ops/weighted_average_wirelength/weighted_average_wirelength.py:207: UserWarning: masked_fill_ received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead. (Triggered internally at  /pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:650.)
+  output[:int(output.numel() // 2)].masked_fill_(ctx.pin_mask, 0.0)
+/opt/dreamplace/dreamplace/ops/weighted_average_wirelength/weighted_average_wirelength.py:208: UserWarning: masked_fill_ received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead. (Triggered internally at  /pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:650.)
+  output[int(output.numel() // 2):].masked_fill_(ctx.pin_mask, 0.0)
+..............................[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+[tp-gnn-flat] load_timing_features: 0.00s
+[tp-gnn-flat] load_prototype_positions: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: starting graph construction, contraction, and feature assembly; embedding training has not started.
+[tp-gnn-flat] build_graph: 0.00s
+[tp-gnn-flat] contract_graph: 0.00s
+[tp-gnn-flat] build_group_features: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: preparing random-walk embedding training; checking dependencies and sampled inputs first, before any optimizer updates.
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: dependencies, sampling, and model initialization are ready; starting embedding training iterations now.
+[tp-gnn-flat] train_or_aggregate: 0.03s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: the embedding stage returned status=trained; starting clustering, partition decoding, and the existing feasibility checks.
+[tp-gnn-flat] weighted_kmeans: 0.00s
+[tp-gnn-flat] area_balanced_weighted_kmeans: 0.00s
+[tp-gnn-flat] lol_handoff_contract: 0.00s
+[tp-gnn-flat] cluster_and_refine: 0.00s
+[open3dbench-log] OUTPUT TP-GNN: returning this run's tier assignment and method report; downstream physical placement and independent validation are still required.
+[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+[tp-gnn-flat] load_timing_features: 0.00s
+[tp-gnn-flat] load_prototype_positions: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: starting graph construction, contraction, and feature assembly; embedding training has not started.
+[tp-gnn-flat] build_graph: 0.00s
+[tp-gnn-flat] contract_graph: 0.00s
+[tp-gnn-flat] build_group_features: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: preparing random-walk embedding training; checking dependencies and sampled inputs first, before any optimizer updates.
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: dependencies, sampling, and model initialization are ready; starting embedding training iterations now.
+[tp-gnn-flat] train_or_aggregate: 0.01s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: the embedding stage returned status=trained; starting clustering, partition decoding, and the existing feasibility checks.
+[tp-gnn-flat] weighted_kmeans: 0.00s
+[tp-gnn-flat] area_balanced_weighted_kmeans: 0.00s
+[tp-gnn-flat] lol_handoff_contract: 0.00s
+[tp-gnn-flat] cluster_and_refine: 0.00s
+[open3dbench-log] OUTPUT TP-GNN: returning this run's tier assignment and method report; downstream physical placement and independent validation are still required.
+.[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+...................................[open3dbench-log] INPUT partition: reading the existing netlist input /tmp/tmperze3gpg/design.input; this command does not regenerate the upstream physical prototype.
+[open3dbench-log] CURRENT_EXECUTION partition: starting the tp-gnn-flat partition adapter; input loading, training, and decoding have separate progress records.
+[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+[tp-gnn-flat] load_timing_features: 0.00s
+[open3dbench-log] INPUT TP-GNN: reading the upstream prototype DEF /tmp/tmperze3gpg/prototype.def; using existing coordinates without rerunning prototype placement.
+[tp-gnn-flat] load_prototype_positions: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: starting graph construction, contraction, and feature assembly; embedding training has not started.
+[tp-gnn-flat] build_graph: 0.00s
+[tp-gnn-flat] contract_graph: 0.00s
+[tp-gnn-flat] build_group_features: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: running deterministic embedding aggregation; this branch does not perform random-walk training.
+[tp-gnn-flat] train_or_aggregate: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: the embedding stage returned status=deterministic_aggregation; starting clustering, partition decoding, and the existing feasibility checks.
+[tp-gnn-flat] weighted_kmeans: 0.00s
+[tp-gnn-flat] area_balanced_weighted_kmeans: 0.00s
+[tp-gnn-flat] lol_handoff_contract: 0.00s
+[tp-gnn-flat] cluster_and_refine: 0.00s
+[open3dbench-log] OUTPUT TP-GNN: returning this run's tier assignment and method report; downstream physical placement and independent validation are still required.
+[open3dbench-log] OUTPUT partition: this run's assignment and handoff are written to /tmp/tmperze3gpg/out; placement is a separate downstream execution, not rerun here. Cut and balance describe partition connectivity and load balance, not final STA results.
+.......[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+[tp-gnn-flat] load_timing_features: 0.00s
+[open3dbench-log] INPUT TP-GNN: reading the upstream prototype DEF /tmp/tmpq5g8da6e/input.def; using existing coordinates without rerunning prototype placement.
+[tp-gnn-flat] load_prototype_positions: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: starting graph construction, contraction, and feature assembly; embedding training has not started.
+[tp-gnn-flat] build_graph: 0.00s
+[tp-gnn-flat] contract_graph: 0.00s
+[tp-gnn-flat] build_group_features: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: preparing random-walk embedding training; checking dependencies and sampled inputs first, before any optimizer updates.
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: dependencies, sampling, and model initialization are ready; starting embedding training iterations now.
+[tp-gnn-flat] train_or_aggregate: 0.04s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: the embedding stage returned status=trained; starting clustering, partition decoding, and the existing feasibility checks.
+[tp-gnn-flat] weighted_kmeans: 0.00s
+[tp-gnn-flat] area_balanced_weighted_kmeans: 0.00s
+[tp-gnn-flat] lol_handoff_contract: 0.00s
+[tp-gnn-flat] cluster_and_refine: 0.00s
+[open3dbench-log] OUTPUT TP-GNN: returning this run's tier assignment and method report; downstream physical placement and independent validation are still required.
+...[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+[tp-gnn-flat] load_timing_features: 0.00s
+[open3dbench-log] INPUT TP-GNN: reading the upstream prototype DEF /tmp/tmpsnrp6lg0/input.def; using existing coordinates without rerunning prototype placement.
+[tp-gnn-flat] load_prototype_positions: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: starting graph construction, contraction, and feature assembly; embedding training has not started.
+[tp-gnn-flat] build_graph: 0.00s
+[tp-gnn-flat] contract_graph: 0.00s
+[tp-gnn-flat] build_group_features: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: running deterministic embedding aggregation; this branch does not perform random-walk training.
+[tp-gnn-flat] train_or_aggregate: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: the embedding stage returned status=deterministic_aggregation; starting clustering, partition decoding, and the existing feasibility checks.
+[tp-gnn-flat] weighted_kmeans: 0.00s
+[tp-gnn-flat] area_balanced_weighted_kmeans: 0.00s
+[tp-gnn-flat] lol_handoff_contract: 0.00s
+[tp-gnn-flat] cluster_and_refine: 0.00s
+[open3dbench-log] OUTPUT TP-GNN: returning this run's tier assignment and method report; downstream physical placement and independent validation are still required.
+.[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+[tp-gnn-flat] load_timing_features: 0.00s
+[open3dbench-log] INPUT TP-GNN: reading the upstream prototype DEF /tmp/tmpc2e8icx1/input.def; using existing coordinates without rerunning prototype placement.
+[tp-gnn-flat] load_prototype_positions: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: starting graph construction, contraction, and feature assembly; embedding training has not started.
+[tp-gnn-flat] build_graph: 0.00s
+[tp-gnn-flat] contract_graph: 0.00s
+[tp-gnn-flat] build_group_features: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: running deterministic embedding aggregation; this branch does not perform random-walk training.
+[tp-gnn-flat] train_or_aggregate: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: the embedding stage returned status=deterministic_aggregation; starting clustering, partition decoding, and the existing feasibility checks.
+[tp-gnn-flat] weighted_kmeans: 0.00s
+[tp-gnn-flat] area_balanced_weighted_kmeans: 0.00s
+.[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+[tp-gnn-flat] load_timing_features: 0.00s
+[open3dbench-log] INPUT TP-GNN: reading the upstream prototype DEF /tmp/tmp8l8o33dl/input.def; using existing coordinates without rerunning prototype placement.
+[tp-gnn-flat] load_prototype_positions: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: starting graph construction, contraction, and feature assembly; embedding training has not started.
+[tp-gnn-flat] build_graph: 0.00s
+[tp-gnn-flat] contract_graph: 0.00s
+[tp-gnn-flat] build_group_features: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: running deterministic embedding aggregation; this branch does not perform random-walk training.
+[tp-gnn-flat] train_or_aggregate: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: the embedding stage returned status=deterministic_aggregation; starting clustering, partition decoding, and the existing feasibility checks.
+[tp-gnn-flat] weighted_kmeans: 0.00s
+[tp-gnn-flat] area_balanced_weighted_kmeans: 0.00s
+[tp-gnn-flat] lol_handoff_contract: 0.00s
+[tp-gnn-flat] cluster_and_refine: 0.00s
+[open3dbench-log] OUTPUT TP-GNN: returning this run's tier assignment and method report; downstream physical placement and independent validation are still required.
+...[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+[tp-gnn-flat] load_timing_features: 0.00s
+[open3dbench-log] INPUT TP-GNN: reading the upstream prototype DEF /tmp/tmpug9o_e1h/input.def; using existing coordinates without rerunning prototype placement.
+[tp-gnn-flat] load_prototype_positions: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: starting graph construction, contraction, and feature assembly; embedding training has not started.
+[tp-gnn-flat] build_graph: 0.00s
+[tp-gnn-flat] contract_graph: 0.00s
+[tp-gnn-flat] build_group_features: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: running deterministic embedding aggregation; this branch does not perform random-walk training.
+[tp-gnn-flat] train_or_aggregate: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: the embedding stage returned status=deterministic_aggregation; starting clustering, partition decoding, and the existing feasibility checks.
+[tp-gnn-flat] weighted_kmeans: 0.00s
+[tp-gnn-flat] area_balanced_weighted_kmeans: 0.00s
+......[open3dbench-log] INPUT TP-GNN: resolving upstream timing features and weights, mode=none; this step does not run STA.
+[tp-gnn-flat] load_timing_features: 0.00s
+[open3dbench-log] INPUT TP-GNN: reading the upstream prototype DEF /tmp/tmpkbr3yu_k/input.def; using existing coordinates without rerunning prototype placement.
+[tp-gnn-flat] load_prototype_positions: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: starting graph construction, contraction, and feature assembly; embedding training has not started.
+[tp-gnn-flat] build_graph: 0.00s
+[tp-gnn-flat] contract_graph: 0.00s
+[tp-gnn-flat] build_group_features: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: running deterministic embedding aggregation; this branch does not perform random-walk training.
+[tp-gnn-flat] train_or_aggregate: 0.00s
+[open3dbench-log] CURRENT_EXECUTION TP-GNN: the embedding stage returned status=deterministic_aggregation; starting clustering, partition decoding, and the existing feasibility checks.
+[tp-gnn-flat] weighted_kmeans: 0.00s
+[tp-gnn-flat] area_balanced_weighted_kmeans: 0.00s
+[tp-gnn-flat] lol_handoff_contract: 0.00s
+[tp-gnn-flat] cluster_and_refine: 0.00s
+[open3dbench-log] OUTPUT TP-GNN: returning this run's tier assignment and method report; downstream physical placement and independent validation are still required.
+.........................
+----------------------------------------------------------------------
+Ran 198 tests in 0.950s
+
+OK
+Wrote LoL partition artifacts: /tmp/tmperze3gpg/out
+Instances: 8, nets: 1
+Top area ratio: 0.500000
+Cut net ratio: 1.000000
+Lib cells parsed: 1

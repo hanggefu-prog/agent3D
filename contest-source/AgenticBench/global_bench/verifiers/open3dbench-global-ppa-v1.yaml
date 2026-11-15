@@ -1,0 +1,14 @@
+schema_version: 1
+id: open3dbench-global-ppa-v1
+image: open3dbench:release
+image_digest: null
+entrypoint:
+  - python3
+  - /trusted/open3dbench_global_verifier.py
+  - --submission
+  - /submission
+  - --output
+  - /verifier-output
+  - --evaluated-run
+  - /evaluation-run
+timeout_seconds: 86400

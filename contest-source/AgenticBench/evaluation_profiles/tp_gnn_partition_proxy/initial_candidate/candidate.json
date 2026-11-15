@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "config_overrides": {"partition": {"algorithm": "tp-gnn"}},
+  "candidate_files": {},
+  "source_patch": "",
+  "notes": "Maintained TP-GNN proxy reference."
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Thermal Evaluation"
+  short_description: "Evaluate and attribute 3D-IC temperature with HotSpot"
+  default_prompt: "Use $open3dbench-thermal-evaluation to evaluate this selected partition-placement candidate and, when requested, attribute its temperature change across placement, OPT/CTS, and routing."

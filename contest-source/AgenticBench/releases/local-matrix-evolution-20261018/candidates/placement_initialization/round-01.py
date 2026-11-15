@@ -1,0 +1,317 @@
+# EVOLVE-BLOCK-START
+def initialize_position(params, placedb, die_contexts=None):
+    """Initialize each tier with a conservative area-quantile redistribution.
+
+    Hypothesis: moving movable centers partway toward an area-uniform distribution
+    over the utilization/target-density footprint reduces early congestion while
+    preserving coordinate order, tier ownership, and most original wire locality.
+    Native feedback has worst overflow above 0.01 in all six reference cells;
+    no candidate measurements are available yet, so this round makes only this
+    one geometry-aware change and leaves filler initialization native.
+    """
+    init_pos = np.zeros(placedb.num_nodes * 2, dtype=placedb.dtype)
+
+    # Preserve all supplied physical-node coordinates initially.
+    init_pos[0:placedb.num_physical_nodes] = placedb.node_x
+    if params.global_place_flag and params.random_center_init_flag:
+        logging.info("move cells to the center of layout with random noise")
+        init_pos[0:placedb.num_movable_nodes] = np.random.normal(
+            loc=(placedb.xl * 1.0 + placedb.xh * 1.0) / 2,
+            scale=(placedb.xh - placedb.xl) * 0.001,
+            size=placedb.num_movable_nodes,
+        )
+
+    init_pos[
+        placedb.num_nodes:placedb.num_nodes + placedb.num_physical_nodes
+    ] = placedb.node_y
+    if params.global_place_flag and params.random_center_init_flag:
+        init_pos[
+            placedb.num_nodes:placedb.num_nodes + placedb.num_movable_nodes
+        ] = np.random.normal(
+            loc=(placedb.yl * 1.0 + placedb.yh * 1.0) / 2,
+            scale=(placedb.yh - placedb.yl) * 0.001,
+            size=placedb.num_movable_nodes,
+        )
+
+    # Apply one bounded monotone redistribution independently inside each region.
+    # Area-weighted quantiles spread crowded coordinates and compact unnecessarily
+    # sparse coordinates toward the footprint implied by utilization/target density.
+    if params.global_place_flag and placedb.num_movable_nodes > 0 and len(placedb.regions) > 0:
+        movable_region_map = placedb.node2fence_region_map[
+            0:placedb.num_movable_nodes
+        ]
+        blend = 0.30
+
+        for region_id, region in enumerate(placedb.regions):
+            if region is None or region.size == 0:
+                continue
+
+            movable_ids = np.nonzero(movable_region_map == region_id)[0]
+            if movable_ids.size == 0:
+                continue
+
+            region_widths = np.maximum(region[:, 2] - region[:, 0], 0.0)
+            region_heights = np.maximum(region[:, 3] - region[:, 1], 0.0)
+            region_area = np.sum(region_widths * region_heights)
+            if not np.isfinite(region_area) or region_area <= 0.0:
+                continue
+
+            movable_area = np.sum(
+                placedb.node_size_x[movable_ids]
+                * placedb.node_size_y[movable_ids]
+            )
+            utilization = movable_area / region_area
+            target_density = 0.60
+
+            if die_contexts is not None:
+                for context in die_contexts:
+                    if context is not None and context[1] == region_id:
+                        if (
+                            context[2] is not None
+                            and np.isfinite(context[2])
+                            and context[2] > 0.0
+                        ):
+                            utilization = context[2]
+                        if (
+                            context[3] is not None
+                            and np.isfinite(context[3])
+                            and context[3] > 0.0
+                        ):
+                            target_density = context[3]
+                        break
+
+            if (
+                not np.isfinite(utilization)
+                or not np.isfinite(target_density)
+                or target_density <= 0.0
+            ):
+                continue
+
+            footprint_fraction = np.sqrt(
+                np.maximum(utilization / target_density, 0.0)
+            )
+            footprint_fraction = np.minimum(
+                np.maximum(footprint_fraction, 0.35), 0.98
+            )
+
+            # Associate every movable object with the nearest box belonging to its
+            # assigned region. For already legal inputs this retains its current box.
+            centers_x = (
+                init_pos[movable_ids]
+                + 0.5 * placedb.node_size_x[movable_ids]
+            )
+            centers_y = (
+                init_pos[placedb.num_nodes + movable_ids]
+                + 0.5 * placedb.node_size_y[movable_ids]
+            )
+            box_choice = np.full(movable_ids.size, -1, dtype=np.int32)
+            best_distance = np.full(
+                movable_ids.size, np.inf, dtype=placedb.dtype
+            )
+
+            for box_id, box in enumerate(region):
+                distance_x = np.maximum(
+                    np.maximum(box[0] - centers_x, 0.0), centers_x - box[2]
+                )
+                distance_y = np.maximum(
+                    np.maximum(box[1] - centers_y, 0.0), centers_y - box[3]
+                )
+                distance = distance_x * distance_x + distance_y * distance_y
+                better = distance < best_distance
+                best_distance[better] = distance[better]
+                box_choice[better] = box_id
+
+            for box_id, box in enumerate(region):
+                local_ids = movable_ids[box_choice == box_id]
+                if local_ids.size < 2:
+                    continue
+
+                box_width = box[2] - box[0]
+                box_height = box[3] - box[1]
+                if box_width <= 0.0 or box_height <= 0.0:
+                    continue
+
+                widths = placedb.node_size_x[local_ids]
+                heights = placedb.node_size_y[local_ids]
+                weights = widths * heights
+                total_weight = np.sum(weights)
+                if not np.isfinite(total_weight) or total_weight <= 0.0:
+                    weights = np.ones(local_ids.size, dtype=placedb.dtype)
+                    total_weight = np.sum(weights)
+
+                current_x = init_pos[local_ids] + 0.5 * widths
+                current_y = (
+                    init_pos[placedb.num_nodes + local_ids] + 0.5 * heights
+                )
+                centroid_x = np.sum(current_x * weights) / total_weight
+                centroid_y = np.sum(current_y * weights) / total_weight
+
+                span_x = box_width * footprint_fraction
+                span_y = box_height * footprint_fraction
+                footprint_xl = np.minimum(
+                    np.maximum(centroid_x - 0.5 * span_x, box[0]),
+                    box[2] - span_x,
+                )
+                footprint_yl = np.minimum(
+                    np.maximum(centroid_y - 0.5 * span_y, box[1]),
+                    box[3] - span_y,
+                )
+
+                order_x = np.argsort(current_x, kind="mergesort")
+                quantile_x = (
+                    np.cumsum(weights[order_x]) - 0.5 * weights[order_x]
+                ) / total_weight
+                target_x = footprint_xl + quantile_x * span_x
+                redistributed_x = current_x.copy()
+                redistributed_x[order_x] = target_x
+
+                order_y = np.argsort(current_y, kind="mergesort")
+                quantile_y = (
+                    np.cumsum(weights[order_y]) - 0.5 * weights[order_y]
+                ) / total_weight
+                target_y = footprint_yl + quantile_y * span_y
+                redistributed_y = current_y.copy()
+                redistributed_y[order_y] = target_y
+
+                new_center_x = (
+                    (1.0 - blend) * current_x + blend * redistributed_x
+                )
+                new_center_y = (
+                    (1.0 - blend) * current_y + blend * redistributed_y
+                )
+
+                maximum_x = box[2] - widths
+                maximum_y = box[3] - heights
+                legal_x = maximum_x >= box[0]
+                legal_y = maximum_y >= box[1]
+
+                new_x = init_pos[local_ids].copy()
+                new_y = init_pos[placedb.num_nodes + local_ids].copy()
+                new_x[legal_x] = np.minimum(
+                    np.maximum(
+                        new_center_x[legal_x] - 0.5 * widths[legal_x], box[0]
+                    ),
+                    maximum_x[legal_x],
+                )
+                new_y[legal_y] = np.minimum(
+                    np.maximum(
+                        new_center_y[legal_y] - 0.5 * heights[legal_y], box[1]
+                    ),
+                    maximum_y[legal_y],
+                )
+
+                init_pos[local_ids] = new_x
+                init_pos[placedb.num_nodes + local_ids] = new_y
+
+    # Retain the native filler policy and random stream consumption.
+    if placedb.num_filler_nodes:
+        if len(placedb.regions) > 0:
+            for i, region in enumerate(placedb.regions):
+                filler_beg, filler_end = placedb.filler_start_map[i:i + 2]
+                subregion_areas = (
+                    (region[:, 2] - region[:, 0])
+                    * (region[:, 3] - region[:, 1])
+                )
+                total_area = np.sum(subregion_areas)
+                subregion_area_ratio = subregion_areas / total_area
+                subregion_num_filler = np.round(
+                    (filler_end - filler_beg) * subregion_area_ratio
+                )
+                subregion_num_filler[-1] = (
+                    (filler_end - filler_beg)
+                    - np.sum(subregion_num_filler[:-1])
+                )
+                subregion_num_filler_start_map = np.concatenate(
+                    [np.zeros([1]), np.cumsum(subregion_num_filler)], 0
+                ).astype(np.int32)
+
+                for j, subregion in enumerate(region):
+                    sub_filler_beg, sub_filler_end = (
+                        subregion_num_filler_start_map[j:j + 2]
+                    )
+                    init_pos[
+                        placedb.num_physical_nodes
+                        + filler_beg
+                        + sub_filler_beg:
+                        placedb.num_physical_nodes
+                        + filler_beg
+                        + sub_filler_end
+                    ] = np.random.uniform(
+                        low=subregion[0],
+                        high=(
+                            subregion[2]
+                            - placedb.filler_size_x_fence_region[i]
+                        ),
+                        size=sub_filler_end - sub_filler_beg,
+                    )
+                    init_pos[
+                        placedb.num_nodes
+                        + placedb.num_physical_nodes
+                        + filler_beg
+                        + sub_filler_beg:
+                        placedb.num_nodes
+                        + placedb.num_physical_nodes
+                        + filler_beg
+                        + sub_filler_end
+                    ] = np.random.uniform(
+                        low=subregion[1],
+                        high=(
+                            subregion[3]
+                            - placedb.filler_size_y_fence_region[i]
+                        ),
+                        size=sub_filler_end - sub_filler_beg,
+                    )
+
+            if len(placedb.filler_start_map) > len(placedb.regions) + 1:
+                filler_beg, filler_end = placedb.filler_start_map[-2:]
+                init_pos[
+                    placedb.num_physical_nodes + filler_beg:
+                    placedb.num_physical_nodes + filler_end
+                ] = np.random.uniform(
+                    low=placedb.xl,
+                    high=(
+                        placedb.xh
+                        - placedb.filler_size_x_fence_region[-1]
+                    ),
+                    size=filler_end - filler_beg,
+                )
+                init_pos[
+                    placedb.num_nodes
+                    + placedb.num_physical_nodes
+                    + filler_beg:
+                    placedb.num_nodes
+                    + placedb.num_physical_nodes
+                    + filler_end
+                ] = np.random.uniform(
+                    low=placedb.yl,
+                    high=(
+                        placedb.yh
+                        - placedb.filler_size_y_fence_region[-1]
+                    ),
+                    size=filler_end - filler_beg,
+                )
+        else:
+            init_pos[
+                placedb.num_physical_nodes:placedb.num_nodes
+            ] = np.random.uniform(
+                low=placedb.xl,
+                high=(
+                    placedb.xh
+                    - placedb.node_size_x[-placedb.num_filler_nodes]
+                ),
+                size=placedb.num_filler_nodes,
+            )
+            init_pos[
+                placedb.num_nodes + placedb.num_physical_nodes:
+                placedb.num_nodes * 2
+            ] = np.random.uniform(
+                low=placedb.yl,
+                high=(
+                    placedb.yh
+                    - placedb.node_size_y[-placedb.num_filler_nodes]
+                ),
+                size=placedb.num_filler_nodes,
+            )
+
+    return init_pos
+# EVOLVE-BLOCK-END

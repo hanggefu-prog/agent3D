@@ -1,0 +1,44 @@
+{
+  "command": "PYTHONPATH=AgenticBench:. python AgenticBench/scripts/test_maintained_tasks.py --tb=short",
+  "passed": 1239,
+  "skipped": 8,
+  "subtests_passed": 180,
+  "wall_seconds": 66.72,
+  "openevolve_version": "0.4.0",
+  "junit_sha256": "82f5ecaced60d62dc9d0e7911369fe940211e4c6a9db23f2755da731274cd213",
+  "skip_details": [
+    {
+      "test": "tests.test_evolution_bridge.ExternalEvoStageIntegrationTest.test_real_randsample_class_uses_literal_bridge",
+      "reason": "set EVOSTAGE_ROOT for external integration"
+    },
+    {
+      "test": "tests.test_latest_recipe_packaging.LatestRecipePackagingTest.test_wheel_binds_all_four_profiles_without_source_checkout",
+      "reason": "Wheel build requires the optional packaging test environment"
+    },
+    {
+      "test": "tests.test_tp_gnn_compact_feedback.test_pair_audit_uses_actual_pairs_and_is_bounded",
+      "reason": "could not import 'torch': No module named 'torch'"
+    },
+    {
+      "test": "tests.test_tp_gnn_compact_feedback.test_audit_does_not_change_training_and_is_repeatable",
+      "reason": "could not import 'torch': No module named 'torch'"
+    },
+    {
+      "test": "tests.test_tp_gnn_timing_context.test_real_training_initial_loss_preserves_embeddings_and_budget[False]",
+      "reason": "could not import 'torch': No module named 'torch'"
+    },
+    {
+      "test": "tests.test_tp_gnn_timing_context.test_real_training_initial_loss_preserves_embeddings_and_budget[True]",
+      "reason": "could not import 'torch': No module named 'torch'"
+    },
+    {
+      "test": "tests.test_tp_gnn_timing_context.test_timing_structural_loss_real_autograd_and_repeatability[False]",
+      "reason": "could not import 'torch': No module named 'torch'"
+    },
+    {
+      "test": "tests.test_tp_gnn_timing_context.test_timing_structural_loss_real_autograd_and_repeatability[True]",
+      "reason": "could not import 'torch': No module named 'torch'"
+    }
+  ],
+  "scope": "Current maintained local, engineering and post-GRT contracts; not the full historical suite."
+}

@@ -1,0 +1,4 @@
+{
+  "feedback_use": "Round-1 improved every ariane133 seed and low-overflow bp_fe s3, but regressed higher-overflow bp_fe s1/s2. The policy therefore admits clean detours only under low current die pressure.",
+  "hypothesis": "When die-wide overflow is low, selectively rerouting long, materially detoured ordinary edges can recover wirelength without disrupting specialized nets or native congestion cleanup."
+}

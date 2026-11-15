@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Environment Check"
+  short_description: "Qualify repository, runtime, tools, and GPU"
+  default_prompt: "Use $open3dbench-environment-check to qualify this Open3DBench environment without modifying it."

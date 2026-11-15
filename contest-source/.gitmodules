@@ -1,0 +1,3 @@
+[submodule "OpenROAD-3D/openroad"]
+	path = OpenROAD-3D/openroad
+	url = https://github.com/xiaosiCU/OpenROAD-3D.git

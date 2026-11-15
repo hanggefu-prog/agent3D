@@ -1,0 +1,21 @@
+.agentic3d/
+.venv/
+.env
+.env.*
+!.env.example
+evolution_runs/
+output/
+tmp/
+analysis/
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Machine-local qualification evidence, deployment bindings and recovery notes.
+/qualification/
+/files/
+/plan.md

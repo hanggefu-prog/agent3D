@@ -1,0 +1,451 @@
+{
+  "input_summary": {
+    "area_definition": "sum of LEF physical rectangle areas excluding COVER",
+    "cell_area_um2": 259942.38200003933,
+    "component_area_um2": 679560.8400000404,
+    "dbu_per_micron": 2000,
+    "declared_clock_commands": 1,
+    "instance_count": 131550,
+    "lef_inputs_found": 3,
+    "lef_inputs_requested": 3,
+    "macro_area_um2": 419618.4580000011,
+    "macro_count": 133,
+    "missing_lef_masters": [],
+    "missing_metric_reason": null,
+    "net_count": 161308,
+    "pin_count": 495,
+    "source": "design.def"
+  },
+  "mode": "rtl",
+  "observability": {
+    "artifact_paths": [
+      "design_params.json",
+      "macro_inventory.json",
+      "metrics.json",
+      "synthesis_metrics.json"
+    ],
+    "collection_issues": [],
+    "commands": [
+      {
+        "attempt_id": "4a9d9854630247238361add15a8f0789",
+        "command": [
+          "make",
+          "--no-print-directory",
+          "-f",
+          "Makefile",
+          "DESIGN_CONFIG=/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/workspace/OpenROAD-3D/flow/designs/nangate45/ariane133/config.mk",
+          "PLATFORM=nangate45",
+          "WORK_HOME=/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/openroad_work/63f55412fe985bfd",
+          "FLOW_VARIANT=input",
+          "ABC_CLOCK_PERIOD_IN_PS=4000",
+          "SYNTH_HIERARCHICAL=0",
+          "RTLMP_FLOW=0",
+          "PRESERVE_CELLS=SyncSpRamBeNx64_00000008_00000100_0_2 limping_SyncSpRamBeNx64_00000008_00000100_0_2 SyncSpRamBeNx64_00000008_00000100_0_2_d45 SyncSpRamBeNx64_00000008_00000100_0_2_d44",
+          "synth",
+          "do-2_1_floorplan"
+        ],
+        "command_id": "9743e31c61544cd2b95ee5ecf5fcc8f3",
+        "completed_at": "2026-11-01T04:49:29.645773+00:00",
+        "component": "make",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/workspace/OpenROAD-3D/flow",
+        "die": null,
+        "line": 1,
+        "log": "synthesis.log",
+        "log_format": "sectioned-tool-transcript-v1",
+        "log_role": "unclassified",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 8,
+        "parent_command_id": null,
+        "peak_process_tree_rss_kib_sampled": 4011016,
+        "returncode": 0,
+        "runtime_seconds": 1045.2839927226305,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "stage": "input",
+        "started_at": "2026-11-01T04:32:04.361821+00:00",
+        "step": "tool_command",
+        "warning_error_line_count": 677
+      },
+      {
+        "attempt_id": "4a9d9854630247238361add15a8f0789",
+        "command": [
+          "make",
+          "--no-print-directory",
+          "-f",
+          "Makefile",
+          "DESIGN_CONFIG=/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/workspace/OpenROAD-3D/flow/designs/nangate45/ariane133/config.mk",
+          "PLATFORM=nangate45",
+          "WORK_HOME=/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/openroad_work/63f55412fe985bfd",
+          "FLOW_VARIANT=input",
+          "ABC_CLOCK_PERIOD_IN_PS=4000",
+          "SYNTH_HIERARCHICAL=0",
+          "RTLMP_FLOW=0",
+          "PRESERVE_CELLS=SyncSpRamBeNx64_00000008_00000100_0_2 limping_SyncSpRamBeNx64_00000008_00000100_0_2 SyncSpRamBeNx64_00000008_00000100_0_2_d45 SyncSpRamBeNx64_00000008_00000100_0_2_d44",
+          "2_1_floorplan.odb.def"
+        ],
+        "command_id": "52b67a1b01f44f1a9cc939bb294ed378",
+        "completed_at": "2026-11-01T04:49:33.683183+00:00",
+        "component": "make",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/workspace/OpenROAD-3D/flow",
+        "die": null,
+        "line": 2,
+        "log": "synthesis_export.log",
+        "log_format": "sectioned-tool-transcript-v1",
+        "log_role": "unclassified",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 8,
+        "parent_command_id": null,
+        "peak_process_tree_rss_kib_sampled": 245780,
+        "returncode": 0,
+        "runtime_seconds": 2.6793361455202103,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "stage": "input",
+        "started_at": "2026-11-01T04:49:31.003878+00:00",
+        "step": "tool_command",
+        "warning_error_line_count": 0
+      },
+      {
+        "attempt_id": "4a9d9854630247238361add15a8f0789",
+        "command": [
+          "/usr/local/bin/openroad",
+          "-exit",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/00_input/macro_inventory.tcl"
+        ],
+        "command_id": "448421fed1544a1cb35b1135855b8293",
+        "completed_at": "2026-11-01T04:49:34.705822+00:00",
+        "component": "OpenROAD",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/workspace/OpenROAD-3D/flow",
+        "die": null,
+        "line": 3,
+        "log": "macro_inventory.log",
+        "log_format": "sectioned-tool-transcript-v1",
+        "log_role": "native_tool",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 8,
+        "parent_command_id": null,
+        "peak_process_tree_rss_kib_sampled": 1136,
+        "returncode": 0,
+        "runtime_seconds": 0.9500349834561348,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "stage": "input",
+        "started_at": "2026-11-01T04:49:33.755822+00:00",
+        "step": "physical_tool",
+        "warning_error_line_count": 0
+      }
+    ],
+    "completed_at": "2026-11-01T04:49:41.751464+00:00",
+    "design": "ariane133",
+    "error": null,
+    "histories": {
+      "optimization": {
+        "available": false,
+        "reason": "no recognized tool iteration records"
+      },
+      "training": {
+        "available": false,
+        "reason": "no recognized tool iteration records"
+      }
+    },
+    "logs": {
+      "byte_identical_groups": [],
+      "duplicate_semantics": "identical bytes alone do not prove duplicate execution; no files removed",
+      "files": [
+        {
+          "bytes": 1408,
+          "classification_source": "commands.jsonl:3",
+          "ownership": "current_stage",
+          "path": "macro_inventory.log",
+          "role": "native_tool",
+          "sections": [
+            {
+              "inside_upstream_reference": false,
+              "line": 1,
+              "text": "=== CONTEXT / Log ownership ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 2,
+              "text": "stage=\"input\" component=\"OpenROAD\" step=\"physical_tool\" die=null role=\"native_tool\""
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 3,
+              "text": "attempt_id=\"4a9d9854630247238361add15a8f0789\" command_id=\"448421fed1544a1cb35b1135855b8293\" parent_command_id=null"
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 4,
+              "text": "=== INPUT / Existing inputs and configuration; no upstream rerun implied ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 5,
+              "text": "No explicit input-file arguments recognized. Inputs may come from tool configuration or environment; their provenance is not inferred."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 6,
+              "text": "=== CURRENT_EXECUTION / Current command output in original tool order ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 7,
+              "text": "Nested commands have their own boundaries. Parent timings may include child timings; do not add them together."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 14,
+              "text": "=== OUTPUT / Current command exit and downstream handoff locations ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 15,
+              "text": "process_returncode=0; process exit only, not stage validation."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 16,
+              "text": "Stage conclusions come from run.json, stage_manifest.json, and checkpoint/validation results. A log footer is not proof of success."
+            }
+          ],
+          "sections_omitted": 0,
+          "sha256": "d62008d792968fe0e1204f2b4073816286cfcae7166ea892eb1a427388fd6231",
+          "source_sha256": "d62008d792968fe0e1204f2b4073816286cfcae7166ea892eb1a427388fd6231",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {},
+          "warning_examples": [],
+          "warning_groups": [],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 0,
+          "warning_occurrences_by_text_scope": {},
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 122347,
+          "classification_source": "commands.jsonl:1",
+          "ownership": "current_stage",
+          "path": "synthesis.log",
+          "role": "unclassified",
+          "sections": [
+            {
+              "inside_upstream_reference": false,
+              "line": 1,
+              "text": "=== CONTEXT / Log ownership ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 2,
+              "text": "stage=\"input\" component=\"make\" step=\"tool_command\" die=null role=\"unclassified\""
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 3,
+              "text": "attempt_id=\"4a9d9854630247238361add15a8f0789\" command_id=\"9743e31c61544cd2b95ee5ecf5fcc8f3\" parent_command_id=null"
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 4,
+              "text": "=== INPUT / Existing inputs and configuration; no upstream rerun implied ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 5,
+              "text": "No explicit input-file arguments recognized. Inputs may come from tool configuration or environment; their provenance is not inferred."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 6,
+              "text": "=== CURRENT_EXECUTION / Current command output in original tool order ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 7,
+              "text": "Nested commands have their own boundaries. Parent timings may include child timings; do not add them together."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 1163,
+              "text": "=== OUTPUT / Current command exit and downstream handoff locations ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 1164,
+              "text": "process_returncode=0; process exit only, not stage validation."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 1165,
+              "text": "Stage conclusions come from run.json, stage_manifest.json, and checkpoint/validation results. A log footer is not proof of success."
+            }
+          ],
+          "sections_omitted": 0,
+          "sha256": "c387766a689563aadb8d36df6494d542e28a91348850cd9d57e39d0b9b698234",
+          "source_sha256": "c387766a689563aadb8d36df6494d542e28a91348850cd9d57e39d0b9b698234",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "IFP-0028": 1
+          },
+          "warning_examples": [
+            {
+              "line": 1109,
+              "text": "[WARNING IFP-0028] Core area lower left (10.000, 12.000) snapped to (10.070, 12.600)."
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "IFP-0028",
+              "count": 1,
+              "first_line": 1109,
+              "representative_lines": [
+                1109
+              ],
+              "text": "[WARNING IFP-0028] Core area lower left (10.000, 12.000) snapped to (10.070, 12.600).",
+              "text_characters": 85,
+              "text_scope": "current_log_body",
+              "text_sha256": "8aeefd0023c089be8be3f4c6d03321e13f0077ee7e40df8535c8dd5087320e93",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 1,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 1
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 2046,
+          "classification_source": "commands.jsonl:2",
+          "ownership": "current_stage",
+          "path": "synthesis_export.log",
+          "role": "unclassified",
+          "sections": [
+            {
+              "inside_upstream_reference": false,
+              "line": 1,
+              "text": "=== CONTEXT / Log ownership ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 2,
+              "text": "stage=\"input\" component=\"make\" step=\"tool_command\" die=null role=\"unclassified\""
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 3,
+              "text": "attempt_id=\"4a9d9854630247238361add15a8f0789\" command_id=\"52b67a1b01f44f1a9cc939bb294ed378\" parent_command_id=null"
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 4,
+              "text": "=== INPUT / Existing inputs and configuration; no upstream rerun implied ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 5,
+              "text": "No explicit input-file arguments recognized. Inputs may come from tool configuration or environment; their provenance is not inferred."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 6,
+              "text": "=== CURRENT_EXECUTION / Current command output in original tool order ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 7,
+              "text": "Nested commands have their own boundaries. Parent timings may include child timings; do not add them together."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 15,
+              "text": "=== OUTPUT / Current command exit and downstream handoff locations ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 16,
+              "text": "process_returncode=0; process exit only, not stage validation."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 17,
+              "text": "Stage conclusions come from run.json, stage_manifest.json, and checkpoint/validation results. A log footer is not proof of success."
+            }
+          ],
+          "sections_omitted": 0,
+          "sha256": "6f307daeab9a9d59bac401c1def1383afa6985e42919154e7bb504cf77fb9a59",
+          "source_sha256": "6f307daeab9a9d59bac401c1def1383afa6985e42919154e7bb504cf77fb9a59",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {},
+          "warning_examples": [],
+          "warning_groups": [],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 0,
+          "warning_occurrences_by_text_scope": {},
+          "warning_text_limit_characters": 1000
+        }
+      ],
+      "warning_count_semantics": "text occurrences, not unique tool events; native warning_audit remains authoritative",
+      "warning_group_semantics": "first 200 distinct original texts per log; full-text counts for those groups remain exact; omitted occurrences remain in code totals and raw logs; no warning is accepted or downgraded by this index",
+      "warning_occurrences_in_files": 1,
+      "warning_occurrences_in_unique_file_contents": 1
+    },
+    "memory_measurement": "maximum sampled process-tree RSS, not sum across nested commands; may miss short peaks",
+    "native_metric_sources": [
+      "synthesis_metrics.json"
+    ],
+    "partial": false,
+    "peak_process_tree_rss_kib_sampled": 4011016,
+    "runtime_seconds": 1073.3456069529057,
+    "schema_version": 1,
+    "stage": "input",
+    "started_at": "2026-11-01T04:31:48.405882+00:00",
+    "status": "success",
+    "upstream_artifacts": []
+  },
+  "schema_version": 1,
+  "synthesis": {
+    "floorplan_checkpoint": "2_1_floorplan",
+    "frontend_contract": {
+      "abc_clock_period_ps": 4000,
+      "expected_macro_count": 133,
+      "preserve_cells": [
+        "SyncSpRamBeNx64_00000008_00000100_0_2",
+        "limping_SyncSpRamBeNx64_00000008_00000100_0_2",
+        "SyncSpRamBeNx64_00000008_00000100_0_2_d45",
+        "SyncSpRamBeNx64_00000008_00000100_0_2_d44"
+      ],
+      "rtlmp_flow": false,
+      "synth_hierarchical": false
+    },
+    "io_status": "pending",
+    "macro_inventory": {
+      "macro_count": 133,
+      "masters": {
+        "fakeram45_256x16": 133
+      }
+    },
+    "resolved_frontend_contract": {
+      "abc_clock_period_ps": 4000,
+      "preserve_cells": [
+        "SyncSpRamBeNx64_00000008_00000100_0_2",
+        "limping_SyncSpRamBeNx64_00000008_00000100_0_2",
+        "SyncSpRamBeNx64_00000008_00000100_0_2_d45",
+        "SyncSpRamBeNx64_00000008_00000100_0_2_d44"
+      ],
+      "rtlmp_flow": "0",
+      "synth_hierarchical": "0"
+    },
+    "source": "rtl"
+  }
+}

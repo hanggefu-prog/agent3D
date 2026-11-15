@@ -1,0 +1,30 @@
+{
+  "generated_fakerams": [
+    "fakeram7_256x16",
+    "fakeram7_512x64",
+    "fakeram7_256x95",
+    "fakeram7_64x7",
+    "fakeram7_64x15",
+    "fakeram7_64x96",
+    "fakeram7_256x96",
+    "fakeram7_32x64",
+    "fakeram7_256x48",
+    "fakeram7_32x32",
+    "fakeram7_64x124",
+    "fakeram7_64x62",
+    "fakeram7_128x116",
+    "fakeram7_2048x39",
+    "fakeram7_256x34",
+    "fakeram7_64x21",
+    "fakeram45_256x32",
+    "fakeram45_64x64",
+    "mem_ext",
+    "mem_0_ext"
+  ],
+  "library_corner": "RVT/TT/NLDM",
+  "metal_policy": "native-full-M1-M9-per-die",
+  "schema_version": 1,
+  "source": "The-OpenROAD-Project/OpenROAD-flow-scripts",
+  "source_commit": "6101364b2d7909dd797e1e3e7f80695401cfa4e4",
+  "source_platform": "flow/platforms/asap7"
+}

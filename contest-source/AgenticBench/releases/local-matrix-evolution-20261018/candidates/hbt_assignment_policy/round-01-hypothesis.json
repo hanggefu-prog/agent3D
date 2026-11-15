@@ -1,0 +1,4 @@
+{
+  "feedback_use": "Only qualified reference data is available: all six cells complete, but WNS/TNS deficits are substantial and vary by case and seed. This candidate isolates one ordering change; improvement must be established by the next comparable six-cell evaluation.",
+  "hypothesis": "Prioritize high-pin nets more strongly when their ideal two-tier geometry is also long, protecting likely high-load, RC-sensitive crossings from site scarcity while retaining combined-HPWL site selection."
+}

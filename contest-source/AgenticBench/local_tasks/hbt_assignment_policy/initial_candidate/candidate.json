@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "config_overrides": {},
+  "candidate_files": {
+    "hbt_policy.json": {
+      "interface_version": "hbt-policy-v1",
+      "source": "def net_priority(context):\n    \"\"\"Assign nets with more pins first.\"\"\"\n    return context[\"pin_count\"]\n\n\ndef site_cost(net_context, site_context):\n    \"\"\"Minimize the combined wire length at a legal terminal position.\"\"\"\n    return site_context[\"combined_hpwl_dbu\"]\n"
+    }
+  },
+  "source_patch": "",
+  "notes": "HBT priority and legal-site cost policy; native execution requires task qualification."
+}

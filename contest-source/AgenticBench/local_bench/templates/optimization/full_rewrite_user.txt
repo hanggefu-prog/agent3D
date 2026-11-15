@@ -1,0 +1,37 @@
+# Selected parent and measured feedback
+
+The system message explains the task, available inputs and editable components.
+The selected parent below is not necessarily the latest or best trial.
+
+Parent metrics (rounded display; exact values are in optimization_feedback):
+{metrics}
+
+{artifacts}
+
+# Selected examples
+
+These are selected programs, not a chronological history. Compare valid results
+under the same objective. Higher combined_score is better; lower physical costs
+are better. Activity, runtime and other diagnostics are not extra rewards.
+Missing metrics remain unknown, never zero. Do not interpret every numeric
+increase as an improvement or treat a rejected program as a physical result.
+
+{evolution_history}
+
+# Parent program
+
+```{language}
+{current_program}
+```
+
+# Next candidate
+
+Try one main change at a time. Keep useful parts of the parent and combine ideas
+when comparable measured results support them. Use the supplied observations
+and final task objective, not invented measurements. If a program was rejected,
+fix the reported problem before judging the idea. Do not return an evaluated
+program unchanged.
+
+Return the complete required Python definitions inside EVOLVE-BLOCK markers,
+even for a small edit. Include a short comment explaining the change. No imports,
+extra definitions, SEARCH/REPLACE blocks, JSON, tests or surrounding prose.

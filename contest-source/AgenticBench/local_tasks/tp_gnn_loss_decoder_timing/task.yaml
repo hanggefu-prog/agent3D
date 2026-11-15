@@ -1,0 +1,151 @@
+schema_version: 1
+id: tp_gnn_loss_decoder_timing
+title: TP-GNN loss and clustering decoder evolution with one-pass OPT timing
+description: Jointly evolve the legacy embedding loss and global two-way clustering; score setup WNS and TNS after one fixed OPT pass.
+kind: tp_gnn_loss_decoder_timing
+availability: available
+base_config: reference_config.yaml
+initial_candidate: initial_candidate
+prompt: prompt.md
+program:
+  mode: task_adapter
+  template: initial_program.py
+  adapter: program_adapter.py
+  entrypoint: compute_tp_gnn_loss
+prompt_context:
+  feedback_recent: 3
+  feedback_top: 3
+  max_feedback_chars: 24000
+  max_source_chars: 0
+execution:
+  from: partition
+  to: opt
+  upstream_stages: [input, floorplan]
+  boundary: open3dbench-stage
+  frozen_inputs:
+    - name: tp_gnn_timing
+      source: baseline_run
+      path: 20_partition/timing_input
+      inject_as: partition.timing_input
+      required_files:
+        - timing_features.csv
+        - timing_net_weights.csv
+        - timing_manifest.json
+        - openroad_full_partition_last.connections.tsv
+      json_checks:
+        - path: timing_manifest.json
+          equals:
+            timing_status: full_coverage_partition_last
+            timing_weight_mode: paper_delay_slack_hyperedge_v1
+candidate_policy:
+  allowed_config_paths: []
+  allowed_source_paths: []
+  max_changed_files: 0
+  max_added_lines: 0
+  max_deleted_lines: 0
+  files:
+    - path: loss_decoder_program.json
+      inject_as: partition.evolution_program
+      allowed_paths: [interface_version, source]
+  value_constraints:
+    - {path: /candidate_files/loss_decoder_program.json/interface_version, type: string, enum: [tp-gnn-loss-decoder-v1]}
+    - {path: /candidate_files/loss_decoder_program.json/source, type: string}
+# The protected runner transports partition.evolution_program. Candidates require
+# this task's fresh same-case reference; another task's reference cannot qualify it.
+definition:
+  integration: lol
+  platforms: [ng45, asap7]
+  functions:
+    compute_tp_gnn_loss:
+      interface: timing-context-v2
+      arguments: [positive_scores, negative_scores, embeddings, positive_sources, positive_targets, negative_sources, negative_targets, source_batch_size, epoch, max_epochs, graph_scores, graph_sources, graph_targets, graph_net_ids, graph_weights, net_weights, node_features, node_areas]
+      output: finite_scalar_autograd_tensor
+    decode_tp_gnn_embeddings:
+      arguments: [embeddings, node_areas, seed, max_iterations, balance_target]
+      output: length_N_binary_integer_labels
+  output: one_complete_program_containing_both_functions
+  training:
+    recipe: config/partition/tp_gnn_fast.json
+    mode: random-walk
+    loss_context: timing-context-v2
+    requested_epochs: 20
+    min_epochs: 10
+    min_optimizer_steps: 100
+    effective_budget: unchanged_minimum_step_policy
+    optimizer: fixed_Adam
+  decoder:
+    interface: tp-gnn-loss-decoder-v1
+    initial_helper: reference_global_two_way
+    initial_native_function: area_balanced_weighted_kmeans
+    max_iterations: 50
+    input_embeddings: readonly_L2_normalized_numpy_array
+    input_areas: readonly_physical_area_numpy_array
+    labels: {top: 1, bottom: 0}
+    clustering_scope: whole_design
+    candidate_centers_used_by_closure: false
+    closure_centers: recomputed_physical_area_weighted_means_from_output_labels
+    closure_affinity: frozen_native_two_center_affinities
+    empty_cluster: reject
+    raw_weighted_kmeans: frozen_diagnostic_only
+  protected_components:
+    - graph_construction_and_contraction
+    - node_features_and_frozen_timing_inputs
+    - GNN_encoder_and_embedding_normalization
+    - sampling_optimizer_learning_rate_seeds_and_training_budget
+    - reference_global_two_way_helper
+    - raw_weighted_kmeans_diagnostics
+    - closure_center_recomputation_and_two_center_affinities
+    - macro_assignment_and_supernode_preserving_area_feasibility_closure
+    - assignment_validation_and_hard_balance_constraints
+    - downstream_placement_PDN_HBT_OPT_and_STA
+    - evaluator_reference_scoring_and_resource_limits
+  hard_constraints:
+    assignment: every_original_instance_exactly_once
+    supernodes: indivisible
+    balance_target: 0.5
+    area_tolerance: 0.03
+    macro_count_tolerance: 0.05
+    macro_area_tolerance: 0.05
+    failed_integer_feasibility: reject_without_relaxation
+  limits:
+    source_bytes: 18000
+    ast_nodes: 3000
+    loss_loops: forbidden
+    decoder_loops: only_for_in_range_max_iterations
+    decoder_max_iterations: 50
+    recursion: forbidden
+    external_io: forbidden
+    input_mutation: forbidden
+    mutable_state: forbidden
+    randomness: frozen_seeded_reference_helper_only
+    dense_pairwise_matrices: forbidden
+    candidate_flow_wall_seconds: 21600
+    physical_threads: 4
+  endpoint:
+    checkpoint: 60_opt/checkpoint.json
+    measurement: post_opt_pre_cts
+    directory: 60_opt
+    opt_passes: 1
+    clocks: ideal_pre_cts
+    rc: placement_estimated_die_rc_plus_passive_hbt_pi
+    excluded: [cts, global_route, detailed_route, thermal]
+  objective:
+    direction: maximize
+    metric: combined_score
+    formula: 100 * (0.4 * WNS_deficit_improvement + 0.6 * TNS_deficit_improvement)
+    timing_unit: ns
+    deficit: max(0, -setup_slack)
+    zero_reference_epsilon_ns: 1.0e-12
+    zero_reference_rule: reject_until_official_rule_is_frozen
+    diagnostics_not_rewards: [cut, hpwl, training_loss, embedding_statistics, runtime, closure_moved_area]
+  admission:
+    native_hooks: source_connected
+    trusted_context_producer: source_connected
+    trusted_physical_collector: source_connected
+    same_contract_native_reference: pending_per_case_fresh_qualification
+    reference_task_id: tp_gnn_loss_decoder_timing
+    reference_recipe_and_initial_program: exact_same_contract_required
+    missing_reference: only_exact_initial_program_may_create_fresh_reference
+    borrowed_legacy_task_reference: forbidden
+    candidate_exception_or_nonfinite: reject_no_baseline_fallback
+    missing_final_timing: reject_not_zero

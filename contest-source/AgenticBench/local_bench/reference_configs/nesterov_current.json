@@ -1,0 +1,16 @@
+{
+  "concurrent_dreamplace": {
+    "cross_die_net_weight": 1.0,
+    "iterations": 4000,
+    "num_bins": 512,
+    "target_density": 0.6,
+    "stop_overflow": 0.01,
+    "density_weight": 3e-05,
+    "macro_place_flag": true,
+    "macro_halo_x": 10.0,
+    "macro_halo_y": 10.0,
+    "learning_rate": 0.01,
+    "die_params": {},
+    "hide_fillers_in_plot": false
+  }
+}

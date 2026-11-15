@@ -1,0 +1,55 @@
+schema_version: 1
+id: tp_gnn_ta3d_sta_validation
+title: Two-pass STA validation of TA3D-decoded TP-GNN objectives
+description: Replay a baseline or evolved TP-GNN loss through fixed placement and exactly two coordinated 3D OPT passes.
+kind: tp_gnn_placement_sta
+base_config: ../../local_bench/benchmark_inputs/bp_lol_ng45_tp_gnn_ta3d_20260904/config.yaml
+benchmark_input: bp_lol_ng45_tp_gnn_ta3d_20260904
+initial_candidate: initial_candidate
+prompt: prompt.md
+program:
+  mode: task_adapter
+  template: initial_program.py
+  adapter: program_adapter.py
+  entrypoint: compute_tp_gnn_loss
+prompt_context:
+  priority_parameters:
+    - final_global_wns_setup_ns
+    - final_global_tns_setup_ns
+    - ta3d_signed_cut_score
+    - timing_weighted_cut
+    - cut_net_count
+  feedback_recent: 0
+  feedback_top: 0
+  max_feedback_chars: 0
+  max_source_chars: 0
+execution:
+  from: partition
+  to: opt
+  upstream_stages: [input, floorplan]
+  frozen_inputs:
+    - name: tp_gnn_timing
+      source: baseline_run
+      path: 20_partition/timing_input
+      inject_as: partition.timing_input
+      required_files:
+        - timing_features.csv
+        - timing_net_weights.csv
+        - timing_manifest.json
+        - openroad_full_partition_last.connections.tsv
+      json_checks:
+        - path: timing_manifest.json
+          equals:
+            timing_status: full_coverage_partition_last
+            timing_weight_mode: paper_delay_slack_hyperedge_v1
+candidate_policy:
+  allowed_config_paths:
+    - partition.algorithm
+  allowed_source_paths:
+    - Place-3D/src/partition/lol/methods/tp_gnn.py
+  max_changed_files: 1
+  max_added_lines: 220
+  max_deleted_lines: 12
+  files: []
+  value_constraints:
+    - {path: /config_overrides/partition/algorithm, type: string, enum: [tp-gnn]}

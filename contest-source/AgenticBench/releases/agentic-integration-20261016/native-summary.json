@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "server": "rafa1-gcr",
+  "root": "/data-ssd/gcr/agenticbench-integration-20261016",
+  "local_tasks": [
+    {
+      "case": "bp_fe-ng45",
+      "container": "grt-merge-541477cf0cf3e3a2d3bc855d",
+      "exit_code": 0,
+      "status": "verified",
+      "task": "hbt_assignment_policy",
+      "wall_seconds": 139.89994011819363,
+      "source_revision": "888cb8ebb9ea09c94aa82178eaa76846954a967f",
+      "evidence": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-local-final/hbt_assignment_policy-bp_fe-ng45/results/qualification.json",
+        "sha256": "ca49ecfe965d6e47f5e387e69a095bbeeb65cc39509f14f361b7d5b1e92f4858"
+      }
+    },
+    {
+      "case": "bp_fe-asap7",
+      "container": "grt-merge-be76a356339ddc9575ec4da7",
+      "exit_code": 0,
+      "status": "verified",
+      "task": "hbt_assignment_policy",
+      "wall_seconds": 138.4895097464323,
+      "source_revision": "888cb8ebb9ea09c94aa82178eaa76846954a967f",
+      "evidence": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-local-final/hbt_assignment_policy-bp_fe-asap7/results/qualification.json",
+        "sha256": "6251c017ce1815bc366fc2e955e5423bbc205b71fafd335f47894c3cf97ecfd2"
+      }
+    },
+    {
+      "case": "bp_fe-ng45",
+      "container": "grt-merge-241f10d7ac24dac8d31e55de",
+      "exit_code": 0,
+      "status": "verified",
+      "task": "tp_gnn_post_placement_timing",
+      "wall_seconds": 245.83651178330183,
+      "source_revision": "888cb8ebb9ea09c94aa82178eaa76846954a967f",
+      "evidence": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-local-final/tp_gnn_post_placement_timing-bp_fe-ng45/results/qualification.json",
+        "sha256": "85cfb05c2dfe129139ab53d56d4e9aafa2c69dcba439f78c2f22fb428d34e247"
+      }
+    },
+    {
+      "case": "bp_fe-ng45",
+      "container": "grt-merge-60e4642c601049eb1502a030",
+      "exit_code": 0,
+      "status": "verified",
+      "task": "placement_initialization",
+      "wall_seconds": 87.1197210997343,
+      "source_revision": "888cb8ebb9ea09c94aa82178eaa76846954a967f",
+      "evidence": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-local-final/placement_initialization-bp_fe-ng45/results/qualification.json",
+        "sha256": "25acde542018e79cd54ae712c2be0f49709c25db72e550af023937c654153cf8"
+      }
+    },
+    {
+      "case": "bp_fe-ng45",
+      "container": "grt-merge-14a2401e403110015b9d3f7c",
+      "exit_code": 0,
+      "status": "verified",
+      "task": "placement_preconditioner",
+      "wall_seconds": 110.3381802663207,
+      "source_revision": "888cb8ebb9ea09c94aa82178eaa76846954a967f",
+      "evidence": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-local-final/placement_preconditioner-bp_fe-ng45/results/qualification.json",
+        "sha256": "cdf56e49975d3291e796be903cb582d9f884d335f85c8f73ae467d9dd87e37db"
+      }
+    },
+    {
+      "case": "bp_fe-ng45",
+      "container": "grt-merge-42272530cba4d4dfde555ed6",
+      "exit_code": 0,
+      "status": "verified",
+      "task": "placement_dynamic_parameters_reference_20260923",
+      "wall_seconds": 173.34917134046555,
+      "source_revision": "888cb8ebb9ea09c94aa82178eaa76846954a967f",
+      "profile": "explicit current-source / deterministic_flag=1",
+      "candidate": "constant 0.95 shared step multiplier",
+      "evidence": [
+        {
+          "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-dynamic-v4/placement_parameters_reference_20260923-bp_fe-ng45/results/reference/evaluation_result.json",
+          "sha256": "ac61c508ef23ace634d6f6712d4a82d215ae9cc010bf7b42c3c70fe88344ed11"
+        },
+        {
+          "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-dynamic-v4/placement_parameters_reference_20260923-bp_fe-ng45/results/probe/evaluation_result.json",
+          "sha256": "541b9df83c6109da30fb03ddb2b7e457e9ee24709497c3cb7a02d85756fd074f"
+        }
+      ]
+    },
+    {
+      "execution": {
+        "container": "grt-merge-route-184f99a6969e8eadfce7",
+        "exit_code": 0,
+        "wall_seconds": 104.15028294175863
+      },
+      "runtime": {
+        "image": "sha256:a1140b88fc0f5b0c9a2330ab9cdb898ffc0460317a7c45699db1cfc652bd3d9b",
+        "receipt": "/data-ssd/gcr/agenticbench-integration-20261016/native-routing-v1/global_routing_ripup_policy/build/receipt.json"
+      },
+      "status": "verified",
+      "task": "global_routing_ripup_policy_source",
+      "case": "bp_fe-ng45",
+      "source_revision": "55f60cc6f7549aed4b95310be2880240ef15d1b2",
+      "candidate": "initial identity policy installed in a verified candidate image",
+      "evidence": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-routing-v1/global_routing_ripup_policy/results/qualification.json",
+        "sha256": "ec00aa353d3b638880437392113629b478aa972af1096736e20d008ed2a11627"
+      },
+      "runtime_receipt": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-routing-v1/global_routing_ripup_policy/build/receipt.json",
+        "sha256": "98e5d92c2f645c18a4194b87735de26abc39a5fa8a8f1a87cbc9332f7aab67a6"
+      },
+      "build_seconds": {
+        "source_materialization": 8.201633013784885,
+        "toolchain_probe": 1.5177323818206787,
+        "build_container": 850.3022903203964,
+        "compiled_artifact_verify": 1.166524551808834,
+        "compiler_cache_attempt": 867.531763151288
+      }
+    },
+    {
+      "execution": {
+        "container": "grt-merge-route-dceb3e03a44930e79986",
+        "exit_code": 0,
+        "wall_seconds": 104.40150801837444
+      },
+      "runtime": {
+        "image": "sha256:ac1aeefd08c062ad0aedc83d02145616cc83c63406ac5706f2d2f8283fbee41c",
+        "receipt": "/data-ssd/gcr/agenticbench-integration-20261016/native-routing-v1/global_routing_maze_cost/build/receipt.json"
+      },
+      "status": "verified",
+      "task": "global_routing_maze_cost_source",
+      "case": "bp_fe-ng45",
+      "source_revision": "55f60cc6f7549aed4b95310be2880240ef15d1b2",
+      "candidate": "initial identity policy installed in a verified candidate image",
+      "evidence": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-routing-v1/global_routing_maze_cost/results/qualification.json",
+        "sha256": "3ce3590e94b96cecb3d74ec325853517d314f581563c110e853dd363242fa940"
+      },
+      "runtime_receipt": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-routing-v1/global_routing_maze_cost/build/receipt.json",
+        "sha256": "7a650c9eb329c2eebaf8e8686b43b96e765564bd8358d2476703c16b91ce7bd5"
+      },
+      "build_seconds": {
+        "source_materialization": 7.846797965466976,
+        "toolchain_probe": 1.2141759768128395,
+        "build_container": 189.1749086305499,
+        "compiled_artifact_verify": 1.262238010764122,
+        "compiler_cache_attempt": 205.55826691538095
+      }
+    },
+    {
+      "execution": {
+        "container": "grt-merge-route-494dbac0470e278d6f24",
+        "exit_code": 0,
+        "wall_seconds": 103.4000396952033
+      },
+      "runtime": {
+        "image": "sha256:e4a7eb065d9d6f940722d3341e9e5a96d2b25a7739a4b79b217a48b0b52c4b14",
+        "receipt": "/data-ssd/gcr/agenticbench-integration-20261016/native-routing-v1/global_routing_iteration_controller/build/receipt.json"
+      },
+      "status": "verified",
+      "task": "global_routing_iteration_controller_source",
+      "case": "bp_fe-ng45",
+      "source_revision": "55f60cc6f7549aed4b95310be2880240ef15d1b2",
+      "candidate": "initial identity policy installed in a verified candidate image",
+      "evidence": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-routing-v1/global_routing_iteration_controller/results/qualification.json",
+        "sha256": "9ff1247673864ea7e24d50f0ccb6732188333c150fa6d0bd57eb8bc16bf62d15"
+      },
+      "runtime_receipt": {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/native-routing-v1/global_routing_iteration_controller/build/receipt.json",
+        "sha256": "1f9f8b31cd51d5c2ff490d7d6ebb310d2289ab56a147b8d738b841e8581f9f6c"
+      },
+      "build_seconds": {
+        "source_materialization": 7.815987750887871,
+        "toolchain_probe": 1.0631920918822289,
+        "build_container": 186.2448626458645,
+        "compiled_artifact_verify": 1.1393924728035927,
+        "compiler_cache_attempt": 202.346006706357
+      }
+    }
+  ],
+  "routing_congested_input": [
+    {
+      "case": "ariane133-ng45",
+      "image": "sha256:a1140b88fc0f5b0c9a2330ab9cdb898ffc0460317a7c45699db1cfc652bd3d9b",
+      "native_hook_calls": {
+        "candidate": 550000.0,
+        "reference": 550000.0
+      },
+      "runtime": {
+        "container": "grt-merge-hard-432f4c2b404fcb62effe",
+        "exit_code": 0,
+        "wall_seconds": 246.87278328835964
+      },
+      "seed": "s1",
+      "status": "verified",
+      "task": "global_routing_ripup_policy_source"
+    },
+    {
+      "case": "ariane133-ng45",
+      "image": "sha256:ac1aeefd08c062ad0aedc83d02145616cc83c63406ac5706f2d2f8283fbee41c",
+      "native_hook_calls": {
+        "candidate": 217300000.0,
+        "reference": 217300000.0
+      },
+      "runtime": {
+        "container": "grt-merge-hard-a7489c90aa96caf52167",
+        "exit_code": 0,
+        "wall_seconds": 244.13866299390793
+      },
+      "seed": "s1",
+      "status": "verified",
+      "task": "global_routing_maze_cost_source"
+    },
+    {
+      "case": "ariane133-ng45",
+      "image": "sha256:e4a7eb065d9d6f940722d3341e9e5a96d2b25a7739a4b79b217a48b0b52c4b14",
+      "native_hook_calls": {
+        "candidate": 5.0,
+        "reference": 5.0
+      },
+      "runtime": {
+        "container": "grt-merge-hard-88b1b1357d18f868b5b9",
+        "exit_code": 0,
+        "wall_seconds": 246.52458142489195
+      },
+      "seed": "s1",
+      "status": "verified",
+      "task": "global_routing_iteration_controller_source"
+    }
+  ],
+  "engineering": {
+    "candidate_finals": 0,
+    "case": "bp_fe",
+    "completed_at": "2026-10-16T14:42:15.716744+00:00",
+    "seed": 1001,
+    "stages_seconds": {
+      "clock-context": 63.537383675575256,
+      "clock_compensation-qualification": 52.03680546581745,
+      "cross_die_cts-qualification": 6.302444443106651,
+      "input-audit": 15.844430305063725,
+      "multi-context": 41.6724516376853,
+      "multi_hbt_fanout-qualification": 76.31886773556471,
+      "reference-cts": 147.92620392888784
+    },
+    "status": "qualified",
+    "tasks": [
+      "clock_compensation",
+      "multi_hbt_fanout",
+      "cross_die_cts"
+    ],
+    "wall_seconds": 409.79516112059355,
+    "source_revision": "5caa11788bf5024ecf18b127e28cb6638fd46a34",
+    "evidence": [
+      {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/engineering-v2/native/qualifications/clock_compensation/bp_fe/qualification.json",
+        "sha256": "d12f78630967e24c01ee28672ff2a2774554d6580d03ce898210b8007e00cbaf"
+      },
+      {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/engineering-v2/native/qualifications/multi_hbt_fanout/bp_fe/qualification.json",
+        "sha256": "d171792f5b312d4b09551491c51cb46991507d6dbc79ad5b73dd6ceaffc87fa2"
+      },
+      {
+        "path": "/data-ssd/gcr/agenticbench-integration-20261016/engineering-v2/native/qualifications/cross_die_cts/bp_fe/qualification.json",
+        "sha256": "729015efad06301d641733a661c9da723cc857779f82788fe459fc7e2d069967"
+      }
+    ],
+    "runtime_image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e"
+  },
+  "post_grt": {
+    "mode": "independent re-verification of the original frozen baseline; no new physical matrix or model call",
+    "verifier_source_revision": "5caa11788bf5024ecf18b127e28cb6638fd46a34",
+    "verified": 15,
+    "wall_work_seconds_excluding_queue": 392.89714296907187,
+    "cells": [
+      {
+        "case": "ariane133-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "8aee71185d7e69e50f8f15eada04ac288a1cf09b1c820e2df38006a4e1cac224",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s1",
+        "status": "verified",
+        "wall_seconds": 41.152157448232174
+      },
+      {
+        "case": "ariane133-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "e56d4ec7aac31eb25bac9ac822d3521487349f4eecf2ac948539c01a7e87007b",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s2",
+        "status": "verified",
+        "wall_seconds": 41.710210770368576
+      },
+      {
+        "case": "ariane133-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "7f3dd00820e98dd03ffb2bbeee691b85f5d9ade2698ed82fb2a72cc287d59011",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s3",
+        "status": "verified",
+        "wall_seconds": 40.675438821315765
+      },
+      {
+        "case": "bp-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "5aa88dc083cd2879edb1f554fe6b6a59099279168a698e12db404f8ca754b5d8",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s1",
+        "status": "verified",
+        "wall_seconds": 41.02762408554554
+      },
+      {
+        "case": "bp-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "98e55b022d47199835cef151cb02ceaf1fca15d80da91cdfc1afc89f65854626",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s2",
+        "status": "verified",
+        "wall_seconds": 40.54813161492348
+      },
+      {
+        "case": "bp-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "83582b8acf3f7fcf6ff5b068fdc04b0701ef612f4f2e3f9b3fac9ff25c08dbac",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s3",
+        "status": "verified",
+        "wall_seconds": 40.3622819557786
+      },
+      {
+        "case": "bp_fe-asap7",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "884bd0a124fba1765c9fee9dddcc6f3a45854543799f0aa7f41a5dfa9ec34a7f",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s1",
+        "status": "verified",
+        "wall_seconds": 11.472551673650742
+      },
+      {
+        "case": "bp_fe-asap7",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "854783531ed3bbbc24c5455a1fccee73e9addfe0b6457f7c029b6e7e03346105",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s2",
+        "status": "verified",
+        "wall_seconds": 11.663159191608429
+      },
+      {
+        "case": "bp_fe-asap7",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "36720ee5a12e625c904c5b10377ede517e176724b482b5e9d12177121262d2a6",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s3",
+        "status": "verified",
+        "wall_seconds": 12.086483679711819
+      },
+      {
+        "case": "bp_fe-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "a4db0d56faea49a399b9559ee8da972867e4f4d3aff57a37056e0f20008fb81f",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s1",
+        "status": "verified",
+        "wall_seconds": 11.546735264360905
+      },
+      {
+        "case": "bp_fe-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "6723e3cf70bbedb28ab5d316f656f3a489c5e303681970001d87d0597f3ae6a0",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s2",
+        "status": "verified",
+        "wall_seconds": 11.20891159772873
+      },
+      {
+        "case": "bp_fe-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "6596d7cb15ec52980685a339e408e082abd9b72a6177710cfc935d0580328088",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s3",
+        "status": "verified",
+        "wall_seconds": 11.389049157500267
+      },
+      {
+        "case": "swerv_wrapper-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "2be2dce3bfd857ab3065c130f713d1b586332554dba22adb676106d1a1696073",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s1",
+        "status": "verified",
+        "wall_seconds": 26.86061380058527
+      },
+      {
+        "case": "swerv_wrapper-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "78e7b0b5fed6b818d82e136e4e9a545a6c947d7bb8adce5b6d9c3d5bafb25785",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s2",
+        "status": "verified",
+        "wall_seconds": 25.59207445383072
+      },
+      {
+        "case": "swerv_wrapper-ng45",
+        "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+        "job": "c11756b28b823f01a72c595234cb978f79d1f1f40b75f0a338f22a3b70330193",
+        "receipt_identical": true,
+        "restored_def_count": 23,
+        "seed": "s3",
+        "status": "verified",
+        "wall_seconds": 25.601719453930855
+      }
+    ]
+  },
+  "resources": {
+    "owned_jobs_by_state": {
+      "succeeded": 34,
+      "failed": 4
+    },
+    "active_owned_leases": 0,
+    "prior_failed_attempts": "Retained diagnostics; repaired launch environment, deterministic-profile admission and thin-host Python compatibility before the final successful checks."
+  },
+  "formal_campaign_mutated": false,
+  "formal_evaluation_budget_spent": 0,
+  "model_calls": 0,
+  "qualification_scope": "Functional native checks on listed inputs, not all-case QoR qualification. Original frozen post-GRT source is retained."
+}

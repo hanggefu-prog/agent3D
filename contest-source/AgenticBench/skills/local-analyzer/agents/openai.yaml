@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic3D Local Analyzer"
+  short_description: "Audit one stage and guide one refinement"
+  default_prompt: "Use $agentic3d-local-analyzer before a stage task to define one falsifiable refinement, or after it to audit the candidate against metric, correctness, comparability, and replay gates."

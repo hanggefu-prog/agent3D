@@ -1,0 +1,35 @@
+Place-3D/benchmarks/
+OpenROAD-3D/flow/evaluation_pack/
+__pycache__/
+*.py[cod]
+runs/
+user_runs/
+OpenROAD-3D/flow/logs/
+OpenROAD-3D/flow/reports/
+OpenROAD-3D/flow/results/
+tmp/
+/inspect_feedthrough.tcl
+/inspect_route.tcl
+/route_test_patch.tcl
+docker/*-probe
+docker/wheels/torch-*.whl
+docker/wheels/mtkahypar-*.whl
+docker/wheels/wheelhouse/
+docker/assets/runtime/
+/build/openroad-3d/
+/.venv/
+/.pytest_cache/
+/output/
+/outputs/
+/.agentic3d/
+.DS_Store
+*.egg-info/
+.env
+.env.*
+!.env.example
+*.lic
+
+# Local qualification trees contain runtime state and nested repository copies.
+/qualification/
+# Sites are independently managed; the research site is restricted to self-hosting.
+/sites/

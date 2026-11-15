@@ -1,0 +1,27 @@
+# Example job: keep the maintained task docs consistent with the code.
+# Copy into .github/workflows/ to enable. It runs offline with no EDA tools.
+# Python 3.8 is the minimum supported version of the local harness.
+name: doc-consistency
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  doc-consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.8"
+      - run: python -m pip install pyyaml pytest
+      - run: python AgenticBench/scripts/check_doc_consistency.py
+      - run: >-
+          cd AgenticBench &&
+          PYTHONPATH=.:..:../Place-3D python -m pytest -q
+          tests/test_current_task_inventory_docs.py
+          tests/test_local_matrix_profiles.py
+          tests/test_routing_scoring_v2.py
+          tests/test_routing_wrapper_integrity.py
+          tests/test_current_task_inventory_smoke_profile.py

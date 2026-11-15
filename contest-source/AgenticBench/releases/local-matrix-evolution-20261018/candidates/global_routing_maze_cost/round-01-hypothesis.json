@@ -1,0 +1,4 @@
+{
+  "feedback_use": "The references show zero or very small overflow across all six cells, while wirelength carries 90% of the objective. With no candidate measurements yet, this shared conservative rule tests one main idea without assuming a die ranking.",
+  "hypothesis": "Slightly compressing high native/congested edge costs while increasing ordinary edge cost relative to turn cost should favor shorter routes without removing the native congestion ordering."
+}

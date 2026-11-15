@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "name": "evostage-main-llm4ad-v1",
+  "integration": "external-path-adapter",
+  "vendored": false,
+  "supported_methods": [
+    "randsample",
+    "hillclimb",
+    "eoh",
+    "evostage"
+  ],
+  "tested_fingerprints": {
+    "llm4ad/base/evaluate.py": "56eae9c9e00485edb86cf8bd2a2de5c83bbeb7d119c79cd4b4954f0aba4950a5",
+    "llm4ad/method/eoh/eoh.py": "8166d6324149cc6b88bab765c8ff0563264bf311c97c9896b8314b668498ed33",
+    "llm4ad/method/evostage/EvoStage.py": "7172a243804cf85589ecd34a49efc89d83c42155158fd452f1bb6a21db79f6ed"
+  },
+  "runtime_compatibility": [
+    "restore Function.__str__ function headers without modifying upstream",
+    "replace EvoStage embedded OpenAI client with the selected provider",
+    "replace exec-based multi-function evaluation with literal AST evaluation",
+    "replace introspective profiler with credential-safe benchmark tracing"
+  ],
+  "license": "Use of the external checkout remains governed by its own LICENSE"
+}

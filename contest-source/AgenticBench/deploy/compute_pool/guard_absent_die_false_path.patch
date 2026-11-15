@@ -1,0 +1,31 @@
+diff --git a/open3dbench/backend/three_d_opt.py b/open3dbench/backend/three_d_opt.py
+--- a/open3dbench/backend/three_d_opt.py
++++ b/open3dbench/backend/three_d_opt.py
+@@ -1260,11 +1260,26 @@ def _quiet_base_port_queries(text: str) -> str:
+     appended afterwards and intentionally retain strict lookups.
+     """
+
+-    return re.sub(
++    quiet = re.sub(
+         r"\[get_ports(?!\s+-quiet(?:\s|\]))",
+         "[get_ports -quiet",
+         text,
+     )
++    # A literal assembly port can belong only to the other die.  OpenSTA
++    # still warns on set_false_path -from {} after a quiet lookup.  Guard
++    # only this simple, single-port form: present ports keep the identical
++    # exception; absent ports have no local exception to apply.  Do not
++    # rewrite assembly SDC, generated HBT constraints or complex commands.
++    pattern = re.compile(
++        r"(?m)^([ \t]*)(set_false_path[ \t]+-from[ \t]+"
++        r"(\[get_ports[ \t]+-quiet[ \t]+[A-Za-z0-9_./:-]+\]))[ \t]*$"
++    )
++    return pattern.sub(
++        lambda match: match.group(1)
++        + "if {[llength " + match.group(3) + "] > 0} { "
++        + match.group(2) + " }",
++        quiet,
++    )
+
+
+ def _boundary_sdc(

@@ -1,0 +1,710 @@
+{
+  "recorded_at_utc": "2026-10-17T16:06:16.434267Z",
+  "counts": {
+    "local_model_calls": 17,
+    "engineering_model_calls": 4,
+    "global_model_calls": 4,
+    "total_model_calls": 25
+  },
+  "model_calls": [
+    {
+      "path": "locals/hbt_assignment_policy/model-01/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 48.4950260668993,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e0-c028-71f2-8ae5-4bc3169eda9f"
+    },
+    {
+      "path": "locals/hbt_assignment_policy/model-02/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 27.48621453344822,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e2-836a-7d00-a104-8b8e86737027"
+    },
+    {
+      "path": "locals/global_routing_maze_cost/model-01/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 43.53785791993141,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149ec-cd32-71b0-8068-4f90511dd561"
+    },
+    {
+      "path": "locals/global_routing_maze_cost/model-02/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 20.872075952589512,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149f8-8db1-77a3-bf56-ae92dee4749e"
+    },
+    {
+      "path": "locals/global_routing_ripup_policy/model-01/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 30.02266540378332,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e6-e96b-7d70-8fe6-995e9c06008f"
+    },
+    {
+      "path": "locals/global_routing_ripup_policy/model-02/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 30.55467213690281,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149fe-491b-7a52-a208-0dd48e0eb6fe"
+    },
+    {
+      "path": "locals/tp_gnn_post_placement_timing/model-01/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 41.43012894690037,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e1-914d-7932-94b6-b9def2cbcc8c"
+    },
+    {
+      "path": "locals/tp_gnn_post_placement_timing/model-02/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 38.9201413244009,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e6-8e0d-7340-8ee3-6f2fb09bc0be"
+    },
+    {
+      "path": "locals/global_routing_iteration_controller/model-01/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 43.84401500225067,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149f2-dd0c-73a1-86cc-ab83c75ae62d"
+    },
+    {
+      "path": "locals/global_routing_iteration_controller/model-02/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 24.431328892707825,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a14a04-1f2d-7ab1-b09a-dddfef37a0ba"
+    },
+    {
+      "path": "locals-fixed/placement_initialization/model-01/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 86.88148360699415,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e5-7e1e-7441-8857-3cbfa6867316"
+    },
+    {
+      "path": "locals-fixed/placement_initialization/model-02/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 92.68924718350172,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e8-c635-7cf2-9e23-0f26d9ad7cbc"
+    },
+    {
+      "path": "locals-fixed/placement_preconditioner/model-01/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 92.04009657353163,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e5-7d6e-7911-bb0b-fe330e90337b"
+    },
+    {
+      "path": "locals-fixed/placement_preconditioner/model-02/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 52.07808209210634,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e8-d4c0-7f80-93ca-6058c9b1fb92"
+    },
+    {
+      "path": "locals-fixed/placement_parameters_reference_20260923/model-01/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 70.18664548546076,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e5-6d7c-7613-9b60-92ac9ecb4523"
+    },
+    {
+      "path": "locals-fixed/placement_parameters_reference_20260923/model-02/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 25.980961985886097,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149e7-eaa5-7ad1-a415-f22b8b70255e"
+    },
+    {
+      "path": "initializer-prompt-recheck/model-01/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 145.30793767422438,
+      "terminal_tool_calls": 0,
+      "thread_id": "01a149ee-7447-79b1-8e65-4c97d56eff4a"
+    },
+    {
+      "path": "engineering-v3/campaign/cross_die_cts/development/development/turn/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 422.6588077172637,
+      "terminal_tool_calls": 59,
+      "thread_id": "01a14a27-5e7d-7bb1-b159-ae1c59800adb"
+    },
+    {
+      "path": "engineering-v3/campaign/clock_compensation/development/development/turn/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 1197.8439081385732,
+      "terminal_tool_calls": 46,
+      "thread_id": "01a14a15-190b-77d0-a66c-4f040aa038b6"
+    },
+    {
+      "path": "engineering-v3/campaign/multi_hbt_fanout/development/development/turn/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 807.7730230987072,
+      "terminal_tool_calls": 55,
+      "thread_id": "01a14a19-171e-7c83-9f30-bd8b938e91e6"
+    },
+    {
+      "path": "engineering-v3/campaign-editfix2/cross_die_cts/development/development/turn/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 497.76836889237165,
+      "terminal_tool_calls": 78,
+      "thread_id": "01a14a3d-1dea-7c00-bd71-4cbfc9a50cda"
+    },
+    {
+      "path": "global-v3/control/rounds/0001/agent/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 205.45846419036388,
+      "terminal_tool_calls": 24,
+      "thread_id": "01a14a30-6506-73b3-99f3-0d23aa1393bc"
+    },
+    {
+      "path": "global-v3/control/rounds/0002/agent/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 56.3003433868289,
+      "terminal_tool_calls": 3,
+      "thread_id": "01a14a30-6506-73b3-99f3-0d23aa1393bc"
+    },
+    {
+      "path": "global-v4/control/rounds/0001/agent/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 317.2561414539814,
+      "terminal_tool_calls": 34,
+      "thread_id": "01a14a38-dcca-7db2-8310-056cef286adc"
+    },
+    {
+      "path": "global-v4/control/rounds/0002/agent/result.json",
+      "model": "gpt-5.6-sol",
+      "success": true,
+      "timed_out": false,
+      "duration_seconds": 576.5927807837725,
+      "terminal_tool_calls": 48,
+      "thread_id": "01a14a38-dcca-7db2-8310-056cef286adc"
+    }
+  ],
+  "global_campaign_budgets": {
+    "global-v3": {
+      "evaluations_used": 0,
+      "thread_id": "01a14a30-6506-73b3-99f3-0d23aa1393bc"
+    },
+    "global-v4": {
+      "evaluations_used": 2,
+      "thread_id": "01a14a38-dcca-7db2-8310-056cef286adc"
+    }
+  },
+  "outer_resource_jobs": [
+    {
+      "job": "380845184aebf4514c5c0e9b7327d8c7bb97309244221ddb9577ea66085d3db0",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/placement_initialization/reference"
+    },
+    {
+      "job": "315644536aeb20d39515cee2ebbbcceaadb46823519282025431a4cb1ad6f629",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/tp_gnn_post_placement_timing/reference"
+    },
+    {
+      "job": "5cbdf371f364e75ca78116f3f7d799b1c7d9f05fc2083f58a75d784441b3f217",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/placement_preconditioner/reference"
+    },
+    {
+      "job": "2590efad0725bd21fe7bdc4f98c5373679b534bbaa4860721739530af127ff52",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering/preparation/bp"
+    },
+    {
+      "job": "85750fc8e868a507b753007a4e6935307a515e73243d4336849718787156b652",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering/preparation/bp_fe"
+    },
+    {
+      "job": "bd9d5424efdfa2b08bf3c277f0c73b659162378f192a2346bc6fbf68b5df4590",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/placement_parameters_reference_20260923/reference"
+    },
+    {
+      "job": "a2bf581dde9a536a06bd2e2f653bc680341cf6fd7f1fa0ab1aa3661355601c49",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/hbt_assignment_policy/reference"
+    },
+    {
+      "job": "56b91f5bf3e02b19b2cf052bb96f359b5171c510f18eed19832f6ad89ff8667a",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering/preparation/ariane133"
+    },
+    {
+      "job": "a32d6683a679f1dd41d5de259efccb98b7d414c10d653c459a75eb92147576fb",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering/preparation/swerv_wrapper"
+    },
+    {
+      "job": "5f866401eba009addc9855a4268212ac019309901947217fb317840cafbfcd5d",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/global_routing_ripup_policy/reference"
+    },
+    {
+      "job": "9921c573b8e08a8f47488992b7dc3c5dec28e7c9b8a88f4dcfc71d35e585a2d2",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/hbt_assignment_policy/search/evaluations/0001-dbcb043a61c6/native-evaluation"
+    },
+    {
+      "job": "4889bd1f68496b3bae1f8a6b7d05c9d9f44c9d4850d377d6ac60de250a24cd11",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/tp_gnn_post_placement_timing/search/evaluations/0001-24ac6b83c905/native-evaluation"
+    },
+    {
+      "job": "9282ef3a3bd743317b7af868b7c166bed03d9dd03906f10d84637d5268d1c59d",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/hbt_assignment_policy/search/evaluations/0002-67e587185e42/native-evaluation"
+    },
+    {
+      "job": "e933ff978120335c11c602280985cdbfdb6c5fb486cabb769ebfc871c6346ad4",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals-fixed/placement_parameters_reference_20260923/reference"
+    },
+    {
+      "job": "192381fe2172b4da157614e3606e8af7cac0e2174a5ce7b14d08ff2e5e18e016",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals-fixed/placement_initialization/reference"
+    },
+    {
+      "job": "69f2a1740fe4ccee4f9ba5f1ff59a0da73ee8e40a46aa52c98e0e2623c3fe6d2",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals-fixed/placement_preconditioner/reference"
+    },
+    {
+      "job": "f3e2613b23ea78f035929c650c51c4f61295fd04879185aeee6d300a507db0c7",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v2/preparation/bp"
+    },
+    {
+      "job": "1b0a97a9e2f013814671228f054e6ea1495308dcfea9dc63dc84030e58a14e19",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v2/preparation/bp_fe"
+    },
+    {
+      "job": "bf71910b2581c51e65ea7428093428e5e1a9e1bea92aa7f04309410948fb4065",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v2/preparation/ariane133"
+    },
+    {
+      "job": "37f064d64b9949fb6ed45906ca30488243fc69908bda86678fd59069c8aaa4e7",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v2/preparation/swerv_wrapper"
+    },
+    {
+      "job": "a567dcb3f8e80167659f5b618488ee3f008939d67301e0d94bcc1c4350c1e352",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/global_routing_maze_cost/reference"
+    },
+    {
+      "job": "10633a3266031c42ee1c0206083fc53c1796bab01343dbf66ee6277eb49a98be",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/preparation/bp"
+    },
+    {
+      "job": "cdcc1b94ae6137e19b57d5ef142eac90b23eeb3ddd5426abb64c3481a729c430",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/preparation/bp_fe"
+    },
+    {
+      "job": "883b97dd61932125200b610152571fbb1761b74c2c31161e7c3c7b1135c0c325",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals-fixed/placement_parameters_reference_20260923/search/evaluations/0001-2e1a7c2fadb2/native-evaluation"
+    },
+    {
+      "job": "99974ce1a3c45c6ed239387a42d779ea9a19a3dabac7ecfb79924c35f6e538d7",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals-fixed/placement_initialization/search/evaluations/0001-c28a3f49098c/native-evaluation"
+    },
+    {
+      "job": "5e9b765310bf96841cc596ec642d46ff122c50cd709bacac413a08a8161cdc62",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals-fixed/placement_preconditioner/search/evaluations/0001-b68b86440cc7/native-evaluation"
+    },
+    {
+      "job": "c46e3fbc933fc711b813cfb6910736b9dbeeaf3b7952160c4d920256f2ba798d",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/tp_gnn_post_placement_timing/search/evaluations/0002-b918b774b485/native-evaluation"
+    },
+    {
+      "job": "19b9b8b9ee116169f65a4cd566d97a7d585334f30d5dc141cdf5edf4c1bf2f99",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/global_routing_ripup_policy/search/evaluations/0001-5551c66410ab/native-evaluation"
+    },
+    {
+      "job": "b60e36de677bbb21963e35c37d8b4e5a720aae00026dd02f0585a127d400fdb7",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals-fixed/placement_parameters_reference_20260923/search/evaluations/0002-f26d26d934f7/native-evaluation"
+    },
+    {
+      "job": "1241fc6c6c52b91c926d456ae983bf5aa6976c27b41cfa60b3cb65e6e8c9ecf5",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals-fixed/placement_preconditioner/search/evaluations/0002-3bef06b21ff5/native-evaluation"
+    },
+    {
+      "job": "322c35038e6909fae3394dd368ccaccdbb4468be0d0d6346ea837deb7239824d",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals-fixed/placement_initialization/search/evaluations/0002-5f7f84e3a868/native-evaluation"
+    },
+    {
+      "job": "dccbeeef945db946d5c9474442917cf1b57208ad025f50c719e0b722c19fa52d",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/preparation/ariane133"
+    },
+    {
+      "job": "72f0d3e3db3a292598b1ee947cd1146a6e5fa77ab4f878e03c843775f9f42208",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/global_routing_iteration_controller/reference"
+    },
+    {
+      "job": "5e292ee69008391667cd4a786fbc3b924b0f3686de6df4c439a4d3224d447047",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/global_routing_maze_cost/search/evaluations/0001-bb753f2f44a0/native-evaluation"
+    },
+    {
+      "job": "033ad06cf4bd0daa36b954da6b27e082ca9cfc43ac21efd716dd480c076a4e85",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/initializer-prompt-recheck/search/evaluations/0001-673c9f401603/native-evaluation"
+    },
+    {
+      "job": "4fe12e5e8c131312a0b0f84c82d2706d39e8bc8eec92dcb7045a8764459613c9",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/global_routing_iteration_controller/search/evaluations/0001-059f461d4c54/native-evaluation"
+    },
+    {
+      "job": "cb54e64538848803b173e99293097e9bf1ca2511bb2060afabbcbd2cb10828ec",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/global_routing_maze_cost/search/evaluations/0002-b472817cf75e/native-evaluation"
+    },
+    {
+      "job": "d2d546ddf364a19368c19749e32f3f3820877bb5e47186419d753721039678f8",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/preparation/swerv_wrapper"
+    },
+    {
+      "job": "195fd4bde5914933e6d84602b54d898c2ab27c6ed42826e4590107f9ae2b64b8",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/global_routing_ripup_policy/search/evaluations/0002-a3c3793ca008/native-evaluation"
+    },
+    {
+      "job": "a3579d32c4f86809bcbdf3452dec5826063f661d859e9d67f90c381b4a4836c8",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/locals/global_routing_iteration_controller/search/evaluations/0002-955122d715d4/native-evaluation"
+    },
+    {
+      "job": "8bbdd9043ab2788b9d65a53b0454689a4615cc07733d9a5bc26080d72a3c994e",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/maze-repeat-diagnostic/0001-bb753f2f44a0"
+    },
+    {
+      "job": "fa3f5556e6cd4035f275bcc8b49fe922200ba44819b9a763ef8640e5aeed6751",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/maze-repeat-diagnostic/0002-b472817cf75e"
+    },
+    {
+      "job": "301df70e21a96f639e699af0f955b915b59e77c872a5db5dd974703e01f334d8",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign/clock_compensation/qualification-resources"
+    },
+    {
+      "job": "76d5119341c9f0b3d443bbbae0495a3dde99cf4ce8f832562a03b23e1f3d63a1",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign/multi_hbt_fanout/qualification-resources"
+    },
+    {
+      "job": "4c377bf59682d9ff312c035a3655c03d984ee1c789cf61b35f31cd81f2f7bc8d",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/maze-context-fixed/reference"
+    },
+    {
+      "job": "4d3610b94cedc2a5e4717cc5d83dd4e47b931afa8b366b19a54bce18f8c5c474",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign/clock_compensation/developer-resources"
+    },
+    {
+      "job": "42b18b384bde6ae5e4245d10b974662e86d4146030062b349a3ebbb28f05f8ac",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign/multi_hbt_fanout/developer-resources"
+    },
+    {
+      "job": "6c6f1dc62adc806a3964d6948e918c57a91c9aeff9740d1776d8a459cf7bd7ba",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/maze-context-fixed/round-01/evaluation"
+    },
+    {
+      "job": "c86e0b140c40ea47bf25e4c9612c80a42723279c32c2344dadf3b41f8c5ae35d",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/maze-context-fixed/round-01/repeat"
+    },
+    {
+      "job": "c23915ff95fb35bca0c6bc3a157f860999c5687e848d6872eee824da400c6261",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/maze-context-fixed/round-02/evaluation"
+    },
+    {
+      "job": "45fc950d53274d43cf0e751dc6be1159df012232dd6813a61afc2a4be5782503",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign/cross_die_cts/qualification-resources"
+    },
+    {
+      "job": "c5be8d26bc5ba2d4d7af03af0906afe65b527cf4f244d59986f39c0ff97a6286",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign/cross_die_cts/developer-resources"
+    },
+    {
+      "job": "78ac5b6955338137f9ac6364c6a9086701efc91a824a07ba4438446f5cf23bb1",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign/clock_compensation/final-resources"
+    },
+    {
+      "job": "632e7b9e6086bf252ef24be1e27193ff74630472541a46450f1023e705b9a52d",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/maze-context-fixed/round-02/repeat"
+    },
+    {
+      "job": "8e9af55f877c904395fb20863e746b23607daeba00ca18bcaab24ace04042e95",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign/multi_hbt_fanout/clean-submission"
+    },
+    {
+      "job": "d01fb63bf4900a6d7f485662264442f2d8a8b059ed448d1afa9da5e2b875816b",
+      "state": "cancelled",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v3/shared-reservation"
+    },
+    {
+      "job": "3539dcdee367c2c03856a7990625d806b013a40b8f9c708ac3a6c4a201a9890f",
+      "state": "cancelled",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v3/round-01-agent-reservation"
+    },
+    {
+      "job": "083726079edebc7238a0c51327830b7e406f8e03aa5a73f442c087d20f5bd30b",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign/cross_die_cts/final-resources"
+    },
+    {
+      "job": "f4cb7ce2896db8d7097ada53e18d351bd7b955a34b3222a445bac3a488cb6bb6",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v3/round-01-agent-reservation-slots-v2/0"
+    },
+    {
+      "job": "52d6028ea5bd6e2cb12052d1a8cd67671649e0f7654e3862955be123cafb5705",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v3/round-01-agent-reservation-slots-v2/1"
+    },
+    {
+      "job": "995eb2fdc85594c2b5108c2e4f9c9ca80a10c9cdb9e29eab9c0b806d50d0c236",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v3/round-01-agent-reservation-slots-v2/2"
+    },
+    {
+      "job": "2af6c8524cfabdac3d575dbd68e0df99f4d6c4173df59e9ab282ad3212f67b25",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v3/round-02-agent-reservation-slots-v2/0"
+    },
+    {
+      "job": "bd11d450553916a22ca9429fbda34efae3cd8d3cd0510b3c03587097538342a7",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v3/round-02-agent-reservation-slots-v2/1"
+    },
+    {
+      "job": "be6e044f9e46bd6d209fbc06c832ababcdab9bcd0de52e713970c17ee56e4819",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v3/round-02-agent-reservation-slots-v2/2"
+    },
+    {
+      "job": "a300e044893b84309ab41f530d974573c697006bd4b953e1b60d3601e6698af7",
+      "state": "failed",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign-editfix/cross_die_cts/qualification-resources"
+    },
+    {
+      "job": "f4027f39be692ebf645a3128bcdd5b69701980809df0d1b295bd8cd33617c696",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/scoped-edit-probe"
+    },
+    {
+      "job": "bad2fb6f55bd49efd9e21036a332f824f5a78c86c2f00cec98126a7eeba501fb",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-01-agent-reservation-slots-v2/0"
+    },
+    {
+      "job": "d3cf6d5eaf47441f6a675f25c24ec0f54fecb3ca1018c20a5ed5599a1af4d58f",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-01-agent-reservation-slots-v2/1"
+    },
+    {
+      "job": "c3f610f6dd1c52b58f3e106ee89fde3e5a98b110ba1d11a3cd0b9bf00cb85b13",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-01-agent-reservation-slots-v2/2"
+    },
+    {
+      "job": "1b94f9dd75cda2f7dea06d973a47409ed93a6da72b7b4eece1ff300c3eb421bb",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign-editfix2/cross_die_cts/qualification-resources"
+    },
+    {
+      "job": "e35dd7627bb2ea0bb9cdcb89eda978341db7da15a7827ff5c3d7f4b241cd8b21",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign-editfix2/cross_die_cts/developer-resources"
+    },
+    {
+      "job": "7290f759b41ef8f21a5a284422d2bfcaba124c8b284a3f57b677d3217697d04d",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-01-matrix-reservation-slots-v2/0"
+    },
+    {
+      "job": "648f661c97a862296dd268e72ee00a78dd33d3d55c63c08a436d1be55c1ba359",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-01-matrix-reservation-slots-v2/1"
+    },
+    {
+      "job": "980edff3ccb398ec911d4a685cc68debef2b041c9f1addb7b535b9749601dd11",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-01-matrix-reservation-slots-v2/2"
+    },
+    {
+      "job": "4599c7d8d19d8f38ba3c10773743b191d83c15cf3cb34029d16586f787498137",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign-editfix2/cross_die_cts/final-resources"
+    },
+    {
+      "job": "92a4ef97d33e79e6eed1746c8107f2734d1138a58558b76ace21b325584cda66",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/cts-endpoint-probe"
+    },
+    {
+      "job": "465dbb55d8bcaef00ada591bb020549f4226712f54ae58c42e8ebb52fd1f1715",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-02-agent-reservation-slots-v2/0"
+    },
+    {
+      "job": "735b8c2f415810996fb9a0441a8b543859806047b3239022e93192dd4c166eb0",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-02-agent-reservation-slots-v2/1"
+    },
+    {
+      "job": "614d75f40e591fdf339bc30124e9174d8b4ef51288c39231fbfbc0e26cc6b105",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-02-agent-reservation-slots-v2/2"
+    },
+    {
+      "job": "7cd99feeb36017e5becd881402a8169b99b62660347b96edcc0fb486e67245e2",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-02-matrix-reservation-slots-v2/0"
+    },
+    {
+      "job": "39582c45067af2608a0e7b166c394939ed8b4e2471cee0182cdbb7e7b12fb128",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-02-matrix-reservation-slots-v2/1"
+    },
+    {
+      "job": "c8c55ea075b14f1635bf41e9c8b4589973f40d2adbee2c7b36f0b4a1363085c3",
+      "state": "succeeded",
+      "output": "/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/global-v4/round-02-matrix-reservation-slots-v2/2"
+    }
+  ],
+  "active_outer_jobs": [],
+  "storage_operations": [
+    {
+      "receipt": "prefix-dedup-1792244254.json",
+      "sha256": "1193ca646578146cc1d69f544129f6bf3a04840d438e2fc490fa6988776b4699",
+      "saved_bytes": 50707828736,
+      "file_count": 1780
+    },
+    {
+      "receipt": "prefix-dedup-1792246811.json",
+      "sha256": "f061090327b3d8c1246ec179b04edf034147ed3a382c8fad97dcbc23e293da63",
+      "saved_bytes": 30424621056,
+      "file_count": 1068
+    },
+    {
+      "receipt": "workspace-dedup-1792249928.json",
+      "sha256": "963a0701663825f5fd74b703f142afe080bdb97c54e30e3d5824a1dfd4535504",
+      "saved_bytes": 0,
+      "file_count": 0
+    },
+    {
+      "receipt": "workspace-dedup-1792250126.json",
+      "sha256": "be2442d7b583fd26da8320dcd544b22953bdf434c5c465ffa4de1211d6671ced",
+      "saved_bytes": 32730214400,
+      "file_count": 22944
+    },
+    {
+      "receipt": "workspace-dedup-1792252859.json",
+      "sha256": "8e15d5e7fa142c4c42f5f3a09f25da673c35d3cb64385d6bf8784d3df4c14431",
+      "saved_bytes": 34673569792,
+      "file_count": 24404
+    },
+    {
+      "receipt": "workspace-dedup-1792253135.json",
+      "sha256": "963a0701663825f5fd74b703f142afe080bdb97c54e30e3d5824a1dfd4535504",
+      "saved_bytes": 0,
+      "file_count": 0
+    },
+    {
+      "receipt": "global-v4/control/rounds/0001/matrix/storage.json",
+      "sha256": "83e8a7838707994a838baf6ba0dd47da115a226d1be4012b8e3f348064e3d70f",
+      "released_blocks_bytes": 22787973120,
+      "seconds": 316.34178145229816
+    },
+    {
+      "receipt": "global-v4/control/rounds/0002/matrix/storage.json",
+      "sha256": "a6d2cc09281e4fae940ad73d3570e20e7a21fabccd5c55591529381aa0064ea5",
+      "released_blocks_bytes": 28659167232,
+      "seconds": 323.94602853804827
+    }
+  ],
+  "filesystem_free_bytes": 122178084864
+}

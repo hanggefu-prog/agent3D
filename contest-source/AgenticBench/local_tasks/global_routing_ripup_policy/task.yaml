@@ -1,0 +1,51 @@
+schema_version: 1
+id: global_routing_ripup_policy_source
+title: Die-aware FastRoute edge rip-up policy evolution
+description: Evolve edge-level rip-up eligibility from a frozen ariane133 CTS checkpoint.
+kind: routing_ripup_policy_source
+base_config: ../../local_bench/benchmark_inputs/ariane133_lol_ng45_tp_gnn_cts/config.yaml
+benchmark_input: ariane133_lol_ng45_tp_gnn_cts
+initial_candidate: initial_candidate
+prompt: prompt.md
+program:
+  mode: task_adapter
+  template: initial_program.py
+  adapter: program_adapter.py
+  entrypoint: score_ripup_edge
+prompt_context:
+  priority_parameters:
+    - baseline_decision
+    - edge_overflow
+    - max_utilization
+    - detour_ratio
+    - history_pressure
+    - die_id
+    - die_overflow
+    - is_hbt
+    - criticality
+  feedback_recent: 3
+  feedback_top: 3
+  max_feedback_chars: 24000
+  max_source_chars: 52000
+  read_only_source_paths:
+    - OpenROAD-3D/openroad/src/grt/src/fastroute/src/maze.cpp
+    - OpenROAD-3D/openroad/src/grt/src/fastroute/src/FastRoute.cpp
+    - OpenROAD-3D/openroad/src/grt/src/fastroute/src/graph2d.cpp
+  source_ranges:
+    - {path: OpenROAD-3D/openroad/src/grt/src/fastroute/src/RipUp.cpp, start_line: 150, end_line: 235}
+    - {path: OpenROAD-3D/openroad/src/grt/src/fastroute/src/maze.cpp, start_line: 1170, end_line: 1340}
+    - {path: OpenROAD-3D/openroad/src/grt/src/fastroute/src/FastRoute.cpp, start_line: 1430, end_line: 1620}
+execution:
+  from: global_routing
+  to: global_routing
+  upstream_stages: [input, floorplan, partition, placement, pdn, hbt, opt, cts]
+candidate_policy:
+  allowed_config_paths: []
+  allowed_source_paths:
+    - OpenROAD-3D/openroad/src/grt/src/fastroute/src/RipUp.cpp
+    - open3dbench/backend/three_d_route.py
+    - open3dbench/runner.py
+  max_changed_files: 3
+  max_added_lines: 1800
+  max_deleted_lines: 24
+  files: []

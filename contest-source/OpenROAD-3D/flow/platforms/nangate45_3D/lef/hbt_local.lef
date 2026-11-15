@@ -1,0 +1,41 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+# Die-local HBT placement anchors for the maintained two-ODB flow.  These
+# COVER masters intentionally have no signal pin.  The colocated boundary
+# BTerm is the sole die-local routing endpoint, while the vertical timing arc
+# is represented exclusively in the logical assembly view.
+MACRO HBT_BOTIN_bottom
+  CLASS COVER ;
+  ORIGIN 0 0 ;
+  FOREIGN HBT_BOTIN_bottom 0 0 ;
+  SIZE 1.0 BY 1.0 ;
+  SYMMETRY X Y ;
+END HBT_BOTIN_bottom
+
+MACRO HBT_BOTIN_top
+  CLASS COVER ;
+  ORIGIN 0 0 ;
+  FOREIGN HBT_BOTIN_top 0 0 ;
+  SIZE 1.0 BY 1.0 ;
+  SYMMETRY X Y ;
+END HBT_BOTIN_top
+
+MACRO HBT_TOPIN_bottom
+  CLASS COVER ;
+  ORIGIN 0 0 ;
+  FOREIGN HBT_TOPIN_bottom 0 0 ;
+  SIZE 1.0 BY 1.0 ;
+  SYMMETRY X Y ;
+END HBT_TOPIN_bottom
+
+MACRO HBT_TOPIN_top
+  CLASS COVER ;
+  ORIGIN 0 0 ;
+  FOREIGN HBT_TOPIN_top 0 0 ;
+  SIZE 1.0 BY 1.0 ;
+  SYMMETRY X Y ;
+END HBT_TOPIN_top
+
+END LIBRARY

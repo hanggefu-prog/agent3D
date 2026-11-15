@@ -1,0 +1,5 @@
+### Alternative program {program_number} (combined_score: {score})
+```{language}
+{program_snippet}
+```
+Treat this as an idea to examine, not evidence of improvement over the parent.

@@ -1,0 +1,4 @@
+# Context-only blank lines are significant inside unified patches.
+*.patch -whitespace
+AgenticBench/analysis/*.csv text eol=lf
+AgenticBench/analysis/**/*.csv text eol=lf

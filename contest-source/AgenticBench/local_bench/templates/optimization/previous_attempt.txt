@@ -1,0 +1,5 @@
+### Selected evaluated example {attempt_number}
+- Recorded change: {changes}
+- Measured metrics: {performance}
+
+Use the task's metric directions and validity gates, not an "all metrics improved" label.

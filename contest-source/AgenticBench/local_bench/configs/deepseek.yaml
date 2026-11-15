@@ -1,0 +1,13 @@
+schema_version: 1
+provider: deepseek
+base_url: https://api.deepseek.com
+model: deepseek-v4-flash
+api_key_env: DEEPSEEK_API_KEY
+api_mode: chat_completions
+stream: true
+timeout_seconds: 300
+max_tokens: 8192
+temperature: null
+top_p: null
+reasoning_effort: high
+max_attempts: 8

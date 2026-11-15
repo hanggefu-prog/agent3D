@@ -1,0 +1,1088 @@
+[
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "bp_fe-ng45",
+    "seed": "s2",
+    "job": "fb647d94ef0db8e7dcc86e482ad2c546282831276137fcaacd5303134353fa31",
+    "grt": {
+      "runtime_seconds": 18.081459939479828,
+      "grt_wire_length_um": 1511864.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "6696b6f93b4f0c5c0da83708e2406c4039be7dbc5107fe0c22a24632e1192bf0",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "1e5080b907ce4fab1f44225650ec1c86891dbdf0107359b07e5c65b6e03256d1",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "bp-ng45",
+    "seed": "s2",
+    "job": "c3045a10386e02ba8d6bfc552258126c59aca80d070698ab1d2d0baf979b400a",
+    "grt": {
+      "runtime_seconds": 50.94258476048708,
+      "grt_wire_length_um": 4716068.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "732874b9f40f2a4cb102318c9ea58b2be83a684ec4d88e4e49da6a2a838d0a49",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "f3e54f0ed52a5644dfbf3c53413a310b328f4032a5550b304b9c9521a08a47bf",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "ariane133-ng45",
+    "seed": "s1",
+    "job": "f64a24fd4303253129f6d3fa2e19945372b803315c8041d972126b5b25388577",
+    "grt": {
+      "runtime_seconds": 115.16138981282711,
+      "grt_wire_length_um": 6977098.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "48f53a738af8abfb75d9a02833f43a1d880e4d7e0c6872a480e7806613185495",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "92bc8dce173631d15be75bee258c979d79fcdbe689b98fa654cbce561f9d07ad",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4",
+          "[INFO GRT-0102] Start extra iteration 4/4",
+          "[INFO GRT-0103] Polishing residual overflow 37 for up to 4 iterations.",
+          "[INFO GRT-0102] Start extra iteration 5/8",
+          "[INFO GRT-0102] Start extra iteration 6/8",
+          "[INFO GRT-0102] Start extra iteration 7/8",
+          "[INFO GRT-0102] Start extra iteration 8/8"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "ariane133-ng45",
+    "seed": "s1",
+    "job": "56037b8699003757e5255bcedbd39ce36fc824473ab06e655a13816aad9d8e20",
+    "grt": {
+      "runtime_seconds": 74.7327184677124,
+      "grt_wire_length_um": 6952061.0,
+      "grt_total_overflow": 40
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "69344aca48e0ca9195a932396123aedc6a6a360e2b4ef9d7428aa3b9b0617265",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "4521373d30469b3c85ab2bac6c3f36c2f936e216d91a8dbee00b139f8cbc3891",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4",
+          "[INFO GRT-0102] Start extra iteration 4/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "bp_fe-ng45",
+    "seed": "s1",
+    "job": "46a51dae556d4b085caebe670a9b98fd030a8b659c5dbcfacd2017f8e3918d0d",
+    "grt": {
+      "runtime_seconds": 16.94591637700796,
+      "grt_wire_length_um": 1495263.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "1e26e703c15c68175c6ea9471a9e0e1f8ed13e14bb3c5670364e82c2a1c6cb26",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "a8826149c4e604b2abd47b5acf0e04c706113f7e20f907e4e7f2a022f5e6ceb2",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "bp_fe-asap7",
+    "seed": "s3",
+    "job": "36720ee5a12e625c904c5b10377ede517e176724b482b5e9d12177121262d2a6",
+    "grt": {
+      "runtime_seconds": 22.865309976041317,
+      "grt_wire_length_um": 465766.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "881b1a1780b815582eec300fa4cbcf9f713a40748487a70020c9c8863504d899",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "9a21b496e240617ba1436a8c741105ae6839c24212d5cac3275226af05a6d3f4",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "bp_fe-ng45",
+    "seed": "s3",
+    "job": "3f46405ab8e6d11e37441ace32b124f7880f13739bcc40264b77dfb5d2fdb92b",
+    "grt": {
+      "runtime_seconds": 16.196841724216938,
+      "grt_wire_length_um": 1512130.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "cc0a38b078025d96bfdc24d29e2bdab7b5ed71f0ce35f0fbed90a41550ca96fd",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "c826edf2ef3bf69e1240b8830b58bb2c599698e66485d5a1cffeeae5180ada23",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "swerv_wrapper-ng45",
+    "seed": "s3",
+    "job": "f904cb1640beb03ee79f693b397d7854fb535e92cd27f32f21666a110b76655b",
+    "grt": {
+      "runtime_seconds": 51.94651302695274,
+      "grt_wire_length_um": 4000319.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "a847a5bb227e0a5f4287cfcd75e4261a428a13d305ca5087a7b6424f0c4467a3",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "70c466e1cf6e428265d2ad13b61d26bc57146ce50e53de88177e8e8b3fe7ced9",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "swerv_wrapper-ng45",
+    "seed": "s3",
+    "job": "396c4b9697b312ca945b35036ad74a9c16f87cb4bd2afbc198c03e266d3ca6c2",
+    "grt": {
+      "runtime_seconds": 44.02669067680836,
+      "grt_wire_length_um": 4057949.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "c5669af8bc65a0948f6c0e1d6f8faf7e248a6528060f9d10704a09ad740fafd6",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "fdb577f005e76e45b0a079270a1ff73f6d22b1a77945d625a4dfa16c47ea2c41",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "bp_fe-ng45",
+    "seed": "s2",
+    "job": "def5a99e6dce1901c0bf6e11d0f40b3f8d02e88d9b44a0758aae3373d7e9f759",
+    "grt": {
+      "runtime_seconds": 16.687045983970165,
+      "grt_wire_length_um": 1492681.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "9de1b6ef7fb263b6e8986cf4c1e515549fc4de526c3ca030fb8ad1695a71ce85",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "57dcee7e05f7323fe8fa15de4dfe31aabe6919a49ce4c73e23cf64abe1bf01b3",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "swerv_wrapper-ng45",
+    "seed": "s2",
+    "job": "cd5dcf0254d86253cffd37b9a9a2d8ade0c8699fbdbb737aa1950a881c400006",
+    "grt": {
+      "runtime_seconds": 48.879170179367065,
+      "grt_wire_length_um": 4084437.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "1be78ae7b51b69f87c692352d11fc358eac544be6e80e1ff6ab750e6313850b5",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "9c2789a99844cdef83f91e0acf891810db2077a50961d964e6dea0c8bd2397b7",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "swerv_wrapper-ng45",
+    "seed": "s1",
+    "job": "2be2dce3bfd857ab3065c130f713d1b586332554dba22adb676106d1a1696073",
+    "grt": {
+      "runtime_seconds": 46.88683073222637,
+      "grt_wire_length_um": 4018322.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "7095e116f24348127ee6b9ccbd6be50c606e06ddb964658bdd5874337f7f4fca",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "06d54ec1ce22a63a3e5969cff1d9d5349afb9b5cda21a050555d3a593ccf71e0",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "bp-ng45",
+    "seed": "s2",
+    "job": "ae730a88ae7366cf98cee901cf73441a606ae8342da5f892a118e6c57a6c81a3",
+    "grt": {
+      "runtime_seconds": 48.700000911951065,
+      "grt_wire_length_um": 4721050.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "2e44eabee925760a34150d5f34596836ca8d970bf8106532c306a21c067e80f8",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "1a79c934dc7d1a152cab6a060abf022012aef5f147e8b684cbc7578193329366",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "bp_fe-asap7",
+    "seed": "s1",
+    "job": "884bd0a124fba1765c9fee9dddcc6f3a45854543799f0aa7f41a5dfa9ec34a7f",
+    "grt": {
+      "runtime_seconds": 21.290574103593826,
+      "grt_wire_length_um": 409058.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "4810e1a5be5258f52d81577058b699df19b28ef600e8c68e1c479d93e726369c",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "3d80a9cfc39130fc4e213365bdfde678cd7383875fbfaed2988fab19bccb85d1",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "bp_fe-asap7",
+    "seed": "s1",
+    "job": "21634831cecb42ebbbb078f4e6eb09332ca4b1fb37f62184645d46e8f27c889a",
+    "grt": {
+      "runtime_seconds": 21.41377764940262,
+      "grt_wire_length_um": 409058.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "4810e1a5be5258f52d81577058b699df19b28ef600e8c68e1c479d93e726369c",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "3d80a9cfc39130fc4e213365bdfde678cd7383875fbfaed2988fab19bccb85d1",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "bp_fe-asap7",
+    "seed": "s1",
+    "job": "5d8f8d38a86600ce37c4f1a3d6ca7913c3b7b7c873676f532a735c5abf53e4ce",
+    "grt": {
+      "runtime_seconds": 20.866566978394985,
+      "grt_wire_length_um": 403458.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "fb149ff8acd7f5b823e2458def5dddedc4ef8b3948c966e71e1dea874a68615d",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "2e7f544c8269973487b1d12167695178473dd41e6502ea81e7ff8b57b60f482e",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "ariane133-ng45",
+    "seed": "s2",
+    "job": "e56d4ec7aac31eb25bac9ac822d3521487349f4eecf2ac948539c01a7e87007b",
+    "grt": {
+      "runtime_seconds": 142.53689865767956,
+      "grt_wire_length_um": 7490688.0,
+      "grt_total_overflow": 20
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "e5663e3807d9c2110271499e54596e25d1ed42fdd33770d7a32acca945468f0d",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "272fa801d0b37d2ccc2544862acaab5279d5687cd62205fe599006d492f5de83",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4",
+          "[INFO GRT-0102] Start extra iteration 4/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "bp_fe-ng45",
+    "seed": "s2",
+    "job": "6723e3cf70bbedb28ab5d316f656f3a489c5e303681970001d87d0597f3ae6a0",
+    "grt": {
+      "runtime_seconds": 16.857388459146023,
+      "grt_wire_length_um": 1511864.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "c2de4472a06784195bb420fed4da0929cbde3f15cbfa9867d5c22475e83649d3",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "e1556042e731cad76ea88454c382fa6c5845c3a0274bebba5bc4d24573aba689",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "bp-ng45",
+    "seed": "s3",
+    "job": "0b2ec7ce876ccb370a0f77e5422a6d1330eb44a3b4a6c9ce82e6b4b9c4fba2f8",
+    "grt": {
+      "runtime_seconds": 45.261021472513676,
+      "grt_wire_length_um": 4798008.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "6ae275ee4a8f1598f10a74a30f6a648309d671962015a4fc78f640d7491193a0",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "ea88b70ebd9dba03d9562d28c279138c2cb7109febda15c1a90c0a20d0213ccf",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "swerv_wrapper-ng45",
+    "seed": "s3",
+    "job": "c11756b28b823f01a72c595234cb978f79d1f1f40b75f0a338f22a3b70330193",
+    "grt": {
+      "runtime_seconds": 43.064390905201435,
+      "grt_wire_length_um": 4057949.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "c5669af8bc65a0948f6c0e1d6f8faf7e248a6528060f9d10704a09ad740fafd6",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "fdb577f005e76e45b0a079270a1ff73f6d22b1a77945d625a4dfa16c47ea2c41",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "swerv_wrapper-ng45",
+    "seed": "s1",
+    "job": "a3c9b3f895d36b40d61a0d2182142fe995e3582b5e988e450d4ee56584ecd8d0",
+    "grt": {
+      "runtime_seconds": 43.92712665349245,
+      "grt_wire_length_um": 4018322.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "7baa571bce4aabcc8bdeb25e713383a00613cdc7ca8d261d31e69049c31ac3aa",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "774f05b968cddad17d5714b2c08c3373a0df0576acde0b5cd3187510c770b7cb",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "bp_fe-asap7",
+    "seed": "s2",
+    "job": "4a01f63540f9db9a6f3a1a22d02e9c77d51d6224f2176c2bc35b0ae08a7a0211",
+    "grt": {
+      "runtime_seconds": 20.861348316073418,
+      "grt_wire_length_um": 404834.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "37921c3538e4657c888558a8a475a0c367ddc17e53ff705d4d20ec9bf31d2b3c",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "3fbfcdd39f7f220cedf6f2aa41ce9f8da8245ef501d55dd2dfe0f085b61b3784",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "bp-ng45",
+    "seed": "s3",
+    "job": "74588f00cd6f67aaa6ee29aa7692c3158abdd47eb84918cc6c18f939ccab4cf5",
+    "grt": {
+      "runtime_seconds": 45.78596340119839,
+      "grt_wire_length_um": 4784240.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "6ee313c2af331b32208e36f174f87b91bb414df936733de2860be4491812a492",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "3d56babc8ac7f5da5e2d412de91930c2e5952404a0721bcd74ce1703d5167930",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "ariane133-ng45",
+    "seed": "s3",
+    "job": "cbdc3bada61d8decabc2180b3d2e1cee62626a1825434f28fc35e133e876ead8",
+    "grt": {
+      "runtime_seconds": 78.76399601250887,
+      "grt_wire_length_um": 6172349.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "b8be60f7796df1cb0f9707952c522f9abf007cf7a7d99c89c55b2d64ebd4b7ae",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "0092750cf63aeddebf93a7deae7ebf596c2b9e8698e4c8d3c1a5c80a818de6f2",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "bp_fe-ng45",
+    "seed": "s3",
+    "job": "60c4446a7f2a96fa33f0ed4661f579af5de82eba5952b2d3f504b89127d8f59d",
+    "grt": {
+      "runtime_seconds": 15.88259655982256,
+      "grt_wire_length_um": 1502462.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "aa9da418d0d65b55464b7642be17f35182b9fdb0da1672793c8f129622359d6c",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "a82af1c09c305e227507d22cac10248620adebc203347c714e20e48ea6613f6b",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "ariane133-ng45",
+    "seed": "s1",
+    "job": "8aee71185d7e69e50f8f15eada04ac288a1cf09b1c820e2df38006a4e1cac224",
+    "grt": {
+      "runtime_seconds": 83.01108203828335,
+      "grt_wire_length_um": 6970147.0,
+      "grt_total_overflow": 37
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "48f53a738af8abfb75d9a02833f43a1d880e4d7e0c6872a480e7806613185495",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "b474b605d680c5630074cbaaa3fd63288a75d761154f012412e8d524d9f32d48",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4",
+          "[INFO GRT-0102] Start extra iteration 4/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "bp-ng45",
+    "seed": "s2",
+    "job": "98e55b022d47199835cef151cb02ceaf1fca15d80da91cdfc1afc89f65854626",
+    "grt": {
+      "runtime_seconds": 53.02018418908119,
+      "grt_wire_length_um": 4721050.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "1b123f4ccfbfda23f7b680095da1fa7937f2d944b4d87bef3c059f1ae8ff3baf",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "578837d83da186e0c16c325f773b5ec19da91ceee68190a290824ff86bfb6a83",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "bp_fe-asap7",
+    "seed": "s3",
+    "job": "3c380606ba0a5e88d08f242621797ba7e3c298839583b8f5c702601295780a30",
+    "grt": {
+      "runtime_seconds": 22.612454637885094,
+      "grt_wire_length_um": 455934.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "084c4f694e83e93327a5aa98e77c7073bdf205d062a6da4c0de2fe295924459a",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "d45aaa6bd608d5456d4ffa916dad949c2e51b27050be1c142a8fb564c4bed68d",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "ariane133-ng45",
+    "seed": "s2",
+    "job": "9bc5eb6777c9ce98bdf33146d8a5abcaaabf4788e616d4ce9457b21c91e9694f",
+    "grt": {
+      "runtime_seconds": 108.68983547389507,
+      "grt_wire_length_um": 7422926.0,
+      "grt_total_overflow": 46
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "d3206323ecfd77a5640be8f4205780146729971379620716c7870a798272201e",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "13412fdb8c532bfbbc71b2f5e6d5dce41090d17f6a9254936408b0341354b7bb",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4",
+          "[INFO GRT-0102] Start extra iteration 4/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "bp_fe-asap7",
+    "seed": "s3",
+    "job": "5b30efdebf9cf8ef4bebe3d616a044b37ec5fb22d78af48459fe3bbf4eec3cd9",
+    "grt": {
+      "runtime_seconds": 23.464850790798664,
+      "grt_wire_length_um": 465766.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "6d9544a2781b0f76996e610fe0a1337cf7553711c2f76cf6d1aaaa1d43ab807a",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "9a21b496e240617ba1436a8c741105ae6839c24212d5cac3275226af05a6d3f4",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "bp-ng45",
+    "seed": "s1",
+    "job": "0ecfa674a757b490162379f5188289aefcc50e4f3df65187cf8d5d4487e3c84e",
+    "grt": {
+      "runtime_seconds": 46.76499142497778,
+      "grt_wire_length_um": 4760149.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "fce9187aa7e574a69e4d9a907bba4ab86d3d53ebab49b170ddfa82a7e07a0e69",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "55588679e4ad8e2197d60c96e18511e7a8358083081c3e126fbeaa9785679a32",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "bp_fe-asap7",
+    "seed": "s2",
+    "job": "854783531ed3bbbc24c5455a1fccee73e9addfe0b6457f7c029b6e7e03346105",
+    "grt": {
+      "runtime_seconds": 21.271690905094147,
+      "grt_wire_length_um": 410251.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "ccc1a4404298034a9357c9e6d7d7b71f33affbf517500c603d907b904153273f",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "4a5383b5580f5eb082332c637db547af540e2e6bd52740b265433e5bd32a0fd3",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "swerv_wrapper-ng45",
+    "seed": "s1",
+    "job": "2c1eb0562f549caad349f1bcf5b95155466e73f4b4feb6b85c61dfe986359714",
+    "grt": {
+      "runtime_seconds": 43.612645484507084,
+      "grt_wire_length_um": 3949412.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "31255d9d6c42460ea1f61f9e53481e232ebcb099bf67cedb1ab6f379e1583544",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "d5b1f897c2b6e92729a50a1b0965273aae2f3d88fb2f588947eebabe93ce56c7",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "ariane133-ng45",
+    "seed": "s2",
+    "job": "897280a0466a5d118982d7042400bbc5cc9fd57b926fbb2086343bd7d13139cf",
+    "grt": {
+      "runtime_seconds": 140.28732949495316,
+      "grt_wire_length_um": 7509963.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "48fed4939b9006ce22c383bffa2c8d7828ce5b2d28caae96dc96344b4be4bced",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "e8086ff933fc17ec04e874b926dbc2e065ff71ffefb37fb7d7549b1d49b55720",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4",
+          "[INFO GRT-0102] Start extra iteration 4/4",
+          "[INFO GRT-0103] Polishing residual overflow 7 for up to 4 iterations.",
+          "[INFO GRT-0102] Start extra iteration 5/8",
+          "[INFO GRT-0102] Start extra iteration 6/8",
+          "[INFO GRT-0102] Start extra iteration 7/8"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "bp_fe-ng45",
+    "seed": "s3",
+    "job": "6596d7cb15ec52980685a339e408e082abd9b72a6177710cfc935d0580328088",
+    "grt": {
+      "runtime_seconds": 16.036459028720856,
+      "grt_wire_length_um": 1512130.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "cc0a38b078025d96bfdc24d29e2bdab7b5ed71f0ce35f0fbed90a41550ca96fd",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "c826edf2ef3bf69e1240b8830b58bb2c599698e66485d5a1cffeeae5180ada23",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "bp_fe-asap7",
+    "seed": "s2",
+    "job": "c1d79d72ce85871aa29e7e20a8fde7d91c9dce66160067c62c8e27292b93e6c7",
+    "grt": {
+      "runtime_seconds": 21.811992928385735,
+      "grt_wire_length_um": 410251.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "ccc1a4404298034a9357c9e6d7d7b71f33affbf517500c603d907b904153273f",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "4a5383b5580f5eb082332c637db547af540e2e6bd52740b265433e5bd32a0fd3",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "ariane133-ng45",
+    "seed": "s3",
+    "job": "128d6487c0c89a8c6cdf705d1635d961642aaff542ee397255e8c1b0a2ae298b",
+    "grt": {
+      "runtime_seconds": 74.57641460001469,
+      "grt_wire_length_um": 6143547.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "e9b51504b86b30e64385f108ecd1a0fe3315cad9b3570c0f6851fc2793296b5f",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "84f2cea88cabf0881421d3cae06fce1482b13a52d77a5cb1ab9d0c23d5963684",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "68a75a22de588d7d54460d3643d04417dc21c3a0775cbf6d9e30b48e47db3cbf",
+    "case": "bp_fe-ng45",
+    "seed": "s1",
+    "job": "f8ad11d2630c087913805077880e1a1d07fca0ae5fda8037c943f9c4f0ba051c",
+    "grt": {
+      "runtime_seconds": 15.82977956533432,
+      "grt_wire_length_um": 1479046.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "8aa65e1bf1296dc7ae68b7113521937f7bb31f8fbdca4f1780353b53a40ee13a",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "11f030806fba03b1ab5e4e7ac5ba38e15b03c6f33ab7fd887064e084b8fbb21f",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "bp-ng45",
+    "seed": "s1",
+    "job": "02d0112736bdf8621467f2084c18d756d4601573a42ff6c5d5f1be341ee7047d",
+    "grt": {
+      "runtime_seconds": 45.99492438137531,
+      "grt_wire_length_um": 4764193.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "270f564565a8b95bb5b9a5fd96134b14c405f4b8c5978f6c5940e9bbbf2dd34a",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "7cce4e1fb2178fbf004580db2328ec9e9155e6336bdc4dec65c5dbd50d626d61",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "ariane133-ng45",
+    "seed": "s3",
+    "job": "7f3dd00820e98dd03ffb2bbeee691b85f5d9ade2698ed82fb2a72cc287d59011",
+    "grt": {
+      "runtime_seconds": 76.89754242449999,
+      "grt_wire_length_um": 6172349.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "3edefb94bf9d1c46a42fba4a7f5497ff95351d1561cf69d766ac2019aa7c1c2e",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "bcd215ea1f9a20e826f8b9692920b6ed52d1da33129917c36cf01e15441c4f0a",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4",
+          "[INFO GRT-0102] Start extra iteration 3/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "bp-ng45",
+    "seed": "s1",
+    "job": "5aa88dc083cd2879edb1f554fe6b6a59099279168a698e12db404f8ca754b5d8",
+    "grt": {
+      "runtime_seconds": 47.62196061760187,
+      "grt_wire_length_um": 4764193.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "270f564565a8b95bb5b9a5fd96134b14c405f4b8c5978f6c5940e9bbbf2dd34a",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "7cce4e1fb2178fbf004580db2328ec9e9155e6336bdc4dec65c5dbd50d626d61",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "bp_fe-ng45",
+    "seed": "s1",
+    "job": "a4db0d56faea49a399b9559ee8da972867e4f4d3aff57a37056e0f20008fb81f",
+    "grt": {
+      "runtime_seconds": 16.48573348671198,
+      "grt_wire_length_um": 1495263.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "1e26e703c15c68175c6ea9471a9e0e1f8ed13e14bb3c5670364e82c2a1c6cb26",
+        "lines": []
+      },
+      "top": {
+        "log_sha256": "a8826149c4e604b2abd47b5acf0e04c706113f7e20f907e4e7f2a022f5e6ceb2",
+        "lines": []
+      }
+    }
+  },
+  {
+    "candidate": "419705daffd2bf58cb5a9cb7ab07521e324ac560124674c3306012e1b770cdf5",
+    "case": "swerv_wrapper-ng45",
+    "seed": "s2",
+    "job": "0fd174606ffa4c448ed591eb42f09816c88022f2c22e7d5d835052a473ab2f76",
+    "grt": {
+      "runtime_seconds": 43.98553731292486,
+      "grt_wire_length_um": 4142329.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "6f4db2ca7ab2ab88e11f97ae1176e02f548c5b110f052cae148e45d0864ad1c2",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "4f59087eefdf934c3c9f138508788444dd29d33b7b7e6be075d91c2a08b9a150",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "swerv_wrapper-ng45",
+    "seed": "s2",
+    "job": "78e7b0b5fed6b818d82e136e4e9a545a6c947d7bb8adce5b6d9c3d5bafb25785",
+    "grt": {
+      "runtime_seconds": 43.133297711610794,
+      "grt_wire_length_um": 4142329.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "7fa304c31a5513b286259363a6314e442775c8baddf1f95ae8be903a94c2677c",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "4f59087eefdf934c3c9f138508788444dd29d33b7b7e6be075d91c2a08b9a150",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4",
+          "[INFO GRT-0102] Start extra iteration 2/4"
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "case": "bp-ng45",
+    "seed": "s3",
+    "job": "83582b8acf3f7fcf6ff5b068fdc04b0701ef612f4f2e3f9b3fac9ff25c08dbac",
+    "grt": {
+      "runtime_seconds": 46.03155402839184,
+      "grt_wire_length_um": 4798008.0,
+      "grt_total_overflow": 0
+    },
+    "iterations": {
+      "bottom": {
+        "log_sha256": "65d389e3075bf7c88ba491f469dc54c7212c8669cfc9226ae01ed00c4b8a23c1",
+        "lines": [
+          "[INFO GRT-0102] Start extra iteration 1/4"
+        ]
+      },
+      "top": {
+        "log_sha256": "fb9ba3db529a3785ec6e7f6fd9bd07e6f854e874f507d568ec01f7ce914a2115",
+        "lines": []
+      }
+    }
+  }
+]

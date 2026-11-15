@@ -1,0 +1,53 @@
+design: bp_fe
+type: lol
+pdk: ng45
+threads: 4
+input:
+  mode: rtl
+  variant: default
+pins:
+  algorithm: openroad
+  die: bottom
+  preplace: dreamplace
+  seed: 1
+  gpu: true
+partition:
+  algorithm: tp-gnn-flat
+  seed: 1001
+  config: config/partition/tp_gnn_fast.json
+placement:
+  algorithm: concurrent-dreamplace
+  config: config/placement/concurrent_dreamplace/default.json
+  gpu: true
+  target_density: 0.60
+  macro_halo_um: 5.0
+  seed: 1000
+pdn:
+  algorithm: openroad
+  connectivity_policy: ideal_supply
+hbt:
+  algorithm: track-aware-greedy
+opt:
+  algorithm: openroad
+  max_buffer_percent: 10.0
+  max_utilization_percent: 75.0
+  threads: 4
+cts:
+  algorithm: openroad
+  target_skew_ns: 0.1
+  cluster_size: 0
+  cluster_diameter_um: 0.0
+  delay_buffer_derate: 1.0
+  repair_hold: false
+routing:
+  algorithm: openroad
+  threads: 4
+  congestion_iterations: 4
+  max_iterations: 5
+  die_timeout_seconds: 10800
+  resource_reduction: 0.0
+  seed: -1
+thermal:
+  enabled: false
+  grid_size: 10
+  ambient_k: 318.15

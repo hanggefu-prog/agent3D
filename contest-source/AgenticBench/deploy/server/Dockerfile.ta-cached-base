@@ -1,0 +1,26 @@
+ARG CUDA_DONOR_IMAGE=shiyunqi/open3dbench:place
+ARG RUNTIME_BASE_IMAGE=shiyunqi/open3dbench:eval
+FROM ${CUDA_DONOR_IMAGE} AS cuda_donor
+FROM ${RUNTIME_BASE_IMAGE}
+
+COPY --from=cuda_donor /usr/local/cuda-11.0 /usr/local/cuda-11.0
+COPY --from=cuda_donor /opt/conda /opt/conda
+COPY --from=cuda_donor /opt/cmake /opt/cmake
+RUN ln -sfn /usr/local/cuda-11.0 /usr/local/cuda
+ENV CUDA_HOME=/usr/local/cuda \
+    PATH=/opt/conda/bin:/opt/cmake/bin:/usr/local/cuda/bin:${PATH} \
+    LD_LIBRARY_PATH=/usr/local/cuda/lib64
+
+# The Ubuntu 20.04 runtime image points at public Ubuntu archives, which are
+# slow from ta1/ta2. This intermediate image adds the cached CUDA compiler and
+# changes the package mirror; the official Open3DBench-V2.0 Dockerfile still
+# owns all dependencies and source builds layered on top of it.
+RUN sed -i \
+      -e 's|http://archive.ubuntu.com/ubuntu/|http://mirror.nju.edu.cn/ubuntu/|g' \
+      -e 's|http://security.ubuntu.com/ubuntu/|http://mirror.nju.edu.cn/ubuntu/|g' \
+      /etc/apt/sources.list \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+       bison build-essential flex libboost-all-dev libcairo2-dev libfl-dev \
+       libsuperlu-dev pkg-config wget zlib1g-dev \
+    && rm -rf /var/lib/apt/lists/*

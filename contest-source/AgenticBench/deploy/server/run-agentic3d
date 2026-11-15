@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source "$HOME/.config/agentic3d/env.sh"
+
+if [[ $# -eq 0 ]]; then
+  cat >&2 <<'EOF'
+Usage:
+  run-agentic3d --task "<optimization objective>" [agentic3d-run options]
+  run-agentic3d --task-file /path/to/task.md [agentic3d-run options]
+
+The dedicated repository is $OPEN3DBENCH_ROOT.
+Workflow state is written under $AGENTIC3D_RUNS_ROOT.
+EOF
+  exit 2
+fi
+
+exec agentic3d-run --repo "$OPEN3DBENCH_ROOT" "$@"

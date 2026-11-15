@@ -1,0 +1,16 @@
+# Copy this file outside the repository (or to an ignored local path), then
+# replace only the placeholder base URL and model ID. Keep the API key in the
+# OPENAI_COMPAT_API_KEY environment variable; never put it in this YAML file.
+schema_version: 1
+provider: openai
+base_url: https://YOUR_OPENAI_COMPATIBLE_HOST/v1
+model: YOUR_MODEL_ID
+api_key_env: OPENAI_COMPAT_API_KEY
+api_mode: chat_completions
+stream: false
+timeout_seconds: 300
+max_tokens: 8192
+temperature: null
+top_p: null
+reasoning_effort: null
+max_attempts: 3

@@ -1,0 +1,50 @@
+{
+  "validation_date": "2026-10-16",
+  "post_grt_host_regressions": {
+    "passed": 182,
+    "seconds": 22.74
+  },
+  "merged_physical_flow_tests": {
+    "passed": 516,
+    "skipped": 1,
+    "subtests_passed": 203,
+    "seconds": 3.58
+  },
+  "partition_conflict_regressions": {
+    "tests": 40,
+    "skipped": 1
+  },
+  "deployed_core_module_hash_matches": 68,
+  "native_regression": {
+    "name": "grt_pin_interior",
+    "passed": true,
+    "image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+    "implementation_sha256": "a3cf65581d68921c014c6e32ab598c60305b3d07e2bc31074e07307df775feb5",
+    "new_binary_build": false
+  },
+  "scope": "Host regressions and an installed-image native RC check. The integrated upstream physical flow is not a newly qualified 15-cell baseline.",
+  "full_recovered_control_plane_suite": {
+    "passed": 2713,
+    "failed": 58,
+    "errors": 68,
+    "skipped": 47,
+    "subtests_passed": 222,
+    "seconds": 178.35,
+    "status": "not_green",
+    "original_workspace_failed_subset": {
+      "failed": 56,
+      "errors": 68,
+      "passed": 2
+    },
+    "publication_only_failures": [
+      "An old mount test rejects any .codex path, including the managed worktree directory.",
+      "An old reference normalization test reads an untracked historical deployment output excluded from publication."
+    ],
+    "known_legacy_causes": [
+      "Missing tp_gnn_reference_20260923.json frozen profile.",
+      "Historical routing helper/API and fixture mismatches.",
+      "Historical task signatures/availability assumptions."
+    ],
+    "runtime_regression_claim": "No new production-runtime failure isolated in the failing-subset comparison; the full suite is still not merge-ready."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "accuracy": "exact interface; PDK-scaled geometry; provisional timing",
+  "generated_sha256": {
+    "OpenROAD-3D/flow/platforms/nangate45/lef/mem_0_ext.lef": "c06743a3ca3ec2f0dc326681f476bd5e1cece0377b0487068064ba8e2299ca1a",
+    "OpenROAD-3D/flow/platforms/nangate45/lef/mem_ext.lef": "d551106b465af4d964513d3ca552989629a1b2ced03c17ee6f2b144abd739085",
+    "OpenROAD-3D/flow/platforms/nangate45/lib/mem_0_ext.lib": "68cc36e0e6753f11dd21538ac0c57b6271172340bdbac73e50579f901fc9055e",
+    "OpenROAD-3D/flow/platforms/nangate45/lib/mem_ext.lib": "9569ab43dcebe8f22314a30f57abf12fc53b535e9ca842f99d655f454e2db908",
+    "OpenROAD-3D/flow/platforms/nangate45_3D/lef/mem_0_ext.lef": "c06743a3ca3ec2f0dc326681f476bd5e1cece0377b0487068064ba8e2299ca1a",
+    "OpenROAD-3D/flow/platforms/nangate45_3D/lef/mem_ext.lef": "d551106b465af4d964513d3ca552989629a1b2ced03c17ee6f2b144abd739085",
+    "OpenROAD-3D/flow/platforms/nangate45_3D/lef_bottom/mem_0_ext.bottom.lef": "d38f26a3e982755b380ba9910d9f6fbe7d4ab27df36f29ed546afec72402f2da",
+    "OpenROAD-3D/flow/platforms/nangate45_3D/lef_bottom/mem_ext.bottom.lef": "9fa8e40429b19a3caeddc2e5aaaae8f1b13f8d64e3a6ef93d23731494e604292",
+    "OpenROAD-3D/flow/platforms/nangate45_3D/lef_top/mem_0_ext.top.lef": "83356223d0ee6bab980e2acac4800bee9641b69f7e5c55fcbda3f007b2321bf8",
+    "OpenROAD-3D/flow/platforms/nangate45_3D/lef_top/mem_ext.top.lef": "5e86e2b5068d3026ac93c2a9640d1618f7a60365f12e127c43a04f201b16ddbb",
+    "OpenROAD-3D/flow/platforms/nangate45_3D/lib_bottom/mem_0_ext.bottom.lib": "01646d07c330963d10769fbc0fb27dc831cff3ac90436165707ab92d231da5fa",
+    "OpenROAD-3D/flow/platforms/nangate45_3D/lib_bottom/mem_ext.bottom.lib": "b510001db0cd5b4af62d1d0afcf9d889581b53dca45de20d6fe62a2f0a3c6f83",
+    "OpenROAD-3D/flow/platforms/nangate45_3D/lib_top/mem_0_ext.top.lib": "d0276e4ed00fd1f34fad1660f307844ad966c4dafc2a0b008762b43b565ae579",
+    "OpenROAD-3D/flow/platforms/nangate45_3D/lib_top/mem_ext.top.lib": "1e725f43c503e7a44e3afea20f0c85bf04eaf0e8b471c93aa245e2b803ecbd68"
+  },
+  "masters": {
+    "mem_0_ext": {
+      "data_width": 512,
+      "depth": 512,
+      "size_um": [
+        431.68,
+        322.0
+      ]
+    },
+    "mem_ext": {
+      "data_width": 128,
+      "depth": 4096,
+      "size_um": [
+        610.28,
+        454.99999999999994
+      ]
+    }
+  },
+  "schema": 1
+}

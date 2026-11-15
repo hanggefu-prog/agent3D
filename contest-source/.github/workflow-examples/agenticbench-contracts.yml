@@ -1,0 +1,25 @@
+# Optional CI: copy into .github/workflows/ with workflow-enabled credentials.
+name: AgenticBench contracts
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cpu-contracts:
+    if: github.ref != 'refs/heads/openroad-source'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e ./AgenticBench pytest numpy
+      - name: Task and agent interface tests
+        working-directory: AgenticBench
+        run: python -m pytest -q tests
+      - name: Initial candidates against the pinned physical sources
+        run: python AgenticBench/scripts/check_task_sources.py

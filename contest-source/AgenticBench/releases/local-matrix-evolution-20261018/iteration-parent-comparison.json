@@ -1,0 +1,141 @@
+{
+  "builds": [
+    {
+      "candidate_sha256": "9659e2b4c9381850fee0e734c20c6e2caab4d2195662cd57529d92b83736a984",
+      "image_id": "sha256:d606c68e1e640be590c6c2cb6cda5d29d862b6c392f8c0f950fba225c2cb737b",
+      "receipt": "${DATA_ROOT}/agenticbench-integration-20261016/local-matrix-audit-20261018/routing-active-hooks/tasks/global_routing_iteration_controller/search/evaluations/0001-9659e2b4c938/matrix/build/receipt.json",
+      "receipt_sha256": "67babcfcc557f9b857df8272a6aa95ceb2cea61f41df1317db0695a69e20cac6",
+      "source_commit": "e951f6df9365ac10012e3bbe3eb14723bec9568b",
+      "source_fingerprint": {
+        "algorithm": "openroad-tree-v1",
+        "bytes": 1838559005,
+        "entries": 11843,
+        "sha256": "bc5962e66a86d7e33ee9d80badac51c33fa5d999a57a8e0eff7e001560378d9d"
+      }
+    },
+    {
+      "candidate_sha256": "bc6787cae2d7166b21f54ae4cc9dfc41513c3c6e5a3d6e9c045514cf7f0fb29e",
+      "image_id": "sha256:f5b7febe42182a54922998bf650b5fc1226412e84d4c793731b3c03dcf12375b",
+      "receipt": "${DATA_ROOT}/agenticbench-integration-20261016/local-matrix-audit-20261018/routing-active-hooks/tasks/global_routing_iteration_controller/search/evaluations/0002-bc6787cae2d7/matrix/build/receipt.json",
+      "receipt_sha256": "75c9c63649cba17d7beafc048c1486ceb5e7fc39a3dd916786fed4e49f8f5dfd",
+      "source_commit": "e951f6df9365ac10012e3bbe3eb14723bec9568b",
+      "source_fingerprint": {
+        "algorithm": "openroad-tree-v1",
+        "bytes": 1838559047,
+        "entries": 11843,
+        "sha256": "ada72a65ee44b239564e368a3e92a7e10956b0c91957f054cd3deaad56af4aa6"
+      }
+    }
+  ],
+  "cells": [
+    {
+      "case": "ariane133-ng45",
+      "control_calls": {
+        "bottom": 1,
+        "top": 4
+      },
+      "logged_controls_identical": true,
+      "metric_deltas": {
+        "bottom_grt_total_overflow": 0.0,
+        "bottom_grt_wirelength_um": 0.0,
+        "grt_congestion_bins": 0.0,
+        "grt_total_overflow": 0.0,
+        "grt_wirelength_um": 0.0,
+        "top_grt_total_overflow": 0.0,
+        "top_grt_wirelength_um": 0.0
+      },
+      "seed": "s1"
+    },
+    {
+      "case": "ariane133-ng45",
+      "control_calls": {
+        "bottom": 3,
+        "top": 4
+      },
+      "logged_controls_identical": true,
+      "metric_deltas": {
+        "bottom_grt_total_overflow": 0.0,
+        "bottom_grt_wirelength_um": 0.0,
+        "grt_congestion_bins": 0.0,
+        "grt_total_overflow": 0.0,
+        "grt_wirelength_um": 0.0,
+        "top_grt_total_overflow": 0.0,
+        "top_grt_wirelength_um": 0.0
+      },
+      "seed": "s2"
+    },
+    {
+      "case": "ariane133-ng45",
+      "control_calls": {
+        "bottom": 2,
+        "top": 3
+      },
+      "logged_controls_identical": true,
+      "metric_deltas": {
+        "bottom_grt_total_overflow": 0.0,
+        "bottom_grt_wirelength_um": 0.0,
+        "grt_congestion_bins": 0.0,
+        "grt_total_overflow": 0.0,
+        "grt_wirelength_um": 0.0,
+        "top_grt_total_overflow": 0.0,
+        "top_grt_wirelength_um": 0.0
+      },
+      "seed": "s3"
+    },
+    {
+      "case": "bp_fe-ng45",
+      "control_calls": {
+        "bottom": 25,
+        "top": 10
+      },
+      "logged_controls_identical": true,
+      "metric_deltas": {
+        "bottom_grt_total_overflow": 0.0,
+        "bottom_grt_wirelength_um": 0.0,
+        "grt_congestion_bins": 0.0,
+        "grt_total_overflow": 0.0,
+        "grt_wirelength_um": 0.0,
+        "top_grt_total_overflow": 0.0,
+        "top_grt_wirelength_um": 0.0
+      },
+      "seed": "s1"
+    },
+    {
+      "case": "bp_fe-ng45",
+      "control_calls": {
+        "bottom": 25,
+        "top": 16
+      },
+      "logged_controls_identical": true,
+      "metric_deltas": {
+        "bottom_grt_total_overflow": 0.0,
+        "bottom_grt_wirelength_um": 0.0,
+        "grt_congestion_bins": 0.0,
+        "grt_total_overflow": 0.0,
+        "grt_wirelength_um": 0.0,
+        "top_grt_total_overflow": 0.0,
+        "top_grt_wirelength_um": 0.0
+      },
+      "seed": "s2"
+    },
+    {
+      "case": "bp_fe-ng45",
+      "control_calls": {
+        "bottom": 7,
+        "top": 16
+      },
+      "logged_controls_identical": true,
+      "metric_deltas": {
+        "bottom_grt_total_overflow": 0.0,
+        "bottom_grt_wirelength_um": 0.0,
+        "grt_congestion_bins": 0.0,
+        "grt_total_overflow": 0.0,
+        "grt_wirelength_um": 0.0,
+        "top_grt_total_overflow": 0.0,
+        "top_grt_wirelength_um": 0.0
+      },
+      "seed": "s3"
+    }
+  ],
+  "interpretation": "Compare effective logged controls as well as final metrics. Identical recorded controls do not prove identical physical paths or measure unlogged context fields."
+}

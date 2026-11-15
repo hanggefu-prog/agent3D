@@ -1,0 +1,2392 @@
+{
+  "io": {
+    "algorithm": "openroad",
+    "artifacts": {
+      "def": "design.def",
+      "odb": "design.odb",
+      "pin_placement": "io_placement.tcl",
+      "preplace_def": "io_preplace.def",
+      "preplace_params": "io_preplace.params.json",
+      "seed_def": "io_seed.def"
+    },
+    "gpu": true,
+    "horizontal_layer": "metal5",
+    "owner_die": "bottom",
+    "partition_consumed": false,
+    "partition_emitted": false,
+    "pin_count": 495,
+    "preplace": "dreamplace",
+    "schema_version": 1,
+    "seed": 1,
+    "source_2d_die_area": [
+      0,
+      0,
+      3000000,
+      3000000
+    ],
+    "status": "success",
+    "target_3d_core_area": [
+      100000,
+      100000,
+      1900000,
+      1900000
+    ],
+    "target_3d_die_area": [
+      0,
+      0,
+      2000000,
+      2000000
+    ],
+    "track_config": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/workspace/OpenROAD-3D/flow/platforms/nangate45_3D/make_tracks.tcl",
+    "unique_final_slots": 495,
+    "vertical_layer": "metal6"
+  },
+  "io_owner": "bottom",
+  "observability": {
+    "artifact_paths": [
+      "design_params.json",
+      "floorplan.json",
+      "io_metrics.json",
+      "io_plan.csv",
+      "io_preplace.params.json",
+      "metrics.json",
+      "optimization_history.csv",
+      "partition.names.csv",
+      "pdn_plan.json",
+      "preplan_manifest.json"
+    ],
+    "collection_issues": [],
+    "commands": [
+      {
+        "command": [
+          "/usr/local/bin/openroad",
+          "-no_init",
+          "-exit",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/10_floorplan/io_seed_slots.tcl"
+        ],
+        "completed_at": "2026-11-01T04:49:45.496838+00:00",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/10_floorplan",
+        "line": 1,
+        "log": "io_seed_slots.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 207344,
+        "returncode": 0,
+        "runtime_seconds": 1.8288913518190384,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T04:49:43.667980+00:00",
+        "warning_error_line_count": 133
+      },
+      {
+        "command": [
+          "/usr/local/bin/openroad",
+          "-no_init",
+          "-exit",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/10_floorplan/io_seed_apply.tcl"
+        ],
+        "completed_at": "2026-11-01T04:49:48.779480+00:00",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/10_floorplan",
+        "line": 2,
+        "log": "io_seed.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 308552,
+        "returncode": 0,
+        "runtime_seconds": 3.279919020831585,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T04:49:45.499600+00:00",
+        "warning_error_line_count": 0
+      },
+      {
+        "command": [
+          "/usr/bin/python3",
+          "/opt/dreamplace/dreamplace/Placer.py",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/10_floorplan/io_preplace.params.json"
+        ],
+        "completed_at": "2026-11-01T04:50:01.726770+00:00",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/workspace/Place-3D",
+        "line": 3,
+        "log": "io_preplace.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 4927788,
+        "returncode": 0,
+        "runtime_seconds": 12.94479175657034,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T04:49:48.782015+00:00",
+        "warning_error_line_count": 25
+      },
+      {
+        "command": [
+          "/usr/local/bin/openroad",
+          "-no_init",
+          "-exit",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/10_floorplan/io_place.tcl"
+        ],
+        "completed_at": "2026-11-01T04:50:07.548582+00:00",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/10_floorplan",
+        "line": 4,
+        "log": "io_place.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 370928,
+        "returncode": 0,
+        "runtime_seconds": 5.800448313355446,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T04:50:01.748177+00:00",
+        "warning_error_line_count": 1
+      },
+      {
+        "attempt_id": "c3b09ddfd07e4523b9da783c52968c33",
+        "command": [
+          "/usr/bin/python3",
+          "/opt/dreamplace/dreamplace/convert_input.py",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/10_floorplan/design_params.json",
+          "100",
+          "--outfile",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/run/10_floorplan/partition.input"
+        ],
+        "command_id": "12447ccee23b41aea2e13b9d46e56562",
+        "completed_at": "2026-11-01T04:50:19.667708+00:00",
+        "component": "python3",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-ariane133-ng45/workspace/Place-3D",
+        "die": null,
+        "line": 5,
+        "log": "partition_input.log",
+        "log_format": "sectioned-tool-transcript-v1",
+        "log_role": "unclassified",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 8,
+        "parent_command_id": null,
+        "peak_process_tree_rss_kib_sampled": 1680348,
+        "returncode": 0,
+        "runtime_seconds": 11.848908945918083,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "stage": "floorplan",
+        "started_at": "2026-11-01T04:50:07.818831+00:00",
+        "step": "tool_command",
+        "warning_error_line_count": 25
+      }
+    ],
+    "completed_at": "2026-11-01T04:50:19.668937+00:00",
+    "design": "ariane133",
+    "error": null,
+    "histories": {
+      "optimization": {
+        "available": true,
+        "confidence": "uncertain",
+        "other_sources": [],
+        "ownership": "current_stage",
+        "path": "optimization_history.csv",
+        "row_count": 52,
+        "selection": "legacy single-content stream; execution provenance uncertain",
+        "source_log": "io_preplace.log",
+        "source_sha256": "cbfc00d0228a74399a285109b64cbbc6edcbc6a40dfccd98e226f0dd0765aea8"
+      },
+      "training": {
+        "available": false,
+        "reason": "no recognized tool iteration records"
+      }
+    },
+    "logs": {
+      "byte_identical_groups": [],
+      "duplicate_semantics": "identical bytes alone do not prove duplicate execution; no files removed",
+      "files": [
+        {
+          "bytes": 2427,
+          "classification_source": "commands.jsonl:4",
+          "ownership": "current_stage",
+          "path": "io_place.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "86bc06c531ab0f1a5807fae1e171eb5a8be5023f7010a01e33c35f2dd39b08a2",
+          "source_sha256": "86bc06c531ab0f1a5807fae1e171eb5a8be5023f7010a01e33c35f2dd39b08a2",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "IFP-0028": 1
+          },
+          "warning_examples": [
+            {
+              "line": 16,
+              "text": "[WARNING IFP-0028] Core area lower left (50.000, 50.000) snapped to (50.160, 50.400)."
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "IFP-0028",
+              "count": 1,
+              "first_line": 16,
+              "representative_lines": [
+                16
+              ],
+              "text": "[WARNING IFP-0028] Core area lower left (50.000, 50.000) snapped to (50.160, 50.400).",
+              "text_characters": 85,
+              "text_scope": "current_log_body",
+              "text_sha256": "1b0723c5a7a36cf710c8d44c1c4a8b1ee3cea0a123e139357fbc4cbd6810403c",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 1,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 1
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 31000,
+          "classification_source": "commands.jsonl:3",
+          "ownership": "current_stage",
+          "path": "io_preplace.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "cbfc00d0228a74399a285109b64cbbc6edcbc6a40dfccd98e226f0dd0765aea8",
+          "source_sha256": "cbfc00d0228a74399a285109b64cbbc6edcbc6a40dfccd98e226f0dd0765aea8",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "unclassified": 25
+          },
+          "warning_examples": [
+            {
+              "line": 57,
+              "text": "[WARNING] Track definition in DEF ignored"
+            },
+            {
+              "line": 58,
+              "text": "[WARNING] Track definition in DEF ignored"
+            },
+            {
+              "line": 59,
+              "text": "[WARNING] Track definition in DEF ignored"
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "unclassified",
+              "count": 20,
+              "first_line": 57,
+              "representative_lines": [
+                57,
+                58,
+                59
+              ],
+              "text": "[WARNING] Track definition in DEF ignored",
+              "text_characters": 41,
+              "text_scope": "current_log_body",
+              "text_sha256": "d99cd9e52765bb7c465989cb6bfd9f98559d86e2add7fb8f9dbaef0dd5a4879f",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 77,
+              "representative_lines": [
+                77
+              ],
+              "text": "[WARNING] no Bookshelf file specified",
+              "text_characters": 37,
+              "text_scope": "current_log_body",
+              "text_sha256": "ce5d5ca003bc72cbc6537ec89360e8036f11f4c972adce1107ed4ec8620cf831",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 78,
+              "representative_lines": [
+                78
+              ],
+              "text": "[WARNING] no additional Bookshelf .pl file specified",
+              "text_characters": 52,
+              "text_scope": "current_log_body",
+              "text_sha256": "5fb2b77688714ba01ee1708458eec98ccf88879a6e88b3b44da54654a8b209d5",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 79,
+              "representative_lines": [
+                79
+              ],
+              "text": "[WARNING] 0 nets with 0 pins from same nodes",
+              "text_characters": 44,
+              "text_scope": "current_log_body",
+              "text_sha256": "c4b735c712a37c734b87a9b0b01b8591a389ab82439c5b6a6b44f30fb86cfcb0",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 80,
+              "representative_lines": [
+                80
+              ],
+              "text": "[WARNING] 7720 nets should be ignored due to not enough pins",
+              "text_characters": 60,
+              "text_scope": "current_log_body",
+              "text_sha256": "bfb82b7992ca38ea463058d99e21de59896f466892258b094c3121fbc5b6c73d",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 97,
+              "representative_lines": [
+                97
+              ],
+              "text": "[WARNING] DREAMPlace - quadratic density penalty is disabled, density weight update is forced to be based on HPWL",
+              "text_characters": 113,
+              "text_scope": "current_log_body",
+              "text_sha256": "9d472dc3dc33ba983b0475e0f74b5f02b5ba1a0ddb309e0584a72347c27777a9",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 25,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 25
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 1451,
+          "classification_source": "commands.jsonl:2",
+          "ownership": "current_stage",
+          "path": "io_seed.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "66360799518c74142436a57d462d87a462f4c76b53b6f5b6249d51f0e44fef8e",
+          "source_sha256": "66360799518c74142436a57d462d87a462f4c76b53b6f5b6249d51f0e44fef8e",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {},
+          "warning_examples": [],
+          "warning_groups": [],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 0,
+          "warning_occurrences_by_text_scope": {},
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 17952,
+          "classification_source": "commands.jsonl:1",
+          "ownership": "current_stage",
+          "path": "io_seed_slots.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "a8a8074088d1045de630c49bf0832c3ba5cde1c342d8b83d6c43cc6008b0d0d7",
+          "source_sha256": "a8a8074088d1045de630c49bf0832c3ba5cde1c342d8b83d6c43cc6008b0d0d7",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "PPL-0015": 133
+          },
+          "warning_examples": [
+            {
+              "line": 16,
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed."
+            },
+            {
+              "line": 17,
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed."
+            },
+            {
+              "line": 18,
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed."
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 16,
+              "representative_lines": [
+                16
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "139f5147e529dbbe5627510cbf5acfd471077939545ba7de95f5c0c58edf3446",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 17,
+              "representative_lines": [
+                17
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "1bc8981a9922cdd662fc9b198c39069ae28569480e833b260273c454ee37c255",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 18,
+              "representative_lines": [
+                18
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "f6d9ed1b1e012fec1b59623b7c292d4fe03c26192139f18501c845cc849d7105",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 19,
+              "representative_lines": [
+                19
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "45cda9fc8b2614293c56e9b11dcfbf7b6df57d994a5e0ede466d6140be2ee993",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 20,
+              "representative_lines": [
+                20
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "959ea500c807d65adec4f15f6f2c54be99077333bc246598dc4e1e265b4fd236",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 21,
+              "representative_lines": [
+                21
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "41f6617f9e927d1b5a9976309e4be0c650faf3fcd6ac06d99b5ae057f36392bf",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 22,
+              "representative_lines": [
+                22
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "30b93f5c985127ebfd2678a5281f6d16cd2aa55bb819756ed76a4043436c5d9b",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 23,
+              "representative_lines": [
+                23
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "0ffb0b88ce0228822d6dfc0eae2f8e79f7f9cb1723103f7dda093ccba8c0dca8",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 24,
+              "representative_lines": [
+                24
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "43e91d942257d4e7e80a0690c96e000a28afd56d560b2fbf4a36a9e244dee7cd",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 25,
+              "representative_lines": [
+                25
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "185ed1e4dd3bd0e7eaeede29f79c9e44c5bc74e87e4091795af56a96b22b612b",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 26,
+              "representative_lines": [
+                26
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_0__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "0025a01f7d90b2321994ee243233da38519d17ef60f7983ae5202cb61c8309c4",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 27,
+              "representative_lines": [
+                27
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "e6d4b6c0ebe82de6e776bcea061afb3feae8fbe9adf461946a9512cd5d17e034",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 28,
+              "representative_lines": [
+                28
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "b9d4fb795e8f547a7478464137f932e1ce4c326c327c9e22f0eae06e7d38f026",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 29,
+              "representative_lines": [
+                29
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "3fe24ae6442b1ad2b689499fac8e6068a0f3ad1cfe0d711716477b4fbad8f454",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 30,
+              "representative_lines": [
+                30
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "4beba823b25f2601b6359861afd4bbc188e0b53b90e390f0c950151937288b42",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 31,
+              "representative_lines": [
+                31
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "371515084292973bca4cbcd25838eb150d0da77158f2313006c6cfc2d6a11424",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 32,
+              "representative_lines": [
+                32
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "179cd23b3f93e3086b84148a2d380a427aea5cdac6112128048a3a2e1d071126",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 33,
+              "representative_lines": [
+                33
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "fd6431ba71de1be76d39a58e6605d97d1745fe316d5cbe529a6d526662cc7b9b",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 34,
+              "representative_lines": [
+                34
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "13d0bd3beb16e23749304792220be29ddc4edab414742019293ecaa8824e0440",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 35,
+              "representative_lines": [
+                35
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "86c16c1a67954d0a1c779b7d97cea48be874970f1962d15b271551fc2f9eaa99",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 36,
+              "representative_lines": [
+                36
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "c8e8a76eed6a75756d88baf128d5bbcc3ef5880d4a0f63f610de6e92631b2690",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 37,
+              "representative_lines": [
+                37
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_1__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "f4d0cc6fae505c09be1cdf75354efc77789e5c728a0eed5b252c07671ff94b62",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 38,
+              "representative_lines": [
+                38
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "3811c8e16a519eb39fbc2c5a78300717076fb10d5ea36498972662d6ba6c4eb6",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 39,
+              "representative_lines": [
+                39
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "2f03aa4631c6df075f766bf7ff576a9e3695499d4d9771206cf49b5f1d16f512",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 40,
+              "representative_lines": [
+                40
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "20d0d9af50b8d6251521ad4df11145c6b687723dd8af9f9c580dde9bb3cb8bef",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 41,
+              "representative_lines": [
+                41
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "f8134a9258aaf67ee4973d7e882229222ebbfb92d1af5ecfb8d9c9f54f03ed60",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 42,
+              "representative_lines": [
+                42
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "ec97e2ec6a6eec14146c5fe73c48ce97904a9e596893acbec9a330f838a996b6",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 43,
+              "representative_lines": [
+                43
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "a841a91d6619d239e0763ccbc914fd71f723fa9076e7652d136ba2946c634b07",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 44,
+              "representative_lines": [
+                44
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "e657808fc1a075f65d159c6f83b51f1a6801000b286ca2944b4f5a7263e4d613",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 45,
+              "representative_lines": [
+                45
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "45e9df73726db3ea1ac3c44d3e7152924f4ed4ff413beaff0357fcc6adda7544",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 46,
+              "representative_lines": [
+                46
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "836c1e865a817b82ffc38f3574eec72b559c24bbd2b2774feac85738ac86544a",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 47,
+              "representative_lines": [
+                47
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "9bbfb8bdde5a1bdf7334d39c21ab8028c23044045d376c74b3a0830453260389",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 48,
+              "representative_lines": [
+                48
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_2__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "9968ee9681a2bb17db445d1ccb7dbb68d079e19d385acb9f0377940450bdb06d",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 49,
+              "representative_lines": [
+                49
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "80a914e6cffa4e703cc96b7ca5daa4de003d4bad5dc3fdf63ac0f77fce2ea60f",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 50,
+              "representative_lines": [
+                50
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "1f2afd140051a08a45da258e4ece5ac5b718625d4753e4daafa0f8c7a00b1fcd",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 51,
+              "representative_lines": [
+                51
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "934014adbc40df4192f145e5d1c38eae16d7303158dc9bd1bf09c008302a5746",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 52,
+              "representative_lines": [
+                52
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "57b575da2ad0f19e0d4bd6b784dd7e6dc8035032ec3827d4fb0ce15a92ff7e09",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 53,
+              "representative_lines": [
+                53
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "0ae7c19c7c1ffd26c6430d688d927bfe9a0fddc7bac936f1c52be1c0cbde673e",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 54,
+              "representative_lines": [
+                54
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "d7432acf5ff8df8caa727277ab231a0e8e025daae69562c4bfa469ebed46c287",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 55,
+              "representative_lines": [
+                55
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "f964ed725561bffa5eaeb566f86f9582bc61a62efc84a774c870652b14fc0168",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 56,
+              "representative_lines": [
+                56
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 119,
+              "text_scope": "current_log_body",
+              "text_sha256": "f9dbf0bb4e02d96d4dd188956056aae1361ffff87b316c45862c4ab225cc526f",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 57,
+              "representative_lines": [
+                57
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "a2a0d0ab0e31ba8e3f2cfcd962348758ea81808a2dcc98e60e7cc7f7775406cc",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 58,
+              "representative_lines": [
+                58
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "0f7d1264dd19888619fc0572cb32fa254ab044cf8970533f7b701c764dc284be",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 59,
+              "representative_lines": [
+                59
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_icache.sram_block_3__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 118,
+              "text_scope": "current_log_body",
+              "text_sha256": "75eb5fa662c4a747f5703903791d9e28a55d514fd133c702866638f056fe87d5",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 60,
+              "representative_lines": [
+                60
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "13510b298a6857fcda2d8ce4321738012b85967ca041aec2dab8e7927e51d06b",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 61,
+              "representative_lines": [
+                61
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "78b9b664828d64b18734561a7e9be66558e17d635d9ca72fadd2bd83eb7c5eb8",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 62,
+              "representative_lines": [
+                62
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "9b6eaae5ed9b25d552562015eebdb113ed24154d13313bac25e53cf03ae7129b",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 63,
+              "representative_lines": [
+                63
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "8b90d41d6ca59a39aa47d891a3cc75261e7e15a119facc6d8f14ecdde160c68f",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 64,
+              "representative_lines": [
+                64
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "31b2c7a5917ab11df9e7c2dbe9e0de306f0eb37977e9e6b0ffb11e54f2c40d36",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 65,
+              "representative_lines": [
+                65
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "c9c3a850567a182b5850a2a2c003feaba24ed7fd943e5a4fdc34c03b6ba4ec44",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 66,
+              "representative_lines": [
+                66
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "9158b3ee31bb0315427b6bb2d1752d96bd5bb8729033c79feaf1b80dbba31c68",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 67,
+              "representative_lines": [
+                67
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "5e58ba9bee6f1b9ce5da1bbb6047d2de53dcce30f52b52472a127dfefa8560a5",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 68,
+              "representative_lines": [
+                68
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "7220357174d51a047c5e35837cfd8358f1145f91f61ec35a66cadac162cf44ab",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 69,
+              "representative_lines": [
+                69
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "5f22a6a215969af83d6c4fe2f74068260fab795834a6de816ee68bf691cee214",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 70,
+              "representative_lines": [
+                70
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_0__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "abb3308094037f88a1f5d034ed4bfc450ef04c30afb7a7f3ccfbce42e3d6aca0",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 71,
+              "representative_lines": [
+                71
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "a880daab266ef8448016ed4e05689da16527350c118d0a93290b3a7a73d63635",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 72,
+              "representative_lines": [
+                72
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "a92e0c10086e3daa78c37034f38dbd5598f9d0a40820afd4e11ea46b76b5911e",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 73,
+              "representative_lines": [
+                73
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "6e24e9314f2832a112eb522222eb2c52eac01ee052dd2e07113985a666dc92b1",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 74,
+              "representative_lines": [
+                74
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "91e5bf338094368acf40b2b1d4fac7e3551b5485871a023188fd0c2cf316dd39",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 75,
+              "representative_lines": [
+                75
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "298e7a01ae9867ba5036c89187c8461e31be95c8a32ae73153666571a447b892",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 76,
+              "representative_lines": [
+                76
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "cfd5b6ffdd8474f00e6d2cee874b67be4a24b3b7521a03f38a569fd54aaf98e9",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 77,
+              "representative_lines": [
+                77
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "14eb999f466a4afe61412ea85317b2462f4ad6f8c6748c4d45253ee19bc300f0",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 78,
+              "representative_lines": [
+                78
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "50e0134808ce93115cabebeee20361025f9a21f2d6e2434dcf0c051acd62b702",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 79,
+              "representative_lines": [
+                79
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "fdb842d18d9ff1e9aeea42f16bfa6c6b53967cf965c1bedadc76d38a3e598144",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 80,
+              "representative_lines": [
+                80
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "ef643d8e33d2f1272b67c5ed8e52bd18da78ccb00a484e9bc0d2ffd9978fca07",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 81,
+              "representative_lines": [
+                81
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_1__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "36f145c5da1b1ad68b9d9a0fa86408101c37d31671109a2da86b19f009d0a356",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 82,
+              "representative_lines": [
+                82
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "246657e93264e4ede4f697457d780260cd391974abf37b0a5216ac3c4c720075",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 83,
+              "representative_lines": [
+                83
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "3814ef6da1f3dbfec9f7fddc342693e7ba7c9b7798f6095251a444a451426d42",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 84,
+              "representative_lines": [
+                84
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "a3038e53d893e4fa74e783a6c304194976b459c3c0d856256344421ed9f13f73",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 85,
+              "representative_lines": [
+                85
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "85b11ead35de313fd2113f89d7cdf108e9f4dfeab822cc5c7abb39dbf22c84de",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 86,
+              "representative_lines": [
+                86
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "9a473b4290dcc0c16ebbed6c946f51ae29ede5dfe7e838ea08442292668a482c",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 87,
+              "representative_lines": [
+                87
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "4abc499633a7f8c674cd689e7fc787cdee2e6aef6324e5d47014aa8f4b474b82",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 88,
+              "representative_lines": [
+                88
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "0fb8204ef613789b7b6fd5c4079d197bf4e64130371aa8273b858486f6ce60f2",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 89,
+              "representative_lines": [
+                89
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "8b5bd1ba66344ce038a14025b18284740ca4f23b8d7f729d1300e8d05af75047",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 90,
+              "representative_lines": [
+                90
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "13458d2f07f1f77c9262f535dda185adfa73cc2547917b9f9847df8c59396f7a",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 91,
+              "representative_lines": [
+                91
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "c36d4d66de43ac8e1a6bcb6d961dc14729c165b727bf19d89f1b59eb04602866",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 92,
+              "representative_lines": [
+                92
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_2__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "8ec8ce480224f15fb848e489208a6831a821b567bf54c8135547f69a8243a9fc",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 93,
+              "representative_lines": [
+                93
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "8a44386e231e29f2cdca80e291d05686af946a9d04eadaf1b71c3e8583702f84",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 94,
+              "representative_lines": [
+                94
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "58e3484485fa2493c682bfea2deab3f42e268bf5dc320fe8fb37253377763193",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 95,
+              "representative_lines": [
+                95
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "98551840612b9ae76fc2893c20268c1a7e8d8f4e09522fac1db36766d3810194",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 96,
+              "representative_lines": [
+                96
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "54f2e0eb628547fd2ee46166843b85779262ca659877609c5f427cf259b7c846",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 97,
+              "representative_lines": [
+                97
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "dc96502305fb9df3eb311ddc8aaab086056aad0e406cdc774f21aac1910983da",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 98,
+              "representative_lines": [
+                98
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "a70e6e14026c29eb1f1de96bae8abb42108b199f228a87859294751fbbf47bb6",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 99,
+              "representative_lines": [
+                99
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "0bcc853f07d923a7a6e299487dd1e7f38edafcc32936b27c11874b23f26360dc",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 100,
+              "representative_lines": [
+                100
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "483a41d9906e39ac603831ef942e83657875158402181e70f85e73654edbcc7c",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 101,
+              "representative_lines": [
+                101
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "16a71330733a0d92d84b38160d477516b984ce16e7d020781da952580050d760",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 102,
+              "representative_lines": [
+                102
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "0ffd677170a18c7f9e4d4c1a5a7a921d2d195a02a109282ea0276ef6df062a8a",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 103,
+              "representative_lines": [
+                103
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_3__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "b397a862c636520c8bfe9a10f5cdcff9a308d1460ba69fab0db5222ad6e4b4cc",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 104,
+              "representative_lines": [
+                104
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "615727c4457eb5ecc098489da24279e8dd31beb361a5ba533ffbdf2e2417f9bb",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 105,
+              "representative_lines": [
+                105
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "9aa2d20127f0ea9456d55f75119e53bcfbe9f679b4d4dd1b8122ea847de8404b",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 106,
+              "representative_lines": [
+                106
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "5d2262452a8be5ea2ae18a8499f1c98b28d472bf600c7c4e076c5098bdcd2462",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 107,
+              "representative_lines": [
+                107
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "70b2601da04b0a081b307fe2a1924d2080b7ef515980e079ecc61dfe8343ead2",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 108,
+              "representative_lines": [
+                108
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "18c5bdd48f8731db5670af5ba07720af9115039f244704a95203d7e7b5cc43ec",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 109,
+              "representative_lines": [
+                109
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "b3c82980928e7f2258c8bcde29b14b79a76cde83334b9433402d7fd13d4858e4",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 110,
+              "representative_lines": [
+                110
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "305e734c68f6411a9b2d6aa23f2a486d31691f46a752984d05a85a1f9992ee02",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 111,
+              "representative_lines": [
+                111
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "50e7b3c705e2b231c434b7c2c5cc3831d0f2ef4a160813ec6a6aadf8abbd5347",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 112,
+              "representative_lines": [
+                112
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "8684c3db1fb1a95cf41439137e01f66d4bbc14ebd674947433acafd5bf33ff15",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 113,
+              "representative_lines": [
+                113
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "67c936c084eb76eb0fb2db7a536654a6c36edcdc929c9374eaeacdc62c455685",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 114,
+              "representative_lines": [
+                114
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_4__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "61a276fe3ac43c56866ac166afaca271db2f449592cd7f283e535af98166d647",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 115,
+              "representative_lines": [
+                115
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "3e071b31a8211c17a17276791bfca5d23803d9b85c4bccb17dbbafbba887f4ea",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 116,
+              "representative_lines": [
+                116
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "5a8ae9b829b31751e93fb22e63ec2d5bac743634787b41c993984c10c6bc6467",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 117,
+              "representative_lines": [
+                117
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "d643c9c2862e48f1da7148b6c65aac0e78e501b05ad15e3a6e990d90c97a2ae7",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 118,
+              "representative_lines": [
+                118
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "1c007932c0950847fd2f14447edb7b22bae085a5690111e3a3ccde9ee66c02b7",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 119,
+              "representative_lines": [
+                119
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "7df8a1eb493bef98842b05088ae11687f021bfc65442ee18c07c71509e19367e",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 120,
+              "representative_lines": [
+                120
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "54b08190532cf5dd7902fda067f91948a74f82ed522b57a7184886e97833d6dd",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 121,
+              "representative_lines": [
+                121
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "e7081ea731d065f9a117d59b51eacc0d8db9ed489fb057ff3cee494ba24a617e",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 122,
+              "representative_lines": [
+                122
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "6538bf661200eb4b87aabf0b7acaf47abf55a8503297f57080fcd93bc8a1f968",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 123,
+              "representative_lines": [
+                123
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "34955c6b8f7862d4cbc185cdde2d37914deb8fe87ed6aa9fbeef8f748f184b96",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 124,
+              "representative_lines": [
+                124
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "5e7a4ef6feb05415f18c29908a1130826da1e3c5c5cf58037aa531cb9a6f11a6",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 125,
+              "representative_lines": [
+                125
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_5__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "3734486038b704d96d11b5ee26c15a539085f86639bbd476338a7ad6ac9bb3c7",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 126,
+              "representative_lines": [
+                126
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "8ad12dc816c810cb1b51549d89a3f904ecae03e38a065900ebc3e7252703aaad",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 127,
+              "representative_lines": [
+                127
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "7f25e80b3f957a23fd02a3006e017c588809eb9ed008520e0ac1ff975759c0c0",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 128,
+              "representative_lines": [
+                128
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "3a8580d50720a18b9e9a4c04183c84815d377d247dec5f3e0f61826809294811",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 129,
+              "representative_lines": [
+                129
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "017ff32b7361d68252fe015122379bb726883627d8e3abfd21e751c1055dd535",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 130,
+              "representative_lines": [
+                130
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "029ee4e8eb5f39613ec2e87069f7770a42298278f5bf2c465706d97df81c26f1",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 131,
+              "representative_lines": [
+                131
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "65d78031664b59a39528a990a0b300f4b19417d2ce9398c37f79cd573c2c03b6",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 132,
+              "representative_lines": [
+                132
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "3d75854cc87a2afa40d510aa5004c68fd5cd7aa507caa53ced340c8f8bd02d67",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 133,
+              "representative_lines": [
+                133
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "e7cba505a41493463a69faf4fd0dbde5a4f37fe3625919b3b8db3a554056dfc6",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 134,
+              "representative_lines": [
+                134
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "792d3a6115ff06bbc87ecc0fd278cab5156de3d53a5d85934e8e59b4501d869e",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 135,
+              "representative_lines": [
+                135
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "0349112ef00a50cee9fc2c095a99d6973601d8a7cb5124406e77e76019db9ff7",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 136,
+              "representative_lines": [
+                136
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_6__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "58218688692f595527e5f26cf9fd9c4fd9b1d1c0c630d0ce345df67719307657",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 137,
+              "representative_lines": [
+                137
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__data_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "3a752b042958b423a5ebb6ba39acc4f17b59d4b097667bd77a30a4a44c399be4",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 138,
+              "representative_lines": [
+                138
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__data_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "f00531f6ecf22378bab96958806ca109745ee4963ae2384385db2b2e7ca191f2",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 139,
+              "representative_lines": [
+                139
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__data_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "6f1e91bea969117dceaa9f24a897fd44340b477bde46b32247fd6ee00a0087bc",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 140,
+              "representative_lines": [
+                140
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__data_sram.genblk1_0__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "52f0e9cd8fcecaa6bf7d8c784cc783bc207ce709a8530f54bed0eb8a1ea44375",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 141,
+              "representative_lines": [
+                141
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__data_sram.genblk1_1__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "1d6417f7e77359da8c5a78034462c6265ab0b7fc5afd7ab56405e929bae9fe71",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 142,
+              "representative_lines": [
+                142
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__data_sram.genblk1_1__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "b4c2eace696d6a64db5bd4351a7f8e9355753a9c15cd1da78f5808b681c06dc5",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 143,
+              "representative_lines": [
+                143
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__data_sram.genblk1_1__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "36669a3c6d8f33d96b14478450e2636573e506222cca1f0137ac1c357812b8db",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 144,
+              "representative_lines": [
+                144
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__data_sram.genblk1_1__i_ram/macro_mem_3 is not placed.",
+              "text_characters": 121,
+              "text_scope": "current_log_body",
+              "text_sha256": "c0dff2a64a8da844406377c7423591d91b808944309a44ea7eb6128f46a7d49e",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 145,
+              "representative_lines": [
+                145
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__tag_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "5917d7d9816bc53d469a872639a3c8282b54d7bbcd7c15f4f3a1aa7f8e499acd",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 146,
+              "representative_lines": [
+                146
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__tag_sram.genblk1_0__i_ram/macro_mem_1 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "0bb4a23064203b2ff36200ccda357ca3e604cb47bde3baecdcc1c8fbd3bbfb4e",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 147,
+              "representative_lines": [
+                147
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.sram_block_7__tag_sram.genblk1_0__i_ram/macro_mem_2 is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "6931453e7dc173a551809caf90579fd66e38eed41b56154d49e466e0e8a9cc28",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 148,
+              "representative_lines": [
+                148
+              ],
+              "text": "[WARNING PPL-0015] Macro i_cache_subsystem.i_nbdcache.valid_dirty_sram.genblk1_0__i_ram/macro_mem_0 is not placed.",
+              "text_characters": 114,
+              "text_scope": "current_log_body",
+              "text_sha256": "986da026015b6ef74f130544db62b0161d6a0c7d2b3cf7b58cd7aa0e42e255ca",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 133,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 133
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 4429,
+          "classification_source": "commands.jsonl:5",
+          "ownership": "current_stage",
+          "path": "partition_input.log",
+          "role": "unclassified",
+          "sections": [
+            {
+              "inside_upstream_reference": false,
+              "line": 1,
+              "text": "=== CONTEXT / Log ownership ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 2,
+              "text": "stage=\"floorplan\" component=\"python3\" step=\"tool_command\" die=null role=\"unclassified\""
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 3,
+              "text": "attempt_id=\"c3b09ddfd07e4523b9da783c52968c33\" command_id=\"12447ccee23b41aea2e13b9d46e56562\" parent_command_id=null"
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 4,
+              "text": "=== INPUT / Existing inputs and configuration; no upstream rerun implied ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 5,
+              "text": "No explicit input-file arguments recognized. Inputs may come from tool configuration or environment; their provenance is not inferred."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 6,
+              "text": "=== CURRENT_EXECUTION / Current command output in original tool order ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 7,
+              "text": "Nested commands have their own boundaries. Parent timings may include child timings; do not add them together."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 78,
+              "text": "=== OUTPUT / Current command exit and downstream handoff locations ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 79,
+              "text": "process_returncode=0; process exit only, not stage validation."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 80,
+              "text": "Stage conclusions come from run.json, stage_manifest.json, and checkpoint/validation results. A log footer is not proof of success."
+            }
+          ],
+          "sections_omitted": 0,
+          "sha256": "7fd2199c5be7ad9953010e61be08052971c6df244504d76c6f3e381436576d30",
+          "source_sha256": "7fd2199c5be7ad9953010e61be08052971c6df244504d76c6f3e381436576d30",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "unclassified": 25
+          },
+          "warning_examples": [
+            {
+              "line": 8,
+              "text": "WARNING:root:target_density 0.8 is smaller than utilization 0.840234, ignored"
+            },
+            {
+              "line": 41,
+              "text": "[WARNING] Track definition in DEF ignored"
+            },
+            {
+              "line": 42,
+              "text": "[WARNING] Track definition in DEF ignored"
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 8,
+              "representative_lines": [
+                8
+              ],
+              "text": "WARNING:root:target_density 0.8 is smaller than utilization 0.840234, ignored",
+              "text_characters": 77,
+              "text_scope": "current_log_body",
+              "text_sha256": "d89325de71e842a1399aa1ce5ec97c44aafba1e6cf5d89641e63e3c161874797",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 20,
+              "first_line": 41,
+              "representative_lines": [
+                41,
+                42,
+                43
+              ],
+              "text": "[WARNING] Track definition in DEF ignored",
+              "text_characters": 41,
+              "text_scope": "current_log_body",
+              "text_sha256": "d99cd9e52765bb7c465989cb6bfd9f98559d86e2add7fb8f9dbaef0dd5a4879f",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 61,
+              "representative_lines": [
+                61
+              ],
+              "text": "[WARNING] no Bookshelf file specified",
+              "text_characters": 37,
+              "text_scope": "current_log_body",
+              "text_sha256": "ce5d5ca003bc72cbc6537ec89360e8036f11f4c972adce1107ed4ec8620cf831",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 62,
+              "representative_lines": [
+                62
+              ],
+              "text": "[WARNING] no additional Bookshelf .pl file specified",
+              "text_characters": 52,
+              "text_scope": "current_log_body",
+              "text_sha256": "5fb2b77688714ba01ee1708458eec98ccf88879a6e88b3b44da54654a8b209d5",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 63,
+              "representative_lines": [
+                63
+              ],
+              "text": "[WARNING] 0 nets with 0 pins from same nodes",
+              "text_characters": 44,
+              "text_scope": "current_log_body",
+              "text_sha256": "c4b735c712a37c734b87a9b0b01b8591a389ab82439c5b6a6b44f30fb86cfcb0",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 64,
+              "representative_lines": [
+                64
+              ],
+              "text": "[WARNING] 7720 nets should be ignored due to not enough pins",
+              "text_characters": 60,
+              "text_scope": "current_log_body",
+              "text_sha256": "bfb82b7992ca38ea463058d99e21de59896f466892258b094c3121fbc5b6c73d",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 25,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 25
+          },
+          "warning_text_limit_characters": 1000
+        }
+      ],
+      "warning_count_semantics": "text occurrences, not unique tool events; native warning_audit remains authoritative",
+      "warning_group_semantics": "first 200 distinct original texts per log; full-text counts for those groups remain exact; omitted occurrences remain in code totals and raw logs; no warning is accepted or downgraded by this index",
+      "warning_occurrences_in_files": 184,
+      "warning_occurrences_in_unique_file_contents": 184
+    },
+    "memory_measurement": "maximum sampled process-tree RSS, not sum across nested commands; may miss short peaks",
+    "native_metric_sources": [
+      "io_metrics.json"
+    ],
+    "partial": false,
+    "peak_process_tree_rss_kib_sampled": 4927788,
+    "runtime_seconds": 36.16235188394785,
+    "schema_version": 1,
+    "stage": "floorplan",
+    "started_at": "2026-11-01T04:49:43.506595+00:00",
+    "status": "success",
+    "upstream_artifacts": []
+  },
+  "partition_consumed": false,
+  "pin_algorithm": "openroad",
+  "preplace": "dreamplace",
+  "schema_version": 1,
+  "status": "success",
+  "tool_iterations": {
+    "optimization": {
+      "last_global_placement_record": {
+        "density_weight": 4.242727e-11,
+        "gamma": 1029.417,
+        "hpwl_log_label": "wHPWL",
+        "hpwl_native": 8581711.0,
+        "hpwl_units": "placer_native_not_microns",
+        "iteration": 51,
+        "max_density": 1662.0,
+        "objective_native": 2270865.0,
+        "overflow": 0.8377859,
+        "overflow_units": "fraction",
+        "phase": "global_placement",
+        "source_line": 413,
+        "source_log": "io_preplace.log",
+        "source_sha256": "cbfc00d0228a74399a285109b64cbbc6edcbc6a40dfccd98e226f0dd0765aea8"
+      },
+      "last_record": {
+        "density_weight": 4.242727e-11,
+        "gamma": 1029.417,
+        "hpwl_log_label": "wHPWL",
+        "hpwl_native": 8581711.0,
+        "hpwl_units": "placer_native_not_microns",
+        "iteration": 51,
+        "max_density": 1662.0,
+        "objective_native": 2270865.0,
+        "overflow": 0.8377859,
+        "overflow_units": "fraction",
+        "phase": "global_placement",
+        "source_line": 413,
+        "source_log": "io_preplace.log",
+        "source_sha256": "cbfc00d0228a74399a285109b64cbbc6edcbc6a40dfccd98e226f0dd0765aea8"
+      },
+      "region_order": "native fence-region order; do not assume die order"
+    }
+  }
+}

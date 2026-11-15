@@ -1,0 +1,11 @@
+schema_version: 1
+provider: qwen
+base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+model: qwen-plus
+api_key_env: DASHSCOPE_API_KEY
+api_mode: chat_completions
+timeout_seconds: 120
+max_tokens: 8192
+temperature: 0.2
+top_p: 0.95
+max_attempts: 3

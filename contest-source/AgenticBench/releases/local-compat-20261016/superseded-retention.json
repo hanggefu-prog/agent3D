@@ -1,0 +1,13 @@
+{
+  "kind": "superseded-agent-created-compatibility-tests",
+  "archived_diagnostics": "/data-ssd/gcr/open3dbench-compat-20261016/superseded-diagnostics.tar.gz",
+  "sha256": "2abbf4e6fc9aaa97d4e0060762844fa46bf36bd74ead91e9f10535aeef660fa5",
+  "removed_physical_attempts": [
+    "/data-ssd/gcr/open3dbench-compat-20261016/hbt-smoke-v1",
+    "/data-ssd/gcr/open3dbench-compat-20261016/hbt",
+    "/data-ssd/gcr/open3dbench-compat-20261016/hbt-final"
+  ],
+  "retained_final": "hbt-release",
+  "note": "Old physical replay requires regeneration. Formal experiment and reference directories are unchanged.",
+  "released_bytes": 28092059648
+}

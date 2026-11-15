@@ -1,0 +1,21 @@
+schema_version: 1
+id: bp_fe_lol_ng45_mtkahypar_cts
+description: Frozen bp_fe LoL ng45 Mt-KaHyPar flow through the shared CTS checkpoint for routing-source tasks.
+config: config.yaml
+stop_stage: cts
+required_stages:
+  input: 00_input
+  floorplan: 10_floorplan
+  partition: 20_partition
+  placement: 30_placement
+  pdn: 40_pdn
+  hbt: 50_hbt
+  opt: 60_opt
+  cts: 70_cts
+compatible_tasks:
+  - global_routing_net_ordering_source
+  - global_routing_ripup_policy_source
+  - global_routing_maze_cost_source
+  - global_routing_iteration_controller_source
+runtime:
+  python_minimum: "3.8"

@@ -1,0 +1,10 @@
+schema_version: 1
+provider: openai
+base_url: https://api.openai.com/v1
+model: gpt-5.6
+api_key_env: OPENAI_API_KEY
+api_mode: responses
+reasoning_effort: low
+timeout_seconds: 120
+max_tokens: 8192
+max_attempts: 3

@@ -1,0 +1,24 @@
+{
+  "suite": "maintained local, engineering and current post-GRT",
+  "tested_commit": "51ef2781",
+  "result": "passed",
+  "summary": "1159 passed, 10 skipped, 180 subtests passed",
+  "suites": [
+    {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "10",
+      "tests": "1349",
+      "time": "62.674",
+      "timestamp": "2026-10-17T22:51:41.680904+08:00",
+      "hostname": "MacBook-Pro-2.local"
+    }
+  ],
+  "skip_reasons": {
+    "set EVOSTAGE_ROOT for external integration": 1,
+    "could not import 'openevolve': No module named 'openevolve'": 2,
+    "could not import 'torch': No module named 'torch'": 6,
+    "Set PYTHONPATH to native OpenEvolve checkout": 1
+  }
+}

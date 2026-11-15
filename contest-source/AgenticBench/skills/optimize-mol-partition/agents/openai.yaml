@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Partition Agent"
+  short_description: "Validate and optimize version-adaptive partition decisions"
+  default_prompt: "Use $optimize-mol-partition with repository_context to improve an Open3DBench partition while preserving area balance."

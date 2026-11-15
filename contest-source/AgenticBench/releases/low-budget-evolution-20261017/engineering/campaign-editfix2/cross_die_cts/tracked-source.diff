@@ -1,0 +1,537 @@
+diff --git a/open3dbench/backend/three_d_cts.py b/open3dbench/backend/three_d_cts.py
+index ac18e168..06a715ec 100644
+--- a/open3dbench/backend/three_d_cts.py
++++ b/open3dbench/backend/three_d_cts.py
+@@ -593,8 +593,12 @@ if {$load_count != $::env(CTS_EXPECTED_CLOCK_LOADS)} {
+ }
+ 
+ repair_clock_inverters
++# Long-wire repair must precede TritonCTS latency balancing.  In particular,
++# the synthetic HBT leaf carries the measured receiving-tree insertion delay;
++# repairing its route afterwards would invalidate the delay comparison used by
++# the balancer.
+ set cts_args [list -root_buf $::env(CTS_BUFFER) \
+-  -buf_list $::env(CTS_BUFFER) -sink_clustering_enable \
++  -buf_list $::env(CTS_BUFFER) -sink_clustering_enable -repair_clock_nets \
+   -delay_buffer_derate $::env(CTS_DELAY_BUFFER_DERATE)]
+ if {$::env(CTS_CLUSTER_SIZE) > 0} {
+   lappend cts_args -sink_clustering_size $::env(CTS_CLUSTER_SIZE)
+@@ -605,7 +609,6 @@ if {$::env(CTS_CLUSTER_DIAMETER) > 0} {
+ clock_tree_synthesis {*}$cts_args
+ set_propagated_clock [all_clocks]
+ estimate_parasitics -placement
+-repair_clock_nets
+ # The synthetic load makes TritonCTS build a real branch to the HBT site.  It
+ # must not survive as a second logical load.  Transfer the boundary BTerm and
+ # physical HBT anchor to that leaf net, then delete the adapter.  The exported
+@@ -1716,6 +1719,44 @@ def _per_clock_skew(path: Path, expected_sinks: Set[str]) -> Dict[str, object]:
+     }
+ 
+ 
++def _clock_domain_inventory(path: Path) -> Dict[str, Tuple[Tuple[object, ...], ...]]:
++    """Read exact clock/sink ownership from the authoritative passive report."""
++
++    lines = path.read_text(encoding="utf-8").splitlines()
++    if not lines or tuple(lines[0].split("\t")) != _CLOCK_SINK_COLUMNS:
++        raise ThreeDCTSError("invalid per-clock sink-table header")
++    result: Dict[str, Set[Tuple[object, ...]]] = {}
++    for line in lines[1:]:
++        fields = line.split("\t")
++        if len(fields) != len(_CLOCK_SINK_COLUMNS) or not fields[0]:
++            raise ThreeDCTSError("invalid per-clock sink row")
++        clock, die, pin, active_edge = fields[:4]
++        try:
++            domain_count = int(fields[8])
++        except ValueError as exc:
++            raise ThreeDCTSError("invalid clock-domain count") from exc
++        rows = result.setdefault(clock, set())
++        if die == "none" and not pin and domain_count == 0:
++            continue
++        if (
++            die not in {"bottom", "top"}
++            or not pin
++            or active_edge not in {"rise", "fall"}
++            or domain_count < 1
++        ):
++            raise ThreeDCTSError("invalid clock-domain sink identity")
++        identity = (die, pin, active_edge, domain_count)
++        if identity in rows:
++            raise ThreeDCTSError(
++                "duplicate clock-domain sink identity: {}/{}".format(clock, pin)
++            )
++        rows.add(identity)
++    return {
++        clock: tuple(sorted(rows))
++        for clock, rows in sorted(result.items())
++    }
++
++
+ def _skew_target_report(skew: Mapping[str, object], target_ns: float) -> Dict[str, object]:
+     groups = skew.get("per_clock", {})
+     results = {
+@@ -1732,6 +1773,138 @@ def _skew_target_report(skew: Mapping[str, object], target_ns: float) -> Dict[st
+     }
+ 
+ 
++def _select_coordinated_skew(
++    baseline: Mapping[str, object],
++    coordinated: Mapping[str, object],
++    tolerance_ns: float = 1.0e-6,
++    baseline_inventory: Optional[Mapping[str, object]] = None,
++    coordinated_inventory: Optional[Mapping[str, object]] = None,
++    baseline_clock_buffers: Optional[int] = None,
++    coordinated_clock_buffers: Optional[int] = None,
++) -> Dict[str, object]:
++    """Select a physical tree using only complete same-clock skew evidence.
++
++    Setup/hold values are deliberately absent from this decision.  Before
++    comparing the scalar task objective, require identical clock-domain and
++    sink inventories so an omitted or reassigned sink can never look like an
++    improvement.
++    """
++
++    if tolerance_ns < 0.0:
++        raise ThreeDCTSError("negative coordinated-skew comparison tolerance")
++    if (baseline_inventory is None) != (coordinated_inventory is None):
++        raise ThreeDCTSError("incomplete coordinated clock-domain inventory")
++    if (
++        baseline_inventory is not None
++        and baseline_inventory != coordinated_inventory
++    ):
++        raise ThreeDCTSError(
++            "coordinated CTS changed exact clock-domain sink ownership"
++        )
++    if (
++        baseline.get("per_clock_report_status") != "valid"
++        or coordinated.get("per_clock_report_status") != "valid"
++    ):
++        raise ThreeDCTSError(
++            "coordinated CTS requires complete, unambiguous per-clock reports"
++        )
++    baseline_clocks = baseline.get("per_clock")
++    coordinated_clocks = coordinated.get("per_clock")
++    if not isinstance(baseline_clocks, Mapping) or not isinstance(
++        coordinated_clocks, Mapping
++    ):
++        raise ThreeDCTSError("coordinated CTS has no per-clock inventory")
++    if set(baseline_clocks) != set(coordinated_clocks):
++        raise ThreeDCTSError("coordinated CTS changed clock-domain ownership")
++
++    inventory = {}
++    for clock in sorted(baseline_clocks):
++        before = baseline_clocks[clock]
++        after = coordinated_clocks[clock]
++        if before.get("status") != "valid" or after.get("status") != "valid":
++            raise ThreeDCTSError("coordinated CTS has an invalid clock domain")
++        before_counts = before.get("sink_count_by_die")
++        after_counts = after.get("sink_count_by_die")
++        if (
++            before.get("sink_count") != after.get("sink_count")
++            or before_counts != after_counts
++        ):
++            raise ThreeDCTSError(
++                "coordinated CTS changed sink inventory for {}".format(clock)
++            )
++        inventory[clock] = {
++            "sink_count": before["sink_count"],
++            "sink_count_by_die": before_counts,
++        }
++
++    baseline_objective = baseline.get("max_per_clock_skew_ns")
++    coordinated_objective = coordinated.get("max_per_clock_skew_ns")
++    if not isinstance(baseline_objective, (int, float)) or not isinstance(
++        coordinated_objective, (int, float)
++    ):
++        raise ThreeDCTSError("coordinated CTS has no finite skew objective")
++    baseline_objective = float(baseline_objective)
++    coordinated_objective = float(coordinated_objective)
++    if not math.isfinite(baseline_objective) or not math.isfinite(
++        coordinated_objective
++    ):
++        raise ThreeDCTSError("coordinated CTS has a non-finite skew objective")
++
++    if (baseline_clock_buffers is None) != (coordinated_clock_buffers is None):
++        raise ThreeDCTSError("incomplete coordinated CTS resource inventory")
++    resource_guard_passed = True
++    buffer_ratio = None
++    if baseline_clock_buffers is not None:
++        if (
++            type(baseline_clock_buffers) is not int
++            or type(coordinated_clock_buffers) is not int
++            or baseline_clock_buffers < 0
++            or coordinated_clock_buffers < 0
++        ):
++            raise ThreeDCTSError("invalid coordinated CTS buffer inventory")
++        if baseline_clock_buffers == 0:
++            buffer_ratio = 1.0 if coordinated_clock_buffers == 0 else None
++            resource_guard_passed = coordinated_clock_buffers == 0
++        else:
++            buffer_ratio = coordinated_clock_buffers / baseline_clock_buffers
++            resource_guard_passed = (
++                coordinated_clock_buffers <= 2 * baseline_clock_buffers
++            )
++
++    improvement = baseline_objective - coordinated_objective
++    selected = (
++        "coordinated"
++        if improvement > tolerance_ns and resource_guard_passed
++        else "baseline"
++    )
++    if selected == "coordinated":
++        reason = "strict-same-domain-skew-improvement"
++    elif not resource_guard_passed:
++        reason = "clock-buffer-2x-guard"
++    else:
++        reason = "no-improvement-beyond-numerical-tolerance"
++    return {
++        "selected": selected,
++        "reason": reason,
++        "comparison_tolerance_ns": tolerance_ns,
++        "baseline_max_per_clock_skew_ns": baseline_objective,
++        "coordinated_max_per_clock_skew_ns": coordinated_objective,
++        "improvement_ns": improvement,
++        "clock_inventory": inventory,
++        "exact_clock_sink_identity_match": baseline_inventory is not None,
++        "resource_guard": {
++            "available": baseline_clock_buffers is not None,
++            "baseline_clock_buffers": baseline_clock_buffers,
++            "coordinated_clock_buffers": coordinated_clock_buffers,
++            "coordinated_to_baseline_ratio": buffer_ratio,
++            "max_ratio": 2.0,
++            "passed": resource_guard_passed,
++            "area_basis": "same configured per-die clock-buffer masters",
++        },
++        "setup_hold_used_for_selection": False,
++    }
++
++
+ _CLOCK_INTERFACE_COLUMNS = (
+     "hbt_id",
+     "point",
+@@ -2385,11 +2558,13 @@ def run_cts(args: argparse.Namespace) -> Path:
+ 
+     models = output / "models"
+     models.mkdir()
++    seed_load_lib = models / "clock_hbt_seed.lib"
++    seed_load_lef = models / "clock_hbt_seed.lef"
+     load_lib = models / "clock_hbt.lib"
+     load_lef = models / "clock_hbt.lef"
+     load_cell = _write_clock_load_models(
+-        load_lib,
+-        load_lef,
++        seed_load_lib,
++        seed_load_lef,
+         clock,
+         source_visible_clock_capacitance_pf,
+         0.0,
+@@ -2416,8 +2591,8 @@ def run_cts(args: argparse.Namespace) -> Path:
+         args.delay_buffer_derate,
+         clock,
+         load_cell,
+-        load_lib,
+-        load_lef,
++        seed_load_lib,
++        seed_load_lef,
+     )
+ 
+     # The two finished local trees now give the passive graph a realistic
+@@ -2443,27 +2618,114 @@ def run_cts(args: argparse.Namespace) -> Path:
+     source_visible_clock_capacitance_pf = float(
+         passive_proxy["source_visible_clock_capacitance_pf"]
+     )
+-    # One physical CTS pass per die is the maintained baseline.  The bottom
+-    # seed already used the remote top-tree capacitance, so rebuilding the same
+-    # tree with only a refined delay arc adds runtime without changing the
+-    # placement objective.
++    # Preserve the qualified one-pass result as a physical fallback.  Now put
++    # the complete passive HBT + receiving-tree delay back on the temporary
++    # source-side leaf.  TritonCTS treats that leaf as a macro clock endpoint
++    # with insertion delay, repairs long clock wires, and uses its native
++    # latency balancer to add real delay buffers only to the faster local
++    # register side of the split.
+     bottom_baseline = bottom_seed
+-    bottom_metrics = _seed_metrics
+-    bottom_latency = _seed_latency
+-    clock_handoff = _seed_handoff
+-    # Re-query the continuous passive network after source CTS.  The far
+-    # cutpoint is the only authority for the receiving clock arrival and slew.
+-    handoff_assembly = tuned_proxy_assembly
++    baseline_bottom_metrics = _seed_metrics
++    baseline_bottom_latency = _seed_latency
++    baseline_assembly = tuned_proxy_assembly
++    baseline_global = _tuned_proxy_global
++    baseline_skew = _tuned_proxy_skew
++
++    _write_clock_load_models(
++        load_lib,
++        load_lef,
++        clock,
++        source_visible_clock_capacitance_pf,
++        downstream_min,
++        downstream_max,
++        args.bottom_hbt_layer,
++    )
++    bottom_coordinated = work / "04_bottom_coordinated"
++    (
++        coordinated_bottom_metrics,
++        coordinated_bottom_latency,
++        _coordinated_handoff,
++    ) = run_die(
++        handoff,
++        "bottom",
++        handoff.dies["bottom"].odb,
++        _source_sdc(
++            handoff.dies["bottom"].sdc,
++            clocks,
++            float(handoff.timing_model["default_transition_ns"]),
++        ),
++        platform,
++        bottom_coordinated,
++        args.openroad,
++        args.bottom_buffer,
++        args.cluster_size,
++        args.cluster_diameter,
++        args.delay_buffer_derate,
++        clock,
++        load_cell,
++        load_lib,
++        load_lef,
++    )
++    coordinated_assembly = work / "05_passive_coordinated"
++    coordinated_global, coordinated_skew = _assembly_cts_sta(
++        handoff,
++        bottom_coordinated / "design.odb",
++        preview / "design.odb",
++        bottom_coordinated / "design.v",
++        preview / "design.v",
++        platform,
++        coordinated_assembly,
++        args.openroad,
++        query_all_boundaries=args.repair_hold,
++    )
++    alignment_selection = _select_coordinated_skew(
++        baseline_skew,
++        coordinated_skew,
++        baseline_inventory=_clock_domain_inventory(
++            baseline_assembly / "passive/clock_sinks_by_clock.tsv"
++        ),
++        coordinated_inventory=_clock_domain_inventory(
++            coordinated_assembly / "passive/clock_sinks_by_clock.tsv"
++        ),
++        # Only the bottom tree changes.  Applying the 2x guard to that die is
++        # stricter than the required whole-design count/area guard because the
++        # configured buffer master is unchanged and the top tree is identical.
++        baseline_clock_buffers=int(
++            baseline_bottom_metrics["clock_buffer_count"]
++        ),
++        coordinated_clock_buffers=int(
++            coordinated_bottom_metrics["clock_buffer_count"]
++        ),
++    )
++    if alignment_selection["selected"] == "coordinated":
++        selected_bottom = bottom_coordinated
++        selected_assembly = coordinated_assembly
++        selected_global = coordinated_global
++        selected_skew = coordinated_skew
++        bottom_metrics = coordinated_bottom_metrics
++        bottom_latency = coordinated_bottom_latency
++    else:
++        selected_bottom = bottom_baseline
++        selected_assembly = baseline_assembly
++        selected_global = baseline_global
++        selected_skew = baseline_skew
++        bottom_metrics = baseline_bottom_metrics
++        bottom_latency = baseline_bottom_latency
++
++    # The receiving topology is unchanged by source-side alignment.  Re-query
++    # its far cutpoint from the selected physical pair and publish that arrival
++    # and slew in the die-local SDC.  This is an artifact handoff only; the
++    # continuous passive assembly remains the timing authority.
+     passive_handoff = _derive_passive_clock_handoff(
+-        handoff_assembly / "passive", clock, clock_period
++        selected_assembly / "passive", clock, clock_period
+     )
+     clock_handoff = passive_handoff
+     top_source_latency = float(passive_handoff["source_latency_ns"])
+     top_source_transition = float(passive_handoff["source_transition_ns"])
+-    top_baseline = preview
+-    baseline_top_metrics = preview_metrics
+-    baseline_top_latency = preview_latency
+-    write_sdc_projection(top_baseline / "design.sdc", project_sdc_for_handoff(
++    selected_top = preview
++    top_metrics = preview_metrics
++    top_latency = preview_latency
++    write_sdc_projection(selected_top / "design.sdc", project_sdc_for_handoff(
+         handoff, "top", _receiving_sdc(
+             handoff.dies["top"].sdc,
+             clock,
+@@ -2471,31 +2733,19 @@ def run_cts(args: argparse.Namespace) -> Path:
+             top_source_transition,
+             clocks,
+         ), source_label="CTS final top HBT latency update",
+-        def_paths={"bottom": bottom_baseline / "design.def", "top": top_baseline / "design.def"},
+-        odb_paths={"bottom": bottom_baseline / "design.odb", "top": top_baseline / "design.odb"},
++        def_paths={"bottom": selected_bottom / "design.def", "top": selected_top / "design.def"},
++        odb_paths={"bottom": selected_bottom / "design.odb", "top": selected_top / "design.odb"},
+         platform=platform, openroad=args.openroad,
+-        evidence_dir=top_baseline / "final_sdc_evidence",
++        evidence_dir=selected_top / "final_sdc_evidence",
+     ))
+ 
+-    baseline_assembly = tuned_proxy_assembly
+-    baseline_global = _tuned_proxy_global
+-    baseline_skew = _tuned_proxy_skew
+-
+-    # The maintained baseline deliberately performs no cross-die root-delay
+-    # search.  Each die is balanced once by TritonCTS; the passive assembly
+-    # reports the remaining inter-die offset without rebuilding either tree.
+-    selected_bottom = bottom_baseline
+-    selected_top = top_baseline
+-    top_metrics = baseline_top_metrics
+-    top_latency = baseline_top_latency
+-
+     # CTS owns the two clock trees, not data-path optimization.  The completed
+     # two-tree passive assembly is already the final timing authority when hold
+     # repair is disabled.  Only explicit hold repair pays to export every data
+     # boundary cutpoint and to rebuild timing after physical mutation.
+-    pre_repair_assembly = baseline_assembly
+-    _pre_repair_global = baseline_global
+-    _pre_repair_skew = baseline_skew
++    pre_repair_assembly = selected_assembly
++    _pre_repair_global = selected_global
++    _pre_repair_skew = selected_skew
+     _mid_repair_global = _pre_repair_global
+     bottom_repair_metrics = {
+         "enabled": False,
+@@ -2509,7 +2759,7 @@ def run_cts(args: argparse.Namespace) -> Path:
+                 encoding="utf-8"
+             )
+         )
+-        bottom_repair = work / "04_bottom_hold_repair"
++        bottom_repair = work / "06_bottom_hold_repair"
+         bottom_repair_metrics = _post_cts_hold_repair_die(
+             handoff,
+             "bottom",
+@@ -2523,7 +2773,7 @@ def run_cts(args: argparse.Namespace) -> Path:
+             args.bottom_clock_layer,
+         )
+ 
+-        mid_repair_assembly = work / "05_assembly_after_bottom_hold"
++        mid_repair_assembly = work / "07_assembly_after_bottom_hold"
+         _mid_repair_global, _mid_repair_skew = _assembly_cts_sta(
+             handoff,
+             bottom_repair / "design.odb",
+@@ -2538,7 +2788,7 @@ def run_cts(args: argparse.Namespace) -> Path:
+         mid_repair_snapshot = json.loads(
+             (mid_repair_assembly / "boundary_snapshot.json").read_text(encoding="utf-8")
+         )
+-        top_repair = work / "06_top_hold_repair"
++        top_repair = work / "08_top_hold_repair"
+         top_repair_metrics = _post_cts_hold_repair_die(
+             handoff,
+             "top",
+@@ -2582,12 +2832,15 @@ def run_cts(args: argparse.Namespace) -> Path:
+             args.openroad,
+         )
+     else:
+-        # No physical state changed after the tuned two-tree assembly.  Publish
+-        # that validated result verbatim instead of regenerating the same
+-        # placement projection, ~180 MB SPEF and OpenSTA graph a third time.
+-        shutil.copytree(baseline_assembly, assembly)
+-        global_metrics = baseline_global
+-        skew = baseline_skew
++        # No physical state changed after selection.  Publish the already
++        # validated passive graph verbatim instead of regenerating the same
++        # placement projection and large stitched SPEF.
++        if alignment_selection["selected"] == "coordinated":
++            shutil.copytree(coordinated_assembly, assembly)
++        else:
++            shutil.copytree(baseline_assembly, assembly)
++        global_metrics = selected_global
++        skew = selected_skew
+     source_root = handoff.checkpoint.parent
+     for name in (
+         "hbt.csv",
+@@ -2609,7 +2862,7 @@ def run_cts(args: argparse.Namespace) -> Path:
+     target_report = _skew_target_report(skew, args.target_skew_ns)
+     metrics = {
+         "schema_version": 1,
+-        "algorithm": "openroad-balanced",
++        "algorithm": "openroad-cross-die-balanced",
+         "status": "success",
+         "clock_hbt_count": 1,
+         "clock_hbt": clock.hbt_id,
+@@ -2641,14 +2894,53 @@ def run_cts(args: argparse.Namespace) -> Path:
+                 source_visible_clock_capacitance_pf
+             ),
+             "proxy_query": passive_proxy,
++            "applied_to_physical_source_tree": (
++                alignment_selection["selected"] == "coordinated"
++            ),
+             "receiving_handoff_query": passive_handoff,
+         },
+         "bottom": {"cts": bottom_metrics, "latency": bottom_latency},
+         "top": {"cts": top_metrics, "latency": top_latency},
+         "cross_die_alignment": {
+-            "method": "reported-only-local-balanced-trees",
+-            "tree_retries": 0,
+-            "root_alignment_buffer_count": 0,
++            "method": "passive-insertion-delay-native-latency-balancing",
++            "construction_order": [
++                "top-preview",
++                "source-capacitance-seed",
++                "passive-delay-measurement",
++                "source-coordinated-rebuild",
++                "authoritative-passive-selection",
++            ],
++            "tree_retries": 1,
++            "clock_net_repair_before_latency_balance": True,
++            "load_model": {
++                "cell": load_cell,
++                "seed_liberty": "models/clock_hbt_seed.lib",
++                "coordinated_liberty": "models/clock_hbt.lib",
++                "capacitance_pf": source_visible_clock_capacitance_pf,
++                "downstream_min_ns": downstream_min,
++                "downstream_max_ns": downstream_max,
++            },
++            "baseline": {
++                "bottom_cts": baseline_bottom_metrics,
++                "bottom_latency": baseline_bottom_latency,
++                "timing": baseline_global,
++                "skew": baseline_skew,
++            },
++            "coordinated": {
++                "bottom_cts": coordinated_bottom_metrics,
++                "bottom_latency": coordinated_bottom_latency,
++                "timing": coordinated_global,
++                "skew": coordinated_skew,
++            },
++            "selection": alignment_selection,
++            "selected_bottom_clock_buffer_count": bottom_metrics.get(
++                "clock_buffer_count"
++            ),
++            "root_alignment_buffer_count": max(
++                0,
++                int(bottom_metrics.get("clock_buffer_count", 0))
++                - int(baseline_bottom_metrics.get("clock_buffer_count", 0)),
++            ),
+         },
+         "post_cts_hold_repair": {
+             "enabled": args.repair_hold,
+@@ -2682,6 +2974,7 @@ def run_cts(args: argparse.Namespace) -> Path:
+             "remote_clock_tree_load_visible_to_source_cts": True,
+             "local_clock_proxy_parameters_from_passive_cutpoint": True,
+             "receiving_clock_from_passive_far_cutpoint": True,
++            "whole_path_latency_used_for_physical_balancing": True,
+             "fixed_hbt_delay_in_cts_coordination": False,
+             "hbt_is_passive_rc_in_authoritative_global_sta": True,
+             "authoritative_timing_view": "continuous-passive-hbt",
+@@ -2731,7 +3024,7 @@ def run_cts(args: argparse.Namespace) -> Path:
+                 },
+             },
+             "cts": {
+-                "algorithm": "openroad-balanced",
++                "algorithm": "openroad-cross-die-balanced",
+                 "metrics": "metrics.json",
+                 "global_skew_ns": skew["global_skew_ns"],
+                 "global_skew_valid_as_single_clock": skew["global_skew_valid_as_single_clock"],

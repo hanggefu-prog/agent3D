@@ -1,0 +1,4 @@
+{
+  "feedback_use": "Only native qualification feedback is available, so this is an unverified round-1 hypothesis. The persistent final overflow, especially on ariane133, motivates a conservative density-continuation signal rather than an aggressive degree transformation.",
+  "hypothesis": "Track growth in each region's live density weight and apply its bounded square root as the density-area preconditioning multiplier. This restores the native preconditioner's intended late-stage damping in the maintained two-region path where set_overflow is not called, while leaving early behavior unchanged and preserving region-specific density forces."
+}

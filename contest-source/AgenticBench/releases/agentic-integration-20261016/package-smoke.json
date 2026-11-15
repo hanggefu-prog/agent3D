@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "isolated_install": true,
+  "local_tasks": [
+    "tp_gnn_post_placement_timing",
+    "placement_initialization",
+    "placement_preconditioner",
+    "placement_dynamic_parameters_reference_20260923",
+    "hbt_assignment_policy",
+    "global_routing_ripup_policy_source",
+    "global_routing_maze_cost_source",
+    "global_routing_iteration_controller_source"
+  ],
+  "engineering_tasks": [
+    "clock_compensation",
+    "multi_hbt_fanout",
+    "cross_die_cts"
+  ],
+  "post_grt_cli": "passed",
+  "required_package_assets": [
+    "local_bench/reference_configs/nesterov_current.yaml",
+    "local_bench/reference_configs/nesterov_current.json",
+    "local_bench/reference_20260923_identity.json",
+    "scripts/build_openroad_candidate.sh",
+    "engineering_bench/native/inspect.tcl"
+  ],
+  "packaged_local_task_files": [
+    "local_tasks/global_routing_iteration_controller/task.yaml",
+    "local_tasks/global_routing_maze_cost/task.yaml",
+    "local_tasks/global_routing_ripup_policy/task.yaml",
+    "local_tasks/hbt_assignment_policy/task.yaml",
+    "local_tasks/placement_initialization/task.yaml",
+    "local_tasks/placement_parameters_reference_20260923/task.yaml",
+    "local_tasks/placement_preconditioner/task.yaml",
+    "local_tasks/tp_gnn_post_placement_timing/task.yaml"
+  ],
+  "packaged_engineering_task_files": [
+    "engineering_tasks/clock_compensation/task.json",
+    "engineering_tasks/cross_die_cts/task.json",
+    "engineering_tasks/multi_hbt_fanout/task.json"
+  ]
+}

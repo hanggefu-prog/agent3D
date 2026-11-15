@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench STA Evaluation"
+  short_description: "Promote selected 3D candidates through two-pass STA"
+  default_prompt: "Use $open3dbench-sta-evaluation to validate a selected Open3DBench candidate through two-pass OPT and STA."

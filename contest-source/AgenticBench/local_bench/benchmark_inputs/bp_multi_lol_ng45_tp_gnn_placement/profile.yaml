@@ -1,0 +1,15 @@
+schema_version: 1
+id: bp_multi_lol_ng45_tp_gnn_placement
+description: Frozen bp_multi LoL ng45 input, floorplan, and TP-GNN global-2way partition for placement tasks.
+config: config.yaml
+stop_stage: partition
+required_stages:
+  input: 00_input
+  floorplan: 10_floorplan
+  partition: 20_partition
+compatible_tasks:
+  - placement_preconditioner_source
+  - placement_dynamic_parameters
+  - placement_two_pass_sta
+runtime:
+  python_minimum: "3.8"

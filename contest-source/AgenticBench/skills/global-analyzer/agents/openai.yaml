@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic3D Global Analyzer"
+  short_description: "Diagnose global PPA and select one Open3DBench stage"
+  default_prompt: "Use $agentic3d-global-analyzer to convert the round-0 user command into measurable global criteria, adjudicate candidate evidence, and dispatch exactly one stage."

@@ -1,0 +1,16 @@
+schema_version: 1
+id: bp_fe_lol_ng45_mtkahypar
+description: Frozen bp_fe LoL ng45 input, floorplan, and Mt-KaHyPar partition for placement tasks.
+config: config.yaml
+stop_stage: partition
+required_stages:
+  input: 00_input
+  floorplan: 10_floorplan
+  partition: 20_partition
+compatible_tasks:
+  - placement_preconditioner_source
+  - placement_dynamic_parameters
+runtime:
+  # The maintained offline Open3DBench image uses Python 3.8.5. The harness is
+  # exercised in that image before any EDA stage or model request is launched.
+  python_minimum: "3.8"

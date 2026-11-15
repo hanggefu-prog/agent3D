@@ -1,0 +1,4 @@
+{
+  "feedback_use": "The native references finish above the 0.01 overflow tolerance in every cell (worst overflow 0.03082\u20130.05978), while no candidate measurements exist yet. This motivates a conservative, topology-preserving density initialization without claiming an observed gain.",
+  "hypothesis": "A modest area-weighted quantile redistribution within each tier will reduce initial clustering while retaining coordinate order and the original centroid, helping the native optimizer trade wirelength against overflow more effectively."
+}

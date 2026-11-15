@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "status": "provisional",
+  "model": "symmetric-lumped-rc-nldm",
+  "resistance_ohm": 3.0,
+  "capacitance_pf": 0.0006,
+  "default_transition_ns": 0.02,
+  "directions": [
+    "B2T",
+    "T2B"
+  ],
+  "provenance": "User-selected hybrid-bond reference values: 3 ohm and 0.6 fF. The generated NLDM arc is derived from this lumped RC instead of a fixed delay. Status remains provisional until calibrated against the target bonding stack.",
+  "intended_use": "placement-RC and extracted-RC assembly STA, die-by-die OPT boundary coordination, and CTS coordination"
+}

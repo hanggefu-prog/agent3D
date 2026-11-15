@@ -1,0 +1,101 @@
+{
+  "name": "open3dbench-unified-place3d-v2",
+  "regime": "unified_place3d",
+  "priority": 200,
+  "sentinels": [
+    "Place-3D/src/api.py",
+    "Place-3D/config",
+    "OpenROAD-3D/flow/Makefile"
+  ],
+  "stages": {
+    "partition": {
+      "source_paths": ["Place-3D/src/partition", "Place-3D/thirdparty/partition"],
+      "config_paths": ["Place-3D/config/partition", "Place-3D/config/benchmark"],
+      "log_roots": ["Place-3D/results"],
+      "result_roots": ["Place-3D/results"],
+      "compile_commands": [
+        "python3 -m compileall -q Place-3D/src/partition Place-3D/src/api.py",
+        "cd Place-3D && bash scripts/verify.sh"
+      ],
+      "preparation_commands": [
+        "mkdir -p Place-3D/benchmarks && ln -s <existing-place-lol-benchmark-root> Place-3D/benchmarks/lol",
+        "cd Place-3D && bash scripts/joint_placement/convert_input.sh <design> <variant> 100"
+      ],
+      "evaluation_commands": [
+        "cd Place-3D && DESIGN=<design> PARTITION_CONFIG=<config> bash scripts/partition_then_place/run_concurrent_dreamplace.sh"
+      ],
+      "required_inputs": [
+        "Place-3D/benchmarks/lol/3D_input/<design> (may directly reuse the original Place-LoL benchmark tree; re-downloading or re-extracting the archive is not required)",
+        "Place-3D/binaries/converted_input/<variant>/<design>.input (generated locally by convert_input.sh; binaries.tar.gz is not required)"
+      ],
+      "optional_tools": [
+        "Place-3D/binaries/iccad2023/ProblemB_evaluator_20230418 (official contest cross-check only)"
+      ],
+      "metrics": ["cut weight/count", "area balance", "partition runtime", "downstream fixed-placement HPWL"],
+      "correctness_gates": ["disjoint complete partition", "fixed input/seed", "area budget", "parseable partition handoff"],
+      "artifact_patterns": ["**/*.log", "**/*partition*.json", "**/*manifest*.json", "**/*.csv"]
+    },
+    "layout": {
+      "source_paths": ["Place-3D/src/placement", "Place-3D/thirdparty/DREAMPlace", "Place-3D/src/evaluation"],
+      "config_paths": ["Place-3D/config/placement", "Place-3D/config/benchmark"],
+      "log_roots": ["Place-3D/results"],
+      "result_roots": ["Place-3D/results"],
+      "compile_commands": [
+        "python3 -m compileall -q Place-3D/src/placement Place-3D/src/evaluation",
+        "cd Place-3D && bash scripts/verify.sh",
+        "make dreamplace"
+      ],
+      "preparation_commands": [
+        "mkdir -p Place-3D/benchmarks && ln -s <existing-place-lol-benchmark-root> Place-3D/benchmarks/lol",
+        "cd Place-3D && bash scripts/joint_placement/convert_input.sh <design> <variant> 100"
+      ],
+      "evaluation_commands": [
+        "cd Place-3D && DESIGN=<design> bash scripts/mol/run_placer_comparison.sh",
+        "cd Place-3D && DESIGN=<design> PARTITION_CONFIG=<partition> PLACEMENT_CONFIG=<placement> bash scripts/partition_then_place/run_concurrent_dreamplace.sh"
+      ],
+      "required_inputs": [
+        "Place-3D/benchmarks/lol/3D_input/<design> (may directly reuse the original Place-LoL benchmark tree; prefer one read-only link/mount or one-time copy over repeated NAS transfers)",
+        "Place-3D/binaries/converted_input/<variant>/<design>.input (generated locally by convert_input.sh; the directory name does not imply a binary-package dependency)"
+      ],
+      "optional_tools": [
+        "Place-3D/binaries/iccad2023/ProblemB_evaluator_20230418 (optional official validation; internal contest_metrics and overlap checks remain mandatory)"
+      ],
+      "metrics": ["HPWL", "density overflow", "maximum density/utilization", "overlap", "runtime"],
+      "correctness_gates": ["frozen partition", "component/net count", "inside DIEAREA", "no illegal macro overlap", "parseable DEF", "deterministic replay"],
+      "artifact_patterns": ["**/*.log", "**/*.json", "**/*.csv", "**/*.def", "**/*.png"]
+    },
+    "place_opt": {
+      "source_paths": ["OpenROAD-3D/openroad/src/gpl", "OpenROAD-3D/openroad/src/dpl", "OpenROAD-3D/openroad/src/rsz", "OpenROAD-3D/openroad/src/cts", "OpenROAD-3D/flow/scripts"],
+      "config_paths": ["OpenROAD-3D/flow/designs", "OpenROAD-3D/flow/platforms"],
+      "log_roots": ["OpenROAD-3D/flow/logs", "OpenROAD-3D/flow/reports"],
+      "result_roots": ["OpenROAD-3D/flow/results"],
+      "compile_commands": [
+        "cmake --build OpenROAD-3D/openroad/build --target openroad -j <threads>",
+        "cd OpenROAD-3D/flow && make do-place",
+        "cd OpenROAD-3D/flow && make do-cts"
+      ],
+      "evaluation_commands": [
+        "cd OpenROAD-3D/flow && make DESIGN_CONFIG=<config> FLOW_VARIANT=<variant> do-place do-cts"
+      ],
+      "metrics": ["HPWL", "WNS", "TNS", "density/utilization", "buffer count", "clock skew/latency", "displacement", "runtime"],
+      "correctness_gates": ["readable 3_place/4_cts ODB and SDC", "legal placement", "clock/net/instance preservation", "macro coordinates frozen unless authorized", "zero fatal errors"],
+      "artifact_patterns": ["**/3_*.log", "**/4_*.log", "**/*metrics*.json", "**/*.rpt", "**/3_place.odb", "**/4_cts.odb", "**/*.sdc"]
+    },
+    "routing": {
+      "source_paths": ["OpenROAD-3D/openroad/src/grt", "OpenROAD-3D/openroad/src/drt", "OpenROAD-3D/flow/scripts", "OpenROAD-3D/flow/scripts_3D", "OpenROAD-3D/flow/script_routing"],
+      "config_paths": ["OpenROAD-3D/flow/designs", "OpenROAD-3D/flow/platforms"],
+      "log_roots": ["OpenROAD-3D/flow/logs", "OpenROAD-3D/flow/reports"],
+      "result_roots": ["OpenROAD-3D/flow/results"],
+      "compile_commands": [
+        "cmake --build OpenROAD-3D/openroad/build --target openroad -j <threads>",
+        "cd OpenROAD-3D/flow && make do-route"
+      ],
+      "evaluation_commands": [
+        "cd OpenROAD-3D/flow && make DESIGN_CONFIG=<config> FLOW_VARIANT=<variant> do-route do-finish"
+      ],
+      "metrics": ["routed wirelength", "vias/HBTs", "overflow/congestion", "DRC", "WNS", "TNS", "power", "runtime"],
+      "correctness_gates": ["all nets represented", "valid guides/layers per die", "cross-die connectivity", "parseable routed ODB/DEF", "DRC budget", "no fatal errors"],
+      "artifact_patterns": ["**/5_*.log", "**/6_*.log", "**/*metrics*.json", "**/*.rpt", "**/*.guide", "**/5_route.odb", "**/5_route.def", "**/6_final.*"]
+    }
+  }
+}

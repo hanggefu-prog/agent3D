@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "config_overrides": {},
+  "source_patch": "",
+  "candidate_files": {
+    "binary_loss_program.json": {
+      "interface_version": "tp-gnn-binary-loss-v1",
+      "source": "def compute_binary_partition_loss(\n    probabilities,\n    expected_cut,\n    net_cut_probabilities,\n    net_weights,\n    node_features,\n    node_areas,\n    balance_target,\n    cut_weight,\n    area_balance_weight,\n    binarization_weight,\n    epoch,\n    max_epochs,\n):\n    \"\"\"Balance soft physical area and separate binary probabilities.\"\"\"\n    total_area = node_areas.sum()\n    top_area_ratio = (node_areas * probabilities).sum() / total_area\n    area_loss = (top_area_ratio - balance_target).square()\n    # Penalize ambiguity until probabilities reach [0,.05] or [.95,1].\n    margin_error = (0.9 - (2.0 * probabilities - 1.0).abs()).clamp_min(0.0).square() / 0.81\n    binary_loss = (\n        0.25 * margin_error.mean()\n        + 0.75 * (node_areas * margin_error).sum() / total_area\n    )\n    return (\n        cut_weight * expected_cut\n        + area_balance_weight * area_loss\n        + binarization_weight * binary_loss\n    )\n"
+    }
+  },
+  "notes": "Binary TP-GNN loss program; native execution requires same-contract task qualification."
+}

@@ -1,0 +1,1572 @@
+{
+  "campaigns": {
+    "placement": {
+      "builds": [],
+      "candidate_matrices": [
+        {
+          "aggregate": 1.0,
+          "cases": [
+            {
+              "case": "bp_fe-ng45",
+              "complete": true,
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "scores": {
+                "s1": 1.0,
+                "s2": 1.0
+              },
+              "stddev": 0.0
+            },
+            {
+              "case": "bp-ng45",
+              "complete": true,
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "scores": {
+                "s1": 1.0,
+                "s2": 1.0
+              },
+              "stddev": 0.0
+            }
+          ],
+          "cells": [
+            {
+              "case": "bp_fe-ng45",
+              "metrics": {
+                "combined_score": 1.0,
+                "hpwl_score": 1.0,
+                "overflow_reward_tolerance": 0.01,
+                "overflow_score": 1.0,
+                "placement_complete": 1.0,
+                "placement_evaluation_boundary": "dreamplace-global-placement",
+                "placement_first_logged_hpwl": 4061368.0,
+                "placement_first_logged_overflow_max": 0.7754,
+                "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+                "placement_logged_hpwl_relative_change": 0.16751769354562304,
+                "placement_logged_overflow_change": -0.74458,
+                "placement_logged_rows": 1291,
+                "placement_max_density": 1.16,
+                "placement_max_density_bottom": 1.16,
+                "placement_max_density_top": 1.137,
+                "placement_native_hpwl": 4741719.0,
+                "placement_overflow_bottom": 0.01348,
+                "placement_overflow_max": 0.03082,
+                "placement_overflow_mean": 0.02215,
+                "placement_overflow_top": 0.03082,
+                "runs_successfully": 1.0,
+                "target_density": 0.6
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0001-b747306aedc9/matrix/cells/bp_fe-ng45/s1/result",
+              "score": 1.0,
+              "seed": "s1",
+              "status": "succeeded"
+            },
+            {
+              "case": "bp_fe-ng45",
+              "metrics": {
+                "combined_score": 1.0,
+                "hpwl_score": 1.0,
+                "overflow_reward_tolerance": 0.01,
+                "overflow_score": 1.0,
+                "placement_complete": 1.0,
+                "placement_evaluation_boundary": "dreamplace-global-placement",
+                "placement_first_logged_hpwl": 4067109.0,
+                "placement_first_logged_overflow_max": 0.7762,
+                "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+                "placement_logged_hpwl_relative_change": 0.1645913596119504,
+                "placement_logged_overflow_change": -0.74517,
+                "placement_logged_rows": 1277,
+                "placement_max_density": 2.0,
+                "placement_max_density_bottom": 1.175,
+                "placement_max_density_top": 2.0,
+                "placement_native_hpwl": 4736520.0,
+                "placement_overflow_bottom": 0.01324,
+                "placement_overflow_max": 0.03103,
+                "placement_overflow_mean": 0.022135,
+                "placement_overflow_top": 0.03103,
+                "runs_successfully": 1.0,
+                "target_density": 0.6
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0001-b747306aedc9/matrix/cells/bp_fe-ng45/s2/result",
+              "score": 1.0,
+              "seed": "s2",
+              "status": "succeeded"
+            },
+            {
+              "case": "bp-ng45",
+              "metrics": {
+                "combined_score": 1.0,
+                "hpwl_score": 1.0,
+                "overflow_reward_tolerance": 0.01,
+                "overflow_score": 1.0,
+                "placement_complete": 1.0,
+                "placement_evaluation_boundary": "dreamplace-global-placement",
+                "placement_first_logged_hpwl": 6469130.0,
+                "placement_first_logged_overflow_max": 0.8534,
+                "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+                "placement_logged_hpwl_relative_change": 1.253463757877798,
+                "placement_logged_overflow_change": -0.83803,
+                "placement_logged_rows": 1367,
+                "placement_max_density": 0.9742,
+                "placement_max_density_bottom": 0.959,
+                "placement_max_density_top": 0.9742,
+                "placement_native_hpwl": 14577950.0,
+                "placement_overflow_bottom": 0.009909,
+                "placement_overflow_max": 0.01537,
+                "placement_overflow_mean": 0.0126395,
+                "placement_overflow_top": 0.01537,
+                "runs_successfully": 1.0,
+                "target_density": 0.6
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0001-b747306aedc9/matrix/cells/bp-ng45/s1/result",
+              "score": 1.0,
+              "seed": "s1",
+              "status": "succeeded"
+            },
+            {
+              "case": "bp-ng45",
+              "metrics": {
+                "combined_score": 1.0,
+                "hpwl_score": 1.0,
+                "overflow_reward_tolerance": 0.01,
+                "overflow_score": 1.0,
+                "placement_complete": 1.0,
+                "placement_evaluation_boundary": "dreamplace-global-placement",
+                "placement_first_logged_hpwl": 6470234.0,
+                "placement_first_logged_overflow_max": 0.853,
+                "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+                "placement_logged_hpwl_relative_change": 1.2219134578440285,
+                "placement_logged_overflow_change": -0.8374199999999999,
+                "placement_logged_rows": 1355,
+                "placement_max_density": 0.9876,
+                "placement_max_density_bottom": 0.9876,
+                "placement_max_density_top": 0.9407,
+                "placement_native_hpwl": 14376300.0,
+                "placement_overflow_bottom": 0.01558,
+                "placement_overflow_max": 0.01558,
+                "placement_overflow_mean": 0.012677,
+                "placement_overflow_top": 0.009774,
+                "runs_successfully": 1.0,
+                "target_density": 0.6
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0001-b747306aedc9/matrix/cells/bp-ng45/s2/result",
+              "score": 1.0,
+              "seed": "s2",
+              "status": "succeeded"
+            }
+          ],
+          "independent_aggregate_matches": true,
+          "matrix_sha256": "03f73ed9e325e76880545f715835854966e370962f0e360a8ac5d5a776c2fab8",
+          "result_path": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0001-b747306aedc9/matrix/evaluation_result.json"
+        },
+        {
+          "aggregate": 0.981504047017983,
+          "cases": [
+            {
+              "case": "bp_fe-ng45",
+              "complete": true,
+              "max": 0.9991996791664033,
+              "mean": 0.9983172858626184,
+              "min": 0.9974348925588334,
+              "scores": {
+                "s1": 0.9974348925588334,
+                "s2": 0.9991996791664033
+              },
+              "stddev": 0.000882393303784923
+            },
+            {
+              "case": "bp-ng45",
+              "complete": true,
+              "max": 1.006214166547666,
+              "mean": 0.9646908081733476,
+              "min": 0.9231674497990293,
+              "scores": {
+                "s1": 1.006214166547666,
+                "s2": 0.9231674497990293
+              },
+              "stddev": 0.041523358374318364
+            }
+          ],
+          "cells": [
+            {
+              "case": "bp_fe-ng45",
+              "metrics": {
+                "combined_score": 0.9974348925588334,
+                "hpwl_score": 0.9985383244957525,
+                "overflow_reward_tolerance": 0.01,
+                "overflow_score": 0.987504005126562,
+                "placement_complete": 1.0,
+                "placement_evaluation_boundary": "dreamplace-global-placement",
+                "placement_first_logged_hpwl": 4109606.0,
+                "placement_first_logged_overflow_max": 0.7768,
+                "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+                "placement_logged_hpwl_relative_change": 0.1555024982930237,
+                "placement_logged_overflow_change": -0.7455900000000001,
+                "placement_logged_rows": 1296,
+                "placement_max_density": 2.0,
+                "placement_max_density_bottom": 1.724,
+                "placement_max_density_top": 2.0,
+                "placement_native_hpwl": 4748660.0,
+                "placement_overflow_bottom": 0.01364,
+                "placement_overflow_max": 0.03121,
+                "placement_overflow_mean": 0.022425,
+                "placement_overflow_top": 0.03121,
+                "runs_successfully": 1.0,
+                "target_density": 0.6
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0002-6c90d8280aac/matrix/cells/bp_fe-ng45/s1/result",
+              "score": 0.9974348925588334,
+              "seed": "s1",
+              "status": "succeeded"
+            },
+            {
+              "case": "bp_fe-ng45",
+              "metrics": {
+                "combined_score": 0.9991996791664033,
+                "hpwl_score": 0.9984262179525825,
+                "overflow_reward_tolerance": 0.01,
+                "overflow_score": 1.0061608300907912,
+                "placement_complete": 1.0,
+                "placement_evaluation_boundary": "dreamplace-global-placement",
+                "placement_first_logged_hpwl": 4115372.0,
+                "placement_first_logged_overflow_max": 0.7759,
+                "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+                "placement_logged_hpwl_relative_change": 0.15274779533903618,
+                "placement_logged_overflow_change": -0.7450600000000001,
+                "placement_logged_rows": 1280,
+                "placement_max_density": 1.357,
+                "placement_max_density_bottom": 1.115,
+                "placement_max_density_top": 1.357,
+                "placement_native_hpwl": 4743986.0,
+                "placement_overflow_bottom": 0.01323,
+                "placement_overflow_max": 0.03084,
+                "placement_overflow_mean": 0.022035,
+                "placement_overflow_top": 0.03084,
+                "runs_successfully": 1.0,
+                "target_density": 0.6
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0002-6c90d8280aac/matrix/cells/bp_fe-ng45/s2/result",
+              "score": 0.9991996791664033,
+              "seed": "s2",
+              "status": "succeeded"
+            },
+            {
+              "case": "bp-ng45",
+              "metrics": {
+                "combined_score": 1.006214166547666,
+                "hpwl_score": 1.0066873326699404,
+                "overflow_reward_tolerance": 0.01,
+                "overflow_score": 1.0019556714471969,
+                "placement_complete": 1.0,
+                "placement_evaluation_boundary": "dreamplace-global-placement",
+                "placement_first_logged_hpwl": 6934067.0,
+                "placement_first_logged_overflow_max": 0.8531,
+                "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+                "placement_logged_hpwl_relative_change": 1.0884006456816757,
+                "placement_logged_overflow_change": -0.83776,
+                "placement_logged_rows": 1412,
+                "placement_max_density": 0.9894,
+                "placement_max_density_bottom": 0.9894,
+                "placement_max_density_top": 0.9662,
+                "placement_native_hpwl": 14481110.0,
+                "placement_overflow_bottom": 0.009812,
+                "placement_overflow_max": 0.01534,
+                "placement_overflow_mean": 0.012576,
+                "placement_overflow_top": 0.01534,
+                "runs_successfully": 1.0,
+                "target_density": 0.6
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0002-6c90d8280aac/matrix/cells/bp-ng45/s1/result",
+              "score": 1.006214166547666,
+              "seed": "s1",
+              "status": "succeeded"
+            },
+            {
+              "case": "bp-ng45",
+              "metrics": {
+                "combined_score": 0.9231674497990293,
+                "hpwl_score": 0.9995800405219178,
+                "overflow_reward_tolerance": 0.01,
+                "overflow_score": 0.23545413329303308,
+                "placement_complete": 1.0,
+                "placement_evaluation_boundary": "dreamplace-global-placement",
+                "placement_first_logged_hpwl": 6931915.0,
+                "placement_first_logged_overflow_max": 0.8528,
+                "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+                "placement_logged_hpwl_relative_change": 1.0748003978698526,
+                "placement_logged_overflow_change": -0.7866299999999999,
+                "placement_logged_rows": 1401,
+                "placement_max_density": 2.23,
+                "placement_max_density_bottom": 0.9649,
+                "placement_max_density_top": 2.23,
+                "placement_native_hpwl": 14382340.0,
+                "placement_overflow_bottom": 0.01561,
+                "placement_overflow_max": 0.06617,
+                "placement_overflow_mean": 0.04089,
+                "placement_overflow_top": 0.06617,
+                "runs_successfully": 1.0,
+                "target_density": 0.6
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0002-6c90d8280aac/matrix/cells/bp-ng45/s2/result",
+              "score": 0.9231674497990293,
+              "seed": "s2",
+              "status": "succeeded"
+            }
+          ],
+          "independent_aggregate_matches": true,
+          "matrix_sha256": "03f73ed9e325e76880545f715835854966e370962f0e360a8ac5d5a776c2fab8",
+          "result_path": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0002-6c90d8280aac/matrix/evaluation_result.json"
+        }
+      ],
+      "complete": true,
+      "directory": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3",
+      "peak_gpu_slots": 4,
+      "peak_live_jobs": 4,
+      "programs": [
+        {
+          "metadata": {
+            "hypothesis": "Initial replay"
+          },
+          "program": "# EVOLVE-BLOCK-START\ndef initialize_position(params, placedb, die_contexts=None):\n    init_pos = np.zeros(placedb.num_nodes * 2, dtype=placedb.dtype)\n    # x position\n    init_pos[0:placedb.num_physical_nodes] = placedb.node_x\n    if params.global_place_flag and params.random_center_init_flag:  # move to center of layout\n        logging.info(\n            \"move cells to the center of layout with random noise\")\n        init_pos[0:placedb.num_movable_nodes] = np.random.normal(\n            loc=(placedb.xl * 1.0 + placedb.xh * 1.0) / 2,\n            scale=(placedb.xh - placedb.xl) * 0.001,\n            size=placedb.num_movable_nodes)\n\n    # y position\n    init_pos[placedb.num_nodes:placedb.num_nodes +\n                  placedb.num_physical_nodes] = placedb.node_y\n    if params.global_place_flag and params.random_center_init_flag:  # move to center of layout\n        init_pos[placedb.num_nodes:placedb.num_nodes +\n                      placedb.num_movable_nodes] = np.random.normal(\n                          loc=(placedb.yl * 1.0 + placedb.yh * 1.0) / 2,\n                          scale=(placedb.yh - placedb.yl) * 0.001,\n                          size=placedb.num_movable_nodes)\n\n    if placedb.num_filler_nodes:  # uniformly distribute filler cells in the layout\n        if len(placedb.regions) > 0:\n            ### uniformly spread fillers in fence region\n            ### for cells in the fence region\n            for i, region in enumerate(placedb.regions):\n                filler_beg, filler_end = placedb.filler_start_map[i : i + 2]\n                subregion_areas = (region[:, 2] - region[:, 0]) * (region[:, 3] - region[:, 1])\n                total_area = np.sum(subregion_areas)\n                subregion_area_ratio = subregion_areas / total_area\n                subregion_num_filler = np.round((filler_end - filler_beg) * subregion_area_ratio)\n                subregion_num_filler[-1] = (filler_end - filler_beg) - np.sum(subregion_num_filler[:-1])\n                subregion_num_filler_start_map = np.concatenate(\n                    [np.zeros([1]), np.cumsum(subregion_num_filler)], 0\n                ).astype(np.int32)\n                for j, subregion in enumerate(region):\n                    sub_filler_beg, sub_filler_end = subregion_num_filler_start_map[j : j + 2]\n                    init_pos[\n                        placedb.num_physical_nodes\n                        + filler_beg\n                        + sub_filler_beg : placedb.num_physical_nodes\n                        + filler_beg\n                        + sub_filler_end\n                    ] = np.random.uniform(\n                        low=subregion[0],\n                        high=subregion[2] - placedb.filler_size_x_fence_region[i],\n                        size=sub_filler_end - sub_filler_beg,\n                    )\n                    init_pos[\n                        placedb.num_nodes\n                        + placedb.num_physical_nodes\n                        + filler_beg\n                        + sub_filler_beg : placedb.num_nodes\n                        + placedb.num_physical_nodes\n                        + filler_beg\n                        + sub_filler_end\n                    ] = np.random.uniform(\n                        low=subregion[1],\n                        high=subregion[3] - placedb.filler_size_y_fence_region[i],\n                        size=sub_filler_end - sub_filler_beg,\n                    )\n\n            ### for cells outside fence region\n            if len(placedb.filler_start_map) > len(placedb.regions) + 1:\n                filler_beg, filler_end = placedb.filler_start_map[-2:]\n                init_pos[\n                    placedb.num_physical_nodes + filler_beg : placedb.num_physical_nodes + filler_end\n                ] = np.random.uniform(\n                    low=placedb.xl,\n                    high=placedb.xh - placedb.filler_size_x_fence_region[-1],\n                    size=filler_end - filler_beg,\n                )\n                init_pos[\n                    placedb.num_nodes\n                    + placedb.num_physical_nodes\n                    + filler_beg : placedb.num_nodes\n                    + placedb.num_physical_nodes\n                    + filler_end\n                ] = np.random.uniform(\n                    low=placedb.yl,\n                    high=placedb.yh - placedb.filler_size_y_fence_region[-1],\n                    size=filler_end - filler_beg,\n                )\n\n        else:\n            init_pos[placedb.num_physical_nodes : placedb.num_nodes] = np.random.uniform(\n                low=placedb.xl,\n                high=placedb.xh - placedb.node_size_x[-placedb.num_filler_nodes],\n                size=placedb.num_filler_nodes,\n            )\n            init_pos[\n                placedb.num_nodes + placedb.num_physical_nodes : placedb.num_nodes * 2\n            ] = np.random.uniform(\n                low=placedb.yl,\n                high=placedb.yh - placedb.node_size_y[-placedb.num_filler_nodes],\n                size=placedb.num_filler_nodes,\n            )\n    return init_pos\n# EVOLVE-BLOCK-END\n",
+          "proposal_id": "0"
+        },
+        {
+          "metadata": {
+            "hypothesis": "Bounded position-dependent perturbation of initial movable x coordinates"
+          },
+          "program": "# EVOLVE-BLOCK-START\ndef initialize_position(params, placedb, die_contexts=None):\n    init_pos = np.zeros(placedb.num_nodes * 2, dtype=placedb.dtype)\n    # x position\n    init_pos[0:placedb.num_physical_nodes] = placedb.node_x\n    if params.global_place_flag and params.random_center_init_flag:  # move to center of layout\n        logging.info(\n            \"move cells to the center of layout with random noise\")\n        init_pos[0:placedb.num_movable_nodes] = np.random.normal(\n            loc=(placedb.xl * 1.0 + placedb.xh * 1.0) / 2,\n            scale=(placedb.xh - placedb.xl) * 0.001,\n            size=placedb.num_movable_nodes)\n\n    # y position\n    init_pos[placedb.num_nodes:placedb.num_nodes +\n                  placedb.num_physical_nodes] = placedb.node_y\n    if params.global_place_flag and params.random_center_init_flag:  # move to center of layout\n        init_pos[placedb.num_nodes:placedb.num_nodes +\n                      placedb.num_movable_nodes] = np.random.normal(\n                          loc=(placedb.yl * 1.0 + placedb.yh * 1.0) / 2,\n                          scale=(placedb.yh - placedb.yl) * 0.001,\n                          size=placedb.num_movable_nodes)\n\n    if placedb.num_filler_nodes:  # uniformly distribute filler cells in the layout\n        if len(placedb.regions) > 0:\n            ### uniformly spread fillers in fence region\n            ### for cells in the fence region\n            for i, region in enumerate(placedb.regions):\n                filler_beg, filler_end = placedb.filler_start_map[i : i + 2]\n                subregion_areas = (region[:, 2] - region[:, 0]) * (region[:, 3] - region[:, 1])\n                total_area = np.sum(subregion_areas)\n                subregion_area_ratio = subregion_areas / total_area\n                subregion_num_filler = np.round((filler_end - filler_beg) * subregion_area_ratio)\n                subregion_num_filler[-1] = (filler_end - filler_beg) - np.sum(subregion_num_filler[:-1])\n                subregion_num_filler_start_map = np.concatenate(\n                    [np.zeros([1]), np.cumsum(subregion_num_filler)], 0\n                ).astype(np.int32)\n                for j, subregion in enumerate(region):\n                    sub_filler_beg, sub_filler_end = subregion_num_filler_start_map[j : j + 2]\n                    init_pos[\n                        placedb.num_physical_nodes\n                        + filler_beg\n                        + sub_filler_beg : placedb.num_physical_nodes\n                        + filler_beg\n                        + sub_filler_end\n                    ] = np.random.uniform(\n                        low=subregion[0],\n                        high=subregion[2] - placedb.filler_size_x_fence_region[i],\n                        size=sub_filler_end - sub_filler_beg,\n                    )\n                    init_pos[\n                        placedb.num_nodes\n                        + placedb.num_physical_nodes\n                        + filler_beg\n                        + sub_filler_beg : placedb.num_nodes\n                        + placedb.num_physical_nodes\n                        + filler_beg\n                        + sub_filler_end\n                    ] = np.random.uniform(\n                        low=subregion[1],\n                        high=subregion[3] - placedb.filler_size_y_fence_region[i],\n                        size=sub_filler_end - sub_filler_beg,\n                    )\n\n            ### for cells outside fence region\n            if len(placedb.filler_start_map) > len(placedb.regions) + 1:\n                filler_beg, filler_end = placedb.filler_start_map[-2:]\n                init_pos[\n                    placedb.num_physical_nodes + filler_beg : placedb.num_physical_nodes + filler_end\n                ] = np.random.uniform(\n                    low=placedb.xl,\n                    high=placedb.xh - placedb.filler_size_x_fence_region[-1],\n                    size=filler_end - filler_beg,\n                )\n                init_pos[\n                    placedb.num_nodes\n                    + placedb.num_physical_nodes\n                    + filler_beg : placedb.num_nodes\n                    + placedb.num_physical_nodes\n                    + filler_end\n                ] = np.random.uniform(\n                    low=placedb.yl,\n                    high=placedb.yh - placedb.filler_size_y_fence_region[-1],\n                    size=filler_end - filler_beg,\n                )\n\n        else:\n            init_pos[placedb.num_physical_nodes : placedb.num_nodes] = np.random.uniform(\n                low=placedb.xl,\n                high=placedb.xh - placedb.node_size_x[-placedb.num_filler_nodes],\n                size=placedb.num_filler_nodes,\n            )\n            init_pos[\n                placedb.num_nodes + placedb.num_physical_nodes : placedb.num_nodes * 2\n            ] = np.random.uniform(\n                low=placedb.yl,\n                high=placedb.yh - placedb.node_size_y[-placedb.num_filler_nodes],\n                size=placedb.num_filler_nodes,\n            )\n    init_pos[:placedb.num_movable_nodes] += 0.001 * (placedb.xh - placedb.xl) * np.sin(np.arange(placedb.num_movable_nodes) * 0.618)\n    return init_pos\n# EVOLVE-BLOCK-END\n",
+          "proposal_id": "1"
+        }
+      ],
+      "reference_cells": [
+        {
+          "case": "bp-ng45",
+          "metrics": {
+            "combined_score": 1.0,
+            "hpwl_score": 1.0,
+            "overflow_reward_tolerance": 0.01,
+            "overflow_score": 1.0,
+            "placement_complete": 1.0,
+            "placement_evaluation_boundary": "dreamplace-global-placement",
+            "placement_first_logged_hpwl": 6469130.0,
+            "placement_first_logged_overflow_max": 0.8534,
+            "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+            "placement_logged_hpwl_relative_change": 1.253463757877798,
+            "placement_logged_overflow_change": -0.83803,
+            "placement_logged_rows": 1367,
+            "placement_max_density": 0.9742,
+            "placement_max_density_bottom": 0.959,
+            "placement_max_density_top": 0.9742,
+            "placement_native_hpwl": 14577950.0,
+            "placement_overflow_bottom": 0.009909,
+            "placement_overflow_max": 0.01537,
+            "placement_overflow_mean": 0.0126395,
+            "placement_overflow_top": 0.01537,
+            "runs_successfully": 1.0,
+            "target_density": 0.6
+          },
+          "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/references/qualification/cells/bp-ng45/s1/result",
+          "seed": "s1",
+          "status": "succeeded"
+        },
+        {
+          "case": "bp-ng45",
+          "metrics": {
+            "combined_score": 1.0,
+            "hpwl_score": 1.0,
+            "overflow_reward_tolerance": 0.01,
+            "overflow_score": 1.0,
+            "placement_complete": 1.0,
+            "placement_evaluation_boundary": "dreamplace-global-placement",
+            "placement_first_logged_hpwl": 6470234.0,
+            "placement_first_logged_overflow_max": 0.853,
+            "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+            "placement_logged_hpwl_relative_change": 1.2219134578440285,
+            "placement_logged_overflow_change": -0.8374199999999999,
+            "placement_logged_rows": 1355,
+            "placement_max_density": 0.9876,
+            "placement_max_density_bottom": 0.9876,
+            "placement_max_density_top": 0.9407,
+            "placement_native_hpwl": 14376300.0,
+            "placement_overflow_bottom": 0.01558,
+            "placement_overflow_max": 0.01558,
+            "placement_overflow_mean": 0.012677,
+            "placement_overflow_top": 0.009774,
+            "runs_successfully": 1.0,
+            "target_density": 0.6
+          },
+          "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/references/qualification/cells/bp-ng45/s2/result",
+          "seed": "s2",
+          "status": "succeeded"
+        },
+        {
+          "case": "bp_fe-ng45",
+          "metrics": {
+            "combined_score": 1.0,
+            "hpwl_score": 1.0,
+            "overflow_reward_tolerance": 0.01,
+            "overflow_score": 1.0,
+            "placement_complete": 1.0,
+            "placement_evaluation_boundary": "dreamplace-global-placement",
+            "placement_first_logged_hpwl": 4061368.0,
+            "placement_first_logged_overflow_max": 0.7754,
+            "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+            "placement_logged_hpwl_relative_change": 0.16751769354562304,
+            "placement_logged_overflow_change": -0.74458,
+            "placement_logged_rows": 1291,
+            "placement_max_density": 1.16,
+            "placement_max_density_bottom": 1.16,
+            "placement_max_density_top": 1.137,
+            "placement_native_hpwl": 4741719.0,
+            "placement_overflow_bottom": 0.01348,
+            "placement_overflow_max": 0.03082,
+            "placement_overflow_mean": 0.02215,
+            "placement_overflow_top": 0.03082,
+            "runs_successfully": 1.0,
+            "target_density": 0.6
+          },
+          "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/references/qualification/cells/bp_fe-ng45/s1/result",
+          "seed": "s1",
+          "status": "succeeded"
+        },
+        {
+          "case": "bp_fe-ng45",
+          "metrics": {
+            "combined_score": 1.0,
+            "hpwl_score": 1.0,
+            "overflow_reward_tolerance": 0.01,
+            "overflow_score": 1.0,
+            "placement_complete": 1.0,
+            "placement_evaluation_boundary": "dreamplace-global-placement",
+            "placement_first_logged_hpwl": 4067109.0,
+            "placement_first_logged_overflow_max": 0.7762,
+            "placement_hpwl_metric": "dreamplace-weighted-hpwl",
+            "placement_logged_hpwl_relative_change": 0.1645913596119504,
+            "placement_logged_overflow_change": -0.74517,
+            "placement_logged_rows": 1277,
+            "placement_max_density": 2.0,
+            "placement_max_density_bottom": 1.175,
+            "placement_max_density_top": 2.0,
+            "placement_native_hpwl": 4736520.0,
+            "placement_overflow_bottom": 0.01324,
+            "placement_overflow_max": 0.03103,
+            "placement_overflow_mean": 0.022135,
+            "placement_overflow_top": 0.03103,
+            "runs_successfully": 1.0,
+            "target_density": 0.6
+          },
+          "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/references/qualification/cells/bp_fe-ng45/s2/result",
+          "seed": "s2",
+          "status": "succeeded"
+        }
+      ],
+      "resource_jobs": [
+        {
+          "expires": null,
+          "finished": 1792254828.2682858,
+          "id": "df6523327ce23af09df0ce9d397dddeb93b4faa6b17f273f3212e3c9df55a56b",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/inputs/bp_fe-ng45/s2/admission"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 2,
+            "gpu_count": 0,
+            "memory_gb": 4,
+            "storage_gb": 8
+          },
+          "started": 1792254820.6397955,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792254856.8037565,
+          "id": "c0d2cb87b6102247ec3019a8f8016a01e361b7ae97ff235d4b6c3e7bc27e48b0",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/inputs/bp-ng45/s2/admission"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 2,
+            "gpu_count": 0,
+            "memory_gb": 4,
+            "storage_gb": 8
+          },
+          "started": 1792254828.2720523,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792254885.5211823,
+          "id": "a15574f8d86deb12c7c08e3335e4cbc57a33645f7a0605bf4b02b7fdc3dbbe2a",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/inputs/bp-ng45/s1/admission"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 2,
+            "gpu_count": 0,
+            "memory_gb": 4,
+            "storage_gb": 8
+          },
+          "started": 1792254856.807596,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792254892.6066175,
+          "id": "c6fe62e0ebf9b5f47b775af865977ab9115092f0c1c65c2b509769a7888b910e",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/inputs/bp_fe-ng45/s1/admission"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 2,
+            "gpu_count": 0,
+            "memory_gb": 4,
+            "storage_gb": 8
+          },
+          "started": 1792254885.5249603,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255017.8025038,
+          "id": "91be265a3065f63deb5a4a26ba7d5a3a4edebf0e51290141c6a326a0c5701fc6",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/references/qualification/cells/bp_fe-ng45/s2/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792254892.8757308,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255024.3791428,
+          "id": "16bbf2fdbd0a4a6c79db84489e212202f58423215cbf15dc46560f94314baaa3",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/references/qualification/cells/bp_fe-ng45/s1/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792254892.8917813,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255036.8442738,
+          "id": "84f7f810aeac68279bfe00a42b6f83caa9877a3029f772bc9c00dabcec5af0ed",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/references/qualification/cells/bp-ng45/s2/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792254892.9168255,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255041.6611803,
+          "id": "0af77f701e62c3a6c0d786ba65d80b5ded7261d0892fd582cb6210a247b5899e",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/references/qualification/cells/bp-ng45/s1/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792254892.9426146,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255176.8875422,
+          "id": "b3b1d586daf8405f3d004e9006635a016a29c8f9b67cb826b187c9f38c3aad64",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0001-b747306aedc9/matrix/cells/bp-ng45/s1/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792255042.0027752,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255154.075553,
+          "id": "34b364d8e07c30ebf6f7acd3b062569753ccc282566781a17001958de36495f3",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0001-b747306aedc9/matrix/cells/bp_fe-ng45/s1/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792255042.00793,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255146.7957652,
+          "id": "9a3f695f795ac06f16f6ade5ee7799259cf67797076f7ed48d3c84a42965452a",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0001-b747306aedc9/matrix/cells/bp_fe-ng45/s2/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792255042.014741,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255182.8837175,
+          "id": "1b59db6baec11ed3a633bbabd1a1868df6e9d7fc8cff3cec624bcacd2d8c8f19",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0001-b747306aedc9/matrix/cells/bp-ng45/s2/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792255042.0213506,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255326.6626356,
+          "id": "ad6883a67c965b77ae713e4f36ac889b5e1b8aa26e600d1912068814ed46ae6e",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0002-6c90d8280aac/matrix/cells/bp-ng45/s2/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792255183.04685,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255326.7203224,
+          "id": "f1bd394c3bcfde88ac3e815d2d70d80a7bb1b4e1b0546ef6438b98e184f061c2",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0002-6c90d8280aac/matrix/cells/bp-ng45/s1/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792255183.0433476,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255294.2528865,
+          "id": "c079df63d75de7b19b252b7835fc65cb4ab2b2576ef711ae9c833f015641d1a2",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0002-6c90d8280aac/matrix/cells/bp_fe-ng45/s2/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792255183.0607364,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255295.710023,
+          "id": "e5069405e8db2caa3729907d9c0061d7f1904eba2e753bbd6cc63b999d37c337",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-native-20261018-v3/search/evaluations/0002-6c90d8280aac/matrix/cells/bp_fe-ng45/s1/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 4,
+            "gpu_count": 1,
+            "memory_gb": 24,
+            "storage_gb": 16
+          },
+          "started": 1792255183.0759914,
+          "state": "succeeded"
+        }
+      ],
+      "wall_seconds": 506.1271474584937
+    },
+    "routing": {
+      "builds": [
+        {
+          "events": [
+            {
+              "at_utc": "2026-10-17T16:46:53.031518+00:00",
+              "phase": "source_clone",
+              "state": "started"
+            },
+            {
+              "at_utc": "2026-10-17T16:47:15.826320+00:00",
+              "duration_seconds": 22.794789269566536,
+              "phase": "source_clone",
+              "state": "completed"
+            },
+            {
+              "at_utc": "2026-10-17T16:47:21.779378+00:00",
+              "phase": "cached_compilation",
+              "state": "started"
+            },
+            {
+              "at_utc": "2026-10-17T16:50:44.426593+00:00",
+              "duration_seconds": 202.64719861000776,
+              "phase": "cached_compilation",
+              "state": "completed"
+            },
+            {
+              "at_utc": "2026-10-17T16:50:44.623124+00:00",
+              "phase": "image_packaging",
+              "state": "started"
+            },
+            {
+              "at_utc": "2026-10-17T16:50:51.744471+00:00",
+              "duration_seconds": 7.121186219155788,
+              "phase": "image_packaging",
+              "state": "completed"
+            },
+            {
+              "at_utc": "2026-10-17T16:50:51.744669+00:00",
+              "phase": "installed_runtime_verification",
+              "state": "started"
+            },
+            {
+              "at_utc": "2026-10-17T16:50:53.944622+00:00",
+              "duration_seconds": 2.1997697055339813,
+              "phase": "installed_runtime_verification",
+              "state": "completed"
+            }
+          ],
+          "path": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/references/qualification/build/image-build-events.jsonl"
+        },
+        {
+          "events": [
+            {
+              "at_utc": "2026-10-17T16:53:27.688252+00:00",
+              "phase": "source_clone",
+              "state": "started"
+            },
+            {
+              "at_utc": "2026-10-17T16:53:50.678156+00:00",
+              "duration_seconds": 22.98984205722809,
+              "phase": "source_clone",
+              "state": "completed"
+            },
+            {
+              "at_utc": "2026-10-17T16:53:56.595432+00:00",
+              "phase": "cached_compilation",
+              "state": "started"
+            },
+            {
+              "at_utc": "2026-10-17T16:57:30.814468+00:00",
+              "duration_seconds": 214.2190316542983,
+              "phase": "cached_compilation",
+              "state": "completed"
+            },
+            {
+              "at_utc": "2026-10-17T16:57:31.039936+00:00",
+              "phase": "image_packaging",
+              "state": "started"
+            },
+            {
+              "at_utc": "2026-10-17T16:57:38.296851+00:00",
+              "duration_seconds": 7.256701402366161,
+              "phase": "image_packaging",
+              "state": "completed"
+            },
+            {
+              "at_utc": "2026-10-17T16:57:38.297084+00:00",
+              "phase": "installed_runtime_verification",
+              "state": "started"
+            },
+            {
+              "at_utc": "2026-10-17T16:57:40.529805+00:00",
+              "duration_seconds": 2.232539914548397,
+              "phase": "installed_runtime_verification",
+              "state": "completed"
+            }
+          ],
+          "path": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/build/image-build-events.jsonl"
+        }
+      ],
+      "candidate_matrices": [
+        {
+          "aggregate": 1.0,
+          "cases": [
+            {
+              "case": "bp_fe-ng45",
+              "complete": true,
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "scores": {
+                "s1": 1.0,
+                "s2": 1.0
+              },
+              "stddev": 0.0
+            },
+            {
+              "case": "bp-ng45",
+              "complete": true,
+              "max": 1.0,
+              "mean": 1.0,
+              "min": 1.0,
+              "scores": {
+                "s1": 1.0,
+                "s2": 1.0
+              },
+              "stddev": 0.0
+            }
+          ],
+          "cells": [
+            {
+              "case": "bp_fe-ng45",
+              "metrics": {
+                "bottom_grt_congestion_bins": 0.0,
+                "bottom_grt_total_overflow": 0.0,
+                "bottom_grt_wirelength_um": 827514.0,
+                "bottom_policy_calls": 1.0,
+                "bottom_policy_changed": 0.0,
+                "bottom_policy_changed_ratio_max": 0.0,
+                "bottom_policy_rows": 1.0,
+                "bottom_policy_score_last": 1.0,
+                "bottom_policy_score_max": 1.0,
+                "bottom_policy_score_min": 1.0,
+                "bottom_policy_selected": 1.0,
+                "bottom_policy_selected_ratio_last": 1.0,
+                "bottom_policy_selected_ratio_max": 1.0,
+                "bottom_policy_selected_ratio_min": 1.0,
+                "combined_score": 1.0,
+                "grt_complete": 1.0,
+                "grt_congestion_bins": 0.0,
+                "grt_total_overflow": 0.0,
+                "grt_wirelength_um": 1495263.0,
+                "overflow_cost": 1.0,
+                "overflow_score": 1.0,
+                "overflow_weight": 0.1,
+                "policy_calls": 2.0,
+                "policy_changed": 0.0,
+                "policy_changed_ratio_max": 0.0,
+                "policy_diagnostic_rows": 2.0,
+                "policy_diagnostics_present": 1.0,
+                "routing_complete": 1.0,
+                "runs_successfully": 1.0,
+                "runtime_seconds": 17.585860915482044,
+                "top_grt_congestion_bins": 0.0,
+                "top_grt_total_overflow": 0.0,
+                "top_grt_wirelength_um": 667749.0,
+                "top_policy_calls": 1.0,
+                "top_policy_changed": 0.0,
+                "top_policy_changed_ratio_max": 0.0,
+                "top_policy_rows": 1.0,
+                "top_policy_score_last": 1.0,
+                "top_policy_score_max": 1.0,
+                "top_policy_score_min": 1.0,
+                "top_policy_selected": 1.0,
+                "top_policy_selected_ratio_last": 1.0,
+                "top_policy_selected_ratio_max": 1.0,
+                "top_policy_selected_ratio_min": 1.0,
+                "wirelength_cost": 1.0,
+                "wirelength_score": 1.0,
+                "wirelength_weight": 0.9
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/cells/bp_fe-ng45/s1/result",
+              "score": 1.0,
+              "seed": "s1",
+              "status": "succeeded"
+            },
+            {
+              "case": "bp_fe-ng45",
+              "metrics": {
+                "bottom_grt_congestion_bins": 0.0,
+                "bottom_grt_total_overflow": 0.0,
+                "bottom_grt_wirelength_um": 833285.0,
+                "bottom_policy_calls": 1.0,
+                "bottom_policy_changed": 0.0,
+                "bottom_policy_changed_ratio_max": 0.0,
+                "bottom_policy_rows": 1.0,
+                "bottom_policy_score_last": 1.0,
+                "bottom_policy_score_max": 1.0,
+                "bottom_policy_score_min": 1.0,
+                "bottom_policy_selected": 1.0,
+                "bottom_policy_selected_ratio_last": 1.0,
+                "bottom_policy_selected_ratio_max": 1.0,
+                "bottom_policy_selected_ratio_min": 1.0,
+                "combined_score": 1.0,
+                "grt_complete": 1.0,
+                "grt_congestion_bins": 0.0,
+                "grt_total_overflow": 0.0,
+                "grt_wirelength_um": 1511864.0,
+                "overflow_cost": 1.0,
+                "overflow_score": 1.0,
+                "overflow_weight": 0.1,
+                "policy_calls": 2.0,
+                "policy_changed": 0.0,
+                "policy_changed_ratio_max": 0.0,
+                "policy_diagnostic_rows": 2.0,
+                "policy_diagnostics_present": 1.0,
+                "routing_complete": 1.0,
+                "runs_successfully": 1.0,
+                "runtime_seconds": 17.5368530228734,
+                "top_grt_congestion_bins": 0.0,
+                "top_grt_total_overflow": 0.0,
+                "top_grt_wirelength_um": 678579.0,
+                "top_policy_calls": 1.0,
+                "top_policy_changed": 0.0,
+                "top_policy_changed_ratio_max": 0.0,
+                "top_policy_rows": 1.0,
+                "top_policy_score_last": 1.0,
+                "top_policy_score_max": 1.0,
+                "top_policy_score_min": 1.0,
+                "top_policy_selected": 1.0,
+                "top_policy_selected_ratio_last": 1.0,
+                "top_policy_selected_ratio_max": 1.0,
+                "top_policy_selected_ratio_min": 1.0,
+                "wirelength_cost": 1.0,
+                "wirelength_score": 1.0,
+                "wirelength_weight": 0.9
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/cells/bp_fe-ng45/s2/result",
+              "score": 1.0,
+              "seed": "s2",
+              "status": "succeeded"
+            },
+            {
+              "case": "bp-ng45",
+              "metrics": {
+                "bottom_grt_congestion_bins": 0.0,
+                "bottom_grt_total_overflow": 0.0,
+                "bottom_grt_wirelength_um": 2417432.0,
+                "bottom_policy_calls": 100000.0,
+                "bottom_policy_changed": 0.0,
+                "bottom_policy_changed_ratio_max": 0.0,
+                "bottom_policy_rows": 3.0,
+                "bottom_policy_score_last": 0.0,
+                "bottom_policy_score_max": 1.0,
+                "bottom_policy_score_min": 0.0,
+                "bottom_policy_selected": 5504.0,
+                "bottom_policy_selected_ratio_last": 0.05504,
+                "bottom_policy_selected_ratio_max": 1.0,
+                "bottom_policy_selected_ratio_min": 0.05504,
+                "combined_score": 1.0,
+                "grt_complete": 1.0,
+                "grt_congestion_bins": 0.0,
+                "grt_total_overflow": 0.0,
+                "grt_wirelength_um": 4764193.0,
+                "overflow_cost": 1.0,
+                "overflow_score": 1.0,
+                "overflow_weight": 0.1,
+                "policy_calls": 200000.0,
+                "policy_changed": 0.0,
+                "policy_changed_ratio_max": 0.0,
+                "policy_diagnostic_rows": 6.0,
+                "policy_diagnostics_present": 1.0,
+                "routing_complete": 1.0,
+                "runs_successfully": 1.0,
+                "runtime_seconds": 50.12658892571926,
+                "top_grt_congestion_bins": 0.0,
+                "top_grt_total_overflow": 0.0,
+                "top_grt_wirelength_um": 2346761.0,
+                "top_policy_calls": 100000.0,
+                "top_policy_changed": 0.0,
+                "top_policy_changed_ratio_max": 0.0,
+                "top_policy_rows": 3.0,
+                "top_policy_score_last": 0.0,
+                "top_policy_score_max": 0.0,
+                "top_policy_score_min": 0.0,
+                "top_policy_selected": 2536.0,
+                "top_policy_selected_ratio_last": 0.02536,
+                "top_policy_selected_ratio_max": 0.05072,
+                "top_policy_selected_ratio_min": 0.0,
+                "wirelength_cost": 1.0,
+                "wirelength_score": 1.0,
+                "wirelength_weight": 0.9
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/cells/bp-ng45/s1/result",
+              "score": 1.0,
+              "seed": "s1",
+              "status": "succeeded"
+            },
+            {
+              "case": "bp-ng45",
+              "metrics": {
+                "bottom_grt_congestion_bins": 0.0,
+                "bottom_grt_total_overflow": 0.0,
+                "bottom_grt_wirelength_um": 2483376.0,
+                "bottom_policy_calls": 100000.0,
+                "bottom_policy_changed": 0.0,
+                "bottom_policy_changed_ratio_max": 0.0,
+                "bottom_policy_rows": 3.0,
+                "bottom_policy_score_last": 0.0,
+                "bottom_policy_score_max": 1.0,
+                "bottom_policy_score_min": 0.0,
+                "bottom_policy_selected": 1864.0,
+                "bottom_policy_selected_ratio_last": 0.01864,
+                "bottom_policy_selected_ratio_max": 1.0,
+                "bottom_policy_selected_ratio_min": 0.01864,
+                "combined_score": 1.0,
+                "grt_complete": 1.0,
+                "grt_congestion_bins": 0.0,
+                "grt_total_overflow": 0.0,
+                "grt_wirelength_um": 4721050.0,
+                "overflow_cost": 1.0,
+                "overflow_score": 1.0,
+                "overflow_weight": 0.1,
+                "policy_calls": 150000.0,
+                "policy_changed": 0.0,
+                "policy_changed_ratio_max": 0.0,
+                "policy_diagnostic_rows": 5.0,
+                "policy_diagnostics_present": 1.0,
+                "routing_complete": 1.0,
+                "runs_successfully": 1.0,
+                "runtime_seconds": 48.491369873285294,
+                "top_grt_congestion_bins": 0.0,
+                "top_grt_total_overflow": 0.0,
+                "top_grt_wirelength_um": 2237674.0,
+                "top_policy_calls": 50000.0,
+                "top_policy_changed": 0.0,
+                "top_policy_changed_ratio_max": 0.0,
+                "top_policy_rows": 2.0,
+                "top_policy_score_last": 0.0,
+                "top_policy_score_max": 1.0,
+                "top_policy_score_min": 0.0,
+                "top_policy_selected": 4061.0,
+                "top_policy_selected_ratio_last": 0.08122,
+                "top_policy_selected_ratio_max": 1.0,
+                "top_policy_selected_ratio_min": 0.08122,
+                "wirelength_cost": 1.0,
+                "wirelength_score": 1.0,
+                "wirelength_weight": 0.9
+              },
+              "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/cells/bp-ng45/s2/result",
+              "score": 1.0,
+              "seed": "s2",
+              "status": "succeeded"
+            }
+          ],
+          "independent_aggregate_matches": true,
+          "matrix_sha256": "441f4a07d36d2079df0411a593cee486fdf809834422e8a03803d9e435ff9dbc",
+          "result_path": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/evaluation_result.json"
+        }
+      ],
+      "complete": true,
+      "directory": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3",
+      "peak_gpu_slots": 0,
+      "peak_live_jobs": 2,
+      "programs": [
+        {
+          "metadata": {
+            "hypothesis": "Preserve native removals; also retry noncritical low-pressure detours, using one source for every case and seed."
+          },
+          "program": "# EVOLVE-BLOCK-START\ndef score_ripup_edge(ctx):\n    \"\"\"Return at least 0.5 when the current routed edge should be rerouted.\"\"\"\n    # Preserve native removals; additionally retry only clean, substantial detours.\n    if ctx.baseline_decision >= 0.5:\n        return 1.0\n    if ctx.is_clock >= 0.5 or ctx.has_ndr >= 0.5 or ctx.is_hbt >= 0.5:\n        return 0.0\n    if ctx.criticality >= 0.5:\n        return 0.0\n    if ctx.detour_ratio >= 0.30 and ctx.route_length >= 0.03:\n        if ctx.edge_overflow <= 0.02 and ctx.max_utilization <= 0.55:\n            if ctx.history_pressure <= 0.38:\n                return 1.0\n    return 0.0\n# EVOLVE-BLOCK-END",
+          "proposal_id": "detour-policy"
+        }
+      ],
+      "reference_cells": [
+        {
+          "case": "bp-ng45",
+          "metrics": {
+            "bottom_grt_congestion_bins": 0.0,
+            "bottom_grt_total_overflow": 0.0,
+            "bottom_grt_wirelength_um": 2417432.0,
+            "bottom_policy_calls": 100000.0,
+            "bottom_policy_changed": 0.0,
+            "bottom_policy_changed_ratio_max": 0.0,
+            "bottom_policy_rows": 3.0,
+            "bottom_policy_score_last": 0.0,
+            "bottom_policy_score_max": 1.0,
+            "bottom_policy_score_min": 0.0,
+            "bottom_policy_selected": 5504.0,
+            "bottom_policy_selected_ratio_last": 0.05504,
+            "bottom_policy_selected_ratio_max": 1.0,
+            "bottom_policy_selected_ratio_min": 0.05504,
+            "combined_score": 0.1891155062101088,
+            "grt_complete": 1.0,
+            "grt_congestion_bins": 0.0,
+            "grt_total_overflow": 0.0,
+            "grt_wirelength_um": 4764193.0,
+            "overflow_cost": 1.0,
+            "overflow_score": 1.0,
+            "overflow_weight": 0.1,
+            "policy_calls": 200000.0,
+            "policy_changed": 0.0,
+            "policy_changed_ratio_max": 0.0,
+            "policy_diagnostic_rows": 6.0,
+            "policy_diagnostics_present": 1.0,
+            "routing_complete": 1.0,
+            "runs_successfully": 1.0,
+            "runtime_seconds": 49.123288817703724,
+            "top_grt_congestion_bins": 0.0,
+            "top_grt_total_overflow": 0.0,
+            "top_grt_wirelength_um": 2346761.0,
+            "top_policy_calls": 100000.0,
+            "top_policy_changed": 0.0,
+            "top_policy_changed_ratio_max": 0.0,
+            "top_policy_rows": 3.0,
+            "top_policy_score_last": 0.0,
+            "top_policy_score_max": 0.0,
+            "top_policy_score_min": 0.0,
+            "top_policy_selected": 2536.0,
+            "top_policy_selected_ratio_last": 0.02536,
+            "top_policy_selected_ratio_max": 0.05072,
+            "top_policy_selected_ratio_min": 0.0,
+            "wirelength_cost": 5.764193,
+            "wirelength_score": 0.173484822593553,
+            "wirelength_weight": 0.9
+          },
+          "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/references/qualification/cells/bp-ng45/s1/result",
+          "seed": "s1",
+          "status": "succeeded"
+        },
+        {
+          "case": "bp-ng45",
+          "metrics": {
+            "bottom_grt_congestion_bins": 0.0,
+            "bottom_grt_total_overflow": 0.0,
+            "bottom_grt_wirelength_um": 2483376.0,
+            "bottom_policy_calls": 100000.0,
+            "bottom_policy_changed": 0.0,
+            "bottom_policy_changed_ratio_max": 0.0,
+            "bottom_policy_rows": 3.0,
+            "bottom_policy_score_last": 0.0,
+            "bottom_policy_score_max": 1.0,
+            "bottom_policy_score_min": 0.0,
+            "bottom_policy_selected": 1864.0,
+            "bottom_policy_selected_ratio_last": 0.01864,
+            "bottom_policy_selected_ratio_max": 1.0,
+            "bottom_policy_selected_ratio_min": 0.01864,
+            "combined_score": 0.19051447481351014,
+            "grt_complete": 1.0,
+            "grt_congestion_bins": 0.0,
+            "grt_total_overflow": 0.0,
+            "grt_wirelength_um": 4721050.0,
+            "overflow_cost": 1.0,
+            "overflow_score": 1.0,
+            "overflow_weight": 0.1,
+            "policy_calls": 150000.0,
+            "policy_changed": 0.0,
+            "policy_changed_ratio_max": 0.0,
+            "policy_diagnostic_rows": 5.0,
+            "policy_diagnostics_present": 1.0,
+            "routing_complete": 1.0,
+            "runs_successfully": 1.0,
+            "runtime_seconds": 47.94391341507435,
+            "top_grt_congestion_bins": 0.0,
+            "top_grt_total_overflow": 0.0,
+            "top_grt_wirelength_um": 2237674.0,
+            "top_policy_calls": 50000.0,
+            "top_policy_changed": 0.0,
+            "top_policy_changed_ratio_max": 0.0,
+            "top_policy_rows": 2.0,
+            "top_policy_score_last": 0.0,
+            "top_policy_score_max": 1.0,
+            "top_policy_score_min": 0.0,
+            "top_policy_selected": 4061.0,
+            "top_policy_selected_ratio_last": 0.08122,
+            "top_policy_selected_ratio_max": 1.0,
+            "top_policy_selected_ratio_min": 0.08122,
+            "wirelength_cost": 5.72105,
+            "wirelength_score": 0.17479308868127355,
+            "wirelength_weight": 0.9
+          },
+          "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/references/qualification/cells/bp-ng45/s2/result",
+          "seed": "s2",
+          "status": "succeeded"
+        },
+        {
+          "case": "bp_fe-ng45",
+          "metrics": {
+            "bottom_grt_congestion_bins": 0.0,
+            "bottom_grt_total_overflow": 0.0,
+            "bottom_grt_wirelength_um": 827514.0,
+            "bottom_policy_calls": 1.0,
+            "bottom_policy_changed": 0.0,
+            "bottom_policy_changed_ratio_max": 0.0,
+            "bottom_policy_rows": 1.0,
+            "bottom_policy_score_last": 1.0,
+            "bottom_policy_score_max": 1.0,
+            "bottom_policy_score_min": 1.0,
+            "bottom_policy_selected": 1.0,
+            "bottom_policy_selected_ratio_last": 1.0,
+            "bottom_policy_selected_ratio_max": 1.0,
+            "bottom_policy_selected_ratio_min": 1.0,
+            "combined_score": 0.42630530528000005,
+            "grt_complete": 1.0,
+            "grt_congestion_bins": 0.0,
+            "grt_total_overflow": 0.0,
+            "grt_wirelength_um": 1495263.0,
+            "overflow_cost": 1.0,
+            "overflow_score": 1.0,
+            "overflow_weight": 0.1,
+            "policy_calls": 2.0,
+            "policy_changed": 0.0,
+            "policy_changed_ratio_max": 0.0,
+            "policy_diagnostic_rows": 2.0,
+            "policy_diagnostics_present": 1.0,
+            "routing_complete": 1.0,
+            "runs_successfully": 1.0,
+            "runtime_seconds": 16.38221549987793,
+            "top_grt_congestion_bins": 0.0,
+            "top_grt_total_overflow": 0.0,
+            "top_grt_wirelength_um": 667749.0,
+            "top_policy_calls": 1.0,
+            "top_policy_changed": 0.0,
+            "top_policy_changed_ratio_max": 0.0,
+            "top_policy_rows": 1.0,
+            "top_policy_score_last": 1.0,
+            "top_policy_score_max": 1.0,
+            "top_policy_score_min": 1.0,
+            "top_policy_selected": 1.0,
+            "top_policy_selected_ratio_last": 1.0,
+            "top_policy_selected_ratio_max": 1.0,
+            "top_policy_selected_ratio_min": 1.0,
+            "wirelength_cost": 2.495263,
+            "wirelength_score": 0.400759358833117,
+            "wirelength_weight": 0.9
+          },
+          "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/references/qualification/cells/bp_fe-ng45/s1/result",
+          "seed": "s1",
+          "status": "succeeded"
+        },
+        {
+          "case": "bp_fe-ng45",
+          "metrics": {
+            "bottom_grt_congestion_bins": 0.0,
+            "bottom_grt_total_overflow": 0.0,
+            "bottom_grt_wirelength_um": 833285.0,
+            "bottom_policy_calls": 1.0,
+            "bottom_policy_changed": 0.0,
+            "bottom_policy_changed_ratio_max": 0.0,
+            "bottom_policy_rows": 1.0,
+            "bottom_policy_score_last": 1.0,
+            "bottom_policy_score_max": 1.0,
+            "bottom_policy_score_min": 1.0,
+            "bottom_policy_selected": 1.0,
+            "bottom_policy_selected_ratio_last": 1.0,
+            "bottom_policy_selected_ratio_max": 1.0,
+            "bottom_policy_selected_ratio_min": 1.0,
+            "combined_score": 0.42360718803787517,
+            "grt_complete": 1.0,
+            "grt_congestion_bins": 0.0,
+            "grt_total_overflow": 0.0,
+            "grt_wirelength_um": 1511864.0,
+            "overflow_cost": 1.0,
+            "overflow_score": 1.0,
+            "overflow_weight": 0.1,
+            "policy_calls": 2.0,
+            "policy_changed": 0.0,
+            "policy_changed_ratio_max": 0.0,
+            "policy_diagnostic_rows": 2.0,
+            "policy_diagnostics_present": 1.0,
+            "routing_complete": 1.0,
+            "runs_successfully": 1.0,
+            "runtime_seconds": 16.882532559335232,
+            "top_grt_congestion_bins": 0.0,
+            "top_grt_total_overflow": 0.0,
+            "top_grt_wirelength_um": 678579.0,
+            "top_policy_calls": 1.0,
+            "top_policy_changed": 0.0,
+            "top_policy_changed_ratio_max": 0.0,
+            "top_policy_rows": 1.0,
+            "top_policy_score_last": 1.0,
+            "top_policy_score_max": 1.0,
+            "top_policy_score_min": 1.0,
+            "top_policy_selected": 1.0,
+            "top_policy_selected_ratio_last": 1.0,
+            "top_policy_selected_ratio_max": 1.0,
+            "top_policy_selected_ratio_min": 1.0,
+            "wirelength_cost": 2.511864,
+            "wirelength_score": 0.39811072573992856,
+            "wirelength_weight": 0.9
+          },
+          "result_dir": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/references/qualification/cells/bp_fe-ng45/s2/result",
+          "seed": "s2",
+          "status": "succeeded"
+        }
+      ],
+      "resource_jobs": [
+        {
+          "expires": null,
+          "finished": 1792255855.8107886,
+          "id": "9d1e259eca4a8f87ff351141513096c5554ea0a1230a97bd44512f1086a092ac",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/references/qualification/build-admission"
+          },
+          "resources": {
+            "build_slots": 1,
+            "cpu": 16,
+            "gpu_count": 0,
+            "memory_gb": 48,
+            "storage_gb": 45
+          },
+          "started": 1792255612.8402297,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255911.1197302,
+          "id": "addbd958dee2596e1266f293ad2fba37ff9279edda9e15f0d488c97d050c8e79",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/references/qualification/cells/bp_fe-ng45/s2/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 16,
+            "gpu_count": 0,
+            "memory_gb": 48,
+            "storage_gb": 45
+          },
+          "started": 1792255855.8774333,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792255910.6996477,
+          "id": "3ebe75d66dddfb91b8b95b8e5886dd4b572b57a6ee2c40bf1ceb8478e1551bf3",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/references/qualification/cells/bp_fe-ng45/s1/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 16,
+            "gpu_count": 0,
+            "memory_gb": 48,
+            "storage_gb": 45
+          },
+          "started": 1792255855.8835359,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792256007.1912458,
+          "id": "bafb38ffc1ed12fed249218116c4e7d30506d2ce56a2822a7ce651b980407d34",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/references/qualification/cells/bp-ng45/s1/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 16,
+            "gpu_count": 0,
+            "memory_gb": 48,
+            "storage_gb": 45
+          },
+          "started": 1792255910.717209,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792256004.9302945,
+          "id": "3344c28797fcee8f74dc7e77f93dbe9d039206c803e7c570adc24b0f286dd7e1",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/references/qualification/cells/bp-ng45/s2/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 16,
+            "gpu_count": 0,
+            "memory_gb": 48,
+            "storage_gb": 45
+          },
+          "started": 1792255911.1343093,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792256262.5647607,
+          "id": "525a2404b754541b3818d9808989c57666d1b0200d4ef0bcedfc614dcf56ba6b",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/build-admission"
+          },
+          "resources": {
+            "build_slots": 1,
+            "cpu": 16,
+            "gpu_count": 0,
+            "memory_gb": 48,
+            "storage_gb": 45
+          },
+          "started": 1792256007.4987147,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792256318.805911,
+          "id": "f506e45037eb76ad9e2df33e3c2885968d46fd48e28f0bb08f8b7b6d402a3fad",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/cells/bp_fe-ng45/s2/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 16,
+            "gpu_count": 0,
+            "memory_gb": 48,
+            "storage_gb": 45
+          },
+          "started": 1792256262.631083,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792256319.4795046,
+          "id": "301fbd59be54228a9ad6144d071c24be175103356eef103b5584f6011a138518",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/cells/bp_fe-ng45/s1/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 16,
+            "gpu_count": 0,
+            "memory_gb": 48,
+            "storage_gb": 45
+          },
+          "started": 1792256262.637067,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792256417.571177,
+          "id": "2dc508ee8592108e23c1b7541c0c6ea8414c64154dc45bc77666d9ec44fcb2dd",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/cells/bp-ng45/s1/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 16,
+            "gpu_count": 0,
+            "memory_gb": 48,
+            "storage_gb": 45
+          },
+          "started": 1792256318.824902,
+          "state": "succeeded"
+        },
+        {
+          "expires": null,
+          "finished": 1792256414.589862,
+          "id": "f43a86b1c0f4662f54f10641613f1a576ce7eb57d4371506d2764f52e78997bf",
+          "payload": {
+            "kind": "local-matrix",
+            "output": "/data-ssd/gcr/agenticbench-integration-20261016/local-matrix-grt-20261018-v3/search/evaluations/0001-5551c66410ab/matrix/cells/bp-ng45/s2/container"
+          },
+          "resources": {
+            "build_slots": 0,
+            "cpu": 16,
+            "gpu_count": 0,
+            "memory_gb": 48,
+            "storage_gb": 45
+          },
+          "started": 1792256319.497949,
+          "state": "succeeded"
+        }
+      ],
+      "wall_seconds": 804.8880291506648
+    }
+  },
+  "feature_commit": "b7676d7ce79c8538f6c83b8c3639b09135d7aea4",
+  "free_gib_at_collection": 87.92051696777344,
+  "source_comparison": {
+    "evaluation.py": {
+      "committed_sha256": "8f03b3a5aa9d158f6f4f0817ea363a667874f6594f2e46a130706e43a6954221",
+      "identical": true,
+      "staged_sha256": "8f03b3a5aa9d158f6f4f0817ea363a667874f6594f2e46a130706e43a6954221"
+    },
+    "metrics.py": {
+      "committed_sha256": "281c2c861c194ebbd3411be1db011e32efe11facd06585045b5c04caedd4ac1a",
+      "identical": true,
+      "staged_sha256": "281c2c861c194ebbd3411be1db011e32efe11facd06585045b5c04caedd4ac1a"
+    },
+    "placement_components.py": {
+      "committed_sha256": "3c155ab08247fd231c2f1571e9e01c259ba23db61f53d06deb42f41d6e50a3f5",
+      "identical": true,
+      "staged_sha256": "3c155ab08247fd231c2f1571e9e01c259ba23db61f53d06deb42f41d6e50a3f5"
+    },
+    "reference_placement_evidence.py": {
+      "committed_sha256": "99ef1f8bd3483c9981796c6099b10f802cabd467e3c4bc3cdd1ef382f0ef1f9f",
+      "identical": true,
+      "staged_sha256": "99ef1f8bd3483c9981796c6099b10f802cabd467e3c4bc3cdd1ef382f0ef1f9f"
+    },
+    "scoped_reference.py": {
+      "committed_sha256": "5a4b187970b1e9777a58683189f3f52c71c1d9caedc8c6b5611863ba36fe3d12",
+      "identical": true,
+      "staged_sha256": "5a4b187970b1e9777a58683189f3f52c71c1d9caedc8c6b5611863ba36fe3d12"
+    },
+    "seeds.py": {
+      "committed_sha256": "dee3067d58d9706a086db3aba96c44b7e5ea72a15e54177a1cd756c18e93053c",
+      "identical": true,
+      "staged_sha256": "dee3067d58d9706a086db3aba96c44b7e5ea72a15e54177a1cd756c18e93053c"
+    }
+  }
+}

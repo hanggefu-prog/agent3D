@@ -1,0 +1,16 @@
+--- parent
++++ round-01
+@@ -1,5 +1,10 @@
+ # EVOLVE-BLOCK-START
+ def score_maze_step(ctx):
+-    """Return a multiplier for the maintained cost of one maze expansion."""
+-    return 1.0
+-# EVOLVE-BLOCK-END
++    """Scale costs to modestly favor wirelength while retaining congestion response."""
++    # Compress expensive/congested edges; keep a small uplift on ordinary edges.
++    multiplier = 1.08
++    multiplier -= 0.10 * ctx.baseline_cost
++    multiplier -= 0.04 * ctx.edge_overflow
++    multiplier -= 0.02 * ctx.history_pressure
++    return multiplier
++# EVOLVE-BLOCK-END

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "scope": "Eight maintained local tasks, three engineering tasks, and current post-GRT; historical global execution excluded by user",
+  "tests": [
+    {
+      "group": "local task inventory, interfaces, prompts, sandbox mount checks and HBT",
+      "passed": 285,
+      "subtests_passed": 2,
+      "log": "compat-local-tests-final.log"
+    },
+    {
+      "group": "latest profiles, partition, placement, routing and engineering native-adapter fixtures",
+      "passed": 478,
+      "skipped": 10,
+      "subtests_passed": 40,
+      "log": "compat-local-interfaces.log"
+    },
+    {
+      "group": "current post-GRT and engineering regressions including release-v2 audit",
+      "passed": 330,
+      "subtests_passed": 114,
+      "log": "compat-current-grt-engineering.log"
+    },
+    {
+      "group": "physical HBT, STA, GRT, CLI and stage manifests",
+      "passed": 67,
+      "subtests_passed": 18,
+      "log": "compat-physical-tests.log"
+    },
+    {
+      "group": "final HBT and task-modeling checks after reference identity hardening",
+      "passed": 93,
+      "log": "compat-hbt-final-check.log"
+    }
+  ],
+  "test_count_note": "Groups overlap; do not sum them as unique tests. Optional tests require unavailable native dependencies. Host tests are not native EDA qualification.",
+  "historical_full_suite": {
+    "passed": 2742,
+    "failed": 42,
+    "errors": 68,
+    "skipped": 47,
+    "subtests_passed": 222,
+    "note": "Diagnostic run before final test-fixture fixes. Includes retired global/reference interfaces, old missing profiles, a removed archive-net-ordering validator, cwd assumptions and two sandbox socket restrictions. Maintained local and engineering focused regressions were then run separately; socket regressions passed with loopback permitted."
+  },
+  "merge_gate": {
+    "main_merged": false,
+    "native_hbt": "See native-qualification.json for exact final inputs and implementation identities.",
+    "other_tasks": "Final release-native acceptance of the other seven local tasks and T2/T3/T4 remains required before merge; offline tests and earlier release receipts do not qualify that future integration."
+  }
+}

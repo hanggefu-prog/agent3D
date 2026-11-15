@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openagentic3dbench"
+version = "0.1.0"
+description = "Decoupled agent benchmark and multi-agent baselines for Open3DBench-V2.0"
+requires-python = ">=3.9"
+dependencies = ["PyYAML>=6.0"]
+
+[project.optional-dependencies]
+evostage = ["astunparse>=1.6", "numpy>=1.24,<2.1", "pytz>=2024.1"]
+
+[project.scripts]
+openagentic3dbench-run = "agentic3d.orchestrator:main"
+openagentic3dbench-inspect = "agentic3d.open3dbench:main"
+openagentic3dbench-task = "local_bench.cli:main"
+openagentic3dbench-evolve = "local_bench.evolve_cli:main"
+openagentic3dbench-convergence = "local_bench.convergence:main"
+openagentic3dbench-profile = "local_bench.profile_cli:main"
+openagentic3dbench-sta = "local_bench.sta_cli:main"
+openagentic3dbench-skill = "local_bench.skill_cli:main"
+openagentic3dbench-global = "global_bench.cli:main"
+openagentic3dbench-grt = "grt_bench.__main__:main"
+openagentic3dbench-engineering = "engineering_bench.cli:main"
+agentic3d-codex-exec = "agentic3d.codex_exec:main"
+agentic3d-task-agent = "agentic3d.task_agent:main"
+agentic3d-run = "agentic3d.orchestrator:main"
+agentic3d-inspect = "agentic3d.open3dbench:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agentic3d*", "engineering_bench*", "engineering_tasks*", "evaluation_profiles*", "global_bench*", "global_tasks*", "grt_bench*", "local_bench*", "local_tasks*", "skills*", "scripts"]
+
+[tool.setuptools.package-data]
+engineering_tasks = ["**/*.json", "**/*.md"]
+engineering_bench = ["native/*.tcl"]
+local_tasks = ["**/*.yaml", "**/*.json", "**/*.md", "**/*.py", "**/openevolve_templates/*.txt"]
+local_bench = ["configs/*.yaml", "benchmark_inputs/**/*.yaml", "reference_configs/*.json", "reference_configs/*.yaml", "reference_20260923_identity.json", "templates/optimization/*.txt"]
+evaluation_profiles = ["**/*.yaml", "**/*.json", "**/*.md", "**/*.py"]
+skills = ["catalog.yaml", "**/*.md", "**/*.yaml", "**/*.json", "**/*.py", "**/*.sh", "**/Dockerfile*"]
+global_bench = ["verifiers/*.yaml", "verifiers/*.py"]
+global_tasks = ["**/*.yaml", "**/*.md", "**/*.json"]
+grt_bench = ["*.json"]
+scripts = ["build_openroad_candidate.sh"]

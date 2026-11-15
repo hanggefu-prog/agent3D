@@ -1,0 +1,19 @@
+schema_version: 1
+id: bp_fe_lol_ng45_tp_gnn_flat_placement
+description: Frozen bp_fe LoL ng45 input, timing features, and explicit flat TP-GNN global-2way partition for placement tasks; not interchangeable with historical tp-gnn bundles.
+config: config.yaml
+stop_stage: partition
+required_stages:
+  input: 00_input
+  floorplan: 10_floorplan
+  timing_extract: 15_timing_extract
+  partition: 20_partition
+partition_contract:
+  method: tp-gnn-flat
+  decoder: global-2way
+compatible_tasks:
+  - placement_preconditioner_source
+  - placement_dynamic_parameters
+  - placement_two_pass_sta
+runtime:
+  python_minimum: "3.8"

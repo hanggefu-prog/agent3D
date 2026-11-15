@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Benchmark Input"
+  short_description: "Prepare and validate frozen benchmark inputs"
+  default_prompt: "Use $open3dbench-benchmark-input to prepare or validate a reproducible benchmark-input bundle."

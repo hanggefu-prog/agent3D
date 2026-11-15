@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+source "$HOME/.config/agentic3d/env.sh"
+
+case "$(basename "$0")" in
+  agentic3d-run|openagentic3dbench-run) module="agentic3d.orchestrator" ;;
+  agentic3d-inspect|openagentic3dbench-inspect) module="agentic3d.open3dbench" ;;
+  agentic3d-task-agent) module="agentic3d.task_agent" ;;
+  agentic3d-codex-exec) module="agentic3d.codex_exec" ;;
+  openagentic3dbench-task) module="local_bench.cli" ;;
+  openagentic3dbench-evolve) module="local_bench.evolve_cli" ;;
+  openagentic3dbench-convergence) module="local_bench.convergence" ;;
+  openagentic3dbench-profile) module="local_bench.profile_cli" ;;
+  openagentic3dbench-sta) module="local_bench.sta_cli" ;;
+  openagentic3dbench-skill) module="local_bench.skill_cli" ;;
+  *) echo "Unsupported Agentic3D entrypoint: $(basename "$0")" >&2; exit 2 ;;
+esac
+
+exec "$AGENTIC3D_REPO_ROOT/.venv/bin/python3" -m "$module" "$@"

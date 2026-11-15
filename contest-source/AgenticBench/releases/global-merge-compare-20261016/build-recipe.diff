@@ -1,0 +1,28 @@
+--- deployed/build_openroad_candidate.sh
++++ merged/build_openroad_candidate.sh
+@@ -26,0 +27,25 @@
++# Candidate evaluations use a fresh CMake/object tree, but the launcher mounts
++# one experiment-owned CCACHE_DIR into every evaluator container.  Capture the
++# shared namespace counters on both sides of this build so warm reuse is
++# observable in each retained candidate result.  The snapshots are global
++# namespace statistics (evaluations are serial in the OpenEvolve launcher),
++# not exact per-translation-unit timings.
++if [[ -n "${CCACHE_DIR:-}" ]]; then
++  # Image builders also invoke this recipe with /candidate/build or /build.
++  # Only the workspace evaluator has RESULT/runtime/BUILD; other callers keep
++  # snapshots inside their writable build directory, never a parent mount.
++  cache_stats_dir="${build_dir}"
++  if [[ "$(basename "$(dirname "${build_dir}")")" == runtime ]]; then
++    cache_stats_dir="${candidate_result_dir}"
++  fi
++  mkdir -p "${cache_stats_dir}"
++  ccache -s > "${cache_stats_dir}/openroad-ccache-before.log" 2>&1
++  capture_ccache_stats() {
++    local status=$?
++    trap - EXIT
++    ccache -s > "${cache_stats_dir}/openroad-ccache-after.log" 2>&1 || true
++    exit "${status}"
++  }
++  trap capture_ccache_stats EXIT
++fi
++

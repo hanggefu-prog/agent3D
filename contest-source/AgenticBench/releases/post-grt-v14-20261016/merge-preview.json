@@ -1,0 +1,56 @@
+[
+  {
+    "branch": "origin/main",
+    "commit": "8aef2370440dd21e731231383e5dfbfb7bde07af",
+    "merge_base": "8aef2370440dd21e731231383e5dfbfb7bde07af",
+    "counts": "2\t0",
+    "exit_code": 0,
+    "output": "0283f7bc3644d4c26737e489988e94c93c9718ae",
+    "stderr": ""
+  },
+  {
+    "branch": "origin/codex/20261012-timing-driven-hbt-public",
+    "commit": "4e127659f853ff924e191e8d2e9dd60119312906",
+    "merge_base": "cdf94e5979ddaffc117fa603ea634567758891cb",
+    "counts": "52\t3",
+    "exit_code": 1,
+    "output": "de664ee43e259be6bee1752fabfc18f4c58d2317\nopen3dbench/backend/clock_crossing.py\n\nAuto-merging open3dbench/backend/clock_crossing.py\nCONFLICT (content): Merge conflict in open3dbench/backend/clock_crossing.py\nAuto-merging open3dbench/backend/three_d_opt.py\nAuto-merging tests/test_clock_crossing.py",
+    "stderr": ""
+  },
+  {
+    "branch": "origin/codex/20261013-pdn-passthrough",
+    "commit": "f906386f81736a3e9a8a89746a8ff96f66ba9ad6",
+    "merge_base": "cdf94e5979ddaffc117fa603ea634567758891cb",
+    "counts": "52\t3",
+    "exit_code": 1,
+    "output": "d900715f465b4ecc488bb9d8fd2ceddca5919c93\nopen3dbench/backend/hbt_materialize.py\n\nAuto-merging open3dbench/backend/hbt_materialize.py\nCONFLICT (content): Merge conflict in open3dbench/backend/hbt_materialize.py\nAuto-merging open3dbench/backend/pdn.py\nAuto-merging open3dbench/backend/three_d_opt.py\nAuto-merging open3dbench/runner.py",
+    "stderr": ""
+  },
+  {
+    "branch": "origin/codex/merge-main-local-20260922",
+    "commit": "55525daf2414524641aa0ae8d71c74c45593573b",
+    "merge_base": "55525daf2414524641aa0ae8d71c74c45593573b",
+    "counts": "13\t0",
+    "exit_code": 0,
+    "output": "0283f7bc3644d4c26737e489988e94c93c9718ae",
+    "stderr": ""
+  },
+  {
+    "branch": "origin/codex/open3d-die-routing",
+    "commit": "18a0d286529085529cd61e7620184aface971108",
+    "merge_base": "18a0d286529085529cd61e7620184aface971108",
+    "counts": "48\t0",
+    "exit_code": 0,
+    "output": "0283f7bc3644d4c26737e489988e94c93c9718ae",
+    "stderr": ""
+  },
+  {
+    "branch": "origin/EDA_contest",
+    "commit": "f2d99134a9fb4203ed78864e06b593911b38fd84",
+    "merge_base": "e6d23148beed101b7741960f8aa967544259b0df",
+    "counts": "222\t2",
+    "exit_code": 1,
+    "output": "88611ba1938683ee84c34c51688be96139c7232f\nREADME.md\n\nAuto-merging README.md\nCONFLICT (content): Merge conflict in README.md",
+    "stderr": ""
+  }
+]

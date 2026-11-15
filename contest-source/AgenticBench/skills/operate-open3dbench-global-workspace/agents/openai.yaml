@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Global Workspace"
+  short_description: "Execute a free-form global optimization trial"
+  default_prompt: "Use $operate-open3dbench-global-workspace to execute the current global Intervention in its isolated Open3DBench workspace."

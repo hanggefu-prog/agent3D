@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "dependency": "Open3DBench-V2.0",
+  "repository": "https://github.com/xiaosiCU/Open3DBench-V2.0.git",
+  "tested_commit": "ce4fb8c8215d33d7a88bbe82dff85fd363c0cf99",
+  "tested_at": "2026-10-16",
+  "test_scope": "Physical source imported from the isolated tested integration; final combined-harness qualification is recorded separately in releases/agentic-integration-20261016. Historical qualified_reference identity is unchanged.",
+  "qualified_reference": {
+    "baseline_id": "reference_20261004",
+    "source_revision": "4d882f0b5b9aa98ba2742510dc1b011e43b31657",
+    "endpoint": "global-route",
+    "scoring_endpoint": "pre-CTS-one-OPT"
+  },
+  "integration": "external-path-adapter",
+  "vendored": false,
+  "submodule": false,
+  "source_relative_to_package": "..",
+  "consolidated_repository": "https://github.com/gaocrr/Agentic-Open3DBench.git",
+  "notes": "The API remains an external-path adapter. The current development checkout and qualified reference producer have different explicit identities. reference_20261004 execution must use qualified_reference.source_revision, never the parent checkout by default. Deployment manifests bind both source revisions, the framework digest and the installed runtime; no fallback or relabeling is allowed."
+}

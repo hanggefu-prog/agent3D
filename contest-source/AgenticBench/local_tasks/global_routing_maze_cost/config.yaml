@@ -1,0 +1,27 @@
+max_iterations: 50
+checkpoint_interval: 1
+diff_based_evolution: false
+max_code_length: 64000
+prompt:
+  system_message: >-
+    Improve global routing of a two-die three-dimensional integrated circuit
+    (3D-IC) by scaling grid-edge costs in maze search. Use congestion, history,
+    direction and net-class observations to improve the final wirelength/overflow
+    score. Preserve positive costs, the declared interface and the routing budget.
+    Keep the rule inexpensive because it is evaluated in the search inner loop.
+    Try one main change at a time; combine ideas when comparable measurements
+    support them. Activity diagnostics are not rewards; missing feedback is
+    unknown, not zero. Return only the complete score_maze_step function inside
+    EVOLVE-BLOCK markers.
+  include_artifacts: true
+  max_artifact_bytes: 32768
+  artifact_security_filter: true
+evaluator:
+  timeout: 21600
+  cascade_thresholds: [0.01]
+  parallel_evaluations: 1
+  enable_artifacts: true
+database:
+  population_size: 16
+  archive_size: 10
+  num_islands: 3

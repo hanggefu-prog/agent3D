@@ -1,0 +1,17 @@
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+test_documented_module_apis_exist_in_evaluation_runtime (test_placement_native_numerics.NativeNumerics) ... ok
+test_failed_real_preconditioner_runs_with_masks_and_unchanged_inputs (test_placement_native_numerics.NativeNumerics) ... ok
+test_finite_values_replacements_dtype_and_gradient (test_placement_native_numerics.NativeNumerics) ... /usr/local/lib/python3.8/dist-packages/torch/autograd/__init__.py:130: UserWarning: CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+  Variable._execution_engine.run_backward(
+ok
+test_fully_detached_loss_is_still_rejected_by_native_training (test_placement_native_numerics.NativeNumerics) ... [open3dbench-log] CURRENT_EXECUTION TP-GNN: dependencies, sampling, and model initialization are ready; starting embedding training iterations now.
+ok
+test_new_loss_helpers_execute_inside_native_training (test_placement_native_numerics.NativeNumerics) ... [open3dbench-log] CURRENT_EXECUTION TP-GNN: dependencies, sampling, and model initialization are ready; starting embedding training iterations now.
+[tp-gnn] epoch 1/2: loss=2.93800938 batches=2 optimizer_steps=2
+[tp-gnn] epoch 2/2: loss=2.93798733 batches=2 optimizer_steps=4
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.094s
+
+OK

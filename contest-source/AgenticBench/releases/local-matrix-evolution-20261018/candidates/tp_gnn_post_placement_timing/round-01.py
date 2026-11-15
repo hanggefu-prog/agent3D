@@ -1,0 +1,52 @@
+# EVOLVE-BLOCK-START
+def compute_tp_gnn_loss(
+    positive_scores,
+    negative_scores,
+    embeddings,
+    positive_sources,
+    positive_targets,
+    negative_sources,
+    negative_targets,
+    source_batch_size,
+    epoch,
+    max_epochs,
+    graph_scores,
+    graph_sources,
+    graph_targets,
+    graph_net_ids,
+    graph_weights,
+    net_weights,
+    node_features,
+    node_areas,
+):
+    """Add an annealed area-balanced timing-graph relaxation to the native loss."""
+    pair_loss = -(
+        F.logsigmoid(positive_scores).sum()
+        + F.logsigmoid(-negative_scores).sum()
+    ) / max(1, source_batch_size)
+
+    if graph_scores.numel() > 0:
+        graph_mass = graph_weights.sum()
+        graph_loss = (
+            graph_weights * (1.0 - graph_scores) * 0.5
+        ).sum() / (graph_mass + 1e-12)
+    else:
+        graph_loss = embeddings.sum() * 0.0
+
+    area_mass = node_areas.sum()
+    area_fraction = node_areas / (area_mass + 1e-12)
+    area_center = (
+        embeddings * area_fraction.reshape(-1, 1)
+    ).sum(dim=0)
+    area_balance_loss = torch.square(area_center).sum()
+
+    sample_density = float(
+        len(positive_scores) + len(negative_scores)
+    ) / float(max(1, source_batch_size))
+    progress = float(epoch) / float(max(1, max_epochs - 1))
+    relaxation_scale = sample_density * (0.30 - 0.10 * progress)
+
+    return pair_loss + relaxation_scale * (
+        graph_loss + 0.5 * area_balance_loss
+    )
+# EVOLVE-BLOCK-END

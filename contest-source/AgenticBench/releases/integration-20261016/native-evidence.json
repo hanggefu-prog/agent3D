@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "scope": "Diagnostic fixed-placement PDN/HBT/OPT/CTS integration and same-source resume; no campaign final or Pareto admission",
+  "source_verification": {
+    "review_commit": "cb445971f388b79aae3eff666878f360b74ac018",
+    "matched_files": 450,
+    "mismatches": [],
+    "runtime": {
+      "runtime/image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+      "runtime/openroad": "3afdc279561105d77e9dca0e2e6a1ba90fbcb6a2a01e7a9612e81d82e7163cc6"
+    }
+  },
+  "cases": [
+    {
+      "status": "verified",
+      "kind": "diagnostic-pdn-to-cts",
+      "case": "bp_fe-asap7",
+      "pdn_algorithm": "none",
+      "prefix_unchanged": true,
+      "resume_unchanged": true,
+      "reused": [
+        "input",
+        "floorplan",
+        "partition",
+        "placement"
+      ],
+      "executed": [
+        "pdn",
+        "hbt",
+        "opt",
+        "cts"
+      ],
+      "stage_seconds": {
+        "pdn": 0.21625739336013794,
+        "hbt": 26.902675546705723,
+        "opt": 235.39703990519047,
+        "cts": 95.3704336732626
+      },
+      "wall_seconds": 359.0040368512273,
+      "manifests": {
+        "pdn": "15c423dc336b9b0aad67cb2c851e725b09ab02d0f1d6d99d93e4cf9445b673aa",
+        "hbt": "5f037ce76f863c16c8099ea4d19963ec05545865aa5042b35f04c1cf914bf22a",
+        "opt": "1e4b9b7223d4509cf1872c2b21b8ff31771c8ffae4d9907161968a98470030e8",
+        "cts": "a0969b3026b1d44804f8721902a4e9c1ee702a8659da87e54949039d1722fc46"
+      },
+      "image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+      "input_provenance": {
+        "image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+        "restored_defs": [],
+        "source_job": "884bd0a124fba1765c9fee9dddcc6f3a45854543799f0aa7f41a5dfa9ec34a7f",
+        "source_receipt_sha256": "aa359c8670d5e32ed5b7126e853de626cda7180134c0dba6bb59566a8306e9d1"
+      },
+      "prefix_manifests": {
+        "00_input": "3b0f34673be72e9667342722ac261fbd243a4d90d3904960e28e6662e1ed13c3",
+        "10_floorplan": "4be64ffc094a629d587d26ca03d684f6b46042907b804f9b04d5f5a8571f86dd",
+        "20_partition": "d36b6dd9ebf750e70962063c958e06e7e56bcbc626e8548c3f4201393ddb37b1",
+        "30_placement": "c578ed68895ba325fa3a1d05af61f160075fe016946a6a9a958bfe9b44d7751d"
+      },
+      "container": {
+        "container": "grt-integration-0f781bc7640e0d6b99a2",
+        "exit_code": 0,
+        "wall_seconds": 361.73015121370554
+      },
+      "lease_id": "0f781bc7640e0d6b99a2777a5f1a19340928c0f13c99f30ab5ccbb88ec35ccac",
+      "pdn_state_propagated": true
+    },
+    {
+      "status": "verified",
+      "kind": "diagnostic-pdn-to-cts",
+      "case": "bp_fe-asap7",
+      "pdn_algorithm": "openroad",
+      "prefix_unchanged": true,
+      "resume_unchanged": true,
+      "reused": [
+        "input",
+        "floorplan",
+        "partition",
+        "placement"
+      ],
+      "executed": [
+        "pdn",
+        "hbt",
+        "opt",
+        "cts"
+      ],
+      "stage_seconds": {
+        "pdn": 62.189228259027004,
+        "hbt": 27.68845808506012,
+        "opt": 236.2373431622982,
+        "cts": 96.66177778691053
+      },
+      "wall_seconds": 424.071753911674,
+      "manifests": {
+        "pdn": "b47397cab3c328ee80a6d2c1d244c1d7b61b7aa9e048012c9132a5eacc69f2ef",
+        "hbt": "b2b626631ab145884f8228401bd3376d51ca355957a10899668d456a2b078680",
+        "opt": "91c1cda2af5d49d299f476592da7160211939f2f1b577095a9f405a73492ef0a",
+        "cts": "eb69022c7ee24bfc37cad8c0117da3ea34b31d2acce2a41132ffb6259c07ea6c"
+      },
+      "image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+      "input_provenance": {
+        "image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+        "restored_defs": [],
+        "source_job": "884bd0a124fba1765c9fee9dddcc6f3a45854543799f0aa7f41a5dfa9ec34a7f",
+        "source_receipt_sha256": "aa359c8670d5e32ed5b7126e853de626cda7180134c0dba6bb59566a8306e9d1"
+      },
+      "prefix_manifests": {
+        "00_input": "3b0f34673be72e9667342722ac261fbd243a4d90d3904960e28e6662e1ed13c3",
+        "10_floorplan": "4be64ffc094a629d587d26ca03d684f6b46042907b804f9b04d5f5a8571f86dd",
+        "20_partition": "d36b6dd9ebf750e70962063c958e06e7e56bcbc626e8548c3f4201393ddb37b1",
+        "30_placement": "c578ed68895ba325fa3a1d05af61f160075fe016946a6a9a958bfe9b44d7751d"
+      },
+      "container": {
+        "container": "grt-integration-f5e398df427e70b0212e",
+        "exit_code": 0,
+        "wall_seconds": 426.78754644840956
+      },
+      "lease_id": "f5e398df427e70b0212ea8ea4caac9c9efec508b3a118cad3c9bdf6b9f1b6405",
+      "pdn_state_propagated": true
+    },
+    {
+      "status": "verified",
+      "kind": "diagnostic-pdn-to-cts",
+      "case": "bp_fe-ng45",
+      "pdn_algorithm": "none",
+      "prefix_unchanged": true,
+      "resume_unchanged": true,
+      "reused": [
+        "input",
+        "floorplan",
+        "partition",
+        "placement"
+      ],
+      "executed": [
+        "pdn",
+        "hbt",
+        "opt",
+        "cts"
+      ],
+      "stage_seconds": {
+        "pdn": 0.26129137724637985,
+        "hbt": 26.575932174921036,
+        "opt": 205.24805323779583,
+        "cts": 69.09831216186285
+      },
+      "wall_seconds": 302.55445819348097,
+      "manifests": {
+        "pdn": "55496585bc66c467ec8de927b91a16ab64b8095a604df5495cb1d9b87204bb65",
+        "hbt": "7cbf9dc8e9f24a6a2594cd361b3590bbdd0ec021eeb0605169fe3d85196cf794",
+        "opt": "12eed0b428d17f9dcb04557ac39c187f289de7867b39beac9ab535cfea4cbf84",
+        "cts": "5505f0e4e71ba1a6ec0d4e53cb5f6d196d7ec3d7d864c9748b24fb2981729a1d"
+      },
+      "image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+      "input_provenance": {
+        "image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+        "restored_defs": [],
+        "source_job": "a4db0d56faea49a399b9559ee8da972867e4f4d3aff57a37056e0f20008fb81f",
+        "source_receipt_sha256": "76e42073e920f5bf5564e5c4672839218a3f952e2acd564dfcb2fc1ba878ab96"
+      },
+      "prefix_manifests": {
+        "00_input": "e6e506ded87ce4b616424383c613152311814eccdf31036e93d05ff4ab564ce9",
+        "10_floorplan": "d1d93254d05eb4583e056112ac02cd37fbc5949117d5271e3ac9954865505729",
+        "20_partition": "7bd04c8ded6847602e62ba327b79af447c2eb05741b594c674a18465d4094ab3",
+        "30_placement": "95df60fc16999f43bded3b1ab37d41178d6b37047efecd0e1e7e6107179dff1c"
+      },
+      "container": {
+        "container": "grt-integration-1a641f2069171a2cf83b",
+        "exit_code": 0,
+        "wall_seconds": 305.46264135092497
+      },
+      "lease_id": "1a641f2069171a2cf83b4ea1fe79d0253e7a1bc1ca39b9c9e8f15223472b5b27",
+      "pdn_state_propagated": true
+    },
+    {
+      "status": "verified",
+      "kind": "diagnostic-pdn-to-cts",
+      "case": "bp_fe-ng45",
+      "pdn_algorithm": "openroad",
+      "prefix_unchanged": true,
+      "resume_unchanged": true,
+      "reused": [
+        "input",
+        "floorplan",
+        "partition",
+        "placement"
+      ],
+      "executed": [
+        "pdn",
+        "hbt",
+        "opt",
+        "cts"
+      ],
+      "stage_seconds": {
+        "pdn": 13.852577470242977,
+        "hbt": 26.814978435635567,
+        "opt": 206.06551695615053,
+        "cts": 69.2891631796956
+      },
+      "wall_seconds": 317.40634080022573,
+      "manifests": {
+        "pdn": "4d0c608ad46d2a5774d96455fe45606d992bb98c95231ab1b96b106e63296932",
+        "hbt": "f145f7bbf69df745a5e9c6a8fce056c592b4ad415ef5a536155262abd2b57c46",
+        "opt": "197570d5c117bc6ddde6fd749589e04588147343fed10aea9c3466064efc2bdd",
+        "cts": "7f3e634a3e9e9704140c187f01f2e7f28f19a102ee9109605914b88562d08211"
+      },
+      "image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+      "input_provenance": {
+        "image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+        "restored_defs": [],
+        "source_job": "a4db0d56faea49a399b9559ee8da972867e4f4d3aff57a37056e0f20008fb81f",
+        "source_receipt_sha256": "76e42073e920f5bf5564e5c4672839218a3f952e2acd564dfcb2fc1ba878ab96"
+      },
+      "prefix_manifests": {
+        "00_input": "e6e506ded87ce4b616424383c613152311814eccdf31036e93d05ff4ab564ce9",
+        "10_floorplan": "d1d93254d05eb4583e056112ac02cd37fbc5949117d5271e3ac9954865505729",
+        "20_partition": "7bd04c8ded6847602e62ba327b79af447c2eb05741b594c674a18465d4094ab3",
+        "30_placement": "95df60fc16999f43bded3b1ab37d41178d6b37047efecd0e1e7e6107179dff1c"
+      },
+      "container": {
+        "container": "grt-integration-37b12612e8c9071fd7fb",
+        "exit_code": 0,
+        "wall_seconds": 319.88004026561975
+      },
+      "lease_id": "37b12612e8c9071fd7fbb444bbb5fe243f62f2c26ed65820684cceb82809f3cf",
+      "pdn_state_propagated": true
+    }
+  ],
+  "normal_pdn_fix_equivalence": {
+    "bp_fe-ng45": {
+      "hbt_assignment_equal": true,
+      "opt_global_metrics_equal": true,
+      "cts_assembly_metrics_equal": true
+    },
+    "bp_fe-asap7": {
+      "hbt_assignment_equal": true,
+      "opt_global_metrics_equal": true,
+      "cts_assembly_metrics_equal": true
+    }
+  },
+  "model_calls": 0,
+  "campaign_evaluations": 0,
+  "resources": {
+    "cpu_per_job": 4,
+    "memory_gib_per_job": 24,
+    "gpu_count": 0,
+    "max_workers": 4
+  },
+  "lease_states": {
+    "0f781bc7640e0d6b99a2777a5f1a19340928c0f13c99f30ab5ccbb88ec35ccac": "succeeded",
+    "f5e398df427e70b0212ea8ea4caac9c9efec508b3a118cad3c9bdf6b9f1b6405": "succeeded",
+    "1a641f2069171a2cf83b4ea1fe79d0253e7a1bc1ca39b9c9e8f15223472b5b27": "succeeded",
+    "37b12612e8c9071fd7fbb444bbb5fe243f62f2c26ed65820684cceb82809f3cf": "succeeded"
+  },
+  "active_test_containers": [],
+  "initial_attempts": [
+    {
+      "case": "bp_fe-asap7",
+      "error": "Native container failed; inspect retained log",
+      "mode": "none",
+      "status": "failed"
+    },
+    {
+      "case": "bp_fe-ng45",
+      "error": "Native container failed; inspect retained log",
+      "mode": "none",
+      "status": "failed"
+    },
+    {
+      "case": "bp_fe-ng45-openroad",
+      "container": "grt-integration-4324e044899b6cbe14eb",
+      "exit_code": 0,
+      "status": "verified",
+      "wall_seconds": 321.1807157844305
+    },
+    {
+      "case": "bp_fe-asap7-openroad",
+      "container": "grt-integration-56b3c23d56d83096904a",
+      "exit_code": 0,
+      "status": "verified",
+      "wall_seconds": 421.4735219627619
+    }
+  ],
+  "status": "verified"
+}

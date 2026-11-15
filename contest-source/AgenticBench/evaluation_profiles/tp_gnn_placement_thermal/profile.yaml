@@ -1,0 +1,72 @@
+schema_version: 1
+id: tp_gnn_placement_thermal
+title: TP-GNN plus 3D placement promotion to HotSpot average temperature
+description: Evaluate a selected TP-GNN and concurrent two-die placement candidate through the fixed full backend and HotSpot steady-state analysis.
+kind: tp_gnn_placement_thermal
+base_config: ../../local_bench/benchmark_inputs/bp_multi_lol_ng45_tp_gnn_sta/config.yaml
+benchmark_input: bp_multi_lol_ng45_tp_gnn_sta
+initial_candidate: initial_candidate
+prompt: prompt.md
+program:
+  mode: candidate_literal
+prompt_context:
+  priority_parameters:
+    - global_average_temperature_k
+    - bottom_average_temperature_k
+    - top_average_temperature_k
+    - global_maximum_temperature_c
+    - total_power_w
+    - cut_net_count
+    - area_balance_error
+    - placement_total_hpwl_um
+  feedback_recent: 5
+  feedback_top: 5
+  max_feedback_chars: 48000
+  max_source_chars: 180000
+  source_ranges:
+    - {path: Place-3D/src/partition/lol/methods/tp_gnn.py, start_line: 35, end_line: 94}
+    - {path: Place-3D/src/partition/lol/methods/tp_gnn.py, start_line: 576, end_line: 706}
+    - {path: Place-3D/src/partition/lol/methods/tp_gnn.py, start_line: 875, end_line: 1200}
+    - {path: Place-3D/src/partition/lol/methods/tp_gnn.py, start_line: 1201, end_line: 1515}
+    - {path: Place-3D/src/placement/concurrent_dreamplace.py, start_line: 57, end_line: 100}
+    - {path: Place-3D/src/placement/concurrent_dreamplace.py, start_line: 205, end_line: 376}
+    - {path: Place-3D/thirdparty/DREAMPlace/dreamplace/PlaceObj.py, start_line: 65, end_line: 160}
+    - {path: Place-3D/thirdparty/DREAMPlace/dreamplace/PlaceObj.py, start_line: 864, end_line: 989}
+    - {path: Place-3D/thirdparty/DREAMPlace/dreamplace/NonLinearPlace.py, start_line: 175, end_line: 365}
+    - {path: Place-3D/thirdparty/DREAMPlace/dreamplace/NonLinearPlace.py, start_line: 528, end_line: 738}
+execution:
+  from: partition
+  to: thermal
+  upstream_stages: [input, floorplan]
+  frozen_inputs:
+    - name: tp_gnn_timing
+      source: baseline_run
+      path: 20_partition/timing_input
+      inject_as: partition.timing_input
+      required_files:
+        - timing_features.csv
+        - timing_net_weights.csv
+        - timing_manifest.json
+        - openroad_full_partition_last.connections.tsv
+      json_checks:
+        - path: timing_manifest.json
+          equals:
+            timing_status: full_coverage_partition_last
+            timing_weight_mode: paper_delay_slack_hyperedge_v1
+candidate_policy:
+  allowed_config_paths:
+    - partition.algorithm
+    - placement.algorithm
+  allowed_source_paths:
+    - Place-3D/src/partition/lol/methods/tp_gnn.py
+    - Place-3D/src/placement/concurrent_dreamplace.py
+    - Place-3D/thirdparty/DREAMPlace/dreamplace/BasicPlace.py
+    - Place-3D/thirdparty/DREAMPlace/dreamplace/PlaceObj.py
+    - Place-3D/thirdparty/DREAMPlace/dreamplace/NonLinearPlace.py
+  max_changed_files: 5
+  max_added_lines: 1800
+  max_deleted_lines: 900
+  files: []
+  value_constraints:
+    - {path: /config_overrides/partition/algorithm, type: string, enum: [tp-gnn]}
+    - {path: /config_overrides/placement/algorithm, type: string, enum: [concurrent-dreamplace], required: false}

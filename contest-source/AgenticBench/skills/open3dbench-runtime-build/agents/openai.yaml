@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Runtime Build"
+  short_description: "Build and verify DREAMPlace or OpenROAD-3D"
+  default_prompt: "Use $open3dbench-runtime-build to build the affected Open3DBench runtime component and verify the exact output binary."

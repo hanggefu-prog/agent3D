@@ -1,0 +1,4 @@
+{
+  "feedback_use": "Round 1 slightly reduced wirelength in five cells but destabilized the overflow-heavy bp_fe case, especially seed s2. This policy therefore avoids compressing congested-edge costs and attenuates its wirelength bias as die-wide pressure rises.",
+  "hypothesis": "A small long-net edge scaling will favor shorter paths by increasing edge cost relative to turn cost, while modest overflow/history surcharges and die-overflow gating should reduce the seed-sensitive congestion regressions seen in round 1."
+}

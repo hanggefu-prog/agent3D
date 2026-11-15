@@ -1,0 +1,46 @@
+[
+  {
+    "candidate": "0001-bb753f2f44a0",
+    "exact_metric_match": false,
+    "original": {
+      "bottom_grt_total_overflow": 0.0,
+      "bottom_grt_wirelength_um": 3313315.0,
+      "combined_score": 1.0006121287526502,
+      "grt_total_overflow": 30.0,
+      "grt_wirelength_um": 6970637.0,
+      "top_grt_total_overflow": 30.0,
+      "top_grt_wirelength_um": 3657322.0
+    },
+    "repeat": {
+      "bottom_grt_total_overflow": 0.0,
+      "bottom_grt_wirelength_um": 3313315.0,
+      "combined_score": 1.0003344270796755,
+      "grt_total_overflow": 32.0,
+      "grt_wirelength_um": 6971292.0,
+      "top_grt_total_overflow": 32.0,
+      "top_grt_wirelength_um": 3657977.0
+    }
+  },
+  {
+    "candidate": "0002-b472817cf75e",
+    "exact_metric_match": false,
+    "original": {
+      "bottom_grt_total_overflow": 0.0,
+      "bottom_grt_wirelength_um": 3313127.0,
+      "combined_score": 1.0009693464012124,
+      "grt_total_overflow": 25.0,
+      "grt_wirelength_um": 6971609.0,
+      "top_grt_total_overflow": 25.0,
+      "top_grt_wirelength_um": 3658482.0
+    },
+    "repeat": {
+      "bottom_grt_total_overflow": 0.0,
+      "bottom_grt_wirelength_um": 3313127.0,
+      "combined_score": 1.000346162982457,
+      "grt_total_overflow": 31.0,
+      "grt_wirelength_um": 6971948.0,
+      "top_grt_total_overflow": 31.0,
+      "top_grt_wirelength_um": 3658821.0
+    }
+  }
+]

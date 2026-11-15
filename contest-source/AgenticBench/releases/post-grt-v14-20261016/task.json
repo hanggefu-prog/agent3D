@@ -1,0 +1,336 @@
+{
+  "activity": 0.1,
+  "ambient_k": 318.15,
+  "cases": [
+    {
+      "config_sha256": "4e4f1d1983e57b61ed7079d613f8d7c488f9058f44f956381d5763343f8161d1",
+      "design": "bp_fe",
+      "id": "bp_fe-ng45",
+      "input_identity": "62ade716d9d4165cac4ef79492e8c14a6fec5b224f4eb203810628548af3a3d6",
+      "pdk": "ng45",
+      "split": "train",
+      "weight": 1
+    },
+    {
+      "config_sha256": "1880d818b6707d8154769d7cac0257063fae9dda777c7a7573f594b5bf721b62",
+      "design": "bp",
+      "id": "bp-ng45",
+      "input_identity": "f818e09bb22428a0d426ae008cc2aa5919cc02c0382b214385071ebcb48c8410",
+      "pdk": "ng45",
+      "split": "train",
+      "weight": 1
+    },
+    {
+      "config_sha256": "6e1b3d7a63172d0189687789ddff987e4d50d360e45f8025a0ff7d1dc09ae657",
+      "design": "ariane133",
+      "id": "ariane133-ng45",
+      "input_identity": "7382d10eb8cfcc94e43751464d1bb1d16c478f8161dca85cb8abba6a2e15791c",
+      "pdk": "ng45",
+      "split": "train",
+      "weight": 1
+    },
+    {
+      "config_sha256": "8cff384cb4a5556cedb3825d616bfd1267f7fa0fad877effe8cbbadd4484c835",
+      "design": "swerv_wrapper",
+      "id": "swerv_wrapper-ng45",
+      "input_identity": "6f8f5ea4f9d3180175c087d62040cb34e0370b2820f37f2bc559fa9e54a9732e",
+      "pdk": "ng45",
+      "split": "train",
+      "weight": 1
+    },
+    {
+      "config_sha256": "08fb56565f9c188f5b134255bec022e67a1d56a80bcf815175ad0884a22e56c0",
+      "design": "bp_fe",
+      "id": "bp_fe-asap7",
+      "input_identity": "af9fdd7a9338e60078c5058878148f44bb12f570064e0ec2fbe794174da249be",
+      "pdk": "asap7",
+      "split": "train",
+      "weight": 1
+    }
+  ],
+  "endpoint": "post-grt-passive-hbt-peak-v2",
+  "epsilon": 0,
+  "evaluator_sha256": "322c79592b539e312d5386d062fbf727a83a39a99c0da43ab52314c7923a0645",
+  "frontend_inputs": {
+    "boundary": "partition",
+    "cases": {
+      "ariane133-ng45": {
+        "producer_image": "sha256:02362ae3864e3b491d9880b41fd9bbd3a8ca72b168e342fd756ebb00a82dda16",
+        "stages": {
+          "floorplan": "b8484dff25f73ccb24a1cada83c37c97b4049d163ca087739f4e28cbfbbb7983",
+          "input": "ecc280e367f7feb402cb25db7893ef239e92771759291e5d2d6d5ca2834dc96a"
+        }
+      },
+      "bp-ng45": {
+        "producer_image": "sha256:02362ae3864e3b491d9880b41fd9bbd3a8ca72b168e342fd756ebb00a82dda16",
+        "stages": {
+          "floorplan": "5183d4007b370916aeec4c08497eec1b11160a0bd61a1ca5cfdc453eaf224ca7",
+          "input": "a35c9710db84e0272a8ae5aefb469fb2fd79db43c822fe7bf1120920a14fa167"
+        }
+      },
+      "bp_fe-asap7": {
+        "producer_image": "sha256:02362ae3864e3b491d9880b41fd9bbd3a8ca72b168e342fd756ebb00a82dda16",
+        "stages": {
+          "floorplan": "4be64ffc094a629d587d26ca03d684f6b46042907b804f9b04d5f5a8571f86dd",
+          "input": "3b0f34673be72e9667342722ac261fbd243a4d90d3904960e28e6662e1ed13c3"
+        }
+      },
+      "bp_fe-ng45": {
+        "producer_image": "sha256:02362ae3864e3b491d9880b41fd9bbd3a8ca72b168e342fd756ebb00a82dda16",
+        "stages": {
+          "floorplan": "d1d93254d05eb4583e056112ac02cd37fbc5949117d5271e3ac9954865505729",
+          "input": "e6e506ded87ce4b616424383c613152311814eccdf31036e93d05ff4ab564ce9"
+        }
+      },
+      "swerv_wrapper-ng45": {
+        "producer_image": "sha256:02362ae3864e3b491d9880b41fd9bbd3a8ca72b168e342fd756ebb00a82dda16",
+        "stages": {
+          "floorplan": "d78a45ed99bba294d09116937c6a5d2545f932b9c5533ae8566c46cded17e64d",
+          "input": "00f04719ed15930f91eb6726cfb865c7a9bcbd40777d08d764f17e77f41e6e97"
+        }
+      }
+    }
+  },
+  "grid_size": 10,
+  "id": "lol-post-grt-frontend-algorithms-20261016",
+  "incremental": {
+    "base_image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+    "drivers": {
+      "Place-3D/thirdparty/partition/extract_tp_gnn_timing_openroad.py": "4fccb282f3d75d9c8f283751302cb5d51aaf4487e9de26f73d94ec27f8509143",
+      "open3dbench/runner.py": "a60d39bb424f30bf80370b8e2b06f1d1b3248149bf5f68d6752aa59c6392788b"
+    },
+    "version": 1
+  },
+  "metrics": [
+    "wns_deficit_ns",
+    "tns_deficit_ns",
+    "overflow",
+    "temperature_peak_k",
+    "power_w"
+  ],
+  "normalization_floors": {
+    "overflow": 1,
+    "power_w": 1e-06,
+    "temperature_peak_k": 1,
+    "tns_deficit_ns": 0.001,
+    "wns_deficit_ns": 0.001
+  },
+  "objectives": [
+    "timing",
+    "overflow",
+    "temperature_peak_k"
+  ],
+  "opt_passes": 1,
+  "optimization": {
+    "allowed_files": [
+      "OpenROAD-3D/openroad/src/cts/include/cts/MakeTritoncts.h",
+      "OpenROAD-3D/openroad/src/cts/include/cts/TritonCTS.h",
+      "OpenROAD-3D/openroad/src/cts/src/Clock.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/Clock.h",
+      "OpenROAD-3D/openroad/src/cts/src/Clustering.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/Clustering.h",
+      "OpenROAD-3D/openroad/src/cts/src/CtsGraphics.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/CtsGraphics.h",
+      "OpenROAD-3D/openroad/src/cts/src/CtsObserver.h",
+      "OpenROAD-3D/openroad/src/cts/src/CtsOptions.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/CtsOptions.h",
+      "OpenROAD-3D/openroad/src/cts/src/HTreeBuilder.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/HTreeBuilder.h",
+      "OpenROAD-3D/openroad/src/cts/src/LatencyBalancer.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/LatencyBalancer.h",
+      "OpenROAD-3D/openroad/src/cts/src/MakeTritoncts.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/SinkClustering.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/SinkClustering.h",
+      "OpenROAD-3D/openroad/src/cts/src/TechChar.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/TechChar.h",
+      "OpenROAD-3D/openroad/src/cts/src/TreeBuilder.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/TreeBuilder.h",
+      "OpenROAD-3D/openroad/src/cts/src/TritonCTS.cpp",
+      "OpenROAD-3D/openroad/src/cts/src/Util.h",
+      "OpenROAD-3D/openroad/src/grt/include/grt/GRoute.h",
+      "OpenROAD-3D/openroad/src/grt/include/grt/GlobalRouter.h",
+      "OpenROAD-3D/openroad/src/grt/include/grt/MakeGlobalRouter.h",
+      "OpenROAD-3D/openroad/src/grt/include/grt/PinGridLocation.h",
+      "OpenROAD-3D/openroad/src/grt/include/grt/RoutePt.h",
+      "OpenROAD-3D/openroad/src/grt/include/grt/Rudy.h",
+      "OpenROAD-3D/openroad/src/grt/src/AbstractGrouteRenderer.h",
+      "OpenROAD-3D/openroad/src/grt/src/AbstractRoutingCongestionDataSource.h",
+      "OpenROAD-3D/openroad/src/grt/src/GlobalRouter.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/Grid.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/Grid.h",
+      "OpenROAD-3D/openroad/src/grt/src/GrouteRenderer.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/GrouteRenderer.h",
+      "OpenROAD-3D/openroad/src/grt/src/MakeGlobalRouter.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/Net.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/Net.h",
+      "OpenROAD-3D/openroad/src/grt/src/Pin.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/Pin.h",
+      "OpenROAD-3D/openroad/src/grt/src/RepairAntennas.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/RepairAntennas.h",
+      "OpenROAD-3D/openroad/src/grt/src/RoutingTracks.h",
+      "OpenROAD-3D/openroad/src/grt/src/Rudy.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/include/CUGR.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/CUGR.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/Design.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/Design.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/GRNet.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/GRNet.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/GRTree.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/GRTree.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/GeoTypes.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/GeoTypes.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/GridGraph.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/GridGraph.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/Layers.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/Layers.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/MazeRoute.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/MazeRoute.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/Netlist.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/Netlist.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/PatternRoute.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/PatternRoute.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/geo.h",
+      "OpenROAD-3D/openroad/src/grt/src/cugr/src/robin_hood.h",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/include/AbstractFastRouteRenderer.h",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/include/DataType.h",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/include/FastRoute.h",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/include/FastRouteRenderer.h",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/include/Graph2D.h",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/src/FastRoute.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/src/FastRouteRenderer.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/src/RSMT.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/src/RipUp.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/src/graph2d.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/src/maze.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/src/maze3D.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/src/route.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/fastroute/src/utility.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/heatMap.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/heatMap.h",
+      "OpenROAD-3D/openroad/src/grt/src/heatMapRudy.cpp",
+      "OpenROAD-3D/openroad/src/grt/src/heatMapRudy.h",
+      "OpenROAD-3D/openroad/src/rsz/include/rsz/MakeResizer.hh",
+      "OpenROAD-3D/openroad/src/rsz/include/rsz/OdbCallBack.hh",
+      "OpenROAD-3D/openroad/src/rsz/include/rsz/Resizer.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/BaseMove.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/BaseMove.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/BufferMove.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/BufferMove.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/BufferedNet.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/BufferedNet.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/CloneMove.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/CloneMove.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/ConcreteSwapArithModules.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/ConcreteSwapArithModules.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/Graphics.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/Graphics.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/MakeResizer.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/MoveTracker.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/MoveTracker.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/OdbCallBack.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/PreChecks.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/PreChecks.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/Rebuffer.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/Rebuffer.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/RecoverPower.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/RecoverPower.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/RepairDesign.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/RepairDesign.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/RepairHold.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/RepairHold.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/RepairSetup.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/RepairSetup.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/Resizer.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/ResizerObserver.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/SizeDownMove.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/SizeDownMove.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/SizeUpMove.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/SizeUpMove.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/SplitLoadMove.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/SplitLoadMove.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/SwapArithModules.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/SwapPinsMove.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/SwapPinsMove.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/UnbufferMove.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/UnbufferMove.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/VTSwapMove.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/VTSwapMove.hh",
+      "OpenROAD-3D/openroad/src/rsz/src/ViolatorCollector.cc",
+      "OpenROAD-3D/openroad/src/rsz/src/ViolatorCollector.hh",
+      "Place-3D/src/hbt/assignment.py",
+      "Place-3D/src/partition/lol/constraints.py",
+      "Place-3D/src/partition/lol/core.py",
+      "Place-3D/src/partition/lol/methods/__init__.py",
+      "Place-3D/src/partition/lol/methods/hmetis.py",
+      "Place-3D/src/partition/lol/methods/mtkahypar.py",
+      "Place-3D/src/partition/lol/methods/pyg_unsupervised.py",
+      "Place-3D/src/partition/lol/methods/tp_gnn.py",
+      "Place-3D/src/placement/concurrent_dreamplace.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/BasicPlace.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/HBTConcurrentPlace.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/NesterovAcceleratedGradientOptimizer.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/NonLinearPlace.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/PlaceObj.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/concurrent_lol.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/abacus_legalize/abacus_legalize.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/adjust_node_area/adjust_node_area.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/density_potential/density_potential.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/electric_potential/electric_overflow.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/electric_potential/electric_potential.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/global_swap/global_swap.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/greedy_legalize/greedy_legalize.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/independent_set_matching/independent_set_matching.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/k_reorder/k_reorder.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/logsumexp_wirelength/logsumexp_wirelength.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/macro_legalize/macro_legalize.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/move_boundary/move_boundary.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/pin_utilization/pin_utilization.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/rudy/rudy.py",
+      "Place-3D/thirdparty/DREAMPlace/dreamplace/ops/weighted_average_wirelength/weighted_average_wirelength.py"
+    ],
+    "baseline": "0eee0d6d2ba54a30a84d91bf2f617ae8a7501def300556eca299bb2c25caa347",
+    "components": [
+      "cts",
+      "grt",
+      "hbt",
+      "partition",
+      "placement",
+      "timing_opt"
+    ],
+    "objective": "paired-ratio-weighted-timing-power-cap-v2",
+    "prompt": "---\ncomponents: [partition, placement, hbt, timing_opt, cts, grt]\n---\n\nImprove the source code and parameters of the 3D-IC backend design tool for the\nmulti-case, paired-seed LoL task through partition,\nplacement, HBT assignment, timing optimization, CTS and GRT. Optimize post-GRT setup\ntiming, total routing overflow and peak silicon temperature. Timing combines\nbaseline-normalized WNS and TNS deficits using the frozen weights (default:\n0.7 WNS + 0.3 TNS). Minimize these three objectives; there is no single overall\nscore or requirement to improve every objective over the baseline.\nWe treat power as a constraint to reduce the number of objectives in Pareto\noptimization. Each case's mean across paired seeds must be at most\nthe frozen limit times its original baseline mean (default: 1.10). Use raw watts\nwithout a normalization floor. A gain in another case cannot offset a violation.\nPeak temperature is the maximum over all 200 active silicon tiles (100 per die)\nfor each case/seed, not a mean or a maximum across cases/seeds. Retain average\ntemperatures as diagnostics only.\n\nYou may tune key parameters early, but parameter tuning has limited potential.\nTry changes to the algorithms themselves. We focus on multi-stage co-optimization\nthat changes multiple correlated algorithms or policies in different design\nstages, to improve the final PPA objectives. If progress stalls in one stage,\nexplore other stages and how they work together, within the allowed files.\nKeep the fixed flow and its single OPT pass.\n\nThe experiment harness (the host) manages rounds, budgets, source checkout and\narchive updates. Each round uses one agent invocation. Select one promising\ntraining-frontier parent and state one coherent hypothesis, then use the bound\nparent-checkout tool to obtain that source. Continue editing in the same\ninvocation, return one candidate and stop. The harness verifies and freezes it,\nthen uses the EDA backend tool to build it and run at most one complete\noptimization matrix. It updates the archive before the next round. The EDA\nbackend tool runs the physical design flow and reports post-GRT measurements;\nthe harness aggregates scores, accounts for the budget and updates the frontier.\nThe harness retains every feasible non-dominated candidate, including different\nsources with identical objective vectors. Over-limit results stay in history\nbut cannot enter the frontier or become parents.\nUse per-case and per-seed diagnostics to assess variability rather than selecting\na favorable seed. Each round lists its evaluation cases and seeds. You may use\nthose cases for local tests.\n\nThe harness-supplied task lists the exact editable source files. Change only those\nfiles; preserve algorithm interfaces, design connectivity,\nphysical constraints and externally supplied seeds. Do not specialize\nbehavior using benchmark names, expected answers, reference metrics or test data.\nDo not modify evaluator code, input data, platform collateral, build scripts,\nstage orchestration, seed schedules, resource budgets or metric extraction.\nWithin the candidate tree, file creation/deletion, executable-mode changes and\nsymlink changes are forbidden.\n\nYou may write and run small tests, exercise individual functions or algorithms,\nand run focused native or EDA checks with the supplied tools and task-provided\noptimization data or synthetic inputs. Keep temporary tests, caches, build\noutputs and logs in the round's scratch directory, outside the candidate tree,\nwithin the round's time and resource limits. Record the commands, inputs and\nresults as diagnostics. Full-flow evaluations and benchmark sweeps require the\nharness-controlled EDA backend tool and its evaluation budget.\n\nPython partition, placement and HBT algorithms use the source snapshot directly.\nOpenROAD C++ edits in Resizer, CTS or GRT require the verified incremental build\nand an installed candidate image before evaluation. Each candidate has one\nparent; several children can evolve concurrently from previously selected parents.\nFailed, incomplete or illegal candidates retain diagnostic artifacts but cannot\nenter the frontier.\n",
+    "retention": "all-nondominated",
+    "schema_version": 1
+  },
+  "schema_version": 2,
+  "scoring": {
+    "power_max_ratio": 1.1,
+    "timing_weights": {
+      "tns_deficit_ns": 0.3,
+      "wns_deficit_ns": 0.7
+    }
+  },
+  "seeds": [
+    {
+      "id": "s1",
+      "io": 1,
+      "partition": 1001,
+      "placement": 1001,
+      "routing": -1
+    },
+    {
+      "id": "s2",
+      "io": 1,
+      "partition": 1002,
+      "placement": 1002,
+      "routing": -1
+    },
+    {
+      "id": "s3",
+      "io": 1,
+      "partition": 1003,
+      "placement": 1003,
+      "routing": -1
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open3DBench Layout Agent"
+  short_description: "Optimize Place-3D or legacy layout HPWL and density"
+  default_prompt: "Use $optimize-mol-layout with repository_context to run a controlled Open3DBench HPWL and density optimization loop."

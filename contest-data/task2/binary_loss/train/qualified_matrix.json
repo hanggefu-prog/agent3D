@@ -1,0 +1,97 @@
+{
+  "cases": [
+    "bp_fe-ng45",
+    "bp-ng45",
+    "ariane133-ng45"
+  ],
+  "cells": [
+    {
+      "base_config": "configs/bp_fe-ng45/1001.yaml",
+      "baseline_run": "../../inputs/bp_fe-ng45",
+      "case": "bp_fe-ng45",
+      "reference_run": "references/bp_fe-ng45/1001/run",
+      "seed": "1001"
+    },
+    {
+      "base_config": "configs/bp_fe-ng45/1002.yaml",
+      "baseline_run": "../../inputs/bp_fe-ng45",
+      "case": "bp_fe-ng45",
+      "reference_run": "references/bp_fe-ng45/1002/run",
+      "seed": "1002"
+    },
+    {
+      "base_config": "configs/bp_fe-ng45/1003.yaml",
+      "baseline_run": "../../inputs/bp_fe-ng45",
+      "case": "bp_fe-ng45",
+      "reference_run": "references/bp_fe-ng45/1003/run",
+      "seed": "1003"
+    },
+    {
+      "base_config": "configs/bp-ng45/1001.yaml",
+      "baseline_run": "../../inputs/bp-ng45",
+      "case": "bp-ng45",
+      "reference_run": "references/bp-ng45/1001/run",
+      "seed": "1001"
+    },
+    {
+      "base_config": "configs/bp-ng45/1002.yaml",
+      "baseline_run": "../../inputs/bp-ng45",
+      "case": "bp-ng45",
+      "reference_run": "references/bp-ng45/1002/run",
+      "seed": "1002"
+    },
+    {
+      "base_config": "configs/bp-ng45/1003.yaml",
+      "baseline_run": "../../inputs/bp-ng45",
+      "case": "bp-ng45",
+      "reference_run": "references/bp-ng45/1003/run",
+      "seed": "1003"
+    },
+    {
+      "base_config": "configs/ariane133-ng45/1001.yaml",
+      "baseline_run": "../../inputs/ariane133-ng45",
+      "case": "ariane133-ng45",
+      "reference_run": "references/ariane133-ng45/1001/run",
+      "seed": "1001"
+    },
+    {
+      "base_config": "configs/ariane133-ng45/1002.yaml",
+      "baseline_run": "../../inputs/ariane133-ng45",
+      "case": "ariane133-ng45",
+      "reference_run": "references/ariane133-ng45/1002/run",
+      "seed": "1002"
+    },
+    {
+      "base_config": "configs/ariane133-ng45/1003.yaml",
+      "baseline_run": "../../inputs/ariane133-ng45",
+      "case": "ariane133-ng45",
+      "reference_run": "references/ariane133-ng45/1003/run",
+      "seed": "1003"
+    }
+  ],
+  "schema_version": 1,
+  "seeds": [
+    {
+      "id": "1001",
+      "io": 1,
+      "partition": 1001,
+      "placement": 1001,
+      "routing": -1
+    },
+    {
+      "id": "1002",
+      "io": 1,
+      "partition": 1002,
+      "placement": 1002,
+      "routing": -1
+    },
+    {
+      "id": "1003",
+      "io": 1,
+      "partition": 1003,
+      "placement": 1003,
+      "routing": -1
+    }
+  ],
+  "task": "tp_gnn_binary_loss_timing"
+}

@@ -1,0 +1,87 @@
+{
+  "source": "source-local-phases-e08588c8",
+  "case": "ariane133-ng45",
+  "seed": 1003,
+  "extra_native_cells": 1,
+  "extra_model_calls": 0,
+  "original_result_sha256": "80b72a181d31f5e47ecf76e719c6d9ef634bb10f8a5d3be03c3646cae9e12323",
+  "replay_result_sha256": "c731bf8fdeab4d0e6f5e26292f6d6795df9b8b6b07e9e96091f754c4a185ddcc",
+  "replay_status": {
+    "combined_score": 0.0,
+    "runs_successfully": 0.0
+  },
+  "causal_error": "PSM-0069: Check connectivity failed on VDD in top-die PDN",
+  "pdn_log_sha256": "c243de67bd75cfd820b0449fbff75c4fa3a2f34b940bf147884971fce25511c8",
+  "physical_comparison": {
+    "20_partition": {
+      "cross_die_nets": {
+        "original_sha256": "8c0f7e8b332ad10d2b5a5148778d92174a55b507b6c3e5ace9eff7be6d0fbb08",
+        "replay_sha256": "8c0f7e8b332ad10d2b5a5148778d92174a55b507b6c3e5ace9eff7be6d0fbb08",
+        "identical": true
+      },
+      "assignment": {
+        "original_sha256": "00aae5ca2cc972e76cc623fbe02de4c777dd9a6809c068e8abc636cd55facd96",
+        "replay_sha256": "00aae5ca2cc972e76cc623fbe02de4c777dd9a6809c068e8abc636cd55facd96",
+        "identical": true
+      }
+    },
+    "30_placement": {
+      "top_def": {
+        "original_sha256": "05d42d41e4f5e8074af99a5e90ba8d1b4dd5a111ea922d390939e04a1ef3973f",
+        "replay_sha256": "05d42d41e4f5e8074af99a5e90ba8d1b4dd5a111ea922d390939e04a1ef3973f",
+        "identical": true
+      },
+      "top_verilog": {
+        "original_sha256": "ac22ae8cbea4f0d3348b41d6b6e380ce92810f48b209d5c6d492f1ae7be855b0",
+        "replay_sha256": "ac22ae8cbea4f0d3348b41d6b6e380ce92810f48b209d5c6d492f1ae7be855b0",
+        "identical": true
+      },
+      "bottom_odb": {
+        "original_sha256": "acfbec644bc901d1b5e6f480310410895c7934c86b713fbcefa4f5614359831e",
+        "replay_sha256": "acfbec644bc901d1b5e6f480310410895c7934c86b713fbcefa4f5614359831e",
+        "identical": true
+      },
+      "bottom_verilog": {
+        "original_sha256": "6c7730b9adf94a5afb457d17be25d2cf58b711a036965b118155937a454736be",
+        "replay_sha256": "6c7730b9adf94a5afb457d17be25d2cf58b711a036965b118155937a454736be",
+        "identical": true
+      },
+      "bottom_def": {
+        "original_sha256": "ba7e1b92a26b95dec547b2ad80327ed7e83de83537e7b0ff67f5c80e550cce03",
+        "replay_sha256": "ba7e1b92a26b95dec547b2ad80327ed7e83de83537e7b0ff67f5c80e550cce03",
+        "identical": true
+      },
+      "cross_die_nets": {
+        "original_sha256": "8c0f7e8b332ad10d2b5a5148778d92174a55b507b6c3e5ace9eff7be6d0fbb08",
+        "replay_sha256": "8c0f7e8b332ad10d2b5a5148778d92174a55b507b6c3e5ace9eff7be6d0fbb08",
+        "identical": true
+      },
+      "partition_assignment": {
+        "original_sha256": "00aae5ca2cc972e76cc623fbe02de4c777dd9a6809c068e8abc636cd55facd96",
+        "replay_sha256": "00aae5ca2cc972e76cc623fbe02de4c777dd9a6809c068e8abc636cd55facd96",
+        "identical": true
+      },
+      "top_odb": {
+        "original_sha256": "3b9d209cdc4a14f700f472d9cebad97dc102d2e15f36ff82f52f1a5459fef6ad",
+        "replay_sha256": "3b9d209cdc4a14f700f472d9cebad97dc102d2e15f36ff82f52f1a5459fef6ad",
+        "identical": true
+      },
+      "def": {
+        "original_sha256": "e8161d249f14536963d491af5beac143847fb830a904860a5760e3ae3dcf0861",
+        "replay_sha256": "e8161d249f14536963d491af5beac143847fb830a904860a5760e3ae3dcf0861",
+        "identical": true
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "source": "run/40_pdn/top/run.log",
+      "excerpt": "[WARNING PSM-0039] Unconnected instance PHY_EDGE_ROW_460_2_Right_651/VDD at location (340.955um, 695.673um).\n[WARNING PSM-0039] Unconnected instance PHY_EDGE_ROW_461_2_Right_650/VDD at location (340.955um, 695.928um).\n[ERROR PSM-0069] Check connectivity failed on VDD.\nError: pdn.tcl, 16 PSM-0069"
+    },
+    {
+      "source": "backend-stage.log",
+      "excerpt": "    _run_openroad(openroad, script, die_dir / \"run.log\")\n  File \"$CELL/workspace/Open3DBench-V2.0/open3dbench/backend/pdn.py\", line 114, in _run_openroad\n    raise PDNError(str(exc)) from exc\nopen3dbench.backend.pdn.PDNError: command failed with code 1; see $CELL/run/40_pdn/top/run.log"
+    }
+  ],
+  "interpretation": "Repeated same-candidate/seed physical failure; original matrix remains invalid and its receipt is unchanged."
+}

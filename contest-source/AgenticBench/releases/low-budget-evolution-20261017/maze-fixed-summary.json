@@ -1,0 +1,98 @@
+{
+  "candidates": [
+    {
+      "exact_metric_match": true,
+      "first": {
+        "bottom_grt_total_overflow": 0.0,
+        "bottom_grt_wirelength_um": 3313085.0,
+        "combined_score": 1.000490080890579,
+        "grt_total_overflow": 29.0,
+        "grt_wirelength_um": 6972328.0,
+        "top_grt_total_overflow": 29.0,
+        "top_grt_wirelength_um": 3659243.0
+      },
+      "proposal": "round-01",
+      "repeat": {
+        "bottom_grt_total_overflow": 0.0,
+        "bottom_grt_wirelength_um": 3313085.0,
+        "combined_score": 1.000490080890579,
+        "grt_total_overflow": 29.0,
+        "grt_wirelength_um": 6972328.0,
+        "top_grt_total_overflow": 29.0,
+        "top_grt_wirelength_um": 3659243.0
+      },
+      "program_json_sha256": "f52cde2381dfab21c01faef120cb73257e2f41b6d3cdba93148470c913285c4e",
+      "program_sha256": "a6ccc335cc247e57e2fdf125fa98326d74a37a19f3abb62bfbbb334a5e5d417e"
+    },
+    {
+      "exact_metric_match": true,
+      "first": {
+        "bottom_grt_total_overflow": 0.0,
+        "bottom_grt_wirelength_um": 3313127.0,
+        "combined_score": 1.000484652475095,
+        "grt_total_overflow": 29.0,
+        "grt_wirelength_um": 6972370.0,
+        "top_grt_total_overflow": 29.0,
+        "top_grt_wirelength_um": 3659243.0
+      },
+      "proposal": "round-02",
+      "repeat": {
+        "bottom_grt_total_overflow": 0.0,
+        "bottom_grt_wirelength_um": 3313127.0,
+        "combined_score": 1.000484652475095,
+        "grt_total_overflow": 29.0,
+        "grt_wirelength_um": 6972370.0,
+        "top_grt_total_overflow": 29.0,
+        "top_grt_wirelength_um": 3659243.0
+      },
+      "program_json_sha256": "76400a2472e5aae2c131ce6c4da60f6ce912035d25033aee5d69b4235a49b5a6",
+      "program_sha256": "5827704430c5cdad4de780dd02d25fa5cfd5846753ee062b179a32db268effbc"
+    }
+  ],
+  "model_calls": 0,
+  "native_builds": 3,
+  "native_evaluations": 5,
+  "reference_metrics": {
+    "bottom_grt_congestion_bins": 0.0,
+    "bottom_grt_total_overflow": 0.0,
+    "bottom_grt_wirelength_um": 3313127.0,
+    "bottom_policy_calls": 2200000.0,
+    "bottom_policy_changed": 0.0,
+    "bottom_policy_changed_ratio_max": 0.0,
+    "bottom_policy_multiplier_last": 1.0,
+    "bottom_policy_multiplier_max": 1.0,
+    "bottom_policy_multiplier_min": 1.0,
+    "bottom_policy_rows": 23.0,
+    "combined_score": 0.13742243311007732,
+    "grt_complete": 1.0,
+    "grt_congestion_bins": 27.0,
+    "grt_total_overflow": 37.0,
+    "grt_wirelength_um": 6970147.0,
+    "overflow_cost": 1.037,
+    "overflow_score": 0.9643201542912248,
+    "overflow_weight": 0.1,
+    "policy_calls": 217300000.0,
+    "policy_changed": 0.0,
+    "policy_changed_ratio_max": 0.0,
+    "policy_diagnostic_rows": 2175.0,
+    "policy_diagnostics_present": 1.0,
+    "routing_complete": 1.0,
+    "runs_successfully": 1.0,
+    "runtime_seconds": 76.32032939046621,
+    "top_grt_congestion_bins": 27.0,
+    "top_grt_total_overflow": 37.0,
+    "top_grt_wirelength_um": 3657020.0,
+    "top_policy_calls": 215100000.0,
+    "top_policy_changed": 0.0,
+    "top_policy_changed_ratio_max": 0.0,
+    "top_policy_multiplier_last": 1.0,
+    "top_policy_multiplier_max": 1.0,
+    "top_policy_multiplier_min": 1.0,
+    "top_policy_rows": 2152.0,
+    "wirelength_cost": 7.970147,
+    "wirelength_score": 0.12546820027284314,
+    "wirelength_weight": 0.9
+  },
+  "status": "completed",
+  "diagnostic_metadata_note": "The remote diagnostic driver labeled a canonical-JSON string digest as program_sha256; retained here as program_json_sha256, with the actual UTF-8 program digest added independently. Native candidate/runtime receipts were unaffected."
+}

@@ -1,0 +1,31 @@
+{
+  "candidate_edits": false,
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--pull=never",
+    "--name",
+    "o3db-engineering-sink-audit",
+    "--read-only",
+    "--network=none",
+    "--cpus=1",
+    "--memory=2g",
+    "--mount",
+    "type=bind,src=/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/engineering-v3/campaign-editfix2/cross_die_cts/finals/bp_fe/replay/70_cts/models,dst=/models,readonly",
+    "--mount",
+    "type=bind,src=/data-ssd/gcr/agenticbench-integration-20261016/evolution-audit-20261017/cts-endpoint-probe,dst=/out",
+    "--entrypoint",
+    "/usr/local/bin/openroad",
+    "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+    "-no_init",
+    "-exit",
+    "/out/check.tcl"
+  ],
+  "diagnostic_only": true,
+  "exit_code": 0,
+  "model_lef_class_cover": true,
+  "model_lib_sha256": "b52777e97c526876fc41290f62129608b0dd233b6f7e56855284e7cbf5596782",
+  "stderr": "WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.\n",
+  "stdout": "OpenROAD GITDIR-NOTFOUND \nFeatures included (+) or not (-): +GPU -GUI +Python\nThis program is licensed under the BSD-3 license. See the LICENSE file for details.\nComponents of this program may be licensed under more restrictive licenses which must be honored.\nHBT_MODEL_IS_CLOCK=1\nHBT_MODEL_IS_REGISTER_CLOCK=0\n"
+}

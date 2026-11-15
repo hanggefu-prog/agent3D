@@ -1,0 +1,45 @@
+schema_version: 1
+id: placement_sta_inner
+title: 3D placement proxy for hierarchical STA optimization
+description: Evaluate one already proposed concurrent two-die placement correction with a fast global-placement HPWL and overflow proxy before optional two-pass STA promotion.
+kind: placement_source
+base_config: ../../local_bench/benchmark_inputs/bp_multi_lol_ng45_tp_gnn_sta/config.yaml
+benchmark_input: bp_multi_lol_ng45_tp_gnn_sta
+initial_candidate: initial_candidate
+prompt: prompt.md
+program:
+  mode: candidate_literal
+prompt_context:
+  priority_parameters:
+    - placement_native_hpwl
+    - placement_overflow_bottom
+    - placement_overflow_top
+    - placement_max_density_bottom
+    - placement_max_density_top
+  feedback_recent: 3
+  feedback_top: 3
+  max_feedback_chars: 24000
+  max_source_chars: 100000
+  source_ranges:
+    - {path: Place-3D/src/placement/concurrent_dreamplace.py, start_line: 57, end_line: 100}
+    - {path: Place-3D/src/placement/concurrent_dreamplace.py, start_line: 205, end_line: 376}
+    - {path: Place-3D/thirdparty/DREAMPlace/dreamplace/PlaceObj.py, start_line: 65, end_line: 160}
+    - {path: Place-3D/thirdparty/DREAMPlace/dreamplace/PlaceObj.py, start_line: 864, end_line: 989}
+    - {path: Place-3D/thirdparty/DREAMPlace/dreamplace/NonLinearPlace.py, start_line: 175, end_line: 365}
+    - {path: Place-3D/thirdparty/DREAMPlace/dreamplace/NonLinearPlace.py, start_line: 528, end_line: 738}
+execution:
+  from: placement
+  to: placement
+  upstream_stages: [input, floorplan, partition]
+  boundary: dreamplace-global-placement
+candidate_policy:
+  allowed_config_paths: []
+  allowed_source_paths:
+    - Place-3D/src/placement/concurrent_dreamplace.py
+    - Place-3D/thirdparty/DREAMPlace/dreamplace/BasicPlace.py
+    - Place-3D/thirdparty/DREAMPlace/dreamplace/PlaceObj.py
+    - Place-3D/thirdparty/DREAMPlace/dreamplace/NonLinearPlace.py
+  max_changed_files: 4
+  max_added_lines: 1200
+  max_deleted_lines: 600
+  files: []

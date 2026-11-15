@@ -1,0 +1,55 @@
+{
+  "name": "open3dbench-legacy-place-mol-v1",
+  "regime": "legacy_mol",
+  "priority": 100,
+  "sentinels": [
+    "Place-MoL/src",
+    "OpenROAD-3D/flow/Makefile"
+  ],
+  "stages": {
+    "partition": {
+      "source_paths": ["Place-MoL/src/partition"],
+      "config_paths": ["Place-MoL/config"],
+      "log_roots": ["Place-MoL/results", "output", "outputs"],
+      "result_roots": ["Place-MoL/results", "output", "outputs"],
+      "compile_commands": ["python3 -m compileall -q Place-MoL/src/partition"],
+      "evaluation_commands": ["cd Place-MoL && python3 src/place_3d/main.py --config <config>"],
+      "metrics": ["cut weight/count", "area balance", "runtime", "downstream HPWL"],
+      "correctness_gates": ["disjoint complete partition", "fixed seed/input", "area budget"],
+      "artifact_patterns": ["**/*.log", "**/*partition*.json", "**/*.csv"]
+    },
+    "layout": {
+      "source_paths": ["Place-MoL/src/place_3d", "Place-MoL/src/run_dmp.py", "Place-MoL/DREAMPlace"],
+      "config_paths": ["Place-MoL/config"],
+      "log_roots": ["Place-MoL/results", "output", "outputs"],
+      "result_roots": ["Place-MoL/results", "output", "outputs"],
+      "compile_commands": ["python3 -m compileall -q Place-MoL/src"],
+      "evaluation_commands": ["cd Place-MoL && python3 src/place_3d/main.py --config <config>"],
+      "metrics": ["HPWL", "density overflow", "maximum density", "runtime"],
+      "correctness_gates": ["frozen partition", "component/net count", "DIEAREA", "macro overlap", "parseable DEF", "replay"],
+      "artifact_patterns": ["**/*.log", "**/*.json", "**/*.csv", "**/*.def"]
+    },
+    "place_opt": {
+      "source_paths": ["OpenROAD-3D/openroad/src/gpl", "OpenROAD-3D/openroad/src/dpl", "OpenROAD-3D/openroad/src/rsz", "OpenROAD-3D/openroad/src/cts", "OpenROAD-3D/flow/scripts"],
+      "config_paths": ["OpenROAD-3D/flow/designs", "OpenROAD-3D/flow/platforms"],
+      "log_roots": ["OpenROAD-3D/flow/logs", "OpenROAD-3D/flow/reports"],
+      "result_roots": ["OpenROAD-3D/flow/results"],
+      "compile_commands": ["cmake --build OpenROAD-3D/openroad/build --target openroad -j <threads>", "cd OpenROAD-3D/flow && make do-place do-cts"],
+      "evaluation_commands": ["cd OpenROAD-3D/flow && make DESIGN_CONFIG=<config> FLOW_VARIANT=<variant> do-place do-cts"],
+      "metrics": ["HPWL", "WNS", "TNS", "density", "clock skew", "runtime"],
+      "correctness_gates": ["readable ODB/SDC", "legal placement", "clock/net/instance preservation"],
+      "artifact_patterns": ["**/3_*.log", "**/4_*.log", "**/*.rpt", "**/*.odb", "**/*.sdc"]
+    },
+    "routing": {
+      "source_paths": ["OpenROAD-3D/openroad/src/grt", "OpenROAD-3D/openroad/src/drt", "OpenROAD-3D/flow/scripts", "OpenROAD-3D/flow/scripts_3D", "OpenROAD-3D/flow/script_routing"],
+      "config_paths": ["OpenROAD-3D/flow/designs", "OpenROAD-3D/flow/platforms"],
+      "log_roots": ["OpenROAD-3D/flow/logs", "OpenROAD-3D/flow/reports"],
+      "result_roots": ["OpenROAD-3D/flow/results"],
+      "compile_commands": ["cmake --build OpenROAD-3D/openroad/build --target openroad -j <threads>", "cd OpenROAD-3D/flow && make do-route"],
+      "evaluation_commands": ["cd OpenROAD-3D/flow && make DESIGN_CONFIG=<config> FLOW_VARIANT=<variant> do-route do-finish"],
+      "metrics": ["wirelength", "vias/HBTs", "congestion", "DRC", "timing", "power"],
+      "correctness_gates": ["all nets represented", "valid guide layers", "cross-die connectivity", "routed ODB/DEF", "DRC budget"],
+      "artifact_patterns": ["**/5_*.log", "**/6_*.log", "**/*.rpt", "**/*.guide", "**/5_route.*", "**/6_final.*"]
+    }
+  }
+}

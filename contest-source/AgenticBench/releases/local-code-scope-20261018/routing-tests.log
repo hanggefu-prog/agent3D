@@ -1,0 +1,17 @@
+WARNING: Your kernel does not support swap limit capabilities or the cgroup is not mounted. Memory limited without swap.
+test_controller_elif_regression (__main__.RoutingLanguageTest) ... ok
+test_documented_policy_examples_match_cpp (__main__.RoutingLanguageTest) ... ok
+test_extended_log_and_expm1_match_compiled_scalar_policy (__main__.RoutingLanguageTest) ... ok
+test_maze_loop_budget_also_applies_to_table_length (__main__.RoutingLanguageTest) ... ok
+test_maze_nested_branch_regression_matches_both_dies (__main__.RoutingLanguageTest) ... ok
+test_nested_early_return_does_not_hide_joined_assignment (__main__.RoutingLanguageTest) ... ok
+test_net_ordering_documented_tables_match_cpp (__main__.RoutingLanguageTest) ... ok
+test_ripup_lookup_tables_and_field_named_locals (__main__.RoutingLanguageTest) ... ok
+test_table_values_are_snapshots_and_negative_loop_indices_work (__main__.RoutingLanguageTest) ... ok
+test_undefined_reads_still_rejected_after_hoisting (__main__.RoutingLanguageTest) ... ok
+test_unsafe_or_unbounded_table_operations_rejected (__main__.RoutingLanguageTest) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 6.746s
+
+OK

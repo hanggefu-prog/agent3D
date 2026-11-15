@@ -1,0 +1,4 @@
+{
+  "feedback_use": "Round 1 failed in every cell and produced no measurements, so it provides no evidence of physical improvement. This proposal makes a distinct, conservative change and leaves the native density-area term intact.",
+  "hypothesis": "A concave 3/4-power transform of incident pin weight will reduce over-damping of highly connected nodes, improving wirelength convergence while preserving the full region-specific density-area stabilization."
+}

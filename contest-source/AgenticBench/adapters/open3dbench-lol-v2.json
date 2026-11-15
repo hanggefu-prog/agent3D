@@ -1,0 +1,72 @@
+{
+  "name": "open3dbench-place-lol-v2",
+  "regime": "lol",
+  "priority": 300,
+  "sentinels": [
+    "Place-LoL/README.md",
+    "Place-LoL/dreamplace/Placer.py",
+    "Place-LoL/test/3D_input_default",
+    "OpenROAD-3D/flow/Makefile"
+  ],
+  "stages": {
+    "partition": {
+      "regime": "lol",
+      "source_paths": ["Place-LoL/dreamplace/Partitioner.py", "Place-LoL/dreamplace/convert_input.py"],
+      "config_paths": ["Place-LoL/test/3D_input_default", "Place-LoL/test/3D_input_inflated"],
+      "log_roots": ["Place-LoL/binaries", "Place-LoL/results"],
+      "result_roots": ["Place-LoL/binaries/converted_input", "Place-LoL/results"],
+      "compile_commands": [
+        "python3 -m compileall -q Place-LoL/dreamplace/Partitioner.py Place-LoL/dreamplace/convert_input.py",
+        "cd Place-LoL && cmake -S . -B build_convert_only -DPLACELOL_CONVERT_ONLY=ON && cmake --build build_convert_only -j <threads>"
+      ],
+      "evaluation_commands": [
+        "cd Place-LoL && bash convert_input.sh <design> <variant> 100"
+      ],
+      "metrics": ["per-die instance count and area", "cut terminals", "assignment completeness", "runtime"],
+      "correctness_gates": ["complete disjoint die assignment", "fixed design/variant/seed", "die capacity", "parseable converted input"],
+      "artifact_patterns": ["**/*.log", "**/*.json", "**/*.input", "**/*.txt", "**/*.csv"]
+    },
+    "layout": {
+      "regime": "lol",
+      "source_paths": ["Place-LoL/dreamplace", "Place-LoL/PlaceDB.py", "Place-LoL/Params.py"],
+      "config_paths": ["Place-LoL/test/3D_input_default", "Place-LoL/test/3D_input_inflated", "Place-LoL/dreamplace/params.json"],
+      "log_roots": ["Place-LoL/results", "Place-LoL/binaries"],
+      "result_roots": ["Place-LoL/results", "Place-LoL/binaries/converted_output", "Place-LoL/binaries"],
+      "compile_commands": [
+        "python3 -m compileall -q Place-LoL/dreamplace Place-LoL/PlaceDB.py Place-LoL/Params.py",
+        "cd Place-LoL && cmake -S . -B build -DCMAKE_INSTALL_PREFIX=install && cmake --build build -j <threads> && cmake --install build"
+      ],
+      "evaluation_commands": [
+        "cd Place-LoL && python3 dreamplace/Placer.py test/3D_input_<variant>/<design>.json",
+        "cd Place-LoL && bash convert_output.sh <design> <method> <variant>"
+      ],
+      "metrics": ["converged HPWL", "density overflow", "maximum density", "RUDY or pin-RUDY when enabled", "runtime"],
+      "correctness_gates": ["fixed design/variant/seed/die assignment", "component/net count", "inside DIEAREA", "no illegal overlap", "parseable DEF", "deterministic replay"],
+      "artifact_patterns": ["**/log", "**/*.log", "**/*.json", "**/*.csv", "**/*.def", "**/*.png", "**/*.plt"]
+    },
+    "place_opt": {
+      "regime": "lol",
+      "source_paths": ["OpenROAD-3D/openroad/src/gpl", "OpenROAD-3D/openroad/src/dpl", "OpenROAD-3D/openroad/src/rsz", "OpenROAD-3D/openroad/src/cts", "OpenROAD-3D/flow/scripts"],
+      "config_paths": ["OpenROAD-3D/flow/designs", "OpenROAD-3D/flow/platforms"],
+      "log_roots": ["OpenROAD-3D/flow/logs", "OpenROAD-3D/flow/reports"],
+      "result_roots": ["OpenROAD-3D/flow/results"],
+      "compile_commands": ["cmake --build OpenROAD-3D/openroad/build --target openroad -j <threads>", "cd OpenROAD-3D/flow && make do-place do-cts"],
+      "evaluation_commands": ["cd OpenROAD-3D/flow && make DESIGN_CONFIG=<config> FLOW_VARIANT=<variant> do-place do-cts"],
+      "metrics": ["HPWL", "WNS", "TNS", "density", "clock skew and latency", "runtime"],
+      "correctness_gates": ["readable placement/CTS ODB and SDC", "legal placement", "clock/net/instance preservation", "fixed LoL input DEF"],
+      "artifact_patterns": ["**/3_*.log", "**/4_*.log", "**/*.rpt", "**/*.odb", "**/*.sdc"]
+    },
+    "routing": {
+      "regime": "lol",
+      "source_paths": ["OpenROAD-3D/openroad/src/grt", "OpenROAD-3D/openroad/src/drt", "OpenROAD-3D/flow/scripts", "OpenROAD-3D/flow/scripts_3D", "OpenROAD-3D/flow/script_routing"],
+      "config_paths": ["OpenROAD-3D/flow/designs", "OpenROAD-3D/flow/platforms"],
+      "log_roots": ["OpenROAD-3D/flow/logs", "OpenROAD-3D/flow/reports"],
+      "result_roots": ["OpenROAD-3D/flow/results"],
+      "compile_commands": ["cmake --build OpenROAD-3D/openroad/build --target openroad -j <threads>", "cd OpenROAD-3D/flow && make do-route"],
+      "evaluation_commands": ["cd OpenROAD-3D/flow && make DESIGN_CONFIG=<config> FLOW_VARIANT=<variant> do-route do-finish"],
+      "metrics": ["routed wirelength", "vias", "congestion/overflow", "DRC", "WNS", "TNS", "power", "runtime"],
+      "correctness_gates": ["all nets represented", "valid guide layers", "cross-die connectivity", "parseable routed ODB/DEF", "DRC budget"],
+      "artifact_patterns": ["**/5_*.log", "**/6_*.log", "**/*.rpt", "**/*.guide", "**/5_route.*", "**/6_final.*"]
+    }
+  }
+}

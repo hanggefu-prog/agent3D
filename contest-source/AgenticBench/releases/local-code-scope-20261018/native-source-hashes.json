@@ -1,0 +1,12 @@
+{
+  "AgenticBench/local_bench/hbt_policy.py": "d3eb618d65e0bbe870b30a873cf15b6213003cfe24581a461df6393e0d00113e",
+  "AgenticBench/local_bench/numerical_programs.py": "94467f01e28e5ddbc3162d558d8ecff18be819d837ffbcf98d13a38674b806cd",
+  "AgenticBench/local_tasks/placement_control_language.py": "c516c0b4080aec88e66bf214f6529105c20c9a3c1e16d7425f5142e3634cf9bc",
+  "AgenticBench/local_tasks/placement_parameters_reference_20260923/program_adapter.py": "aafce9e6360e35429f100f6f865656db1e37c9616ad28c4b2f91cf4208407b47",
+  "AgenticBench/local_tasks/placement_source_common.py": "bbf26aeb3eb18ac9d3f27979914b6273b1d4565aa7f91243cd5ad0393ef775a4",
+  "AgenticBench/local_tasks/routing_scalar_common.py": "d80a143e4fb25c3f18121504699e4f8ce485b9bbe012f1f012e1e4af96c27ba3",
+  "AgenticBench/local_tasks/tp_gnn_loss_patch.py": "95914b474af48f673ba10ef3839a56f69856355cd2c6b4d137e2df55e256f8bf",
+  "AgenticBench/local_tasks/tp_gnn_timing_context.py": "3f4fbc5cfd5b8ad2b1d19a3284aacad11470e5224128e4b4502e6ff58191ae89",
+  "Place-3D/src/hbt/policy.py": "28c66a315cac9f06e16baf6aed868f904134ec78971a546e07f2313fcc9c8ad8",
+  "Place-3D/src/hbt/policy_grammar.py": "842ab3c3f4fb84a27105dcb49ef6e9ae2adcaabac0d5742633a94197ad81073d"
+}
