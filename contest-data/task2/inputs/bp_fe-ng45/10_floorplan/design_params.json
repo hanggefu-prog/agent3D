@@ -1,0 +1,25 @@
+{
+  "def_input": "../../run/10_floorplan/design.def",
+  "detailed_place_flag": 0,
+  "enable_fillers": 0,
+  "global_place_flag": 0,
+  "gpu": 0,
+  "lef_input": [
+    "../OpenROAD-3D/flow/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef",
+    "../OpenROAD-3D/flow/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef",
+    "../OpenROAD-3D/flow/platforms/nangate45/lef/fakeram45_512x64.lef",
+    "../OpenROAD-3D/flow/platforms/nangate45/lef/fakeram45_64x7.lef",
+    "../OpenROAD-3D/flow/platforms/nangate45/lef/fakeram45_64x96.lef"
+  ],
+  "legalize_flag": 0,
+  "lib_input": [
+    "../OpenROAD-3D/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+    "../OpenROAD-3D/flow/platforms/nangate45/lib/fakeram45_512x64.lib",
+    "../OpenROAD-3D/flow/platforms/nangate45/lib/fakeram45_64x7.lib",
+    "../OpenROAD-3D/flow/platforms/nangate45/lib/fakeram45_64x96.lib"
+  ],
+  "num_threads": 4,
+  "plot_flag": 0,
+  "sdc_input": "../../run/10_floorplan/design.sdc",
+  "verilog_input": "../../run/10_floorplan/design.v"
+}

@@ -1,0 +1,10 @@
+{
+  "macro_count": 24,
+  "masters": {
+    "fakeram45_256x95": 1,
+    "fakeram45_512x64": 17,
+    "fakeram45_64x15": 1,
+    "fakeram45_64x7": 1,
+    "fakeram45_64x96": 4
+  }
+}

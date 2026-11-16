@@ -1,0 +1,582 @@
+{
+  "input_summary": {
+    "area_definition": "sum of LEF physical rectangle areas excluding COVER",
+    "cell_area_um2": 2828.607479999949,
+    "component_area_um2": 15695.82547999995,
+    "dbu_per_micron": 1000,
+    "declared_clock_commands": 1,
+    "instance_count": 24570,
+    "lef_inputs_found": 5,
+    "lef_inputs_requested": 5,
+    "macro_area_um2": 12867.218,
+    "macro_count": 11,
+    "missing_lef_masters": [],
+    "missing_metric_reason": null,
+    "net_count": 26605,
+    "pin_count": 2511,
+    "source": "design.def"
+  },
+  "mode": "rtl",
+  "observability": {
+    "artifact_paths": [
+      "design_params.json",
+      "macro_inventory.json",
+      "metrics.json",
+      "synthesis_metrics.json"
+    ],
+    "collection_issues": [],
+    "commands": [
+      {
+        "attempt_id": "36c80509049347a48e5823163e2cb502",
+        "command": [
+          "make",
+          "--no-print-directory",
+          "-f",
+          "Makefile",
+          "DESIGN_CONFIG=/workspace/OpenROAD-3D/flow/designs/asap7/bp_fe_top/config.mk",
+          "PLATFORM=asap7",
+          "WORK_HOME=/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/openroad_work/f0cdf494d0536239",
+          "FLOW_VARIANT=input",
+          "ABC_CLOCK_PERIOD_IN_PS=1800",
+          "SYNTH_HIERARCHICAL=0",
+          "RTLMP_FLOW=0",
+          "PRESERVE_CELLS=",
+          "synth",
+          "do-2_1_floorplan"
+        ],
+        "command_id": "e93c7c1896f748ea9eafa797239eb00f",
+        "completed_at": "2026-11-01T18:48:20.261271+00:00",
+        "component": "make",
+        "cwd": "/workspace/OpenROAD-3D/flow",
+        "die": null,
+        "line": 1,
+        "log": "synthesis.log",
+        "log_format": "sectioned-tool-transcript-v1",
+        "log_role": "unclassified",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 8,
+        "parent_command_id": null,
+        "peak_process_tree_rss_kib_sampled": 365760,
+        "returncode": 0,
+        "runtime_seconds": 94.37138264626265,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "stage": "input",
+        "started_at": "2026-11-01T18:46:45.889935+00:00",
+        "step": "tool_command",
+        "warning_error_line_count": 43
+      },
+      {
+        "attempt_id": "36c80509049347a48e5823163e2cb502",
+        "command": [
+          "make",
+          "--no-print-directory",
+          "-f",
+          "Makefile",
+          "DESIGN_CONFIG=/workspace/OpenROAD-3D/flow/designs/asap7/bp_fe_top/config.mk",
+          "PLATFORM=asap7",
+          "WORK_HOME=/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/openroad_work/f0cdf494d0536239",
+          "FLOW_VARIANT=input",
+          "ABC_CLOCK_PERIOD_IN_PS=1800",
+          "SYNTH_HIERARCHICAL=0",
+          "RTLMP_FLOW=0",
+          "PRESERVE_CELLS=",
+          "2_1_floorplan.odb.def"
+        ],
+        "command_id": "4fef729acfe4424cb2219f37d3acd273",
+        "completed_at": "2026-11-01T18:48:24.922644+00:00",
+        "component": "make",
+        "cwd": "/workspace/OpenROAD-3D/flow",
+        "die": null,
+        "line": 2,
+        "log": "synthesis_export.log",
+        "log_format": "sectioned-tool-transcript-v1",
+        "log_role": "unclassified",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 8,
+        "parent_command_id": null,
+        "peak_process_tree_rss_kib_sampled": 78492,
+        "returncode": 0,
+        "runtime_seconds": 2.5048224329948425,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "stage": "input",
+        "started_at": "2026-11-01T18:48:22.417865+00:00",
+        "step": "tool_command",
+        "warning_error_line_count": 0
+      },
+      {
+        "attempt_id": "36c80509049347a48e5823163e2cb502",
+        "command": [
+          "/usr/local/bin/openroad",
+          "-exit",
+          "/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/00_input/macro_inventory.tcl"
+        ],
+        "command_id": "9edcd13779f7483fb31da56d381b666f",
+        "completed_at": "2026-11-01T18:48:25.271853+00:00",
+        "component": "OpenROAD",
+        "cwd": "/workspace/OpenROAD-3D/flow",
+        "die": null,
+        "line": 3,
+        "log": "macro_inventory.log",
+        "log_format": "sectioned-tool-transcript-v1",
+        "log_role": "native_tool",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 8,
+        "parent_command_id": null,
+        "peak_process_tree_rss_kib_sampled": 1400,
+        "returncode": 0,
+        "runtime_seconds": 0.3223966285586357,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "stage": "input",
+        "started_at": "2026-11-01T18:48:24.949506+00:00",
+        "step": "physical_tool",
+        "warning_error_line_count": 0
+      }
+    ],
+    "completed_at": "2026-11-01T18:48:35.920165+00:00",
+    "design": "bp_fe",
+    "error": null,
+    "histories": {
+      "optimization": {
+        "available": false,
+        "reason": "no recognized tool iteration records"
+      },
+      "training": {
+        "available": false,
+        "reason": "no recognized tool iteration records"
+      }
+    },
+    "logs": {
+      "byte_identical_groups": [],
+      "duplicate_semantics": "identical bytes alone do not prove duplicate execution; no files removed",
+      "files": [
+        {
+          "bytes": 1487,
+          "classification_source": "commands.jsonl:3",
+          "ownership": "current_stage",
+          "path": "macro_inventory.log",
+          "role": "native_tool",
+          "sections": [
+            {
+              "inside_upstream_reference": false,
+              "line": 1,
+              "text": "=== CONTEXT / Log ownership ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 2,
+              "text": "stage=\"input\" component=\"OpenROAD\" step=\"physical_tool\" die=null role=\"native_tool\""
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 3,
+              "text": "attempt_id=\"36c80509049347a48e5823163e2cb502\" command_id=\"9edcd13779f7483fb31da56d381b666f\" parent_command_id=null"
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 4,
+              "text": "=== INPUT / Existing inputs and configuration; no upstream rerun implied ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 5,
+              "text": "No explicit input-file arguments recognized. Inputs may come from tool configuration or environment; their provenance is not inferred."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 6,
+              "text": "=== CURRENT_EXECUTION / Current command output in original tool order ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 7,
+              "text": "Nested commands have their own boundaries. Parent timings may include child timings; do not add them together."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 16,
+              "text": "=== OUTPUT / Current command exit and downstream handoff locations ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 17,
+              "text": "process_returncode=0; process exit only, not stage validation."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 18,
+              "text": "Stage conclusions come from run.json, stage_manifest.json, and checkpoint/validation results. A log footer is not proof of success."
+            }
+          ],
+          "sections_omitted": 0,
+          "sha256": "aab5270a948a612d59126131f9ad939d5ebaa7c4d96d1f6ef4dedbe16a8b0305",
+          "source_sha256": "aab5270a948a612d59126131f9ad939d5ebaa7c4d96d1f6ef4dedbe16a8b0305",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {},
+          "warning_examples": [],
+          "warning_groups": [],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 0,
+          "warning_occurrences_by_text_scope": {},
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 42017,
+          "classification_source": "commands.jsonl:1",
+          "ownership": "current_stage",
+          "path": "synthesis.log",
+          "role": "unclassified",
+          "sections": [
+            {
+              "inside_upstream_reference": false,
+              "line": 1,
+              "text": "=== CONTEXT / Log ownership ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 2,
+              "text": "stage=\"input\" component=\"make\" step=\"tool_command\" die=null role=\"unclassified\""
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 3,
+              "text": "attempt_id=\"36c80509049347a48e5823163e2cb502\" command_id=\"e93c7c1896f748ea9eafa797239eb00f\" parent_command_id=null"
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 4,
+              "text": "=== INPUT / Existing inputs and configuration; no upstream rerun implied ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 5,
+              "text": "No explicit input-file arguments recognized. Inputs may come from tool configuration or environment; their provenance is not inferred."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 6,
+              "text": "=== CURRENT_EXECUTION / Current command output in original tool order ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 7,
+              "text": "Nested commands have their own boundaries. Parent timings may include child timings; do not add them together."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 458,
+              "text": "=== OUTPUT / Current command exit and downstream handoff locations ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 459,
+              "text": "process_returncode=0; process exit only, not stage validation."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 460,
+              "text": "Stage conclusions come from run.json, stage_manifest.json, and checkpoint/validation results. A log footer is not proof of success."
+            }
+          ],
+          "sections_omitted": 0,
+          "sha256": "38fc3d60f78b3530ccd88cf3c6a135857f5f5c608de405622aac72b25dc5e60a",
+          "source_sha256": "38fc3d60f78b3530ccd88cf3c6a135857f5f5c608de405622aac72b25dc5e60a",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "IFP-0028": 1,
+            "STA-1212": 10
+          },
+          "warning_examples": [
+            {
+              "line": 384,
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 13178, timing group from output port."
+            },
+            {
+              "line": 385,
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 13211, timing group from output port."
+            },
+            {
+              "line": 386,
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 13244, timing group from output port."
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "STA-1212",
+              "count": 1,
+              "first_line": 384,
+              "representative_lines": [
+                384
+              ],
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 13178, timing group from output port.",
+              "text_characters": 159,
+              "text_scope": "current_log_body",
+              "text_sha256": "b519757fb06ee70b2935318ae10e1c711c4f11308b7f1b1044d1df3a062a8f6e",
+              "text_truncated": false
+            },
+            {
+              "code": "STA-1212",
+              "count": 1,
+              "first_line": 385,
+              "representative_lines": [
+                385
+              ],
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 13211, timing group from output port.",
+              "text_characters": 159,
+              "text_scope": "current_log_body",
+              "text_sha256": "30eb6e35ec00f01fa5c136b49b5cd383ed19bc16f8dd931a1fa1056c86c43608",
+              "text_truncated": false
+            },
+            {
+              "code": "STA-1212",
+              "count": 1,
+              "first_line": 386,
+              "representative_lines": [
+                386
+              ],
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 13244, timing group from output port.",
+              "text_characters": 159,
+              "text_scope": "current_log_body",
+              "text_sha256": "112746f05deb6ed126147cceb5e8c26972187cc70fd13b14c1c11f55434772cb",
+              "text_truncated": false
+            },
+            {
+              "code": "STA-1212",
+              "count": 1,
+              "first_line": 387,
+              "representative_lines": [
+                387
+              ],
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 13277, timing group from output port.",
+              "text_characters": 159,
+              "text_scope": "current_log_body",
+              "text_sha256": "630db0c287d47cee3f44cfd77c96b65581649438cedcd9b1d8b452f674367f95",
+              "text_truncated": false
+            },
+            {
+              "code": "STA-1212",
+              "count": 1,
+              "first_line": 388,
+              "representative_lines": [
+                388
+              ],
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 13310, timing group from output port.",
+              "text_characters": 159,
+              "text_scope": "current_log_body",
+              "text_sha256": "cb45d61991a879d9358c870f4d9fd80227ac655b5e7dc8baa094f272be9b5009",
+              "text_truncated": false
+            },
+            {
+              "code": "STA-1212",
+              "count": 1,
+              "first_line": 389,
+              "representative_lines": [
+                389
+              ],
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 13343, timing group from output port.",
+              "text_characters": 159,
+              "text_scope": "current_log_body",
+              "text_sha256": "6a7c8d9281d533867744eea77429d45fd40483f70cd15fa1ed068286d82eed3e",
+              "text_truncated": false
+            },
+            {
+              "code": "STA-1212",
+              "count": 1,
+              "first_line": 390,
+              "representative_lines": [
+                390
+              ],
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 13376, timing group from output port.",
+              "text_characters": 159,
+              "text_scope": "current_log_body",
+              "text_sha256": "cbbbdac9e0781f41b0d289acd4efa826c5bd3382ff82f7f689803d419df92799",
+              "text_truncated": false
+            },
+            {
+              "code": "STA-1212",
+              "count": 1,
+              "first_line": 391,
+              "representative_lines": [
+                391
+              ],
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 14772, timing group from output port.",
+              "text_characters": 159,
+              "text_scope": "current_log_body",
+              "text_sha256": "cef06293ada1a88ebda13a0fb854bb7bb441a84f9b9da5948c9a581ac6bbf999",
+              "text_truncated": false
+            },
+            {
+              "code": "STA-1212",
+              "count": 1,
+              "first_line": 392,
+              "representative_lines": [
+                392
+              ],
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 14805, timing group from output port.",
+              "text_characters": 159,
+              "text_scope": "current_log_body",
+              "text_sha256": "7609113c6b1e539bcc699823f09297b723e9285ef6b3b86937d5907902012ff2",
+              "text_truncated": false
+            },
+            {
+              "code": "STA-1212",
+              "count": 1,
+              "first_line": 393,
+              "representative_lines": [
+                393
+              ],
+              "text": "[WARNING STA-1212] /workspace/OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz line 14838, timing group from output port.",
+              "text_characters": 159,
+              "text_scope": "current_log_body",
+              "text_sha256": "317d209788dd7fa3fb672c62e9cca1e578a689ea9132ab6914ab65d6be636328",
+              "text_truncated": false
+            },
+            {
+              "code": "IFP-0028",
+              "count": 1,
+              "first_line": 404,
+              "representative_lines": [
+                404
+              ],
+              "text": "[WARNING IFP-0028] Core area lower left (5.000, 5.000) snapped to (5.022, 5.130).",
+              "text_characters": 81,
+              "text_scope": "current_log_body",
+              "text_sha256": "4ffd5bd5a918a8882309c0ebfad7530a2d78a1123924dce9116eb1c4bc12ebab",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 11,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 11
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 1872,
+          "classification_source": "commands.jsonl:2",
+          "ownership": "current_stage",
+          "path": "synthesis_export.log",
+          "role": "unclassified",
+          "sections": [
+            {
+              "inside_upstream_reference": false,
+              "line": 1,
+              "text": "=== CONTEXT / Log ownership ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 2,
+              "text": "stage=\"input\" component=\"make\" step=\"tool_command\" die=null role=\"unclassified\""
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 3,
+              "text": "attempt_id=\"36c80509049347a48e5823163e2cb502\" command_id=\"4fef729acfe4424cb2219f37d3acd273\" parent_command_id=null"
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 4,
+              "text": "=== INPUT / Existing inputs and configuration; no upstream rerun implied ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 5,
+              "text": "No explicit input-file arguments recognized. Inputs may come from tool configuration or environment; their provenance is not inferred."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 6,
+              "text": "=== CURRENT_EXECUTION / Current command output in original tool order ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 7,
+              "text": "Nested commands have their own boundaries. Parent timings may include child timings; do not add them together."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 15,
+              "text": "=== OUTPUT / Current command exit and downstream handoff locations ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 16,
+              "text": "process_returncode=0; process exit only, not stage validation."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 17,
+              "text": "Stage conclusions come from run.json, stage_manifest.json, and checkpoint/validation results. A log footer is not proof of success."
+            }
+          ],
+          "sections_omitted": 0,
+          "sha256": "119e537e900dd0143153015a2ca34bdea528f68ea9577ebf594b298d194b4726",
+          "source_sha256": "119e537e900dd0143153015a2ca34bdea528f68ea9577ebf594b298d194b4726",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {},
+          "warning_examples": [],
+          "warning_groups": [],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 0,
+          "warning_occurrences_by_text_scope": {},
+          "warning_text_limit_characters": 1000
+        }
+      ],
+      "warning_count_semantics": "text occurrences, not unique tool events; native warning_audit remains authoritative",
+      "warning_group_semantics": "first 200 distinct original texts per log; full-text counts for those groups remain exact; omitted occurrences remain in code totals and raw logs; no warning is accepted or downgraded by this index",
+      "warning_occurrences_in_files": 11,
+      "warning_occurrences_in_unique_file_contents": 11
+    },
+    "memory_measurement": "maximum sampled process-tree RSS, not sum across nested commands; may miss short peaks",
+    "native_metric_sources": [
+      "synthesis_metrics.json"
+    ],
+    "partial": false,
+    "peak_process_tree_rss_kib_sampled": 365760,
+    "runtime_seconds": 137.95500137656927,
+    "schema_version": 1,
+    "stage": "input",
+    "started_at": "2026-11-01T18:46:17.965196+00:00",
+    "status": "success",
+    "upstream_artifacts": []
+  },
+  "schema_version": 1,
+  "synthesis": {
+    "floorplan_checkpoint": "2_1_floorplan",
+    "frontend_contract": {
+      "abc_clock_period_ps": 1800,
+      "expected_macro_count": 11,
+      "preserve_cells": [],
+      "rtlmp_flow": false,
+      "synth_hierarchical": false
+    },
+    "io_status": "pending",
+    "macro_inventory": {
+      "macro_count": 11,
+      "masters": {
+        "fakeram7_512x64": 9,
+        "fakeram7_64x7": 1,
+        "fakeram7_64x96": 1
+      }
+    },
+    "resolved_frontend_contract": {
+      "abc_clock_period_ps": 1800,
+      "preserve_cells": [],
+      "rtlmp_flow": "0",
+      "synth_hierarchical": "0"
+    },
+    "source": "rtl"
+  }
+}

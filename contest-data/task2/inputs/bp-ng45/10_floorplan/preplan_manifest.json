@@ -1,0 +1,20 @@
+{
+  "core_area": [
+    90000,
+    90000,
+    1710000,
+    1710000
+  ],
+  "die_area": [
+    0,
+    0,
+    1800000,
+    1800000
+  ],
+  "external_io_count": 1198,
+  "floorplan": "floorplan.json",
+  "io_plan": "io_plan.csv",
+  "partition_independent": true,
+  "schema_version": 1,
+  "source_def": "design.def"
+}

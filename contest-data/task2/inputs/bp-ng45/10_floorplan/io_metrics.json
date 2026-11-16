@@ -1,0 +1,42 @@
+{
+  "algorithm": "openroad",
+  "artifacts": {
+    "def": "design.def",
+    "odb": "design.odb",
+    "pin_placement": "io_placement.tcl",
+    "preplace_def": "io_preplace.def",
+    "preplace_params": "io_preplace.params.json",
+    "seed_def": "io_seed.def"
+  },
+  "gpu": true,
+  "horizontal_layer": "metal5",
+  "owner_die": "bottom",
+  "partition_consumed": false,
+  "partition_emitted": false,
+  "pin_count": 1198,
+  "preplace": "dreamplace",
+  "schema_version": 1,
+  "seed": 1,
+  "source_2d_die_area": [
+    0,
+    0,
+    2700000,
+    2600000
+  ],
+  "status": "success",
+  "target_3d_core_area": [
+    90000,
+    90000,
+    1710000,
+    1710000
+  ],
+  "target_3d_die_area": [
+    0,
+    0,
+    1800000,
+    1800000
+  ],
+  "track_config": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/workspace/OpenROAD-3D/flow/platforms/nangate45_3D/make_tracks.tcl",
+  "unique_final_slots": 1198,
+  "vertical_layer": "metal6"
+}

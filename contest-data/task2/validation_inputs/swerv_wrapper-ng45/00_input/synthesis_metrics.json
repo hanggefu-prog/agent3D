@@ -1,0 +1,26 @@
+{
+  "floorplan_checkpoint": "2_1_floorplan",
+  "frontend_contract": {
+    "abc_clock_period_ps": 2000,
+    "expected_macro_count": 28,
+    "preserve_cells": [],
+    "rtlmp_flow": false,
+    "synth_hierarchical": false
+  },
+  "io_status": "pending",
+  "macro_inventory": {
+    "macro_count": 28,
+    "masters": {
+      "fakeram45_2048x39": 8,
+      "fakeram45_256x34": 16,
+      "fakeram45_64x21": 4
+    }
+  },
+  "resolved_frontend_contract": {
+    "abc_clock_period_ps": 2000,
+    "preserve_cells": [],
+    "rtlmp_flow": "0",
+    "synth_hierarchical": "0"
+  },
+  "source": "rtl"
+}

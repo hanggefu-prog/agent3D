@@ -1,0 +1,25 @@
+{
+  "def_input": "../../home/gcr/contest2-release/qualification/validation-prefixes/swerv_wrapper-ng45/run-v2/10_floorplan/design.def",
+  "detailed_place_flag": 0,
+  "enable_fillers": 0,
+  "global_place_flag": 0,
+  "gpu": 0,
+  "lef_input": [
+    "../OpenROAD-3D/flow/platforms/nangate45/lef/NangateOpenCellLibrary.tech.lef",
+    "../OpenROAD-3D/flow/platforms/nangate45/lef/NangateOpenCellLibrary.macro.mod.lef",
+    "../OpenROAD-3D/flow/platforms/nangate45/lef/fakeram45_2048x39.lef",
+    "../OpenROAD-3D/flow/platforms/nangate45/lef/fakeram45_256x34.lef",
+    "../OpenROAD-3D/flow/platforms/nangate45/lef/fakeram45_64x21.lef"
+  ],
+  "legalize_flag": 0,
+  "lib_input": [
+    "../OpenROAD-3D/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib",
+    "../OpenROAD-3D/flow/platforms/nangate45/lib/fakeram45_2048x39.lib",
+    "../OpenROAD-3D/flow/platforms/nangate45/lib/fakeram45_256x34.lib",
+    "../OpenROAD-3D/flow/platforms/nangate45/lib/fakeram45_64x21.lib"
+  ],
+  "num_threads": 4,
+  "plot_flag": 0,
+  "sdc_input": "../../home/gcr/contest2-release/qualification/validation-prefixes/swerv_wrapper-ng45/run-v2/10_floorplan/design.sdc",
+  "verilog_input": "../../home/gcr/contest2-release/qualification/validation-prefixes/swerv_wrapper-ng45/run-v2/10_floorplan/design.v"
+}

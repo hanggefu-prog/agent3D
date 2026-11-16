@@ -1,0 +1,793 @@
+{
+  "io": {
+    "algorithm": "openroad",
+    "artifacts": {
+      "def": "design.def",
+      "odb": "design.odb",
+      "pin_placement": "io_placement.tcl",
+      "preplace_def": "io_preplace.def",
+      "preplace_params": "io_preplace.params.json",
+      "seed_def": "io_seed.def"
+    },
+    "gpu": true,
+    "horizontal_layer": "M4",
+    "owner_die": "bottom",
+    "partition_consumed": false,
+    "partition_emitted": false,
+    "pin_count": 2511,
+    "preplace": "dreamplace",
+    "schema_version": 1,
+    "seed": 1,
+    "source_2d_die_area": [
+      0,
+      0,
+      300000,
+      240000
+    ],
+    "status": "success",
+    "target_3d_core_area": [
+      10000,
+      8000,
+      190000,
+      152000
+    ],
+    "target_3d_die_area": [
+      0,
+      0,
+      200000,
+      160000
+    ],
+    "track_config": "/workspace/OpenROAD-3D/flow/platforms/asap7_3D/make_tracks.tcl",
+    "unique_final_slots": 2511,
+    "vertical_layer": "M5"
+  },
+  "io_owner": "bottom",
+  "observability": {
+    "artifact_paths": [
+      "design_params.json",
+      "floorplan.json",
+      "io_metrics.json",
+      "io_plan.csv",
+      "io_preplace.params.json",
+      "metrics.json",
+      "optimization_history.csv",
+      "partition.names.csv",
+      "pdn_plan.json",
+      "preplan_manifest.json"
+    ],
+    "collection_issues": [],
+    "commands": [
+      {
+        "command": [
+          "/usr/local/bin/openroad",
+          "-no_init",
+          "-exit",
+          "/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan/io_seed_slots.tcl"
+        ],
+        "completed_at": "2026-11-01T18:48:38.991507+00:00",
+        "cwd": "/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan",
+        "line": 1,
+        "log": "io_seed_slots.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 1284,
+        "returncode": 0,
+        "runtime_seconds": 0.4454188644886017,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T18:48:38.546142+00:00",
+        "warning_error_line_count": 11
+      },
+      {
+        "command": [
+          "/usr/local/bin/openroad",
+          "-no_init",
+          "-exit",
+          "/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan/io_seed_apply.tcl"
+        ],
+        "completed_at": "2026-11-01T18:48:39.706343+00:00",
+        "cwd": "/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan",
+        "line": 2,
+        "log": "io_seed.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 1240,
+        "returncode": 0,
+        "runtime_seconds": 0.6997154727578163,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T18:48:39.006681+00:00",
+        "warning_error_line_count": 0
+      },
+      {
+        "command": [
+          "/usr/bin/python3",
+          "/opt/dreamplace/dreamplace/Placer.py",
+          "/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan/io_preplace.params.json"
+        ],
+        "completed_at": "2026-11-01T18:48:56.515531+00:00",
+        "cwd": "/workspace/Place-3D",
+        "line": 3,
+        "log": "io_preplace.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 4342828,
+        "returncode": 0,
+        "runtime_seconds": 16.806606747210026,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T18:48:39.708972+00:00",
+        "warning_error_line_count": 37
+      },
+      {
+        "command": [
+          "/usr/local/bin/openroad",
+          "-no_init",
+          "-exit",
+          "/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan/io_place.tcl"
+        ],
+        "completed_at": "2026-11-01T18:48:58.088383+00:00",
+        "cwd": "/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan",
+        "line": 4,
+        "log": "io_place.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 142176,
+        "returncode": 0,
+        "runtime_seconds": 1.5634492933750153,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T18:48:56.524986+00:00",
+        "warning_error_line_count": 1
+      },
+      {
+        "attempt_id": "db5020c0241241be8037bacc67b5bc9e",
+        "command": [
+          "/usr/bin/python3",
+          "/opt/dreamplace/dreamplace/convert_input.py",
+          "/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan/design_params.json",
+          "40",
+          "--outfile",
+          "/home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan/partition.input"
+        ],
+        "command_id": "1d4c1c787400425f9660ced577fd12b1",
+        "completed_at": "2026-11-01T18:49:02.445281+00:00",
+        "component": "python3",
+        "cwd": "/workspace/Place-3D",
+        "die": null,
+        "line": 5,
+        "log": "partition_input.log",
+        "log_format": "sectioned-tool-transcript-v1",
+        "log_role": "unclassified",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 8,
+        "parent_command_id": null,
+        "peak_process_tree_rss_kib_sampled": 1112208,
+        "returncode": 0,
+        "runtime_seconds": 4.214034907519817,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "stage": "floorplan",
+        "started_at": "2026-11-01T18:48:58.231294+00:00",
+        "step": "tool_command",
+        "warning_error_line_count": 36
+      }
+    ],
+    "completed_at": "2026-11-01T18:49:02.446673+00:00",
+    "design": "bp_fe",
+    "error": null,
+    "histories": {
+      "optimization": {
+        "available": true,
+        "confidence": "uncertain",
+        "other_sources": [],
+        "ownership": "current_stage",
+        "path": "optimization_history.csv",
+        "row_count": 431,
+        "selection": "legacy single-content stream; execution provenance uncertain",
+        "source_log": "io_preplace.log",
+        "source_sha256": "07b1ef4660ca005528a8e6884e2cf6556e2b4aaf8cf972133fd32dedd6a0a4b9"
+      },
+      "training": {
+        "available": false,
+        "reason": "no recognized tool iteration records"
+      }
+    },
+    "logs": {
+      "byte_identical_groups": [],
+      "duplicate_semantics": "identical bytes alone do not prove duplicate execution; no files removed",
+      "files": [
+        {
+          "bytes": 2318,
+          "classification_source": "commands.jsonl:4",
+          "ownership": "current_stage",
+          "path": "io_place.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "fc09b5affc1e69946372f01c3bac407ec5982a127646899e8aa5731a3c4459a5",
+          "source_sha256": "fc09b5affc1e69946372f01c3bac407ec5982a127646899e8aa5731a3c4459a5",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "IFP-0028": 1
+          },
+          "warning_examples": [
+            {
+              "line": 16,
+              "text": "[WARNING IFP-0028] Core area lower left (10.000, 8.000) snapped to (10.044, 8.100)."
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "IFP-0028",
+              "count": 1,
+              "first_line": 16,
+              "representative_lines": [
+                16
+              ],
+              "text": "[WARNING IFP-0028] Core area lower left (10.000, 8.000) snapped to (10.044, 8.100).",
+              "text_characters": 83,
+              "text_scope": "current_log_body",
+              "text_sha256": "3725105e3b9b88ed4f1017ca247d8c699087bb82ea180ba63a939368687d41b3",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 1,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 1
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 177120,
+          "classification_source": "commands.jsonl:3",
+          "ownership": "current_stage",
+          "path": "io_preplace.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "07b1ef4660ca005528a8e6884e2cf6556e2b4aaf8cf972133fd32dedd6a0a4b9",
+          "source_sha256": "07b1ef4660ca005528a8e6884e2cf6556e2b4aaf8cf972133fd32dedd6a0a4b9",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "unclassified": 37
+          },
+          "warning_examples": [
+            {
+              "line": 41,
+              "text": "[WARNING] Track definition in DEF ignored"
+            },
+            {
+              "line": 42,
+              "text": "[WARNING] Track definition in DEF ignored"
+            },
+            {
+              "line": 43,
+              "text": "[WARNING] Track definition in DEF ignored"
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "unclassified",
+              "count": 32,
+              "first_line": 41,
+              "representative_lines": [
+                41,
+                42,
+                43
+              ],
+              "text": "[WARNING] Track definition in DEF ignored",
+              "text_characters": 41,
+              "text_scope": "current_log_body",
+              "text_sha256": "d99cd9e52765bb7c465989cb6bfd9f98559d86e2add7fb8f9dbaef0dd5a4879f",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 73,
+              "representative_lines": [
+                73
+              ],
+              "text": "[WARNING] no Bookshelf file specified",
+              "text_characters": 37,
+              "text_scope": "current_log_body",
+              "text_sha256": "ce5d5ca003bc72cbc6537ec89360e8036f11f4c972adce1107ed4ec8620cf831",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 74,
+              "representative_lines": [
+                74
+              ],
+              "text": "[WARNING] no additional Bookshelf .pl file specified",
+              "text_characters": 52,
+              "text_scope": "current_log_body",
+              "text_sha256": "5fb2b77688714ba01ee1708458eec98ccf88879a6e88b3b44da54654a8b209d5",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 75,
+              "representative_lines": [
+                75
+              ],
+              "text": "[WARNING] 0 nets with 0 pins from same nodes",
+              "text_characters": 44,
+              "text_scope": "current_log_body",
+              "text_sha256": "c4b735c712a37c734b87a9b0b01b8591a389ab82439c5b6a6b44f30fb86cfcb0",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 76,
+              "representative_lines": [
+                76
+              ],
+              "text": "[WARNING] 66 nets should be ignored due to not enough pins",
+              "text_characters": 58,
+              "text_scope": "current_log_body",
+              "text_sha256": "5a66459c04619932d68d5a90a956cd2a1830a157701cd7a44f544dfba134aaf2",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 111,
+              "representative_lines": [
+                111
+              ],
+              "text": "[WARNING] DREAMPlace - quadratic density penalty is disabled, density weight update is forced to be based on HPWL",
+              "text_characters": 113,
+              "text_scope": "current_log_body",
+              "text_sha256": "9d472dc3dc33ba983b0475e0f74b5f02b5ba1a0ddb309e0584a72347c27777a9",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 37,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 37
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 1365,
+          "classification_source": "commands.jsonl:2",
+          "ownership": "current_stage",
+          "path": "io_seed.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "272a1cf7ab83dc6d441ce0bb888bb68cb3edb94a5228cd717111f011b2fad240",
+          "source_sha256": "272a1cf7ab83dc6d441ce0bb888bb68cb3edb94a5228cd717111f011b2fad240",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {},
+          "warning_examples": [],
+          "warning_groups": [],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 0,
+          "warning_occurrences_by_text_scope": {},
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 2792,
+          "classification_source": "commands.jsonl:1",
+          "ownership": "current_stage",
+          "path": "io_seed_slots.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "8f24ea4b3db3440d936c31ea587e260b24a29eb99e1e15f1430cdb2a0808f340",
+          "source_sha256": "8f24ea4b3db3440d936c31ea587e260b24a29eb99e1e15f1430cdb2a0808f340",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "PPL-0015": 11
+          },
+          "warning_examples": [
+            {
+              "line": 16,
+              "text": "[WARNING PPL-0015] Macro bp_fe_pc_gen_1.genblk1_branch_prediction_1.btb_1.btb_mem.macro_mem.mem is not placed."
+            },
+            {
+              "line": 17,
+              "text": "[WARNING PPL-0015] Macro icache_1.data_mem_banks_0__data_mem_bank.macro_mem.mem is not placed."
+            },
+            {
+              "line": 18,
+              "text": "[WARNING PPL-0015] Macro icache_1.data_mem_banks_1__data_mem_bank.macro_mem.mem is not placed."
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 16,
+              "representative_lines": [
+                16
+              ],
+              "text": "[WARNING PPL-0015] Macro bp_fe_pc_gen_1.genblk1_branch_prediction_1.btb_1.btb_mem.macro_mem.mem is not placed.",
+              "text_characters": 110,
+              "text_scope": "current_log_body",
+              "text_sha256": "ef092a4e8487ea09a531baf08d053650bb85ea9ab5bdcce01e7bdebbcc4892ab",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 17,
+              "representative_lines": [
+                17
+              ],
+              "text": "[WARNING PPL-0015] Macro icache_1.data_mem_banks_0__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 94,
+              "text_scope": "current_log_body",
+              "text_sha256": "3a9443ca0eb860d26f55e3b12e56ea73f8a4db9091d87e2a2bf4137b1e41b43a",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 18,
+              "representative_lines": [
+                18
+              ],
+              "text": "[WARNING PPL-0015] Macro icache_1.data_mem_banks_1__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 94,
+              "text_scope": "current_log_body",
+              "text_sha256": "3fa98cd20a228317167a283b3b2c9bd989de87122131bb8cd65dcbf15ec46d8d",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 19,
+              "representative_lines": [
+                19
+              ],
+              "text": "[WARNING PPL-0015] Macro icache_1.data_mem_banks_2__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 94,
+              "text_scope": "current_log_body",
+              "text_sha256": "14aaa2b8a4b35dd711aa76b95a75917ec77148eba47de17437142dfe95eda64b",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 20,
+              "representative_lines": [
+                20
+              ],
+              "text": "[WARNING PPL-0015] Macro icache_1.data_mem_banks_3__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 94,
+              "text_scope": "current_log_body",
+              "text_sha256": "a670f72de528ea92375903cd35384a7ff0abc3951796a483c4ece8e15f19e376",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 21,
+              "representative_lines": [
+                21
+              ],
+              "text": "[WARNING PPL-0015] Macro icache_1.data_mem_banks_4__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 94,
+              "text_scope": "current_log_body",
+              "text_sha256": "419ea95b06176260a952f3c6d4257197ea14f00c8940db193cb7428f60626a85",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 22,
+              "representative_lines": [
+                22
+              ],
+              "text": "[WARNING PPL-0015] Macro icache_1.data_mem_banks_5__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 94,
+              "text_scope": "current_log_body",
+              "text_sha256": "b91302d57964bd95c6a61af071f7973cc506a2a94a2e1dc3440e8f8299414c1a",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 23,
+              "representative_lines": [
+                23
+              ],
+              "text": "[WARNING PPL-0015] Macro icache_1.data_mem_banks_6__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 94,
+              "text_scope": "current_log_body",
+              "text_sha256": "c59df05537efce2dbc77c33221f90a44c28929f53a3063c010c931c081615409",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 24,
+              "representative_lines": [
+                24
+              ],
+              "text": "[WARNING PPL-0015] Macro icache_1.data_mem_banks_7__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 94,
+              "text_scope": "current_log_body",
+              "text_sha256": "575ed96a30a8056785a88a0c4edd604ea5f88c21d914cd1da7eb45c23ce004a4",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 25,
+              "representative_lines": [
+                25
+              ],
+              "text": "[WARNING PPL-0015] Macro icache_1.metadata_mem.macro_mem.mem is not placed.",
+              "text_characters": 75,
+              "text_scope": "current_log_body",
+              "text_sha256": "dd5cd0092ba5c0dab7fe4a6cd660fbf4a3842f36bb0d319fe57d4650386f6f39",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 26,
+              "representative_lines": [
+                26
+              ],
+              "text": "[WARNING PPL-0015] Macro icache_1.tag_mem.macro_mem.mem is not placed.",
+              "text_characters": 70,
+              "text_scope": "current_log_body",
+              "text_sha256": "7b2dc993a52c62f78a42f98594ba6f0b9a835aa28546b19c0a830894e73e6949",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 11,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 11
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 5297,
+          "classification_source": "commands.jsonl:5",
+          "ownership": "current_stage",
+          "path": "partition_input.log",
+          "role": "unclassified",
+          "sections": [
+            {
+              "inside_upstream_reference": false,
+              "line": 1,
+              "text": "=== CONTEXT / Log ownership ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 2,
+              "text": "stage=\"floorplan\" component=\"python3\" step=\"tool_command\" die=null role=\"unclassified\""
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 3,
+              "text": "attempt_id=\"db5020c0241241be8037bacc67b5bc9e\" command_id=\"1d4c1c787400425f9660ced577fd12b1\" parent_command_id=null"
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 4,
+              "text": "=== INPUT / Existing inputs and configuration; no upstream rerun implied ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 5,
+              "text": "No explicit input-file arguments recognized. Inputs may come from tool configuration or environment; their provenance is not inferred."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 6,
+              "text": "=== CURRENT_EXECUTION / Current command output in original tool order ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 7,
+              "text": "Nested commands have their own boundaries. Parent timings may include child timings; do not add them together."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 91,
+              "text": "=== OUTPUT / Current command exit and downstream handoff locations ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 92,
+              "text": "process_returncode=0; process exit only, not stage validation."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 93,
+              "text": "Stage conclusions come from run.json, stage_manifest.json, and checkpoint/validation results. A log footer is not proof of success."
+            }
+          ],
+          "sections_omitted": 0,
+          "sha256": "6ba278be6261be1a5e8bb01fe66e50b8becc22d93b6ed000c042522ebcba2a42",
+          "source_sha256": "6ba278be6261be1a5e8bb01fe66e50b8becc22d93b6ed000c042522ebcba2a42",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "unclassified": 36
+          },
+          "warning_examples": [
+            {
+              "line": 42,
+              "text": "[WARNING] Track definition in DEF ignored"
+            },
+            {
+              "line": 43,
+              "text": "[WARNING] Track definition in DEF ignored"
+            },
+            {
+              "line": 44,
+              "text": "[WARNING] Track definition in DEF ignored"
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "unclassified",
+              "count": 32,
+              "first_line": 42,
+              "representative_lines": [
+                42,
+                43,
+                44
+              ],
+              "text": "[WARNING] Track definition in DEF ignored",
+              "text_characters": 41,
+              "text_scope": "current_log_body",
+              "text_sha256": "d99cd9e52765bb7c465989cb6bfd9f98559d86e2add7fb8f9dbaef0dd5a4879f",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 74,
+              "representative_lines": [
+                74
+              ],
+              "text": "[WARNING] no Bookshelf file specified",
+              "text_characters": 37,
+              "text_scope": "current_log_body",
+              "text_sha256": "ce5d5ca003bc72cbc6537ec89360e8036f11f4c972adce1107ed4ec8620cf831",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 75,
+              "representative_lines": [
+                75
+              ],
+              "text": "[WARNING] no additional Bookshelf .pl file specified",
+              "text_characters": 52,
+              "text_scope": "current_log_body",
+              "text_sha256": "5fb2b77688714ba01ee1708458eec98ccf88879a6e88b3b44da54654a8b209d5",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 76,
+              "representative_lines": [
+                76
+              ],
+              "text": "[WARNING] 0 nets with 0 pins from same nodes",
+              "text_characters": 44,
+              "text_scope": "current_log_body",
+              "text_sha256": "c4b735c712a37c734b87a9b0b01b8591a389ab82439c5b6a6b44f30fb86cfcb0",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 77,
+              "representative_lines": [
+                77
+              ],
+              "text": "[WARNING] 66 nets should be ignored due to not enough pins",
+              "text_characters": 58,
+              "text_scope": "current_log_body",
+              "text_sha256": "5a66459c04619932d68d5a90a956cd2a1830a157701cd7a44f544dfba134aaf2",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 36,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 36
+          },
+          "warning_text_limit_characters": 1000
+        }
+      ],
+      "warning_count_semantics": "text occurrences, not unique tool events; native warning_audit remains authoritative",
+      "warning_group_semantics": "first 200 distinct original texts per log; full-text counts for those groups remain exact; omitted occurrences remain in code totals and raw logs; no warning is accepted or downgraded by this index",
+      "warning_occurrences_in_files": 85,
+      "warning_occurrences_in_unique_file_contents": 85
+    },
+    "memory_measurement": "maximum sampled process-tree RSS, not sum across nested commands; may miss short peaks",
+    "native_metric_sources": [
+      "io_metrics.json"
+    ],
+    "partial": false,
+    "peak_process_tree_rss_kib_sampled": 4342828,
+    "runtime_seconds": 24.01084041595459,
+    "schema_version": 1,
+    "stage": "floorplan",
+    "started_at": "2026-11-01T18:48:38.435839+00:00",
+    "status": "success",
+    "upstream_artifacts": []
+  },
+  "partition_consumed": false,
+  "pin_algorithm": "openroad",
+  "preplace": "dreamplace",
+  "schema_version": 1,
+  "status": "success",
+  "tool_iterations": {
+    "optimization": {
+      "last_global_placement_record": {
+        "density_weight": 0.001762803,
+        "gamma": 13.68892,
+        "hpwl_log_label": "wHPWL",
+        "hpwl_native": 6899280.0,
+        "hpwl_units": "placer_native_not_microns",
+        "iteration": 430,
+        "max_density": 9.777,
+        "objective_native": 6378820.0,
+        "overflow": 0.07986563,
+        "overflow_units": "fraction",
+        "phase": "global_placement",
+        "source_line": 2701,
+        "source_log": "io_preplace.log",
+        "source_sha256": "07b1ef4660ca005528a8e6884e2cf6556e2b4aaf8cf972133fd32dedd6a0a4b9"
+      },
+      "last_record": {
+        "density_weight": 0.001762803,
+        "gamma": 13.68892,
+        "hpwl_log_label": "wHPWL",
+        "hpwl_native": 6899280.0,
+        "hpwl_units": "placer_native_not_microns",
+        "iteration": 430,
+        "max_density": 9.777,
+        "objective_native": 6378820.0,
+        "overflow": 0.07986563,
+        "overflow_units": "fraction",
+        "phase": "global_placement",
+        "source_line": 2701,
+        "source_log": "io_preplace.log",
+        "source_sha256": "07b1ef4660ca005528a8e6884e2cf6556e2b4aaf8cf972133fd32dedd6a0a4b9"
+      },
+      "region_order": "native fence-region order; do not assume die order"
+    }
+  }
+}

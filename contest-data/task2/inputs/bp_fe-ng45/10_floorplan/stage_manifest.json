@@ -1,0 +1,113 @@
+{
+  "artifacts": {
+    "def": {
+      "bytes": 4817071,
+      "path": "design.def",
+      "sha256": "1e29fe102fed41789d4ff53d0450e69327851fd4adc6be2fc28ff25e6fbaa8e4"
+    },
+    "design_params": {
+      "bytes": 1035,
+      "path": "design_params.json",
+      "sha256": "7bcec4d2b97c4c511345a770fc98a60274cfe6c8fb29660d3dac5a0f1947cff5"
+    },
+    "diagnostics_commands_jsonl": {
+      "bytes": 4412,
+      "path": "commands.jsonl",
+      "sha256": "98b9b30c5266c1de4a7a7cdd3a1233c149ffbb928466f78261e8e44bda0bcd73"
+    },
+    "diagnostics_metrics_json": {
+      "bytes": 31144,
+      "path": "metrics.json",
+      "sha256": "2e5e0148e8cf2e23c2a0a4ee2072b47c821a41599880dcb21e5617fcdaa4e6d5"
+    },
+    "diagnostics_optimization_history_csv": {
+      "bytes": 83807,
+      "path": "optimization_history.csv",
+      "sha256": "268d0d824116fb279595d6939d9197d0e94258034a8694afedb4c870a5a98369"
+    },
+    "floorplan": {
+      "bytes": 1324,
+      "path": "floorplan.json",
+      "sha256": "6354a80bba4daafe094b03627662e4c399f8a2c73b5c6aff0adab9c607c02abe"
+    },
+    "io_metrics": {
+      "bytes": 940,
+      "path": "io_metrics.json",
+      "sha256": "5ceaf9952683c649c5ad8815b803901e5b66416be2ae928806385d6b32442ad2"
+    },
+    "io_plan": {
+      "bytes": 236823,
+      "path": "io_plan.csv",
+      "sha256": "5bb89da1c2eed9ca7eff2f6933f310085336266297cac0eb43a7ef0a1b52a763"
+    },
+    "io_preview_def": {
+      "bytes": 4666422,
+      "path": "io_preplace.def",
+      "sha256": "53f11d8b5e2e4090e139d52d25ce495010d9e5cbfcb050832c50686fc380cbce"
+    },
+    "odb": {
+      "bytes": 14277016,
+      "path": "design.odb",
+      "sha256": "9475464e05a0694a78a8e946c854a8b4563ae3c1a06895fe5b23315dba2025c7"
+    },
+    "partition_input": {
+      "bytes": 2235992,
+      "path": "partition.input",
+      "sha256": "71335d5aadf5a1d50d8cb41a797b3cfbe651c23fa316f3e9f8abb5cf8db35370"
+    },
+    "partition_names": {
+      "bytes": 402961,
+      "path": "partition.names.csv",
+      "sha256": "470a05c79b0b7650147ae9eef369d463155811fe0eccdd55443175786332f4f7"
+    },
+    "pdn_plan": {
+      "bytes": 301,
+      "path": "pdn_plan.json",
+      "sha256": "b553295779885545cc4bc557c2e37069fa120121e806d2b1e6249b37294f5936"
+    },
+    "preplan_manifest": {
+      "bytes": 306,
+      "path": "preplan_manifest.json",
+      "sha256": "48e1d70dfb1975aa99b30003f96086a6457eb4475fd1ed18ba867882305e6b9a"
+    },
+    "sdc": {
+      "bytes": 2160,
+      "path": "design.sdc",
+      "sha256": "f54a8e78db2c390a257181b5384aab07b58230204ce78b4d724b8ff563d1b9a7"
+    },
+    "verilog": {
+      "bytes": 4146894,
+      "path": "design.v",
+      "sha256": "9365ec18bcb256f191cb60a8ea7e9f442d64d94585ef3df53abd5511e1643d44"
+    }
+  },
+  "design": "bp_fe",
+  "integration": "lol",
+  "method": "fixed+pins:openroad",
+  "pdk": "ng45",
+  "provenance": {
+    "container_image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+    "container_image_id": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+    "container_image_version": "2.0",
+    "implementation_sha256": "fcc95e7b5635ffe793cf765770c72adbb6a2765c3951fd3c43b33c76d8ff767c",
+    "openroad_version": "GITDIR-NOTFOUND",
+    "python_version": "3.8.10",
+    "repo_commit": "b9e0b67fe6fbe9a1919510e40be205398526d6ed",
+    "repo_dirty": false,
+    "yosys_version": "Yosys 0.58 (git sha1 157aabb5831cc77d08346001c4a085f188d7c736, g++ 9.4.0-1ubuntu1~20.04.2 -fPIC -O3)"
+  },
+  "schema_version": 1,
+  "signature": {
+    "config": "812953fe8a17c022212808194fbc2511d9ee0ec6b4a697abafabbbd62322b6bd",
+    "implementation": "fcc95e7b5635ffe793cf765770c72adbb6a2765c3951fd3c43b33c76d8ff767c",
+    "runtime": "b131983239397045c52e151afd1e3d273e7bae84665bb5f90c80e8377102e420",
+    "upstream": "a9f9cbbc2c802cac0c62c5b2202de7061b7c1dd9f9fe65eb0ce4434e5a5c16db"
+  },
+  "stage": "floorplan",
+  "status": "success",
+  "timing": {
+    "completed_at": "2026-11-01T04:29:08.866430+00:00",
+    "runtime_seconds": 22.937914676964283,
+    "started_at": "2026-11-01T04:28:45.928521+00:00"
+  }
+}

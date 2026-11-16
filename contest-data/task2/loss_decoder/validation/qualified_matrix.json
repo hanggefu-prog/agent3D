@@ -1,0 +1,75 @@
+{
+  "cases": [
+    "swerv_wrapper-ng45",
+    "bp_fe-asap7"
+  ],
+  "cells": [
+    {
+      "base_config": "configs/swerv_wrapper-ng45/1001.yaml",
+      "baseline_run": "../../validation_inputs/swerv_wrapper-ng45",
+      "case": "swerv_wrapper-ng45",
+      "reference_run": "references/swerv_wrapper-ng45/1001/run",
+      "seed": "1001"
+    },
+    {
+      "base_config": "configs/swerv_wrapper-ng45/1002.yaml",
+      "baseline_run": "../../validation_inputs/swerv_wrapper-ng45",
+      "case": "swerv_wrapper-ng45",
+      "reference_run": "references/swerv_wrapper-ng45/1002/run",
+      "seed": "1002"
+    },
+    {
+      "base_config": "configs/swerv_wrapper-ng45/1003.yaml",
+      "baseline_run": "../../validation_inputs/swerv_wrapper-ng45",
+      "case": "swerv_wrapper-ng45",
+      "reference_run": "references/swerv_wrapper-ng45/1003/run",
+      "seed": "1003"
+    },
+    {
+      "base_config": "configs/bp_fe-asap7/1001.yaml",
+      "baseline_run": "../../validation_inputs/bp_fe-asap7",
+      "case": "bp_fe-asap7",
+      "reference_run": "references/bp_fe-asap7/1001/run",
+      "seed": "1001"
+    },
+    {
+      "base_config": "configs/bp_fe-asap7/1002.yaml",
+      "baseline_run": "../../validation_inputs/bp_fe-asap7",
+      "case": "bp_fe-asap7",
+      "reference_run": "references/bp_fe-asap7/1002/run",
+      "seed": "1002"
+    },
+    {
+      "base_config": "configs/bp_fe-asap7/1003.yaml",
+      "baseline_run": "../../validation_inputs/bp_fe-asap7",
+      "case": "bp_fe-asap7",
+      "reference_run": "references/bp_fe-asap7/1003/run",
+      "seed": "1003"
+    }
+  ],
+  "schema_version": 1,
+  "seeds": [
+    {
+      "id": "1001",
+      "io": 1,
+      "partition": 1001,
+      "placement": 1001,
+      "routing": -1
+    },
+    {
+      "id": "1002",
+      "io": 1,
+      "partition": 1002,
+      "placement": 1002,
+      "routing": -1
+    },
+    {
+      "id": "1003",
+      "io": 1,
+      "partition": 1003,
+      "placement": 1003,
+      "routing": -1
+    }
+  ],
+  "task": "tp_gnn_loss_decoder_timing"
+}

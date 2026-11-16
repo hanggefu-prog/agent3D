@@ -1,0 +1,89 @@
+{
+  "artifacts": {
+    "def": {
+      "bytes": 3634644,
+      "path": "design.def",
+      "sha256": "7a9d54959ab133ab60d2fe1c5673b7d37daeeecf1816abc387077dec12dd583b"
+    },
+    "design_params": {
+      "bytes": 1486,
+      "path": "design_params.json",
+      "sha256": "aebadbd025dddb434e198b426592d13f9fcaea9b08045c2b11dea4473ef32282"
+    },
+    "diagnostics_commands_jsonl": {
+      "bytes": 3430,
+      "path": "commands.jsonl",
+      "sha256": "524c62b4fe74233f557b4828bf927929eb29bcae30c44dcfc6ffafce1ea4006d"
+    },
+    "diagnostics_metrics_json": {
+      "bytes": 23958,
+      "path": "metrics.json",
+      "sha256": "d45aaf6acc0cff9ff3ae06d661a3548b53b6b7aaea7e38c9e7b03fae9094af19"
+    },
+    "macro_inventory": {
+      "bytes": 118,
+      "path": "macro_inventory.json",
+      "sha256": "02e1481403484c23b7900cab93cda5e061a6d0e505c9502d3dfa143ef0cb12da"
+    },
+    "metrics": {
+      "bytes": 23958,
+      "path": "metrics.json",
+      "sha256": "d45aaf6acc0cff9ff3ae06d661a3548b53b6b7aaea7e38c9e7b03fae9094af19"
+    },
+    "odb": {
+      "bytes": 13254312,
+      "path": "design.odb",
+      "sha256": "89d7eea039dd71978ab986fe9846956cb0b0892a5eb392d5dbf9acaea3ab241d"
+    },
+    "sdc": {
+      "bytes": 2409,
+      "path": "design.sdc",
+      "sha256": "ee42d71ee61fc1eb0063c5bac25545c7a99b1902f115f76b9715961feeb60d17"
+    },
+    "source_config": {
+      "bytes": 2430,
+      "path": "source.mk",
+      "sha256": "5233a67f28b341cdeaa28d8ff5bc585d58f5e9674d8d8e1e1aaedd37206a2303"
+    },
+    "synthesis_metrics": {
+      "bytes": 574,
+      "path": "synthesis_metrics.json",
+      "sha256": "b7c3dd762d66b9518bc2e1c8df77e452a7026ce94cc512c3bee11bb2f1adb0b3"
+    },
+    "verilog": {
+      "bytes": 3671942,
+      "path": "design.v",
+      "sha256": "7dd73b0cc539c1a2b393cec41e32a423504fd39e526a5e1dfb8126d3996b6096"
+    }
+  },
+  "design": "bp_fe",
+  "integration": "lol",
+  "method": "rtl",
+  "pdk": "asap7",
+  "provenance": {
+    "container_image": "unknown",
+    "container_image_id": "unknown",
+    "container_image_version": "2.0",
+    "implementation_sha256": "0ca13cdd4dd632e84cc02eee5f35c2e2716980cc0e4d0fa264de973f6c7e7559",
+    "openroad_version": "GITDIR-NOTFOUND",
+    "python_version": "3.8.10",
+    "repo_commit": "29711a6b7adb6943c346df2154b30be9676d7b4c",
+    "repo_dirty": false,
+    "yosys_version": "Yosys 0.58 (git sha1 157aabb5831cc77d08346001c4a085f188d7c736, g++ 9.4.0-1ubuntu1~20.04.2 -fPIC -O3)"
+  },
+  "schema_version": 1,
+  "signature": {
+    "config": "009bd95138a4096cf914e55480e8ced94326a4069b865bce2ad315791d07d4e6",
+    "implementation": "0ca13cdd4dd632e84cc02eee5f35c2e2716980cc0e4d0fa264de973f6c7e7559",
+    "runtime": "a084d570dfed360c5a8996d40fb99a0d0ebc9ee1764ffea4a0f0cdb2f0039996",
+    "sources": "f0cdf494d0536239f662fa998fb3a88ec4e789ff848cc65ac76f584c65c0eb39",
+    "upstream": "none"
+  },
+  "stage": "input",
+  "status": "success",
+  "timing": {
+    "completed_at": "2026-11-01T18:48:36.115738+00:00",
+    "runtime_seconds": 138.15054734796286,
+    "started_at": "2026-11-01T18:46:17.965196+00:00"
+  }
+}

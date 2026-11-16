@@ -1,0 +1,84 @@
+{
+  "dbu_per_micron": 1000,
+  "footprint_policy": {
+    "core_margin_percent": 5.0,
+    "name": "registered-per-design-near-half-area",
+    "pdk": "asap7",
+    "source_die_size_um": [
+      300,
+      240
+    ],
+    "stack_die_size_um": [
+      200,
+      160
+    ],
+    "target_to_source_area_ratio": 0.4444444444444444
+  },
+  "io_policy": {
+    "default_die": "bottom",
+    "owner_policy": "fixed-bottom"
+  },
+  "local": {
+    "bottom": {
+      "core_area": [
+        10000,
+        8000,
+        190000,
+        152000
+      ],
+      "die_area": [
+        0,
+        0,
+        200000,
+        160000
+      ]
+    },
+    "top": {
+      "core_area": [
+        10000,
+        8000,
+        190000,
+        152000
+      ],
+      "die_area": [
+        0,
+        0,
+        200000,
+        160000
+      ]
+    }
+  },
+  "schema_version": 1,
+  "source": "rtl",
+  "source_2d": {
+    "area_um2": 72000.0,
+    "die_area": [
+      0,
+      0,
+      300000,
+      240000
+    ]
+  },
+  "units": "dbu",
+  "virtual_placement_regions": {
+    "bottom": {
+      "xh": 200000,
+      "xl": 0,
+      "yh": 160000,
+      "yl": 0
+    },
+    "canvas": {
+      "xh": 401000,
+      "xl": 0,
+      "yh": 160000,
+      "yl": 0
+    },
+    "die_gap": 1000,
+    "top": {
+      "xh": 401000,
+      "xl": 201000,
+      "yh": 160000,
+      "yl": 0
+    }
+  }
+}

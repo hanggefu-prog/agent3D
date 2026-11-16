@@ -1,0 +1,15 @@
+{
+  "queue": "../../contest-work/task2/control/queue.sqlite",
+  "host": "local-contest2",
+  "image": "sha256:f2401e978e5504c11cbc048266cc088152f3d5cf0a1a5438d91933175c9b7821",
+  "image_archive": "../../open3dbench-contest-runtime.tar.gz",
+  "capacity": {
+    "cpu": 8,
+    "memory_gb": 24,
+    "storage_gb": 40,
+    "gpus": [
+      "0"
+    ],
+    "build_slots": 0
+  }
+}

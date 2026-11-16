@@ -1,0 +1,113 @@
+{
+  "artifacts": {
+    "def": {
+      "bytes": 13348296,
+      "path": "design.def",
+      "sha256": "8d17d3924655a8040eb36397a77bf84c8a080f22644a0121e8dcca3f45fcbc1a"
+    },
+    "design_params": {
+      "bytes": 1287,
+      "path": "design_params.json",
+      "sha256": "952da78e263330de3c3623bd2e36dd91e86346f23494137319a159ad5f0c9a29"
+    },
+    "diagnostics_commands_jsonl": {
+      "bytes": 4360,
+      "path": "commands.jsonl",
+      "sha256": "f95415aa8796dbb69ec74937900a15c064fb30de9b90e44b99751bea84349ca6"
+    },
+    "diagnostics_metrics_json": {
+      "bytes": 40308,
+      "path": "metrics.json",
+      "sha256": "85f02a5fa4fb7c8841f9fd0a86ba32571cbbc36909ec3d3c14b7d68e932d2ed9"
+    },
+    "diagnostics_optimization_history_csv": {
+      "bytes": 102156,
+      "path": "optimization_history.csv",
+      "sha256": "35e9402cf8744a27b697d978eac86af588fd88278d2df99f17e8f71720944510"
+    },
+    "floorplan": {
+      "bytes": 1349,
+      "path": "floorplan.json",
+      "sha256": "f55a671ce82c522b82b12551dd181c474c3335a7e65d7aa29d8c0662c8c74305"
+    },
+    "io_metrics": {
+      "bytes": 870,
+      "path": "io_metrics.json",
+      "sha256": "96fc18fece28b2bbb5bf47e91bc954b22f058ca25bfc8a698efee7d183afc72f"
+    },
+    "io_plan": {
+      "bytes": 128521,
+      "path": "io_plan.csv",
+      "sha256": "f4f2a93ca42fcffb7526b65f750151771979fbc32b099f756de50941345038f7"
+    },
+    "io_preview_def": {
+      "bytes": 13105124,
+      "path": "io_preplace.def",
+      "sha256": "694039dd74d8a9593b68c34e10a5296b79552b5832a69e274d18376fe9dbf2c6"
+    },
+    "odb": {
+      "bytes": 40852718,
+      "path": "design.odb",
+      "sha256": "0409293f325965e806ba18cdf427cf2033221b6a39b40170c5ca79a8c035a4fb"
+    },
+    "partition_input": {
+      "bytes": 7163389,
+      "path": "partition.input",
+      "sha256": "82b30c0167cef56bc7e47a0a8afc96f5b5c5ca07d07a97d2206a7472bbc626ba"
+    },
+    "partition_names": {
+      "bytes": 1306105,
+      "path": "partition.names.csv",
+      "sha256": "11200d28c48dc6c628602adb21ac79a5b16330f21cd2c1283620dc081042780e"
+    },
+    "pdn_plan": {
+      "bytes": 301,
+      "path": "pdn_plan.json",
+      "sha256": "b553295779885545cc4bc557c2e37069fa120121e806d2b1e6249b37294f5936"
+    },
+    "preplan_manifest": {
+      "bytes": 308,
+      "path": "preplan_manifest.json",
+      "sha256": "d10498d569d752ad5d499e475c7046c2fa8abef1e101ed02b96b3b38339212fd"
+    },
+    "sdc": {
+      "bytes": 1199,
+      "path": "design.sdc",
+      "sha256": "801464dcefd123c351020dae62755793dd3d33bea6c4731b2192008362cda437"
+    },
+    "verilog": {
+      "bytes": 12592857,
+      "path": "design.v",
+      "sha256": "eddd2a2e768eea66c61fbb19d09d923496e083ed88fbe48fabbc60bf9fe617ec"
+    }
+  },
+  "design": "swerv_wrapper",
+  "integration": "lol",
+  "method": "fixed+pins:openroad",
+  "pdk": "ng45",
+  "provenance": {
+    "container_image": "unknown",
+    "container_image_id": "unknown",
+    "container_image_version": "2.0",
+    "implementation_sha256": "fcc95e7b5635ffe793cf765770c72adbb6a2765c3951fd3c43b33c76d8ff767c",
+    "openroad_version": "GITDIR-NOTFOUND",
+    "python_version": "3.8.10",
+    "repo_commit": "29711a6b7adb6943c346df2154b30be9676d7b4c",
+    "repo_dirty": false,
+    "yosys_version": "Yosys 0.58 (git sha1 157aabb5831cc77d08346001c4a085f188d7c736, g++ 9.4.0-1ubuntu1~20.04.2 -fPIC -O3)"
+  },
+  "schema_version": 1,
+  "signature": {
+    "config": "79510ee7166c168a72eb53298af63a9ae12399bdf5548c155f2933acf5e033df",
+    "implementation": "fcc95e7b5635ffe793cf765770c72adbb6a2765c3951fd3c43b33c76d8ff767c",
+    "runtime": "a084d570dfed360c5a8996d40fb99a0d0ebc9ee1764ffea4a0f0cdb2f0039996",
+    "upstream": "f6128ad3d8bdf5ebe0d5b8624992a548defc4f5913140df47f54bbd2a321d077"
+  },
+  "stage": "floorplan",
+  "status": "success",
+  "timing": {
+    "completed_at": "2026-11-01T18:57:05.997755+00:00",
+    "runtime_seconds": 54.82681965082884,
+    "started_at": "2026-11-01T18:56:11.170942+00:00"
+  }
+}

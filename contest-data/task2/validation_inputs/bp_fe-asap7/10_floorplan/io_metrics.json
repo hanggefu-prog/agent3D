@@ -1,0 +1,42 @@
+{
+  "algorithm": "openroad",
+  "artifacts": {
+    "def": "design.def",
+    "odb": "design.odb",
+    "pin_placement": "io_placement.tcl",
+    "preplace_def": "io_preplace.def",
+    "preplace_params": "io_preplace.params.json",
+    "seed_def": "io_seed.def"
+  },
+  "gpu": true,
+  "horizontal_layer": "M4",
+  "owner_die": "bottom",
+  "partition_consumed": false,
+  "partition_emitted": false,
+  "pin_count": 2511,
+  "preplace": "dreamplace",
+  "schema_version": 1,
+  "seed": 1,
+  "source_2d_die_area": [
+    0,
+    0,
+    300000,
+    240000
+  ],
+  "status": "success",
+  "target_3d_core_area": [
+    10000,
+    8000,
+    190000,
+    152000
+  ],
+  "target_3d_die_area": [
+    0,
+    0,
+    200000,
+    160000
+  ],
+  "track_config": "/workspace/OpenROAD-3D/flow/platforms/asap7_3D/make_tracks.tcl",
+  "unique_final_slots": 2511,
+  "vertical_layer": "M5"
+}

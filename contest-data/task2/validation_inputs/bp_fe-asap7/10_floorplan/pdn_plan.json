@@ -1,0 +1,14 @@
+{
+  "algorithm": "openroad",
+  "dies": [
+    "bottom",
+    "top"
+  ],
+  "ground": "VSS",
+  "physical_generation_stage": "40_pdn",
+  "power": "VDD",
+  "schema_version": 1,
+  "signal_hbt_policy": "fixed-pdn-obstacle-at-final-assignment",
+  "source_model": "independent-per-die",
+  "status": "planned"
+}

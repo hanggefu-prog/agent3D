@@ -1,0 +1,988 @@
+{
+  "io": {
+    "algorithm": "openroad",
+    "artifacts": {
+      "def": "design.def",
+      "odb": "design.odb",
+      "pin_placement": "io_placement.tcl",
+      "preplace_def": "io_preplace.def",
+      "preplace_params": "io_preplace.params.json",
+      "seed_def": "io_seed.def"
+    },
+    "gpu": true,
+    "horizontal_layer": "metal5",
+    "owner_die": "bottom",
+    "partition_consumed": false,
+    "partition_emitted": false,
+    "pin_count": 1198,
+    "preplace": "dreamplace",
+    "schema_version": 1,
+    "seed": 1,
+    "source_2d_die_area": [
+      0,
+      0,
+      2700000,
+      2600000
+    ],
+    "status": "success",
+    "target_3d_core_area": [
+      90000,
+      90000,
+      1710000,
+      1710000
+    ],
+    "target_3d_die_area": [
+      0,
+      0,
+      1800000,
+      1800000
+    ],
+    "track_config": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/workspace/OpenROAD-3D/flow/platforms/nangate45_3D/make_tracks.tcl",
+    "unique_final_slots": 1198,
+    "vertical_layer": "metal6"
+  },
+  "io_owner": "bottom",
+  "observability": {
+    "artifact_paths": [
+      "design_params.json",
+      "floorplan.json",
+      "io_metrics.json",
+      "io_plan.csv",
+      "io_preplace.params.json",
+      "metrics.json",
+      "optimization_history.csv",
+      "partition.names.csv",
+      "pdn_plan.json",
+      "preplan_manifest.json"
+    ],
+    "collection_issues": [],
+    "commands": [
+      {
+        "command": [
+          "/usr/local/bin/openroad",
+          "-no_init",
+          "-exit",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/run/10_floorplan/io_seed_slots.tcl"
+        ],
+        "completed_at": "2026-11-01T04:34:58.906116+00:00",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/run/10_floorplan",
+        "line": 1,
+        "log": "io_seed_slots.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 213112,
+        "returncode": 0,
+        "runtime_seconds": 1.8827492520213127,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T04:34:57.023419+00:00",
+        "warning_error_line_count": 24
+      },
+      {
+        "command": [
+          "/usr/local/bin/openroad",
+          "-no_init",
+          "-exit",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/run/10_floorplan/io_seed_apply.tcl"
+        ],
+        "completed_at": "2026-11-01T04:35:02.190381+00:00",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/run/10_floorplan",
+        "line": 2,
+        "log": "io_seed.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 331048,
+        "returncode": 0,
+        "runtime_seconds": 3.2755175977945328,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T04:34:58.914909+00:00",
+        "warning_error_line_count": 0
+      },
+      {
+        "command": [
+          "/usr/bin/python3",
+          "/opt/dreamplace/dreamplace/Placer.py",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/run/10_floorplan/io_preplace.params.json"
+        ],
+        "completed_at": "2026-11-01T04:35:19.275284+00:00",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/workspace/Place-3D",
+        "line": 3,
+        "log": "io_preplace.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 4911892,
+        "returncode": 0,
+        "runtime_seconds": 17.082565903663635,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T04:35:02.192793+00:00",
+        "warning_error_line_count": 25
+      },
+      {
+        "command": [
+          "/usr/local/bin/openroad",
+          "-no_init",
+          "-exit",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/run/10_floorplan/io_place.tcl"
+        ],
+        "completed_at": "2026-11-01T04:35:25.350641+00:00",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/run/10_floorplan",
+        "line": 4,
+        "log": "io_place.log",
+        "log_format": "native-stdout-stderr",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 1,
+        "peak_process_tree_rss_kib_sampled": 393636,
+        "returncode": 0,
+        "runtime_seconds": 6.047520972788334,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "started_at": "2026-11-01T04:35:19.303182+00:00",
+        "warning_error_line_count": 1
+      },
+      {
+        "attempt_id": "56c2deb8e5e949b4b6dc7def1724cf18",
+        "command": [
+          "/usr/bin/python3",
+          "/opt/dreamplace/dreamplace/convert_input.py",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/run/10_floorplan/design_params.json",
+          "100",
+          "--outfile",
+          "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/run/10_floorplan/partition.input"
+        ],
+        "command_id": "4ed4e6e9dd654b428fa1e521f88eb92f",
+        "completed_at": "2026-11-01T04:35:37.040784+00:00",
+        "component": "python3",
+        "cwd": "/home/gcr/contest-private-20261101/contest2-prep/data/prepare-bp-ng45/workspace/Place-3D",
+        "die": null,
+        "line": 5,
+        "log": "partition_input.log",
+        "log_format": "sectioned-tool-transcript-v1",
+        "log_role": "unclassified",
+        "memory_measurement": "Linux /proc process-tree RSS, sampled at 1s; shared pages may be double-counted",
+        "native_output_start_line": 8,
+        "parent_command_id": null,
+        "peak_process_tree_rss_kib_sampled": 1727424,
+        "returncode": 0,
+        "runtime_seconds": 11.382483273744583,
+        "schema_version": 1,
+        "source": "commands.jsonl",
+        "source_line_semantics": "physical_log_line_including_section_markers",
+        "stage": "floorplan",
+        "started_at": "2026-11-01T04:35:25.658347+00:00",
+        "step": "tool_command",
+        "warning_error_line_count": 25
+      }
+    ],
+    "completed_at": "2026-11-01T04:35:37.042189+00:00",
+    "design": "bp",
+    "error": null,
+    "histories": {
+      "optimization": {
+        "available": true,
+        "confidence": "uncertain",
+        "other_sources": [],
+        "ownership": "current_stage",
+        "path": "optimization_history.csv",
+        "row_count": 631,
+        "selection": "legacy single-content stream; execution provenance uncertain",
+        "source_log": "io_preplace.log",
+        "source_sha256": "81a90a2fc456751cf1e1126188bb860825ef43817112d81754b8a919f9687b33"
+      },
+      "training": {
+        "available": false,
+        "reason": "no recognized tool iteration records"
+      }
+    },
+    "logs": {
+      "byte_identical_groups": [],
+      "duplicate_semantics": "identical bytes alone do not prove duplicate execution; no files removed",
+      "files": [
+        {
+          "bytes": 3168,
+          "classification_source": "commands.jsonl:4",
+          "ownership": "current_stage",
+          "path": "io_place.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "16e8ac62039e187fe28f59e7958f15f3c4533a971b9228b19938dce6ac1a935c",
+          "source_sha256": "16e8ac62039e187fe28f59e7958f15f3c4533a971b9228b19938dce6ac1a935c",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "IFP-0028": 1
+          },
+          "warning_examples": [
+            {
+              "line": 20,
+              "text": "[WARNING IFP-0028] Core area lower left (45.000, 45.000) snapped to (45.030, 46.200)."
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "IFP-0028",
+              "count": 1,
+              "first_line": 20,
+              "representative_lines": [
+                20
+              ],
+              "text": "[WARNING IFP-0028] Core area lower left (45.000, 45.000) snapped to (45.030, 46.200).",
+              "text_characters": 85,
+              "text_scope": "current_log_body",
+              "text_sha256": "3f5ddcdf1d7d1040b29c0f8a253500c7a0a19f7fe4c32a3d76d7631cbbbbc697",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 1,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 1
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 255293,
+          "classification_source": "commands.jsonl:3",
+          "ownership": "current_stage",
+          "path": "io_preplace.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "81a90a2fc456751cf1e1126188bb860825ef43817112d81754b8a919f9687b33",
+          "source_sha256": "81a90a2fc456751cf1e1126188bb860825ef43817112d81754b8a919f9687b33",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "unclassified": 25
+          },
+          "warning_examples": [
+            {
+              "line": 43,
+              "text": "[WARNING] Track definition in DEF ignored"
+            },
+            {
+              "line": 44,
+              "text": "[WARNING] Track definition in DEF ignored"
+            },
+            {
+              "line": 45,
+              "text": "[WARNING] Track definition in DEF ignored"
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "unclassified",
+              "count": 19,
+              "first_line": 43,
+              "representative_lines": [
+                43,
+                44,
+                45
+              ],
+              "text": "[WARNING] Track definition in DEF ignored",
+              "text_characters": 41,
+              "text_scope": "current_log_body",
+              "text_sha256": "d99cd9e52765bb7c465989cb6bfd9f98559d86e2add7fb8f9dbaef0dd5a4879f",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 59,
+              "representative_lines": [
+                59
+              ],
+              "text": "[WARNING] Tr[INFO   ] DREAMPlace - set shift_factor = (20140, 22400), as original row bbox = (20140, 22400, 2.67976e+06, 2.5788e+06)",
+              "text_characters": 132,
+              "text_scope": "current_log_body",
+              "text_sha256": "0d98679c19aeece7bc2dc53b09ec1a04f2ed415b950139a4e0fcf6a7c73fafcf",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 81,
+              "representative_lines": [
+                81
+              ],
+              "text": "[WARNING] no Bookshelf file specified",
+              "text_characters": 37,
+              "text_scope": "current_log_body",
+              "text_sha256": "ce5d5ca003bc72cbc6537ec89360e8036f11f4c972adce1107ed4ec8620cf831",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 82,
+              "representative_lines": [
+                82
+              ],
+              "text": "[WARNING] no additional Bookshelf .pl file specified",
+              "text_characters": 52,
+              "text_scope": "current_log_body",
+              "text_sha256": "5fb2b77688714ba01ee1708458eec98ccf88879a6e88b3b44da54654a8b209d5",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 83,
+              "representative_lines": [
+                83
+              ],
+              "text": "[WARNING] 0 nets with 0 pins from same nodes",
+              "text_characters": 44,
+              "text_scope": "current_log_body",
+              "text_sha256": "c4b735c712a37c734b87a9b0b01b8591a389ab82439c5b6a6b44f30fb86cfcb0",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 84,
+              "representative_lines": [
+                84
+              ],
+              "text": "[WARNING] 22871 nets should be ignored due to not enough pins",
+              "text_characters": 61,
+              "text_scope": "current_log_body",
+              "text_sha256": "eaff9cecf3111672d5b060925da5bee9edf2ea183b8d19ba62bd6eb54a3d631b",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 101,
+              "representative_lines": [
+                101
+              ],
+              "text": "[WARNING] DREAMPlace - quadratic density penalty is disabled, density weight update is forced to be based on HPWL",
+              "text_characters": 113,
+              "text_scope": "current_log_body",
+              "text_sha256": "9d472dc3dc33ba983b0475e0f74b5f02b5ba1a0ddb309e0584a72347c27777a9",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 25,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 25
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 2191,
+          "classification_source": "commands.jsonl:2",
+          "ownership": "current_stage",
+          "path": "io_seed.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "616608589f9f2ac3b6b0717baa199df2545a2aa18999acfb90892f27d36fa99d",
+          "source_sha256": "616608589f9f2ac3b6b0717baa199df2545a2aa18999acfb90892f27d36fa99d",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {},
+          "warning_examples": [],
+          "warning_groups": [],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 0,
+          "warning_occurrences_by_text_scope": {},
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 5377,
+          "classification_source": "commands.jsonl:1",
+          "ownership": "current_stage",
+          "path": "io_seed_slots.log",
+          "role": "unclassified",
+          "sections": [],
+          "sections_omitted": 0,
+          "sha256": "2d96c7f5205b21815ee3e52857d1c19906d789bd3f65519d25c1da58180314d1",
+          "source_sha256": "2d96c7f5205b21815ee3e52857d1c19906d789bd3f65519d25c1da58180314d1",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "PPL-0015": 24
+          },
+          "warning_examples": [
+            {
+              "line": 20,
+              "text": "[WARNING PPL-0015] Macro multi_top.me.genblk1_0__bp_cce_top.bp_cce.directory.wg_ram.macro_mem0.mem is not placed."
+            },
+            {
+              "line": 21,
+              "text": "[WARNING PPL-0015] Macro multi_top.me.genblk1_0__bp_cce_top.bp_cce.directory.wg_ram.macro_mem1.mem is not placed."
+            },
+            {
+              "line": 22,
+              "text": "[WARNING PPL-0015] Macro multi_top.me.genblk1_0__bp_cce_top.bp_cce.pc_inst_ram.cce_inst_ram.macro_mem.mem is not placed."
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 20,
+              "representative_lines": [
+                20
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.me.genblk1_0__bp_cce_top.bp_cce.directory.wg_ram.macro_mem0.mem is not placed.",
+              "text_characters": 113,
+              "text_scope": "current_log_body",
+              "text_sha256": "27b1a7ad3b1d1644600ac6aedc9f158919be0468204c6e95b6ced651a61e9ea6",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 21,
+              "representative_lines": [
+                21
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.me.genblk1_0__bp_cce_top.bp_cce.directory.wg_ram.macro_mem1.mem is not placed.",
+              "text_characters": 113,
+              "text_scope": "current_log_body",
+              "text_sha256": "d04f640ed49246e66853386f32ed3263647a46f4ae0036ea71992b95f1a06196",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 22,
+              "representative_lines": [
+                22
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.me.genblk1_0__bp_cce_top.bp_cce.pc_inst_ram.cce_inst_ram.macro_mem.mem is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "a9ff025bf37dd73a5fa26542bd04316ffd505bfae84e4e2b52fc9a6b1e4cdf12",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 23,
+              "representative_lines": [
+                23
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.be.be_mmu.dcache.data_mem_0__data_mem.macro_mem.mem is not placed.",
+              "text_characters": 114,
+              "text_scope": "current_log_body",
+              "text_sha256": "3224c43172ac43f6fa706fc5a9a275f526449bcaf9c7ba6a2ff411307c17255d",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 24,
+              "representative_lines": [
+                24
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.be.be_mmu.dcache.data_mem_1__data_mem.macro_mem.mem is not placed.",
+              "text_characters": 114,
+              "text_scope": "current_log_body",
+              "text_sha256": "44d0de8165f9e60ad6cfe48e8bb0277d1e78e213349330b4ad54ed4984378bb8",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 25,
+              "representative_lines": [
+                25
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.be.be_mmu.dcache.data_mem_2__data_mem.macro_mem.mem is not placed.",
+              "text_characters": 114,
+              "text_scope": "current_log_body",
+              "text_sha256": "eaa4b1b5866a577ead07ac2a27bdaeedf9c99130db861c440b1501edd2a50de3",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 26,
+              "representative_lines": [
+                26
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.be.be_mmu.dcache.data_mem_3__data_mem.macro_mem.mem is not placed.",
+              "text_characters": 114,
+              "text_scope": "current_log_body",
+              "text_sha256": "895cc2d81a29a03749b718abeec7d7a6b772f73bda6462e3ba388b1f8a0cd271",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 27,
+              "representative_lines": [
+                27
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.be.be_mmu.dcache.data_mem_4__data_mem.macro_mem.mem is not placed.",
+              "text_characters": 114,
+              "text_scope": "current_log_body",
+              "text_sha256": "449d564c109ee126656327482b91d92adf329f62b1279f57b5cf9988494f1370",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 28,
+              "representative_lines": [
+                28
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.be.be_mmu.dcache.data_mem_5__data_mem.macro_mem.mem is not placed.",
+              "text_characters": 114,
+              "text_scope": "current_log_body",
+              "text_sha256": "dc3945744fb1eac13550f2a0d5c3375837401e73a6fe4f40f88bab79b1e0089f",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 29,
+              "representative_lines": [
+                29
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.be.be_mmu.dcache.data_mem_6__data_mem.macro_mem.mem is not placed.",
+              "text_characters": 114,
+              "text_scope": "current_log_body",
+              "text_sha256": "df35b86215101ce1c2877330bdfb7c1cc73d902354ca54e5c65a8ed81612dc19",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 30,
+              "representative_lines": [
+                30
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.be.be_mmu.dcache.data_mem_7__data_mem.macro_mem.mem is not placed.",
+              "text_characters": 114,
+              "text_scope": "current_log_body",
+              "text_sha256": "a91e4e8898f1b0de090a74c8a8e29e147e267d051af1694c038698218e025233",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 31,
+              "representative_lines": [
+                31
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.be.be_mmu.dcache.stat_mem.macro_mem.mem is not placed.",
+              "text_characters": 102,
+              "text_scope": "current_log_body",
+              "text_sha256": "0db77fe95ebf648227127925d843ad46e134209fa594cd31f6a0be8d854a5680",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 32,
+              "representative_lines": [
+                32
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.be.be_mmu.dcache.tag_mem.macro_mem.mem is not placed.",
+              "text_characters": 101,
+              "text_scope": "current_log_body",
+              "text_sha256": "388208dbb44f5ea1117a115805045b28edd2381db6ee135257a05f5c1533e38f",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 33,
+              "representative_lines": [
+                33
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.bp_fe_pc_gen_1.genblk1_branch_prediction_1.btb_1.btb_mem.macro_mem.mem is not placed.",
+              "text_characters": 136,
+              "text_scope": "current_log_body",
+              "text_sha256": "87b97d260f49ba973c197bc69212629cf47a68993b780099fc15a8a151c72c56",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 34,
+              "representative_lines": [
+                34
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.icache_1.data_mem_banks_0__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "0b13d17c6a80a80acf01dece86ded6048b92d025071c963df618cb10dd366513",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 35,
+              "representative_lines": [
+                35
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.icache_1.data_mem_banks_1__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "55e0f59fac071e9e35a1aafc9fc1a9bd7fcec8d2e3c4a2c5a3ff0aaef13787c7",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 36,
+              "representative_lines": [
+                36
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.icache_1.data_mem_banks_2__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "f774175bc13dcc1ef05c6989c9314db19321cc63a6a27e677e046ddab74e6b47",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 37,
+              "representative_lines": [
+                37
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.icache_1.data_mem_banks_3__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "f75f9b80f9931e94860561747c2636162e388bd9161297b543ebef3b306132a4",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 38,
+              "representative_lines": [
+                38
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.icache_1.data_mem_banks_4__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "d7af86e5fa12c9860ffa8b4a0838841b0f5aa382fd8e4845cc33cd5bb6b6b371",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 39,
+              "representative_lines": [
+                39
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.icache_1.data_mem_banks_5__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "6e4fe6bc63e968fc34d0bae0140a6f96068e9d54bb251694fe0b40249a6643f8",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 40,
+              "representative_lines": [
+                40
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.icache_1.data_mem_banks_6__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "e0320d5272e24e331eea33ea482356999ce4250b0b7bf63984ef32f567c3bcb5",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 41,
+              "representative_lines": [
+                41
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.icache_1.data_mem_banks_7__data_mem_bank.macro_mem.mem is not placed.",
+              "text_characters": 120,
+              "text_scope": "current_log_body",
+              "text_sha256": "77cd7fa308733cc78ea719c07d4a5b513c331df5a2c6616b4186fcdb0777fc14",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 42,
+              "representative_lines": [
+                42
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.icache_1.metadata_mem.macro_mem.mem is not placed.",
+              "text_characters": 101,
+              "text_scope": "current_log_body",
+              "text_sha256": "b4d8c06097912897c597450b20f6d26c676a6b1ac8e47bddc63822a749df5cec",
+              "text_truncated": false
+            },
+            {
+              "code": "PPL-0015",
+              "count": 1,
+              "first_line": 43,
+              "representative_lines": [
+                43
+              ],
+              "text": "[WARNING PPL-0015] Macro multi_top.rof1_0__core.fe.icache_1.tag_mem.macro_mem.mem is not placed.",
+              "text_characters": 96,
+              "text_scope": "current_log_body",
+              "text_sha256": "b11b946a5f0d91e0e9866011c58bffbac6081f1c82bcf426027973facd7dfa94",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 24,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 24
+          },
+          "warning_text_limit_characters": 1000
+        },
+        {
+          "bytes": 5010,
+          "classification_source": "commands.jsonl:5",
+          "ownership": "current_stage",
+          "path": "partition_input.log",
+          "role": "unclassified",
+          "sections": [
+            {
+              "inside_upstream_reference": false,
+              "line": 1,
+              "text": "=== CONTEXT / Log ownership ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 2,
+              "text": "stage=\"floorplan\" component=\"python3\" step=\"tool_command\" die=null role=\"unclassified\""
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 3,
+              "text": "attempt_id=\"56c2deb8e5e949b4b6dc7def1724cf18\" command_id=\"4ed4e6e9dd654b428fa1e521f88eb92f\" parent_command_id=null"
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 4,
+              "text": "=== INPUT / Existing inputs and configuration; no upstream rerun implied ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 5,
+              "text": "No explicit input-file arguments recognized. Inputs may come from tool configuration or environment; their provenance is not inferred."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 6,
+              "text": "=== CURRENT_EXECUTION / Current command output in original tool order ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 7,
+              "text": "Nested commands have their own boundaries. Parent timings may include child timings; do not add them together."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 82,
+              "text": "=== OUTPUT / Current command exit and downstream handoff locations ==="
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 83,
+              "text": "process_returncode=0; process exit only, not stage validation."
+            },
+            {
+              "inside_upstream_reference": false,
+              "line": 84,
+              "text": "Stage conclusions come from run.json, stage_manifest.json, and checkpoint/validation results. A log footer is not proof of success."
+            }
+          ],
+          "sections_omitted": 0,
+          "sha256": "0f22baf6c911d5dd20a6f7f415be78158d1f7ee83e956527a3a3e321dd3a2fc8",
+          "source_sha256": "0f22baf6c911d5dd20a6f7f415be78158d1f7ee83e956527a3a3e321dd3a2fc8",
+          "symlink": false,
+          "upstream_reference_closed": true,
+          "warning_codes": {
+            "unclassified": 25
+          },
+          "warning_examples": [
+            {
+              "line": 8,
+              "text": "WARNING:root:target_density 0.8 is smaller than utilization 0.872366, ignored"
+            },
+            {
+              "line": 45,
+              "text": "[WARNING] Track definition in DEF ignored"
+            },
+            {
+              "line": 46,
+              "text": "[WARNING] Track definition in DEF ignored"
+            }
+          ],
+          "warning_groups": [
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 8,
+              "representative_lines": [
+                8
+              ],
+              "text": "WARNING:root:target_density 0.8 is smaller than utilization 0.872366, ignored",
+              "text_characters": 77,
+              "text_scope": "current_log_body",
+              "text_sha256": "4f76bc2a0c13b04232fb12f24ca86070f78a52929d6fda85967e2382e817a144",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 20,
+              "first_line": 45,
+              "representative_lines": [
+                45,
+                46,
+                47
+              ],
+              "text": "[WARNING] Track definition in DEF ignored",
+              "text_characters": 41,
+              "text_scope": "current_log_body",
+              "text_sha256": "d99cd9e52765bb7c465989cb6bfd9f98559d86e2add7fb8f9dbaef0dd5a4879f",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 65,
+              "representative_lines": [
+                65
+              ],
+              "text": "[WARNING] no Bookshelf file specified",
+              "text_characters": 37,
+              "text_scope": "current_log_body",
+              "text_sha256": "ce5d5ca003bc72cbc6537ec89360e8036f11f4c972adce1107ed4ec8620cf831",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 66,
+              "representative_lines": [
+                66
+              ],
+              "text": "[WARNING] no additional Bookshelf .pl file specified",
+              "text_characters": 52,
+              "text_scope": "current_log_body",
+              "text_sha256": "5fb2b77688714ba01ee1708458eec98ccf88879a6e88b3b44da54654a8b209d5",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 67,
+              "representative_lines": [
+                67
+              ],
+              "text": "[WARNING] 0 nets with 0 pins from same nodes",
+              "text_characters": 44,
+              "text_scope": "current_log_body",
+              "text_sha256": "c4b735c712a37c734b87a9b0b01b8591a389ab82439c5b6a6b44f30fb86cfcb0",
+              "text_truncated": false
+            },
+            {
+              "code": "unclassified",
+              "count": 1,
+              "first_line": 68,
+              "representative_lines": [
+                68
+              ],
+              "text": "[WARNING] 22871 nets should be ignored due to not enough pins",
+              "text_characters": 61,
+              "text_scope": "current_log_body",
+              "text_sha256": "eaff9cecf3111672d5b060925da5bee9edf2ea183b8d19ba62bd6eb54a3d631b",
+              "text_truncated": false
+            }
+          ],
+          "warning_groups_limit": 200,
+          "warning_groups_omitted_occurrences": 0,
+          "warning_occurrences": 25,
+          "warning_occurrences_by_text_scope": {
+            "current_log_body": 25
+          },
+          "warning_text_limit_characters": 1000
+        }
+      ],
+      "warning_count_semantics": "text occurrences, not unique tool events; native warning_audit remains authoritative",
+      "warning_group_semantics": "first 200 distinct original texts per log; full-text counts for those groups remain exact; omitted occurrences remain in code totals and raw logs; no warning is accepted or downgraded by this index",
+      "warning_occurrences_in_files": 75,
+      "warning_occurrences_in_unique_file_contents": 75
+    },
+    "memory_measurement": "maximum sampled process-tree RSS, not sum across nested commands; may miss short peaks",
+    "native_metric_sources": [
+      "io_metrics.json"
+    ],
+    "partial": false,
+    "peak_process_tree_rss_kib_sampled": 4911892,
+    "runtime_seconds": 40.20753365010023,
+    "schema_version": 1,
+    "stage": "floorplan",
+    "started_at": "2026-11-01T04:34:56.834665+00:00",
+    "status": "success",
+    "upstream_artifacts": []
+  },
+  "partition_consumed": false,
+  "pin_algorithm": "openroad",
+  "preplace": "dreamplace",
+  "schema_version": 1,
+  "status": "success",
+  "tool_iterations": {
+    "optimization": {
+      "last_global_placement_record": {
+        "density_weight": 0.05512251,
+        "gamma": 14.29942,
+        "hpwl_log_label": "wHPWL",
+        "hpwl_native": 15284720.0,
+        "hpwl_units": "placer_native_not_microns",
+        "iteration": 630,
+        "max_density": 1.771,
+        "objective_native": 11910240.0,
+        "overflow": 0.02045139,
+        "overflow_units": "fraction",
+        "phase": "global_placement",
+        "source_line": 3891,
+        "source_log": "io_preplace.log",
+        "source_sha256": "81a90a2fc456751cf1e1126188bb860825ef43817112d81754b8a919f9687b33"
+      },
+      "last_record": {
+        "density_weight": 0.05512251,
+        "gamma": 14.29942,
+        "hpwl_log_label": "wHPWL",
+        "hpwl_native": 15284720.0,
+        "hpwl_units": "placer_native_not_microns",
+        "iteration": 630,
+        "max_density": 1.771,
+        "objective_native": 11910240.0,
+        "overflow": 0.02045139,
+        "overflow_units": "fraction",
+        "phase": "global_placement",
+        "source_line": 3891,
+        "source_log": "io_preplace.log",
+        "source_sha256": "81a90a2fc456751cf1e1126188bb860825ef43817112d81754b8a919f9687b33"
+      },
+      "region_order": "native fence-region order; do not assume die order"
+    }
+  }
+}

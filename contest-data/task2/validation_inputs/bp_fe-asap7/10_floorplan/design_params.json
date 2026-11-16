@@ -1,0 +1,29 @@
+{
+  "def_input": "../../home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan/design.def",
+  "detailed_place_flag": 0,
+  "enable_fillers": 0,
+  "global_place_flag": 0,
+  "gpu": 0,
+  "lef_input": [
+    "../OpenROAD-3D/flow/platforms/asap7/lef/asap7_tech_1x_201209.lef",
+    "../OpenROAD-3D/flow/platforms/asap7/lef/asap7sc7p5t_28_R_1x_220121a.dreamplace.lef",
+    "../OpenROAD-3D/flow/platforms/asap7/lef/fakeram7_512x64.lef",
+    "../OpenROAD-3D/flow/platforms/asap7/lef/fakeram7_64x7.lef",
+    "../OpenROAD-3D/flow/platforms/asap7/lef/fakeram7_64x96.lef"
+  ],
+  "legalize_flag": 0,
+  "lib_input": [
+    "../OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib.gz",
+    "../OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib.gz",
+    "../OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib.gz",
+    "../OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib",
+    "../OpenROAD-3D/flow/platforms/asap7/lib/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib.gz",
+    "../OpenROAD-3D/flow/platforms/asap7/lib/NLDM/fakeram7_512x64.lib",
+    "../OpenROAD-3D/flow/platforms/asap7/lib/NLDM/fakeram7_64x7.lib",
+    "../OpenROAD-3D/flow/platforms/asap7/lib/NLDM/fakeram7_64x96.lib"
+  ],
+  "num_threads": 4,
+  "plot_flag": 0,
+  "sdc_input": "../../home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan/design.sdc",
+  "verilog_input": "../../home/gcr/contest2-release/qualification/validation-prefixes/bp_fe-asap7/run-v2/10_floorplan/design.v"
+}

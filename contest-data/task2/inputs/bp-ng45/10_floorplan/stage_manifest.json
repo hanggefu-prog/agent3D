@@ -1,0 +1,113 @@
+{
+  "artifacts": {
+    "def": {
+      "bytes": 24898271,
+      "path": "design.def",
+      "sha256": "35169fbce16864b5ae57f4b695668dd7ee8757bb6a3b2cc054bf083ae7554522"
+    },
+    "design_params": {
+      "bytes": 1321,
+      "path": "design_params.json",
+      "sha256": "401353b70baff9cd673c110319b62282086cd4050b027166aa0499892288773e"
+    },
+    "diagnostics_commands_jsonl": {
+      "bytes": 4382,
+      "path": "commands.jsonl",
+      "sha256": "3882369579e2f86fa294940ac2594f480fe93624ad2cefa19b732cdd82c5ce2a"
+    },
+    "diagnostics_metrics_json": {
+      "bytes": 39285,
+      "path": "metrics.json",
+      "sha256": "a6781522104cfaf555b0b4f53cfafd818d7ec91d4bae07298338516e69df387e"
+    },
+    "diagnostics_optimization_history_csv": {
+      "bytes": 131087,
+      "path": "optimization_history.csv",
+      "sha256": "97ce1b4d41a535dfea745a1bd802518d631072c2c988afdf91b03ff6107c7872"
+    },
+    "floorplan": {
+      "bytes": 1350,
+      "path": "floorplan.json",
+      "sha256": "10156f485f7f6ebecb19d1d57dd0f7a2d1a7cf6c3ae44d6a977873e33b7c7bd9"
+    },
+    "io_metrics": {
+      "bytes": 939,
+      "path": "io_metrics.json",
+      "sha256": "9bec9186d4bac3e33019ccbb649b0bb8541e2ddc79265746b03bd6cf84f9a8b0"
+    },
+    "io_plan": {
+      "bytes": 110944,
+      "path": "io_plan.csv",
+      "sha256": "43060c1ffe92112caa52aec9ae8c1525e513095fb3ffd7adb402bf13dce4900a"
+    },
+    "io_preview_def": {
+      "bytes": 24503660,
+      "path": "io_preplace.def",
+      "sha256": "fc0f5ab2f2d1b327a13a65c1bf13d8598a2c2b8ac10593b99570fc1865e7a5fd"
+    },
+    "odb": {
+      "bytes": 74106680,
+      "path": "design.odb",
+      "sha256": "9d0374a055f7e9034e3755758e8070777c660a3e478b120ad8890d729cfd8691"
+    },
+    "partition_input": {
+      "bytes": 12286427,
+      "path": "partition.input",
+      "sha256": "e05c807ebeab764a21c0967645d23ab90cdd116461fa96453da708bf0bc9dc15"
+    },
+    "partition_names": {
+      "bytes": 2486554,
+      "path": "partition.names.csv",
+      "sha256": "4ea0a1f47411388c7defa0b812157ad9df819cf9429d3433692635d082cc31a8"
+    },
+    "pdn_plan": {
+      "bytes": 301,
+      "path": "pdn_plan.json",
+      "sha256": "b553295779885545cc4bc557c2e37069fa120121e806d2b1e6249b37294f5936"
+    },
+    "preplan_manifest": {
+      "bytes": 308,
+      "path": "preplan_manifest.json",
+      "sha256": "d8171d567c735fbc65472323fb39f11444e8c2c260a750aba2724f14079b642d"
+    },
+    "sdc": {
+      "bytes": 173417,
+      "path": "design.sdc",
+      "sha256": "53ee20d6f7c6cefcf54f9818b1cd7722f18e7dccfe6ea592ea4b475f07e13b30"
+    },
+    "verilog": {
+      "bytes": 26919690,
+      "path": "design.v",
+      "sha256": "28bec2f53a48d3079c5eb10a6878220e1cf79b6ea47abcc2abddbbb5507f1d7b"
+    }
+  },
+  "design": "bp",
+  "integration": "lol",
+  "method": "fixed+pins:openroad",
+  "pdk": "ng45",
+  "provenance": {
+    "container_image": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+    "container_image_id": "sha256:a339ce29f295d9f50d8b7da66adf5fccaa194026186b16ff5fba6d9da90be86e",
+    "container_image_version": "2.0",
+    "implementation_sha256": "fcc95e7b5635ffe793cf765770c72adbb6a2765c3951fd3c43b33c76d8ff767c",
+    "openroad_version": "GITDIR-NOTFOUND",
+    "python_version": "3.8.10",
+    "repo_commit": "b9e0b67fe6fbe9a1919510e40be205398526d6ed",
+    "repo_dirty": false,
+    "yosys_version": "Yosys 0.58 (git sha1 157aabb5831cc77d08346001c4a085f188d7c736, g++ 9.4.0-1ubuntu1~20.04.2 -fPIC -O3)"
+  },
+  "schema_version": 1,
+  "signature": {
+    "config": "e0f9230798541a9f6a8e05176353fb0059e75e89c5db13b37fefb446651f5683",
+    "implementation": "fcc95e7b5635ffe793cf765770c72adbb6a2765c3951fd3c43b33c76d8ff767c",
+    "runtime": "b131983239397045c52e151afd1e3d273e7bae84665bb5f90c80e8377102e420",
+    "upstream": "8f67febe06355c7f672290343fc01be3881882ac15eaf0ac9bdf6e63653b6c60"
+  },
+  "stage": "floorplan",
+  "status": "success",
+  "timing": {
+    "completed_at": "2026-11-01T04:35:37.104314+00:00",
+    "runtime_seconds": 40.26965707540512,
+    "started_at": "2026-11-01T04:34:56.834665+00:00"
+  }
+}
