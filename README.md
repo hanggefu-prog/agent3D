@@ -1,17 +1,6 @@
-# 赛题 2：3D 芯片网表切分目标演化
 
-在解压后的赛题代码目录中，运行表征学习 TP-GNN 的默认 Codex Agent：
 
-```sh
-cd AgenticBench
-python3 -m contest2 run --baseline loss_decoder
-```
-
-概率预测 GNN 的入口为 `python3 -m contest2 run --baseline binary_loss`。两条基线各有独立的 Agent 开发目录和 Codex 会话，评估次数和模型费用分别计账。
-
-评估在一次 OPT 后测量时序，不运行功耗或温度分析。
-
-## 赛题背景
+## 背景
 
 3D 芯片网表切分决定每个实例位于上层还是下层。不同的切分会改变跨层连接、后续布局和时序。本赛题固定图构造、GNN 主体、训练配置及下游物理设计流程，参赛队伍开发 Agent，反复提出函数修改，根据完整物理评估的反馈改进切分方法。
 
